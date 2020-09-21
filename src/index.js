@@ -3,10 +3,11 @@ import { createStore, combineReducers } from 'redux';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import { Provider } from 'react-redux';
-import PageNavigationReducer from './reducers/Page-Navigation';
+import combinedReducer from './reducers';
+
 
 const LayoutStore = createStore(
-  PageNavigationReducer,
+  combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
