@@ -1,12 +1,10 @@
-import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import ReactDOM from 'react-dom';
-import './css/index.css';
-import { Provider } from 'react-redux';
-import combinedReducer from './reducers';
-import Banner from './components/Banner';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import React from "react";
+import { createStore, combineReducers } from "redux";
+import ReactDOM from "react-dom";
+import "./css/index.css";
+import { Provider } from "react-redux";
+import combinedReducer from "./reducers";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const LayoutStore = createStore(
   combinedReducer,
@@ -15,8 +13,13 @@ const LayoutStore = createStore(
 
 ReactDOM.render(
   <Provider store={LayoutStore}>
-    <h1>Hello Scriptorce</h1>
-   <Banner />
-   </Provider>,
-  document.getElementById('root')
+    <Router>
+      <h1>Hello Scriptorce</h1>
+      <Route path="/" exact/>
+      <Route path="/store" exact/>
+      <Route path="/cart" exact/>
+      <Route path="/donation" exact/>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );
