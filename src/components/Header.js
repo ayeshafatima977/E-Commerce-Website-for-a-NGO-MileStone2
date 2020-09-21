@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -12,14 +14,15 @@ import { Link } from "react-router-dom";
 const HeaderComponent = () => 
 {   
     const ShowOverLay = (toShowFormName) => 
-    {
+    {   
+        let callingForm;
         if(toShowFormName==="contact")
         {
-            const callingForm = document.getElementsByClassName("contactform-overlay");            
+            callingForm = document.getElementsByClassName("contactform-overlay");            
         }
         else if (toShowFormName==="login")
         {
-            const callingForm = document.getElementsByClassName("loginform-overlay"); 
+            callingForm = document.getElementsByClassName("loginform-overlay"); 
         }
         callingForm.classList.add("form-overlay");      
         
@@ -43,7 +46,7 @@ const HeaderComponent = () =>
                 <ul>
                     <li><a href=""  onClick={ShowOverLay("login")} >LOGIN</a></li>
                     <li><a href=""  onClick={ShowOverLay("contact")}>CONTACT</a></li>
-                    <li><Link to="/cart">CART</Link></li>                   
+                    <li><Link to="/cart">CART<FontAwesomeIcon icon={faShoppingCart} /></Link></li>                   
                 </ul>
             </nav>
         </>
