@@ -5,6 +5,7 @@ import './css/index.css';
 import { Provider } from 'react-redux';
 import combinedReducer from './reducers';
 import Banner from './components/Banner';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 const LayoutStore = createStore(
