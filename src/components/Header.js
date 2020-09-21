@@ -12,7 +12,9 @@ const HeaderComponent = () =>
 {   
     const ShowOverLay = (toShowForName) => 
     {
-        //! Write Logic to Toggle the Class Name
+        var login = document.getElementById("login");
+        login.classList.add("contactform-overlay");
+        
     }
     
 
@@ -31,8 +33,8 @@ const HeaderComponent = () =>
                     <li><Link to="/volunteer">VOLUNTEER</Link></li>{/*!Parking lot item */}
                 </ul>
                 <ul>
-                    <li><a href="" className="contactform-overlay" onClick={ShowOverLay("login")} >LOGIN</a></li>
-                    <li><a href="" className="contactform-overlay" onClick={ShowOverLay("contact")}>CONTACT</a></li>
+                    <li><a href="" id="login" className="contactform-overlay" onClick={ShowOverLay("login")} >LOGIN</a></li>
+                    <li><a href="" id="contact" className="contactform-overlay" onClick={ShowOverLay("contact")}>CONTACT</a></li>
                     <li><Link to="/cart">CART</Link></li>                   
                 </ul>
             </nav>
