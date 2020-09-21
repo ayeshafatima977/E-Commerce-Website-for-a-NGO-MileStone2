@@ -6,7 +6,7 @@ import React from "react";
 =============================================*/
 
 /* Assuming routing would be in middle section between header/banner and footer */
-function KnowUsPageComponent() {
+const KnowUsPageComponent = () => {
   return (
     <>
       <h2> About Us</h2>
@@ -59,7 +59,7 @@ function KnowUsPageComponent() {
       </ul>
     </>
   );
-}
+};
 
 /*=====  End of Know us page React Component  ======*/
 

@@ -7,9 +7,9 @@ import DonationFormComponent from "Donation-form";
 =============================================*/
 
 /* Assuming routing would be in middle section between header/banner and footer */
-function DonationPageComponent() {
+const DonationPageComponent = () => {
   return <DonationFormComponent />;
-}
+};
 
 /*=====  End of Donation page React Component  ======*/
 

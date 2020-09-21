@@ -1,22 +1,22 @@
 /*cspell:disable*/
 import React from "react";
-import HeaderComponent from "Header";
-
+import ShoppingLayoutComponent from "Shopping-layout";
+import ShoppingNavigationComponent from "Shopping-navigation";
 
 /*=============================================
 =        Products page React Component        =
 =============================================*/
 
 /* Assuming routing would be in middle section between header/banner and footer */
-function ProductsPageComponent() {
+const ShoppingPageComponent = () => {
   return (
-      <>
-      <ShoppingPageComponent />
+    <>
+      <ShoppingLayoutComponent />
       <ShoppingNavigationComponent />
-      </>
+    </>
   );
-}
+};
 
 /*=====  End of Cart page React Component  ======*/
 
-export default ProductsPageComponent;
+export default ShoppingPageComponent;
