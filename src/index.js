@@ -9,6 +9,7 @@ import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
+import CreditCardComponent from "./components/Credit-card";
 const GlobalStore = createStore(
   combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -27,6 +28,7 @@ ReactDOM.render(
       <Route path="/volunteer" exact />
       <Route path="/cart" exact />
       <ContactFormComponent />
+      <CreditCardComponent />
     </Router>
   </Provider>,
   document.getElementById("root")
