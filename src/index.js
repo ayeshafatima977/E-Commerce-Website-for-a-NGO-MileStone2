@@ -5,6 +5,8 @@ import "./css/index.css";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
 
 const GlobalStore = createStore(
   combinedReducer,
