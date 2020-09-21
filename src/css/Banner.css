@@ -1,0 +1,13 @@
+/* Banner 1 */
+.banner {
+  position: absolute;
+  width: 1440px;
+  height: 230px;
+  
+  /* Positional css can change in the actual page layout */
+  /* left: 1440px;
+  top: 193px; */
+
+  background: url("../img/Banner.jpg");
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
