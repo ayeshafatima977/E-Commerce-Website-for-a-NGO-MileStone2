@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import callFakeStoreAPI from '../Call-Fake-Store-Api';
 /**
  * This is the initial Page Layout Reducer
