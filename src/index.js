@@ -1,13 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { createStore, combineReducers } from "redux";
+import ReactDOM from "react-dom";
+import "./css/index.css";
+import { Provider } from "react-redux";
+import combinedReducer from "./reducers";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 
+const GlobalStore = createStore(
+  combinedReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-     <HeaderComponent />
-     <FooterComponent />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={GlobalStore}>
+    <Router>
+      <h1>Hello Scriptorce</h1>
+      <Route path="/" exact/>
+      <Route path="/about" exact />
+      <Route path="/events" exact />
+      <Route path="/news" exact />
+      <Route path="/donation" exact/>
+      <Route path="/shop" exact/>
+      <Route path="/volunteer" exact/>
+      <Route path="/cart" exact/>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );
