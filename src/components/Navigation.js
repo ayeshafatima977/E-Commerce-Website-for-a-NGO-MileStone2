@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navigation.css';
+
+
 
 
 /*=============================================
@@ -11,37 +11,21 @@ const Navigation = () =>
 {
     return(
         <nav>            
+            
+            <logo>Logo</logo>
+            <h1>Make A DIFFERENCE</h1>
+            <ul>    
+                <li>ABOUT</li>
+                <li>EVENTS</li>
+                <li>NEWS</li>
+                <li>DONATE</li>
+                <li>SHOP</li>
+                <li>VOLUNTEER</li>
+            </ul>
             <ul>
-                <li>
-                    <Link to = '/'>
-                        ABOUT
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/'>
-                        EVENTS
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/'>
-                        NEWS
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/'>
-                        DONATE
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/'>
-                        SHOP
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/'>
-                        VOLUNTEER
-                    </Link>
-                </li>
+                <li>LOGIN</li>
+                <li>CONTACT</li>
+                <li>CART</li>
             </ul>
         </nav>
     );

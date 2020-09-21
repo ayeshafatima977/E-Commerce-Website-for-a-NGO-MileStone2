@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
+import Navigation from './components/Navigation';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Hello Scriptorce</h1>
-   <> </>
+     <Navigation />
   </React.StrictMode>,
   document.getElementById('root')
 );
