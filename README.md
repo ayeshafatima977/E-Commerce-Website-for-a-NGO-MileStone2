@@ -13,9 +13,9 @@ Trello board: https://trello.com/b/QuSHXICc
 
 GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-router-project-scriptorce
 
-#Resources: The following we links has been used as research resources during the project execution. If any code snippet is used, a citation would be added to the corresponding code.
+#Resources: The following links has been used as research resources during the project execution. If any code snippet is used, a citation would be added to the corresponding code.
 
-==============================================================================================
+1. Inserting Image in React : https://reactgo.com/react-images/
 
 Citation:
 
@@ -40,15 +40,14 @@ Citation:
 Source:
 Reason:
 
-==============================================================================================
-==============================================================================================
+# ==============================================================================================
 
 Images and Icons Credit has been added to the footer as per the license and attributes documentation from the corresponding websites
 
 Icons Credit goes to:
 
-Images Credit goes to: 
+Images Credit goes to:
 
 ==============================================================================================
 
-! General Notes: 
+! General Notes:

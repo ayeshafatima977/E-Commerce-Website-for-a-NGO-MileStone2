@@ -6,7 +6,6 @@ import HeroSectionComponent from "./components/Hero-section";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Hello Scriptorce</h1>
     <Router>
       <ContactFormComponent />
       <HeroSectionComponent />
