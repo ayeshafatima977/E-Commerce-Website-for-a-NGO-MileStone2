@@ -1,3 +1,4 @@
+//! Change to only one action switch statement
 const BillingInfoReducer = (
   state = {
     FName: "",

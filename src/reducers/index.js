@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import PageNavigationReducer from './Page-Navigation';
+import ShoppingNavigationReducer from './Shopping-Navigation';
 import CartReducer from './Cart';
 import BillingReducer from './Billing-Info';
 import CreditReducer from './Credit-Card';
@@ -12,7 +12,7 @@ const UserDataReducer = combineReducers({
 })
 
 export default combineReducers( {
-  PageNav: PageNavigationReducer,
+  ShopNav: ShoppingNavigationReducer,
   Cart: CartReducer,
   UserData: UserDataReducer
 })

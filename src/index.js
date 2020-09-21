@@ -16,6 +16,8 @@ ReactDOM.render(
     <Router>
       <h1>Hello Scriptorce</h1>
       <Route path="/" exact/>
+      <Route path="/news" exact />
+      <Route path="/events" exact />
       <Route path="/shop" exact/>
       <Route path="/cart" exact/>
       <Route path="/donation" exact/>

@@ -4,7 +4,7 @@ import callFakeStoreAPI from '../Call-Fake-Store-Api';
  * This is the initial Page Layout Reducer
  * Author: Kenji Au
  */
- const PageNavigationReducer = (
+ const ShoppingNavigationReducer = (
    state = {
     Search: "",
     Sort: "",
@@ -38,4 +38,4 @@ import callFakeStoreAPI from '../Call-Fake-Store-Api';
    };
  };
 
- export default PageNavigationReducer;
+ export default ShoppingNavigationReducer;
