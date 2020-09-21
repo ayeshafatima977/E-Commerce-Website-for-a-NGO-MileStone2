@@ -1,52 +1,30 @@
-//! Change to only one action switch statement
 const BillingInfoReducer = (
-  state = {
-    FName: "",
-    LName: "",
-    Address: "",
-    City: "",
-    Prov: "",
-    PostalCode: "",
-    Phone: "",
-    EmailID: "",
-  },
-  action
-) => {
-  switch (action.type) {
-    case "CHANGE_F_NAME": {
-      // Logic for changing the first name
-      break;
+    state = {
+      fName: "",
+      lName: "",
+      address: "",
+      city: "",
+      prov: "",
+      postalCode: "",
+      phone: "",
+      emailID: "",
+     },action) => {
+    switch (action.type) {
+      case "CHANGE_BILLING_INFO": {
+        const BillingInformationCopy = {...state}
+        BillingInformationCopy.fName = action.payload.fName;
+        BillingInformationCopy.lName = action.payload.lName;
+        BillingInformationCopy.address = action.payload.address;
+        BillingInformationCopy.city = action.payload.city;
+        BillingInformationCopy.prov = action.payload.prov;
+        BillingInformationCopy.postalCode = action.payload.postalCode;
+        BillingInformationCopy.phone = action.payload.phone;
+        BillingInformationCopy.email = action.payload.email;
+        return BillingInformationCopy;
+      }
+      default:
+        return state;
     }
-    case "CHANGE_L_NAME": {
-      // Logic for changing the last name
-      break;
-    }
-    case "CHANGE_ADDRESS": {
-      // Logic for changing the address
-    }
-    case "CHANGE_CITY": {
-      // Logic for changing the city
-      break;
-    }
-    case "CHANGE_PROVINCE": {
-      // Logic for changing the province
-      break;
-    }
-    case "CHANGE_POSTAL_CODE": {
-      // Logic for changing the postal code
-      break;
-    }
-    case "CHANGE_PHONE": {
-      // Logic for changing the phone number
-      break;
-    }
-    case "CHANGE_EMAIL": {
-      // Logic for changing the email address
-      break;
-    }
-    default:
-      return state;
-  }
-};
+  };
 
 export default BillingInfoReducer;
