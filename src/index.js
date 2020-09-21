@@ -6,17 +6,17 @@ import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-const LayoutStore = createStore(
+const GlobalStore = createStore(
   combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(
-  <Provider store={LayoutStore}>
+  <Provider store={GlobalStore}>
     <Router>
       <h1>Hello Scriptorce</h1>
       <Route path="/" exact/>
-      <Route path="/store" exact/>
+      <Route path="/shop" exact/>
       <Route path="/cart" exact/>
       <Route path="/donation" exact/>
     </Router>
