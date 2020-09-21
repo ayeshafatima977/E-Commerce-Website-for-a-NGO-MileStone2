@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import ShoppingNavigationReducer from './Shopping-Navigation';
+import ShoppingNavigationReducer from './Shopping-navigation';
 import CartReducer from './Cart';
-import BillingReducer from './Billing-Info';
-import CreditReducer from './Credit-Card';
-import BillingInfoReducer from './Billing-Info';
-import CreditCardReducer from './Credit-Card';
+import BillingReducer from './Billing-info';
+import CreditReducer from './Credit-card';
+import BillingInfoReducer from './Billing-info';
+import CreditCardReducer from './Credit-card';
 
 const UserDataReducer = combineReducers({
   BillingInfo: BillingInfoReducer,
