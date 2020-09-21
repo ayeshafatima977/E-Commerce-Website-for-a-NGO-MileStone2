@@ -16,11 +16,13 @@ ReactDOM.render(
     <Router>
       <h1>Hello Scriptorce</h1>
       <Route path="/" exact/>
-      <Route path="/news" exact />
+      <Route path="/about" exact />
       <Route path="/events" exact />
-      <Route path="/shop" exact/>
-      <Route path="/cart" exact/>
+      <Route path="/news" exact />
       <Route path="/donation" exact/>
+      <Route path="/shop" exact/>
+      <Route path="/volunteer" exact/>
+      <Route path="/cart" exact/>
     </Router>
   </Provider>,
   document.getElementById("root")

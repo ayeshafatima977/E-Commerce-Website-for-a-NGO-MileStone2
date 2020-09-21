@@ -9,7 +9,7 @@ import callFakeStoreAPI from '../Call-Fake-Store-Api';
     Search: "",
     Sort: "",
     Browse: "",
-    displayProducts: [callFakeStoreAPI()]
+    displayProducts: callFakeStoreAPI()
   },
   action) => {
    switch (action.type) {
