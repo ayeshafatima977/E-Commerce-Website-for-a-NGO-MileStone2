@@ -2,7 +2,7 @@ const CartReducer = (
   state = [],
   action) => {
   switch (action.type) {
-    case ("ADD_PRODUCT_TO__CART"):
+    case ("ADD_PRODUCT_TO_CART"):
     {
       // Logic for adding an item to the cart
        break;
