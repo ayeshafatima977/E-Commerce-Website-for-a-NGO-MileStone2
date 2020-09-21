@@ -8,11 +8,13 @@ import CreditCardReducer from './Credit-card';
 
 const UserDataReducer = combineReducers({
   BillingInfo: BillingInfoReducer,
-  CreditInfo: CreditCardReducer
+  CreditCardInfo: CreditCardReducer
 })
 
-export default combineReducers( {
+const GlobalReducer = combineReducers({
   ShopNav: ShoppingNavigationReducer,
   Cart: CartReducer,
   UserData: UserDataReducer
 })
+
+export default GlobalReducer;

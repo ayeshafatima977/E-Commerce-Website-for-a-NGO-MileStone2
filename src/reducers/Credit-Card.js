@@ -7,25 +7,14 @@ const CreditCardReducer = (
   },
   action) => {
   switch (action.type) {
-    case ("CHANGE_CREDIT_NO"):
+    case ("CHANGE_CREDIT_INFO"):
     {
-      // Logic for changing the credit card no
-       break;
-    }
-    case ("CHANGE_EXP_DATE"):
-    {
-       // Logic for changing the expiry date
-       break;
-    }
-    case ("CHANGE_CVC"):
-    {
-       // Logic for changing the CVC.
-       break;
-    }
-    case ("CLEAR_CC_INFO"):
-    {
-       // Logic for clearing CC info if user doesn't want us to save it.
-       break;
+      const CreditInfoCopy = {...state};
+      CreditInfoCopy.No = action.payload.no;
+      CreditInfoCopy.ExpDate = action.payload.ExpDate;
+      CreditInfoCopy.CVC = action.payload.CVC;
+      CreditInfoCopy.SaveCCInfo = action.payload.SaveCCInfo;
+      return CreditInfoCopy;
     }
     default:
        return state;
