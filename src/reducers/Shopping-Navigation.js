@@ -1,8 +1,4 @@
 import CallFakeStoreAPI from "../Call-fake-store-api";
-/**
- * This is the initial Page Layout Reducer
- * Author: Kenji Au
- */
 const ShoppingNavigationReducer = (
   state = {
     Search: "",
@@ -14,9 +10,11 @@ const ShoppingNavigationReducer = (
   },
   action
 ) => {
+  // Create a copy of the state
   const stateCopy = { ...state };
   // Create a new array for only items with search term
   let displayCopy = [];
+
   switch (action.type) {
     case "SEARCH_PRODUCT": {
       // Update the search state
@@ -41,9 +39,38 @@ const ShoppingNavigationReducer = (
       return stateCopy;
     }
     case "SORT_PRODUCT": {
+      // The two functions below are used for sorting alphabetically.
+      // The Compare function code snippet was found from:
+      // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+      function compareAZ(a, b) {
+        // This function will sort an array based on the title alphabetically.
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+
+        let comparison = 0;
+        if (titleA > titleB) {
+          comparison = 1;
+        } else {
+          comparison = -1;
+        }
+        return comparison;
+      }
+      function compareZA(a, b) {
+        // This function will sort an array based on the title alphabetically reversed.
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+
+        let comparison = 0;
+        if (titleA < titleB) {
+          comparison = 1;
+        } else {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
       if (state.Sort === "") {
         stateCopy.Sort = action.payload;
-        // Sorting Function based on the payload
         // Shorthand sort function snippet found at:
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
@@ -52,16 +79,31 @@ const ShoppingNavigationReducer = (
 
         // Keep a copy of the current display and save it.
         stateCopy.previousDisplayProducts = state.displayProducts;
-        if (action.payload === "PRICE_H_L") {
-          products.sort((a, b) => b.price - a.price);
-          stateCopy.displayProducts = products;
+        switch (action.payload) {
+          case ("PRICE_H_L"): {
+            products.sort((a, b) => b.price - a.price);
+            stateCopy.displayProducts = products;
+            break;
+          }
+          case ("PRICE_L_H"): {
+            products.sort((a, b) => a.price - b.price);
+            stateCopy.displayProducts = products;
+            break;
+          }
+          case ("ALPHA_A_Z"): {
+            products.sort(compareAZ);
+            stateCopy.displayProducts = products;
+            break;
+          }
+          case ("ALPHA_Z_A"): {
+            products.sort(compareZA);
+            stateCopy.displayProducts = products;
+            break;
+          }
+          default: {
+            return stateCopy;
+          }
         }
-        if (action.payload === "PRICE_L_H") {
-          products.sort((a, b) => a.price - b.price);
-          stateCopy.displayProducts = products;
-        }
-        // Alphabet A
-        // Alphabet Z
       } else {
         // Set the sort copy to empty.
         stateCopy.Sort = "";
