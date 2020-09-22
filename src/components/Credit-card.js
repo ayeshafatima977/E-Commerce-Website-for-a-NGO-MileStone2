@@ -22,7 +22,7 @@ const CreditCardComponent = () => {
     SaveCCInfo: userInfoSave,
   };
 
-  //   // Update the state you wish to edit in the copy
+  // Update the state you wish to edit in the copy
   //   CreditCardStateInfoCopy.No = 123456;
   //   CreditCardStateInfoCopy.ExpDate = 40620;
   //   CreditCardStateInfoCopy.CVC = 1423;
@@ -32,7 +32,7 @@ const CreditCardComponent = () => {
   // Change Global Store with the Local values edited above
   // };
 
-  // //@Link :https://stackoverflow.com/questions/49212020/react-checkbox-select-onchange
+  //@Link :https://stackoverflow.com/questions/49212020/react-checkbox-select-onchange
   // handleCheckClick = () => {
   //   this.setState({ checked: !this.state.checked });
   // };
@@ -74,20 +74,20 @@ const CreditCardComponent = () => {
             setUserCVC(e.target.value);
           }}
         />
-        <input
+        {/* <input
           type="checkbox"
           checked={this.state.checked}
           onChange={this.handleCheckClick}
           className="filled-in"
           id="filled-in-box"
-        />
+        /> */}
 
-        <input
+        {/* <input
           type="checkbox"
           onClick={(e) => {
             setUserInfoSave(e.target.value);
           }}
-        />
+        /> */}
         <button type="Submit">Send</button>
       </form>
     </>

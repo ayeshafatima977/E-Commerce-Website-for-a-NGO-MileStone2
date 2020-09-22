@@ -10,6 +10,7 @@ import combinedReducer from "./reducers";
 // import HeaderComponent from "./components/HeaderComponent";
 // import FooterComponent from "./components/FooterComponent";
 import CreditCardComponent from "./components/Credit-card";
+import BillingDetailsComponent from "./components/Billing-details";
 const GlobalStore = createStore(
   combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -29,6 +30,7 @@ ReactDOM.render(
       <Route path="/cart" exact />
       <ContactFormComponent /> */}
     <CreditCardComponent />
+    <BillingDetailsComponent />
     {/* </Router> */}
   </Provider>,
   document.getElementById("root")
