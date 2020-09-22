@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeCreditInfo } from "../actions/Credit-card";
+import { FaCcMastercard } from "react-icons/fa";
+import { FaCcPaypal } from "react-icons/fa";
+import { FaCcVisa } from "react-icons/fa";
+import { FaCcAmazonPay } from "react-icons/fa";
+import { FaCcApplePay } from "react-icons/fa";
+import { SiGooglepay } from "react-icons/si";
+import { FaCreditCard } from "react-icons/fa";
 
 const CreditCardComponent = () => {
   const GlobalStateInfo = useSelector((state) => state);
@@ -30,9 +37,26 @@ const CreditCardComponent = () => {
     <>
       <form onSubmit={validationForm}>
         <h2>Credit Card</h2>
-        <label htmlFor="Card Number">
-          Card Number
-        </label>
+        <p>
+          <FaCcMastercard />
+        </p>
+        <p>
+          <FaCcVisa />
+        </p>
+        <p>
+          <FaCcPaypal />
+        </p>
+        <p>
+          <FaCcAmazonPay />
+        </p>
+        <p>
+          <FaCcApplePay />
+        </p>
+        <p>
+          <SiGooglepay />
+        </p>
+
+        <label htmlFor="Card Number">Card Number</label>
         <input
           type="number"
           placeholder="Enter your Credit Card Number"
@@ -40,6 +64,10 @@ const CreditCardComponent = () => {
             setUserCreditNumber(e.target.value);
           }}
         />
+        <p>
+          <FaCreditCard />
+        </p>
+
         <label htmlFor="Expiry Date">Expiry Date</label>
         <input
           type="number"
@@ -48,9 +76,7 @@ const CreditCardComponent = () => {
             setUserExpiry(e.target.value);
           }}
         />
-        <label htmlFor="Card Code(CVC)">
-          Card Code (CVC) *
-        </label>
+        <label htmlFor="Card Code(CVC)">Card Code (CVC) *</label>
         <input
           type="number"
           placeholder="Enter your CVC"
@@ -62,7 +88,7 @@ const CreditCardComponent = () => {
           type="checkbox"
           id="checkboxes"
           onChange={(e) => {
-          // If the checkbox is checked it returns true else returns false
+            // If the checkbox is checked it returns true else returns false
             setUserInfoSave(e.target.checked);
           }}
         />
