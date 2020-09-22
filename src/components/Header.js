@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/si";
+
 
 
 
@@ -10,10 +12,18 @@ import { Link } from "react-router-dom";
 
 const HeaderComponent = () => 
 {   
-    const ShowOverLay = (toShowForName) => 
-    {
-        var login = document.getElementById("login");
-        login.classList.add("contactform-overlay");
+    const ShowOverLay = (toShowFormName) => 
+    {   
+        let callingForm;
+        if(toShowFormName==="contact")
+        {
+            callingForm = document.getElementsByClassName("contactform-overlay");            
+        }
+        else if (toShowFormName==="login")
+        {
+            callingForm = document.getElementsByClassName("loginform-overlay"); 
+        }
+        callingForm.classList.add("form-overlay");      
         
     }
     
@@ -33,9 +43,9 @@ const HeaderComponent = () =>
                     <li><Link to="/volunteer">VOLUNTEER</Link></li>{/*!Parking lot item */}
                 </ul>
                 <ul>
-                    <li><a href="" id="login" className="contactform-overlay" onClick={ShowOverLay("login")} >LOGIN</a></li>
-                    <li><a href="" id="contact" className="contactform-overlay" onClick={ShowOverLay("contact")}>CONTACT</a></li>
-                    <li><Link to="/cart">CART</Link></li>                   
+                    <li><a href=""  onClick={ShowOverLay("login")} >LOGIN</a></li>
+                    <li><a href=""  onClick={ShowOverLay("contact")}>CONTACT</a></li>
+                    <li><Link to="/cart">CART<FaShoppingCart /></Link></li>                   
                 </ul>
             </nav>
         </>

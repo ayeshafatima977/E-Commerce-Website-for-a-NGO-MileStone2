@@ -2,13 +2,9 @@ import React from "react";
 import { createStore } from "redux";
 import ReactDOM from "react-dom";
 import "./css/index.css";
-import ContactFormComponent from "./components/Contact-form";
-import HeroSectionComponent from "./components/Hero-section";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import ShoppingLayoutComponent from "./components/Shopping-layout";
-import ShoppingNavigationComponent from "./components/Shopping-navigation";
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -18,27 +14,15 @@ ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
       <h1>Hello Scriptorce</h1>
-      <Route path="/" exact >
-        <HeroSectionComponent />
-        <ContactFormComponent />
-      </Route>
-      <Route path="/about" exact >
-      </Route>
-      <Route path="/events" exact >
-      </Route>
-      <Route path="/news" exact >
-      </Route>
-      <Route path="/donation" exact >
-      </Route>
-      <Route path="/shop" exact >
-        <ShoppingLayoutComponent />
-        <ShoppingNavigationComponent />
-      </Route>
-      <Route path="/volunteer" exact >
-      </Route>
-      <Route path="/cart" exact >
-      </Route>
-    </Router>
+      <Route path="/" exact />
+      <Route path="/about" exact />
+      <Route path="/events" exact />
+      <Route path="/news" exact />
+      <Route path="/donation" exact />
+      <Route path="/shop" exact />
+      <Route path="/volunteer" exact />
+      <Route path="/cart" exact />
+    </Router> 
   </Provider>,
   document.getElementById("root")
 );

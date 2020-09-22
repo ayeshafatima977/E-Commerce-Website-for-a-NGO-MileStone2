@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Search, Sort, Browse } from "../actions/Shopping-navigation";
+import { Search, Sort, Browse, Filter } from "../actions/Shopping-navigation";
+
 
 
 const ShoppingNavigationComponent = () => {
@@ -13,6 +14,11 @@ const ShoppingNavigationComponent = () => {
   const BrowseOption = (id) => {
     dispatch(Browse(id));
   };
+     
+    
+    const FilterOption = (id) => {
+      dispatch(Filter(id));
+  }
 
   return (
     <>
@@ -47,14 +53,14 @@ const ShoppingNavigationComponent = () => {
       <label htmlFor="WomenC">Women Clothing</label>
       
       <h3>Filter By Price</h3>
-      <input type="checkbox" id="0-20" className="CB"/>
+      <input type="checkbox" id="20" onChange={(e) => {FilterOption(e.target.id)}}/>
       <label htmlFor="0-20">$0-$20</label>
-      <input type="checkbox" id="21-100" className="CB"/>
+      <input type="checkbox" id="100" onChange={(e) => {FilterOption(e.target.id)}}/>
       <label htmlFor="21-100">$21-$100</label>
-      <input type="checkbox" id="101-200" className="CB"/>
+      <input type="checkbox" id="200" onChange={(e) => {FilterOption(e.target.id)}}/>
       <label htmlFor="101-200">$101-$200</label>
-      <input type="checkbox" id="201" className="CB"/>
-      <label htmlFor="201">$201+</label>
+      <input type="checkbox" id="201" onChange={(e) => {FilterOption(e.target.id)}}/>
+      <label htmlFor="201" >$201+</label>
     </>
   );
 };

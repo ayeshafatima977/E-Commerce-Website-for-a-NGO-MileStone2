@@ -1,6 +1,7 @@
 const CartReducer = (state = [], action) => {
   const cartCopy = [...state];
   switch (action.type) {
+
     case "ADD_PRODUCT_TO_CART": {
       action.payload.inCartQty++;
       cartCopy.push(action.payload);
@@ -19,6 +20,7 @@ const CartReducer = (state = [], action) => {
       // Once the index of the item is found, remove that item from the array
       cartCopy.splice(i, 1);
       return cartCopy;
+
     }
     case "INCREASE_CART_QTY": {
       for (let item of cartCopy) {

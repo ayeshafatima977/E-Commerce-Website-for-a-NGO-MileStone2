@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-icons/si";
 
 /*=============================================
 =            FooterComponent            =
@@ -21,12 +22,11 @@ const FooterComponent = () => {
       {/* Get Social start */}
       <section>
         <div>
-          <h2>Get Social</h2>
-          {/** Get npm install from fontawsome*/}
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <h2>Get Social</h2>            
+          <p><FaFacebookF /></p>
+          <p><FaInstagram /></p>
+          <p><FaTwitter/></p>
+          <p><FaYoutube /></p>
         </div>
         <p>Privacy Policy | Terms &amp; Conditions</p>
       </section>
@@ -51,9 +51,9 @@ const FooterComponent = () => {
             Email Address
           </label>
           <input type="email" id="email" placeholder="Email Address" />
-          <p>{/* envelop icon from font awesome */}</p>
+          <p><FaEnvelope /></p>
         </div>
-        <p>&copy; 2020 Edomonton Scriptorce</p>
+        <p>&copy; 2020 Edmonton Scriptorce</p>
       </section>
       {/* Newsletter end */}
     </footer>
