@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Search, Sort, Browse, Filter } from "../actions/Shopping-navigation";
+import { BiSearch } from 'react-icons/Bi';
 
 
 
@@ -23,7 +24,7 @@ const ShoppingNavigationComponent = () => {
   return (
     <>
       <form>
-        <label className="screen-reader-text">Search</label>
+        <label className="screen-reader-text">Search<BiSearch /></label>
         <input
           type="text"
           placeholder="Search"
