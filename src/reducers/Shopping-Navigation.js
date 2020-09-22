@@ -26,7 +26,8 @@ const ShoppingNavigationReducer = (
 
       // Add to the array if item contains the search term
       for (const product of state.displayProducts) {
-        if (product.title.includes(stateCopy.Search)) {
+        const productTitle = product.title.toLowerCase();
+        if (productTitle.includes(stateCopy.Search)) {
           displayCopy.push(product);
         }
       }
@@ -63,7 +64,7 @@ const ShoppingNavigationReducer = (
         stateCopy.displayProducts = displayCopy;
         return stateCopy;
       } else {
-         // Set the browse state to empty.
+        // Set the browse state to empty.
         stateCopy.Browse = "";
         // Update the copy to display the last saved view.
         displayCopy = state.previousDisplayProducts;
