@@ -6,18 +6,15 @@ import "./css/index.css";
 // import HeroSectionComponent from "./components/Hero-section";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import HeaderComponent from "./components/HeaderComponent";
-// import FooterComponent from "./components/FooterComponent";
-import CreditCardComponent from "./components/Credit-card";
-import BillingDetailsComponent from "./components/Billing-details";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 const GlobalStore = createStore(
   combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 ReactDOM.render(
   <Provider store={GlobalStore}>
-    {/* {/* <Router>
+    <Router> 
       <h1>Hello Scriptorce</h1>
       <Route path="/" exact />
       <HeroSectionComponent />
@@ -27,11 +24,8 @@ ReactDOM.render(
       <Route path="/donation" exact />
       <Route path="/shop" exact />
       <Route path="/volunteer" exact />
-      <Route path="/cart" exact /> */}
-      <ContactFormComponent />
-    <CreditCardComponent />
-    <BillingDetailsComponent />
-    {/* </Router> */}
+      <Route path="/cart" exact />
+     </Router> 
   </Provider>,
   document.getElementById("root")
 );
