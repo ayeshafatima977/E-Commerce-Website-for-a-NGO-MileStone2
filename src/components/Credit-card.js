@@ -5,7 +5,6 @@ import { ChangeCreditInfo } from "../actions/Credit-card";
 const CreditCardComponent = () => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
-  //const CreditCardStateInfoCopy = {
   //   Creating a copy of Global Store with User Data
   //...GlobalStateInfo.UserData.CreditCardInfo
   //};
@@ -22,21 +21,6 @@ const CreditCardComponent = () => {
     SaveCCInfo: userInfoSave,
   };
 
-  // Update the state you wish to edit in the copy
-  //   CreditCardStateInfoCopy.No = 123456;
-  //   CreditCardStateInfoCopy.ExpDate = 40620;
-  //   CreditCardStateInfoCopy.CVC = 1423;
-  //This is to access the store for edit mode i.e dispatch(actionFunction(payload));
-  //   dispatch(ChangeCreditInfo({ creditInfo }));
-
-  // Change Global Store with the Local values edited above
-  // };
-
-  //@Link :https://stackoverflow.com/questions/49212020/react-checkbox-select-onchange
-  // handleCheckClick = () => {
-  //   this.setState({ checked: !this.state.checked });
-  // };
-
   //NEED TO VALIDATE CC FORM validationForm
   const validationForm = (e) => {
     e.preventDefault();
@@ -51,7 +35,8 @@ const CreditCardComponent = () => {
           Card Number
         </label>
         <input
-          type="number" placeholder="Enter your Credit Card Number"
+          type="number"
+          placeholder="Enter your Credit Card Number"
           onChange={(e) => {
             setUserCreditNumber(e.target.value);
           }}
@@ -60,7 +45,8 @@ const CreditCardComponent = () => {
           Expiry Date *
         </label>
         <input
-          type="number" placeholder="Enter your Expiry Date"
+          type="number"
+          placeholder="Enter your Expiry Date"
           onChange={(e) => {
             setUserExpiry(e.target.value);
           }}
@@ -69,26 +55,23 @@ const CreditCardComponent = () => {
           Card Code (CVC) *
         </label>
         <input
-          type="number" placeholder="Enter your CVC"
+          type="number"
+          placeholder="Enter your CVC"
           onChange={(e) => {
             setUserCVC(e.target.value);
           }}
         />
-        {/* <input
-          type="checkbox"
-          checked={this.state.checked}
-          onChange={this.handleCheckClick}
-          className="filled-in"
-          id="filled-in-box"
-        /> */}
 
-        {/* <input
+        <input
           type="checkbox"
-          onClick={(e) => {
-            setUserInfoSave(e.target.value);
+          id="checkboxes"
+          onChange={(e) => {
+            setUserInfoSave(e.target.checked);
           }}
-        /> */}
-        <button type="Submit">Send</button>
+        />
+        {console.log(userInfoSave)}
+
+        <button type="Submit">Save</button>
       </form>
     </>
   );

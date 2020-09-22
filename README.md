@@ -16,6 +16,10 @@ GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-
 #Resources: The following links has been used as research resources during the project execution. If any code snippet is used, a citation would be added to the corresponding code.
 
 1. Inserting Image in React : https://reactgo.com/react-images/
+   2.CheckBox:
+   https://stackoverflow.com/questions/17706058/error-cannot-read-property-checked-of-undefined 3.http://jsfiddle.net/jmUXY/1/
+2. Save User data: https://html5hive.org/how-to-submit-forms-and-save-data-with-react-js-and-node-js/
+3. Good Resource for react forms and Event Handlers: https://livebook.manning.com/book/react-quickly/chapter-7/127
 
 Citation:
 
