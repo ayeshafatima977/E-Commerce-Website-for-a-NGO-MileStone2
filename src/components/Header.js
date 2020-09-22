@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { FaShoppingCart } from "react-icons/si";
 
 
 
@@ -46,7 +45,7 @@ const HeaderComponent = () =>
                 <ul>
                     <li><a href=""  onClick={ShowOverLay("login")} >LOGIN</a></li>
                     <li><a href=""  onClick={ShowOverLay("contact")}>CONTACT</a></li>
-                    <li><Link to="/cart">CART<FontAwesomeIcon icon={faShoppingCart} /></Link></li>                   
+                    <li><Link to="/cart">CART<FaShoppingCart /></Link></li>                   
                 </ul>
             </nav>
         </>

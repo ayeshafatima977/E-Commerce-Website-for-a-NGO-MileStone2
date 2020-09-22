@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { FaWindowClose } from "react-icons/si";
+
 
 
 /*=============================================
@@ -33,7 +33,7 @@ const ProductDetailsOverlayComponent = (props) => {
   }
   return (
     <section>
-      <button><FontAwesomeIcon icon={faWindowClose} /></button>
+      <button><FaWindowClose /></button>
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>
       <p>{productPriceCopy}</p>
