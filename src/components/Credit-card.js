@@ -51,7 +51,7 @@ const CreditCardComponent = () => {
           Card Number
         </label>
         <input
-          type="number"
+          type="number" placeholder="Enter your Credit Card Number"
           onChange={(e) => {
             setUserCreditNumber(e.target.value);
           }}
@@ -60,7 +60,7 @@ const CreditCardComponent = () => {
           Expiry Date *
         </label>
         <input
-          type="number"
+          type="number" placeholder="Enter your Expiry Date"
           onChange={(e) => {
             setUserExpiry(e.target.value);
           }}
@@ -69,7 +69,7 @@ const CreditCardComponent = () => {
           Card Code (CVC) *
         </label>
         <input
-          type="number"
+          type="number" placeholder="Enter your CVC"
           onChange={(e) => {
             setUserCVC(e.target.value);
           }}

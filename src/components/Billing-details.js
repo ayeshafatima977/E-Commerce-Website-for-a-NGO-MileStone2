@@ -39,6 +39,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your First Name"
           onChange={(e) => {
             setUserFirstName(e.target.value);
           }}
@@ -48,6 +49,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your Last Name"
           onChange={(e) => {
             setUserLastName(e.target.value);
           }}
@@ -57,6 +59,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your Street Address"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
           }}
@@ -66,6 +69,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your City"
           onChange={(e) => {
             setUserCity(e.target.value);
           }}
@@ -93,6 +97,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your Postal Code"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
@@ -102,6 +107,7 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="number"
+          placeholder="Enter your Phone Number"
           onChange={(e) => {
             setUserPhone(e.target.value);
           }}
@@ -111,10 +117,12 @@ const BillingDetailsComponent = (props) => {
         </label>
         <input
           type="text"
+          placeholder="Enter your Email Address"
           onChange={(e) => {
             setUserEmail(e.target.value);
           }}
         />
+        <button type="Submit">Send</button>
       </form>
     </>
   );
