@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF,faInstagram,faTwitter,faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 /*=============================================
 =            FooterComponent            =
@@ -21,12 +24,11 @@ const FooterComponent = () => {
       {/* Get Social start */}
       <section>
         <div>
-          <h2>Get Social</h2>
-          {/** Get npm install from fontawsome*/}
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <h2>Get Social</h2>            
+          <p><FontAwesomeIcon icon={faFacebookF} /></p>
+          <p><FontAwesomeIcon icon={faTwitter} /></p>
+          <p><FontAwesomeIcon icon={faInstagram} /></p>
+          <p><FontAwesomeIcon icon={faYoutube} /></p>
         </div>
         <p>Privacy Policy | Terms &amp; Conditions</p>
       </section>
@@ -51,9 +53,9 @@ const FooterComponent = () => {
             Email Address
           </label>
           <input type="email" id="email" placeholder="Email Address" />
-          <p>{/* envelop icon from font awesome */}</p>
+          <p><FontAwesomeIcon icon={faEnvelope} /></p>
         </div>
-        <p>&copy; 2020 Edomonton Scriptorce</p>
+        <p>&copy; 2020 Edmonton Scriptorce</p>
       </section>
       {/* Newsletter end */}
     </footer>
