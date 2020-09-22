@@ -21,10 +21,6 @@ const ProductCard = (props) => {
     };
   };
 
-  useEffect(() => {
-    inCartCheck()
-  }, cartState);
-
   const AddSingleProductToCart = () => {
     dispatch(AddToCart(props.obj));
   };
