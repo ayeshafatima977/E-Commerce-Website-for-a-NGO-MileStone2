@@ -50,7 +50,7 @@ const ShoppingNavigationReducer = (
         // Change the browse state to the desired input.
         stateCopy.Browse = action.payload;
 
-        // Keep a copy of the current display and saved it.
+        // Keep a copy of the current display and save it.
         stateCopy.previousDisplayProducts = state.displayProducts;
 
         // Loop through the currently displayed products and only add the ones with the right category to the new display
@@ -66,6 +66,7 @@ const ShoppingNavigationReducer = (
       } else {
         // Set the browse state to empty.
         stateCopy.Browse = "";
+        
         // Update the copy to display the last saved view.
         displayCopy = state.previousDisplayProducts;
         stateCopy.displayProducts = displayCopy;
