@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
-
-const BillingDetailsComponent = (props) => {
+const BillingDetailsComponent = () => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
+
   //Creating Local states
   const [userFirstName, setUserFirstName] = useState("");
   const [userLastName, setUserLastName] = useState("");
@@ -14,7 +14,8 @@ const BillingDetailsComponent = (props) => {
   const [userPostalCode, setUserPostalCode] = useState("");
   const [userPhone, setUserPhone] = useState("0");
   const [userEmail, setUserEmail] = useState("");
-  // Check we need to make a global copy
+
+  // Creating a Copy with parameters assigned in the Billing Information reducer
   const BillingInfoCopy = {
     fName: userFirstName,
     lName: userLastName,
@@ -25,6 +26,7 @@ const BillingDetailsComponent = (props) => {
     phone: userPhone,
     emailID: userEmail,
   };
+  //NEED TO VALIDATE CC FORM validationForm
   const validationForm = (e) => {
     e.preventDefault();
     dispatch(ChangeBillingInfo(BillingInfoCopy));
@@ -34,9 +36,7 @@ const BillingDetailsComponent = (props) => {
     <>
       {/* DO WE NEED A SUBMIT HERE */}
       <form onSubmit={validationForm}>
-        <label htmlFor="First Name" className="screen-reader-text">
-          First Name
-        </label>
+        <label htmlFor="First Name">First Name</label>
         <input
           type="text"
           placeholder="Enter your First Name"
@@ -44,9 +44,7 @@ const BillingDetailsComponent = (props) => {
             setUserFirstName(e.target.value);
           }}
         />
-        <label htmlFor=" Last Name" className="screen-reader-text">
-          Last Name
-        </label>
+        <label htmlFor=" Last Name">Last Name</label>
         <input
           type="text"
           placeholder="Enter your Last Name"
@@ -54,9 +52,7 @@ const BillingDetailsComponent = (props) => {
             setUserLastName(e.target.value);
           }}
         />
-        <label htmlFor="StreetAddress" className="screen-reader-text">
-          Street Address
-        </label>
+        <label htmlFor="StreetAddress">Street Address</label>
         <input
           type="text"
           placeholder="Enter your Street Address"
@@ -64,9 +60,7 @@ const BillingDetailsComponent = (props) => {
             setUserStreetAddress(e.target.value);
           }}
         />
-        <label htmlFor="City" className="screen-reader-text">
-          City
-        </label>
+        <label htmlFor="City">City</label>
         <input
           type="text"
           placeholder="Enter your City"
@@ -75,9 +69,7 @@ const BillingDetailsComponent = (props) => {
           }}
         />
 
-        <label htmlFor="Province" className="screen-reader-text">
-          Province
-        </label>
+        <label htmlFor="Province">Province</label>
         <select
           onChange={(e) => {
             setUserProvince(e.target.value);
@@ -93,9 +85,7 @@ const BillingDetailsComponent = (props) => {
           <option value="NB">NB</option>
           <option value="NS">NS</option>
         </select>
-        <label htmlFor="Postal Code" className="screen-reader-text">
-          Postal Code
-        </label>
+        <label htmlFor="Postal Code">Postal Code</label>
         <input
           type="text"
           placeholder="Enter your Postal Code"
@@ -103,9 +93,7 @@ const BillingDetailsComponent = (props) => {
             setUserPostalCode(e.target.value);
           }}
         />
-        <label htmlFor="Phone" className="screen-reader-text">
-          Phone
-        </label>
+        <label htmlFor="Phone">Phone</label>
         <input
           type="number"
           placeholder="Enter your Phone Number"
@@ -113,9 +101,7 @@ const BillingDetailsComponent = (props) => {
             setUserPhone(e.target.value);
           }}
         />
-        <label htmlFor="Email Address" className="screen-reader-text">
-          Email Address *
-        </label>
+        <label htmlFor="Email Address">Email Address *</label>
         <input
           type="text"
           placeholder="Enter your Email Address"

@@ -5,15 +5,14 @@ import { ChangeCreditInfo } from "../actions/Credit-card";
 const CreditCardComponent = () => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
-  //   Creating a copy of Global Store with User Data
-  //...GlobalStateInfo.UserData.CreditCardInfo
-  //};
+
   //Creating Local states
   const [userCreditNumber, setUserCreditNumber] = useState("0");
   const [userExpiry, setUserExpiry] = useState("0");
   const [userCVC, setUserCVC] = useState("0");
   const [userInfoSave, setUserInfoSave] = useState("");
 
+  // Creating a Copy with parameters assigned in the Creditcard reducer
   const CreditCardStateInfoCopy = {
     No: userCreditNumber,
     ExpDate: userExpiry,
@@ -31,7 +30,7 @@ const CreditCardComponent = () => {
     <>
       <form onSubmit={validationForm}>
         <h2>Credit Card</h2>
-        <label htmlFor="Card Number" className="screen-reader-text">
+        <label htmlFor="Card Number">
           Card Number
         </label>
         <input
@@ -41,9 +40,7 @@ const CreditCardComponent = () => {
             setUserCreditNumber(e.target.value);
           }}
         />
-        <label htmlFor="Expiry Date" className="screen-reader-text">
-          Expiry Date *
-        </label>
+        <label htmlFor="Expiry Date">Expiry Date</label>
         <input
           type="number"
           placeholder="Enter your Expiry Date"
@@ -51,7 +48,7 @@ const CreditCardComponent = () => {
             setUserExpiry(e.target.value);
           }}
         />
-        <label htmlFor="Card Code(CVC)" className="screen-reader-text">
+        <label htmlFor="Card Code(CVC)">
           Card Code (CVC) *
         </label>
         <input
@@ -61,16 +58,16 @@ const CreditCardComponent = () => {
             setUserCVC(e.target.value);
           }}
         />
-
         <input
           type="checkbox"
           id="checkboxes"
           onChange={(e) => {
+          // If the checkbox is checked it returns true else returns false
             setUserInfoSave(e.target.checked);
           }}
         />
-        {console.log(userInfoSave)}
-
+        {/* Testing */}
+        {/* {console.log(userInfoSave)} */}
         <button type="Submit">Save</button>
       </form>
     </>
