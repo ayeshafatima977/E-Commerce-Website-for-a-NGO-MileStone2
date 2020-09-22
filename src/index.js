@@ -17,7 +17,7 @@ const GlobalStore = createStore(
 );
 ReactDOM.render(
   <Provider store={GlobalStore}>
-    {/* <Router> */}
+    <Router>
       {/* <h1>Hello Scriptorce</h1>
       <Route path="/" exact />
       <HeroSectionComponent />
@@ -26,15 +26,15 @@ ReactDOM.render(
       <Route path="/news" exact />
       <Route path="/donation" exact />
       <Route path="/shop" exact /> */}
-      <ProductDetailsOverlayComponent productId="1" />
+      {/* <ProductDetailsOverlayComponent productId="1" /> */}
       <Route path="/shop" exact >
         <ShoppingLayoutComponent />
         <ShoppingNavigationComponent />
       </Route>
       {/* <Route path="/volunteer" exact />
       <Route path="/cart" exact />
-      <ContactFormComponent />
-    </Router> */}
+      <ContactFormComponent />*/}
+    </Router> 
   </Provider>,
   document.getElementById("root")
 );
