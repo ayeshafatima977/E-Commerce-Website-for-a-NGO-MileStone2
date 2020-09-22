@@ -40,11 +40,16 @@ const CartReducer = (
   switch (action.type) {
     case "ADD_PRODUCT_TO_CART": {
       // Logic for adding an item to the cart
-      break;
+      return 1;
+      console.log('Add');
+       break;
     }
-    case "REMOVE_PRODUCT_FROM_CART": {
-      // Logic for removing an item completely from the cart
-      break;
+    case ("REMOVE_PRODUCT_FROM_CART"):
+    {
+       // Logic for removing an item completely from the cart
+       return 2;
+       console.log('Remove');
+       break;
     }
     case "INCREASE_CART_QTY": {
       console.log("Increase cart");
