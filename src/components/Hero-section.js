@@ -6,7 +6,14 @@ const HeroSectionComponent = () => {
   return (
     <>
       <img src={LandingPage} alt="A Kid eating Mango" />
-      <p>We Strive To Make A Difference for Those Kids In Need.</p>
+      <p>
+        We Strive To Make A Difference for Those Kids In Need.Empowering people
+        to rise out of poverty.
+      </p>
+      <p>
+        We bring real and lasting change to the lives of the world’s most
+        vulnerable children. For good.
+      </p>
       <Link to="/donation">DONATE</Link>
       {/* <input type="submit" id="donate" value="DONATE" ></input> */}
       <Link to="/shop">SHOP</Link>

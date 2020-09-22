@@ -22,6 +22,7 @@ GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-
 3. Good Resource for react forms and Event Handlers: https://livebook.manning.com/book/react-quickly/chapter-7/127
 4. Good Resource for React Classes :https://medium.com/capital-one-tech/how-to-work-with-forms-inputs-and-events-in-react-c337171b923b
 5. React Icons :https://stackoverflow.com/questions/54576811/react-fontawesome-doesnt-have-free-brands-svg-icons-so-cant-show-the-social-me
+6. Hero Section :https://childrenbelieve.ca/about-us/accountability/
 
 Citation:
 
