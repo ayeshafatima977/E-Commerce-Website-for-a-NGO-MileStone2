@@ -18,6 +18,7 @@ const ShoppingLayoutComponent = () => {
             price={individProd.price}
             briefDescription={individProd.briefDescription}
             obj={individProd}
+            key={individProd.id}
           />
         )
       })
