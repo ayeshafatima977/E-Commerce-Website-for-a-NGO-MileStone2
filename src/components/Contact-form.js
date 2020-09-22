@@ -1,5 +1,5 @@
 import React from "react";
-
+import { GrFormClose } from "react-icons/gr";
 const ContactFormComponent = () => {
   /*==================================================
             MAILTO VIA CONTACT FORM LOGIC
@@ -23,6 +23,9 @@ const ContactFormComponent = () => {
       {/* ! NEED TO DO CSS TO TRANSFORM + button to 45 degrees to make X AND MAKE
       IT POPUP BY LINKING */}
       {/* <div class="close">+</div> */}
+      <p>
+        <GrFormClose />
+      </p>
       <form onSubmit={sendMail}>
         <label htmlFor="Email" className="screen-reader-text">
           Email Address:
