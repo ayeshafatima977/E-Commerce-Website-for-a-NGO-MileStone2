@@ -1,16 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Search, Sort} from "../actions/Shopping-navigation";
+import { Search, Sort, Browse } from "../actions/Shopping-navigation";
 
 
 const ShoppingNavigationComponent = () => {
   const dispatch = useDispatch();
 
-  const SortOption = () => {
-    console.log(this);
-    if (this.checked) {
-      console.log("hi");
-    };
+  const SortOption = (id) => {
+    dispatch(Sort(id))
+  };
+
+  const BrowseOption = (id) => {
+    dispatch(Browse(id));
   };
 
   return (
@@ -26,33 +27,33 @@ const ShoppingNavigationComponent = () => {
         />
       </form>
       <h3>Sort</h3>
-      <input type="checkbox" id="PriceHL" onChange={(e) => {SortOption(e)}}/>
+      <input type="checkbox" id="PRICE_H_L" className="CB" onChange={(e) => {SortOption(e.target.id)}}/>
       <label htmlFor="PriceHL">Price high to low</label>
-      <input type="checkbox" id="PriceLH"/>
+      <input type="checkbox" id="PRICE_L_H" className="CB" onChange={(e) => {SortOption(e.target.id)}}/>
       <label htmlFor="PriceLH">Price low to high</label>
-      <input type="checkbox" id="AlphaA"/>
+      <input type="checkbox" id="ALPHA_A_Z" className="CB" onChange={(e) => {SortOption(e.target.id)}}/>
       <label htmlFor="AlphaA">Alphabetical A-Z</label>
-      <input type="checkbox" id="AlphaZ"/>
+      <input type="checkbox" id="ALPHA_Z_A" className="CB" onChange={(e) => {SortOption(e.target.id)}}/>
       <label htmlFor="AlphaZ">Alphabetical Z-A</label>
 
       <h3>Browse Categories</h3>
-      <input type="checkbox" id="MenC"/>
+      <input type="checkbox" id="men clothing" className="CB" onChange={(e) => {BrowseOption(e.target.id)}}/>
       <label htmlFor="MenC">Men Clothing</label>
-      <input type="checkbox" id="Jewel"/>
+      <input type="checkbox" id="jewelery" className="CB" onChange={(e) => {BrowseOption(e.target.id)}}/>
       <label htmlFor="Jewel">Jewelery</label>
-      <input type="checkbox" id="Elec"/>
+      <input type="checkbox" id="electronics" className="CB" onChange={(e) => {BrowseOption(e.target.id)}}/>
       <label htmlFor="Elec">Electronics</label>
-      <input type="checkbox" id="WomenC"/>
+      <input type="checkbox" id="women clothing" className="CB" onChange={(e) => {BrowseOption(e.target.id)}}/>
       <label htmlFor="WomenC">Women Clothing</label>
       
       <h3>Fitler By Price</h3>
-      <input type="checkbox" id="0-20"/>
+      <input type="checkbox" id="0-20" className="CB"/>
       <label htmlFor="0-20">$0-$20</label>
-      <input type="checkbox" id="21-100"/>
+      <input type="checkbox" id="21-100" className="CB"/>
       <label htmlFor="21-100">$21-$100</label>
-      <input type="checkbox" id="101-200"/>
+      <input type="checkbox" id="101-200" className="CB"/>
       <label htmlFor="101-200">$101-$200</label>
-      <input type="checkbox" id="201"/>
+      <input type="checkbox" id="201" className="CB"/>
       <label htmlFor="201">$201+</label>
     </>
   );
