@@ -2,7 +2,7 @@ import React from "react";
 import { createStore, combineReducers } from "redux";
 import ReactDOM from "react-dom";
 import "./css/index.css";
-// import ContactFormComponent from "./components/Contact-form";
+ import ContactFormComponent from "./components/Contact-form";
 // import HeroSectionComponent from "./components/Hero-section";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
@@ -17,7 +17,7 @@ const GlobalStore = createStore(
 );
 ReactDOM.render(
   <Provider store={GlobalStore}>
-    {/* <Router>
+    {/* {/* <Router>
       <h1>Hello Scriptorce</h1>
       <Route path="/" exact />
       <HeroSectionComponent />
@@ -27,8 +27,8 @@ ReactDOM.render(
       <Route path="/donation" exact />
       <Route path="/shop" exact />
       <Route path="/volunteer" exact />
-      <Route path="/cart" exact />
-      <ContactFormComponent /> */}
+      <Route path="/cart" exact /> */}
+      <ContactFormComponent />
     <CreditCardComponent />
     <BillingDetailsComponent />
     {/* </Router> */}

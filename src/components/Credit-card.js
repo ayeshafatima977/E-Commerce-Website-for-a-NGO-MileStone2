@@ -68,7 +68,7 @@ const CreditCardComponent = () => {
           <FaCreditCard />
         </p>
 
-        <label htmlFor="Expiry Date">Expiry Date</label>
+        <label htmlFor="Expiry Date">Expiry Date*</label>
         <input
           type="number"
           placeholder="Enter your Expiry Date"
