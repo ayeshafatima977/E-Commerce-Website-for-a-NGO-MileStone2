@@ -1,4 +1,4 @@
-import CallFakeStoreAPI from '../Call-Fake-Store-Api';
+import CallFakeStoreAPI from '../Call-fake-store-api';
 /**
  * This is the initial Page Layout Reducer
  * Author: Kenji Au

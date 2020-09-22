@@ -7,8 +7,9 @@ import HeroSectionComponent from "./components/Hero-section";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import HeaderComponent from "./components/HeaderComponent";
-import FooterComponent from "./components/FooterComponent";
+//import HeaderComponent from "./components/HeaderComponent";
+//import FooterComponent from "./components/FooterComponent";
+import ShoppingCartComponent from './components/Shopping-cart'
 const GlobalStore = createStore(
   combinedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -16,7 +17,7 @@ const GlobalStore = createStore(
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
-      <h1>Hello Scriptorce</h1>
+   {/*    <h1>Hello Scriptorce</h1>
       <Route path="/" exact />
       <HeroSectionComponent />
       <Route path="/about" exact />
@@ -26,8 +27,10 @@ ReactDOM.render(
       <Route path="/shop" exact />
       <Route path="/volunteer" exact />
       <Route path="/cart" exact />
-      <ContactFormComponent />
-    </Router>
+      <ContactFormComponent />*/}
+      <Route path="/cart" component ={ShoppingCartComponent} exact />
+      </Router> 
+    
   </Provider>,
   document.getElementById("root")
 );
