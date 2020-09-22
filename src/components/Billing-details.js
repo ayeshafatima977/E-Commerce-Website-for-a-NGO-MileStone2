@@ -29,6 +29,8 @@ const BillingDetailsComponent = () => {
   //NEED TO VALIDATE CC FORM validationForm
   const validationForm = (e) => {
     e.preventDefault();
+    
+    // Dispatch the new object back to the reducer to update the state :dispatch(actionFunction(payload));
     dispatch(ChangeBillingInfo(BillingInfoCopy));
   };
 
