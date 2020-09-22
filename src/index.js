@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ProductDetailsOverlayComponent from  "./components/Product-details-overlay"; 
+import ShoppingLayoutComponent from "./components/Shopping-layout";
+import ShoppingNavigationComponent from "./components/Shopping-navigation";
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -25,6 +27,10 @@ ReactDOM.render(
       <Route path="/donation" exact />
       <Route path="/shop" exact /> */}
       <ProductDetailsOverlayComponent productId="1" />
+      <Route path="/shop" exact >
+        <ShoppingLayoutComponent />
+        <ShoppingNavigationComponent />
+      </Route>
       {/* <Route path="/volunteer" exact />
       <Route path="/cart" exact />
       <ContactFormComponent />
