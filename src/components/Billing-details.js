@@ -34,6 +34,7 @@ const BillingDetailsComponent = () => {
 
   return (
     <>
+      <h2>Billing Details</h2>
       {/* DO WE NEED A SUBMIT HERE */}
       <form onSubmit={validationForm}>
         <label htmlFor="First Name">First Name</label>
@@ -109,6 +110,7 @@ const BillingDetailsComponent = () => {
             setUserEmail(e.target.value);
           }}
         />
+        {/* TESTING BUTTON */}
         <button type="Submit">Send</button>
       </form>
     </>
