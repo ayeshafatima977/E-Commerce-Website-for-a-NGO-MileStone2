@@ -7,6 +7,7 @@ const ShoppingLayoutComponent = () => {
   const globalState = useSelector(state => state);
   const displayProductList = globalState.ShopNav.displayProducts;
 
+  // Pass Product ProductId={individProd.id} into OverlayCard
   return (
     <>
       {displayProductList.map((individProd) => {

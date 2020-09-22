@@ -29,6 +29,7 @@ const CartReducer = (state = [], action) => {
       return cartCopy;
     }
     case "DECREASE_CART_QTY": {
+      // Do not let user drop the qty below 0 in the cart
       let i = -1;
       let noItem = false;
       for (let item of cartCopy) {
