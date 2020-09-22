@@ -1,5 +1,5 @@
 import React from "react";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
 import ReactDOM from "react-dom";
 import "./css/index.css";
 import ContactFormComponent from "./components/Contact-form";

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddToCart, RemoveFromCart } from '../actions/Cart';
 import '../css/Product-card.css';
@@ -31,7 +31,7 @@ const ProductCard = (props) => {
   return (
     <div className="product-card-container">
       <h2 className="product-title">{title}</h2>
-      <img className="product-image" src={imageURL} />
+      <img className="product-image" src={imageURL} alt={briefDescription}/>
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
