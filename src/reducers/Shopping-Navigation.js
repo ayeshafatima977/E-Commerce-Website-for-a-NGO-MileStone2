@@ -41,8 +41,35 @@ const ShoppingNavigationReducer = (
       return stateCopy;
     }
     case "SORT_PRODUCT": {
-      stateCopy.Sort = action.payload;
-      // Sorting Function based on the payload
+      if (state.Sort === "") {
+        stateCopy.Sort = action.payload;
+        // Sorting Function based on the payload
+        // Shorthand sort function snippet found at:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+        // Create a copy of the product list.
+        let products = [...state.displayProducts];
+
+        // Keep a copy of the current display and save it.
+        stateCopy.previousDisplayProducts = state.displayProducts;
+        if (action.payload === "PRICE_H_L") {
+          products.sort((a, b) => b.price - a.price);
+          stateCopy.displayProducts = products;
+        }
+        if (action.payload === "PRICE_L_H") {
+          products.sort((a, b) => a.price - b.price);
+          stateCopy.displayProducts = products;
+        }
+        // Alphabet A
+        // Alphabet Z
+      } else {
+        // Set the sort copy to empty.
+        stateCopy.Sort = "";
+
+        // Update the copy to display the last saved view.
+        displayCopy = state.previousDisplayProducts;
+        stateCopy.displayProducts = displayCopy;
+      }
       return stateCopy;
     }
     case "BROWSE_PRODUCT": {
@@ -66,7 +93,7 @@ const ShoppingNavigationReducer = (
       } else {
         // Set the browse state to empty.
         stateCopy.Browse = "";
-        
+
         // Update the copy to display the last saved view.
         displayCopy = state.previousDisplayProducts;
         stateCopy.displayProducts = displayCopy;
