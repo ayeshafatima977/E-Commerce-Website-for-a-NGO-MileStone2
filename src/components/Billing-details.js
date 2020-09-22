@@ -83,6 +83,7 @@ const BillingDetailsComponent = (props) => {
             setUserProvince(e.target.value);
           }}
         >
+          <option value="">--Please Select Your Province--</option>
           <option value="AB">AB </option>
           <option value="BC">BC </option>
           <option value="MAN">MAN </option>
