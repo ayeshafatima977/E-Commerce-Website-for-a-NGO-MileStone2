@@ -1,18 +1,24 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+
+
+/*=============================================
+=            Product Details Overlay Component           =
+=============================================*/
 
 const ProductDetailsOverlayComponent = (props) => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const productList = GlobalStateInfo.ShopNav.displayProducts;
   let productTitleCopy,
-    productDescriptionCopy,
-    productPriceCopy,
-    productImgCopy,
-    cartBtn,
-    productIdCopy, 
-    productInCartQtyCopy;
+      productDescriptionCopy,
+      productPriceCopy,
+      productImgCopy,    
+      productIdCopy, 
+      productInCartQtyCopy;
 
   for (const product of productList) {
     console.log(Number(props.productId) === product.id);
@@ -27,7 +33,8 @@ const ProductDetailsOverlayComponent = (props) => {
     }
   }
   return (
-    <>
+    <section>
+      <button><FontAwesomeIcon icon={faWindowClose} /></button>
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>
       <p>{productPriceCopy}</p>
@@ -42,8 +49,12 @@ const ProductDetailsOverlayComponent = (props) => {
           Remove to Cart
         </button>
       )}
-
-    </>
+    </section>
   );
 };
+
+/*=====  End of Product Details Overlay Component ======*/
+
+
+
 export default ProductDetailsOverlayComponent;
