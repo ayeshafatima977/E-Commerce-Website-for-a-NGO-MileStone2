@@ -39,8 +39,21 @@ import CallFakeStoreAPI from '../Call-fake-store-api';
      }
      case ("SORT_PRODUCT"):
      {
-        // Logic for Sorting Products
-        break;
+        switch(action.payload) {
+           case("Price high to low"): {
+            return state;
+           }
+           case("Price low to high"): {
+            return state;
+           }
+           case("Alphabetical A-Z"): {
+            return state;
+           }
+           case("Alphabetical Z-A"): {
+            return state;
+         }
+        }
+        return state;
      }
      case ("BROWSE_PRODUCT"):
      {
