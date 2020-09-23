@@ -2,6 +2,7 @@
 import React from "react";
 import ShoppingLayoutComponent from "./Shopping-layout";
 import ShoppingNavigationComponent from "./Shopping-navigation";
+import BannerComponent from './Banner';
 
 /*=============================================
 =        Products page React Component        =
@@ -11,6 +12,7 @@ import ShoppingNavigationComponent from "./Shopping-navigation";
 const ShoppingPageComponent = () => {
   return (
     <>
+      <BannerComponent />
       <ShoppingLayoutComponent />
       <ShoppingNavigationComponent />
     </>

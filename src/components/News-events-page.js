@@ -1,5 +1,6 @@
 /*cspell:disable*/
 import React from "react";
+import BannerComponent from "./Banner";
 
 /*=============================================
 =      News and Events page React Component   =
@@ -9,6 +10,7 @@ import React from "react";
 const NewsEventsPageComponent = () => {
   return (
     <>
+      <BannerComponent />
       {/*=============News Section===============*/}
 
       <h1> News </h1>

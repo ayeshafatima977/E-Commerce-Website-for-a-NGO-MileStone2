@@ -20,6 +20,8 @@ import CartPageComponent from './components/Cart-page';
 import LandingPageComponent from './components/Landing-page';
 import ShoppingPageComponent from './components/Shopping-page';
 import DonationPageComponent from './components/Donation-page';
+import HeaderComponent from "./components/Header";
+import FooterComponent from "./components/Hero-footer";
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -29,7 +31,7 @@ ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
       <h1>Hello Scriptorce</h1>
-
+      <HeaderComponent />
       <Route path="/" exact component ={LandingPageComponent}/>
       <Route path="/about" exact component={KnowUsPageComponent}/>
       <Route path="/events" exact component={NewsEventsPageComponent}/>
@@ -39,6 +41,7 @@ ReactDOM.render(
       <Route path="/volunteer" exact />
       <Route path="/contact" exact component={ContactFormComponent} /> {/*! This line will be removed after we implement CSS overlay */}
       <Route path="/cart" exact component={CartPageComponent}/>
+      <FooterComponent />
     </Router> 
   </Provider>,
   document.getElementById("root")

@@ -1,5 +1,6 @@
 /*cspell:disable*/
 import React from "react";
+import BannerComponent from "./Banner";
 
 /*=============================================
 =         Know us page React Component        =
@@ -9,6 +10,7 @@ import React from "react";
 const KnowUsPageComponent = () => {
   return (
     <>
+      <BannerComponent />
       <h2> About Us</h2>
       <p>
         
