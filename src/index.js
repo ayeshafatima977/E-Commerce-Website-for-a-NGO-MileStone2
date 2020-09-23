@@ -32,7 +32,7 @@ ReactDOM.render(
       <Route path="/donation" exact component={DonationPageComponent} />
       <Route path="/shop" exact component={ShoppingPageComponent} />
       <Route path="/volunteer" exact />
-      <Route path="/contact" exact component={ContactFormComponent} />{" "}
+      {/* <Route path="/contact" exact component={ContactFormComponent} />{" "} */}
       {/*! This line will be removed after we implement CSS overlay */}
       <Route path="/cart" exact component={CartPageComponent} />
       <Route path="/product" exact component={ProductDetailsOverlayComponent} />

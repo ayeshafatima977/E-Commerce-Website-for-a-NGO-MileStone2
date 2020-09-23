@@ -17,23 +17,25 @@ const ContactFormComponent = () => {
       encodeURIComponent(document.getElementById("message").value);
     window.location.href = link;
   };
-
-  // const on = () => {
-  //   document.getElementsByClassName("contactform-overlay").display = "block";
-  // };
-
-  const off = () => {
-    document.getElementsByClassName("contactform-overlay").display = "none";
-  };
-
   /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
+
   return (
     <>
+      {/* Here we wrap the Target element i.e form so as to dispaly in the Parent element which is our header to display the contact form when button is clicked */}
       <div className="contactform-overlay">
         <h2>CONTACT US</h2>
 
         <div id="close">
-          <button onClick={off}>Close{/* <GrFormClose /> */}</button>
+          {/* To deactivate or remove the class from Child component we use classList Remove here */}
+          <button
+            onClick={() => {
+              document
+                .getElementsByClassName("contactform-overlay")[0]
+                .classList.remove("overlayShow");
+            }}
+          >
+            <GrFormClose />
+          </button>
         </div>
 
         <form onSubmit={sendMail}>
