@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardComponent from "./Product-card";
-import { InitialProductAdd } from '../actions/Shopping-navigation';
+import { InitialProductAdd } from "../actions/Shopping-navigation";
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
 
 const ShoppingLayoutComponent = () => {
@@ -22,7 +22,7 @@ const ShoppingLayoutComponent = () => {
         // Update the global store.
         dispatch(InitialProductAdd(productList));
       });
-    }
+  }
   // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
@@ -38,11 +38,9 @@ const ShoppingLayoutComponent = () => {
               obj={individProd}
               key={individProd.id}
             />
-            </>
+          </>
         );
       })}
-
-
     </>
   );
 };
