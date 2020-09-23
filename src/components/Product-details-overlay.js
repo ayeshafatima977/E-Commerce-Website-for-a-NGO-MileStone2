@@ -8,7 +8,6 @@ import { FaWindowClose } from "react-icons/fa";
 /*=============================================
 =            Product Details Overlay Component           =
 =============================================*/
-
 const ProductDetailsOverlayComponent = (props) => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();

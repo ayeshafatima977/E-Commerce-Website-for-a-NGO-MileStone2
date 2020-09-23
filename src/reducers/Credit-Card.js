@@ -10,7 +10,7 @@ const CreditCardReducer = (
     case ("CHANGE_CREDIT_INFO"):
     {
       const CreditInfoCopy = {...state};
-      CreditInfoCopy.No = action.payload.no;
+      CreditInfoCopy.No = action.payload.No;
       CreditInfoCopy.ExpDate = action.payload.ExpDate;
       CreditInfoCopy.CVC = action.payload.CVC;
       CreditInfoCopy.SaveCCInfo = action.payload.SaveCCInfo;
