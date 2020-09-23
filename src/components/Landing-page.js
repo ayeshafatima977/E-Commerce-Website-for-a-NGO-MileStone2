@@ -12,10 +12,8 @@ import ContactFormComponent from "./Contact-form";
 const LandingPageComponent = () => {
   return (
     <>
-      <HeaderComponent />
       <HeroSectionComponent />
       <ContactFormComponent className="contactform-overlay" />
-      <HeroFooterComponent />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import ShoppingNavigationReducer from './Shopping-navigation';
 import CartReducer from './Cart';
-import BillingInfoReducer from './Billing-Info';
+import BillingInfoReducer from './Billing-info';
 import CreditCardReducer from './Credit-card';
 
 

@@ -48,7 +48,6 @@ const DonationFormComponent = () => {
           type="number"
           onChange={(e) => setDonationAmount(e.target.value)}
           placeholder="Donation Amount"
-          holder="Enter Amount"
           value={donationAmount}
         ></input>
         <h2>Fund</h2>
