@@ -1,12 +1,14 @@
 import React from "react";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
 import ReactDOM from "react-dom";
 import "./css/index.css";
- import ContactFormComponent from "./components/Contact-form";
-// import HeroSectionComponent from "./components/Hero-section";
 import { Provider } from "react-redux";
 import combinedReducer from "./reducers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ShoppingLayoutComponent from "./components/Shopping-layout";
+import ShoppingNavigation from './components/Shopping-navigation';
+ import ContactFormComponent from "./components/Contact-form";
+// import HeroSectionComponent from "./components/Hero-section";
 
 //import HeaderComponent from "./components/HeaderComponent";
 //import FooterComponent from "./components/FooterComponent";
@@ -19,7 +21,7 @@ const GlobalStore = createStore(
 );
 ReactDOM.render(
   <Provider store={GlobalStore}>
-         <Router> 
+    <Router>
       <h1>Hello Scriptorce</h1>
 
       <Route path="/" exact />
@@ -32,8 +34,7 @@ ReactDOM.render(
       <Route path="/cart" exact />
       <Route path="/donation" component ={DonationFormComponent} exact />
       <Route path="/shop" component ={ShoppingCartComponent} exact />
-      </Router> 
-      
+    </Router> 
   </Provider>,
   document.getElementById("root")
 );

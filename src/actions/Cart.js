@@ -1,7 +1,7 @@
-const AddToCart = (productID) => {
+const AddToCart = (productObj) => {
   return {
     type: "ADD_PRODUCT_TO_CART",
-    payload: productID
+    payload: productObj
   };
 };
 const RemoveFromCart = (productID) => {

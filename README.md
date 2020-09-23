@@ -26,6 +26,7 @@ GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-
 
 Citation:
 
+
 (1) File Names: 
 components/Billing-details.js
 components/Credit-card.js
@@ -37,13 +38,19 @@ in my multi-form submission roadblock. I have use React Hooks to give the child 
 Purpose: Perform multi-form submission using one submission button.
 Source:https://stackoverflow.com/questions/37949981/call-child-method-from-parent
 
+(1) File Name: Shopping-navigation.js (Reducer file)
+
+Citation: (Line 44)
+Source: https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+Reason: A function to sort an array based on the inner object properties (title) was needed.
+
 ==============================================================================================
 
-(2) File Name:
+(2) File Name: Shopping-navigation.js (Reducer file) 
 
-Citation:
-Source:
-Reason:
+Citation: (Line 75)
+Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+Reason: A function to sort an array based on the inner object properties (price) was needed.
 
 ==============================================================================================
 
