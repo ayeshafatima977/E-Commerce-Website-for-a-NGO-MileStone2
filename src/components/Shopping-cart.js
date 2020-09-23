@@ -61,7 +61,6 @@ const ShoppingCartComponent = () => {
             </div>
           );
         })}
-
         <Link to="/shop">Back To Shopping</Link>
         <p> Subtotal</p>
         <p> $ {subTotal} </p>

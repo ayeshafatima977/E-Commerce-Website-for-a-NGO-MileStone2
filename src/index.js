@@ -14,7 +14,7 @@ import ShoppingPageComponent from './components/Shopping-page';
 import DonationPageComponent from './components/Donation-page';
 import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Hero-footer";
-import ProductDetailsOverlayComponent from './components/Product-details-overlay';
+import ProductDetailsOverlayComponent from "./components/Product-details-overlay";
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -25,18 +25,25 @@ ReactDOM.render(
     <Router>
       <h1>Hello Scriptorce</h1>
       <HeaderComponent />
-      <Route path="/" exact component ={LandingPageComponent}/>
-      <Route path="/about" exact component={KnowUsPageComponent}/>
-      <Route path="/events" exact component={NewsEventsPageComponent}/>
-      <Route path="/news" exact component={NewsEventsPageComponent}/>
-      <Route path="/donation" exact component={DonationPageComponent}/>
-      <Route path="/shop" exact component={ShoppingPageComponent}/>
+      <Route path="/" exact component={LandingPageComponent} />
+      <Route path="/about" exact component={KnowUsPageComponent} />
+      <Route path="/events" exact component={NewsEventsPageComponent} />
+      <Route path="/news" exact component={NewsEventsPageComponent} />
+      <Route path="/donation" exact component={DonationPageComponent} />
+      <Route path="/shop" exact component={ShoppingPageComponent} />
       <Route path="/volunteer" exact />
+<<<<<<< HEAD
       <Route path="/contact" exact component={ContactFormComponent} /> {/*! This line will be removed after we implement CSS overlay */}
       <Route path="/cart" exact component={CartPageComponent}/>
       <Route path="/product-quick-view" exact component={ProductDetailsOverlayComponent} />
+=======
+      <Route path="/contact" exact component={ContactFormComponent} />{" "}
+      {/*! This line will be removed after we implement CSS overlay */}
+      <Route path="/cart" exact component={CartPageComponent} />
+      <Route path="/product" exact component={ProductDetailsOverlayComponent} />
+>>>>>>> 98ebfabf90a7d905ac9adaf3bbe5ddc88ea18e38
       <FooterComponent />
-    </Router> 
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
