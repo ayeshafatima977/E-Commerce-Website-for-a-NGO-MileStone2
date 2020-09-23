@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Product from "./Product-card";
+import ProductCardComponent from "./Product-card";
 import { InitialProductAdd } from '../actions/Shopping-navigation';
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
 
@@ -30,7 +30,7 @@ const ShoppingLayoutComponent = () => {
       {displayProductList.map((individProd) => {
         return (
           <>
-            <Product
+            <ProductCardComponent
               title={individProd.title}
               image={individProd.image}
               price={individProd.price}
@@ -38,10 +38,11 @@ const ShoppingLayoutComponent = () => {
               obj={individProd}
               key={individProd.id}
             />
-            {/* <ProductDetailsOverlayComponent productId={individProd.id} /> */}
             </>
         );
       })}
+
+
     </>
   );
 };
