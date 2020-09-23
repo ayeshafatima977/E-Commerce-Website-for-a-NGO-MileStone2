@@ -43,6 +43,7 @@ const DonationFormComponent = () => {
         <label htmlFor="donation-amount" className="screen-reader-text">
           Donation Amount
         </label>
+        $
         <input
           id="donation-amount"
           type="number"
