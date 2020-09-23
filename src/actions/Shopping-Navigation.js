@@ -23,4 +23,11 @@ const Filter = (userInput) => {
   }
 }
 
-export {Search, Sort, Browse, Filter} ;
+const InitialProductAdd = (productList) => {
+  return {
+    type: "INITIAL_LIST",
+    payload: productList
+  };
+};
+
+export {Search, Sort, Browse, Filter, InitialProductAdd} ;

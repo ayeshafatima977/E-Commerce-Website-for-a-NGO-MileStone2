@@ -12,24 +12,32 @@ import { FaWindowClose } from "react-icons/fa";
 const ProductDetailsOverlayComponent = (props) => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
-  const productList = GlobalStateInfo.ShopNav.displayProducts;
+  const productList = GlobalStateInfo.ShopNav.products;
   let productTitleCopy,
       productDescriptionCopy,
       productPriceCopy,
       productImgCopy,    
       productIdCopy, 
-      productInCartQtyCopy;
+      productInCartQtyCopy,
+      productObj;
 
   for (const product of productList) {
-    
     if (Number(props.productId) === product.id) {
       productTitleCopy = product.title;
       productDescriptionCopy = product.description;
       productPriceCopy = product.price;
-      productImgCopy = product.img;
+      productImgCopy = product.image;
       productIdCopy = product.id;
       productInCartQtyCopy = product.inCartQty;
+      productObj = product;
     }
+  }
+
+  const AddSingleProductToCart = () => {
+    dispatch(AddToCart(productObj));
+  }
+  const RemoveSingleProductFromCart = () => {
+    dispatch(RemoveFromCart(productIdCopy));
   }
   return (
     <section>
@@ -37,15 +45,15 @@ const ProductDetailsOverlayComponent = (props) => {
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>
       <p>{productPriceCopy}</p>
-      <img src={productImgCopy} />      
+      <img src={productImgCopy} alt={productDescriptionCopy}/>      
 
       {productInCartQtyCopy === 0 ? (
-        <button onClick={dispatch(AddToCart(productIdCopy))}>
+        <button onClick={AddSingleProductToCart}>
           Add to Cart
         </button>
       ) : (
-        <button onClick={dispatch(RemoveFromCart(productIdCopy))}>
-          Remove to Cart
+        <button onClick={RemoveSingleProductFromCart}>
+          Remove from Cart
         </button>
       )}
     </section>
