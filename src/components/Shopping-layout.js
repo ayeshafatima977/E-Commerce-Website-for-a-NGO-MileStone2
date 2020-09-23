@@ -38,7 +38,6 @@ const ShoppingLayoutComponent = () => {
               obj={individProd}
               key={individProd.id}
             />
-            {/* <ProductDetailsOverlayComponent productId={individProd.id} /> */}
             </>
         );
       })}

@@ -1,13 +1,14 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AddToCart, RemoveFromCart } from '../actions/Cart';
-import { FaShoppingCart } from 'react-icons/fa'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AddToCart, RemoveFromCart } from "../actions/Cart";
+import { FaShoppingCart } from "react-icons/fa";
+import ProductDetailsOverlayComponent from "./Product-details-overlay";
+import { Link } from "react-router-dom";
 
-import '../css/Product-card.css';
-import { Link } from 'react-router-dom';
+import "../css/Product-card.css";
 
 const ProductCard = (props) => {
-  const globalState = useSelector(state => state);
+  const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
   const cartState = [...globalState.Cart];
 
@@ -18,11 +19,11 @@ const ProductCard = (props) => {
   const id = props.id;
 
   const inCartCheck = () => {
-    for(let item of cartState) {
+    for (let item of cartState) {
       if (title === item.title) {
         return true;
       }
-    };
+    }
   };
 
   const AddSingleProductToCart = () => {
@@ -35,16 +36,27 @@ const ProductCard = (props) => {
   return (
     <div className="product-card-container">
       <h2 className="product-title">{title}</h2>
-      <img className="product-image" src={imageURL} alt={briefDescription}/>
+      <img className="product-image" src={imageURL} alt={briefDescription} />
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-      <FaShoppingCart />{inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}>Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}>Add to Cart</button>}
-      <Link to="/product"
-        params = {
-          {productId: id}
-        }
-        ><p className="product-view">Quick View</p></Link>
+      <FaShoppingCart />
+      {inCartCheck(title) ? (
+        <button className="cart-option" onClick={RemoveSingleProductToCart}>
+          Remove From Cart
+        </button>
+      ) : (
+        <button className="cart-option" onClick={AddSingleProductToCart}>
+          Add to Cart
+        </button>
+      )}
+      <Link to={
+      {
+        pathname: "/product-quick-view",
+        state: {CallingProductCard: props.id }}}
+        >
+        Quick View
+      </Link>
     </div>
   );
 };

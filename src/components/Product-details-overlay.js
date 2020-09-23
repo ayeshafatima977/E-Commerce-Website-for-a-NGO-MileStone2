@@ -2,7 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaWindowClose } from "react-icons/fa";
-
+import {useLocation} from "react-router-dom";
+ 
 
 
 /*=============================================
@@ -19,9 +20,10 @@ const ProductDetailsOverlayComponent = (props) => {
       productIdCopy, 
       productInCartQtyCopy,
       productObj;
-
+      let callingCard = useLocation();
+      console.log(callingCard);
   for (const product of productList) {
-    if (Number(props.productId) === product.id) {
+    if (Number(callingCard.state) === product.id) {
       productTitleCopy = product.title;
       productDescriptionCopy = product.description;
       productPriceCopy = product.price;
