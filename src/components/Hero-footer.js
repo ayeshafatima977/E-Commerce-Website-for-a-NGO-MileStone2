@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-icons/si";
+import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-icons/fa";
 
 /*=============================================
 =            FooterComponent            =

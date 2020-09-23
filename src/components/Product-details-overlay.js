@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
-import { FaWindowClose } from "react-icons/si";
+import { FaWindowClose } from "react-icons/fa";
 
 
 
