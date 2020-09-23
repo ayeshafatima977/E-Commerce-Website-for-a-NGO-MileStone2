@@ -27,13 +27,6 @@ const CreditCardComponent = forwardRef((props, ref) => {
     SaveCCInfo: userInfoSave,
   };
 
-  //NEED TO VALIDATE CC FORM validationForm
-  const validationForm = (e) => {
-    e.preventDefault();
-    // Dispatch the new object back to the reducer to update the state :dispatch(actionFunction(payload));
-    dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
-  };
-
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
       dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
