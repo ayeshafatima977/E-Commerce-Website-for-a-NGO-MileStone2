@@ -18,26 +18,22 @@ const ContactFormComponent = () => {
     window.location.href = link;
   };
 
-  const on = () => {
-    document.getElementsByClassName("contact-form-overlay").display = "block";
-  };
+  // const on = () => {
+  //   document.getElementsByClassName("contactform-overlay").display = "block";
+  // };
 
   const off = () => {
-    document.getElementsByClassName("contact-form-overlay").display = "none";
+    document.getElementsByClassName("contactform-overlay").display = "none";
   };
 
   /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
   return (
     <>
-      <div className="contact-form-overlay" onClick={off}>
+      <div className="contactform-overlay">
         <h2>CONTACT US</h2>
-        {/* ! NEED TO DO CSS TO TRANSFORM + button to 45 degrees to make X AND MAKE
-      IT POPUP BY LINKING */}
 
         <div id="close">
-          <button onClick={on}>
-            <GrFormClose />
-          </button>
+          <button onClick={off}>Close{/* <GrFormClose /> */}</button>
         </div>
 
         <form onSubmit={sendMail}>
