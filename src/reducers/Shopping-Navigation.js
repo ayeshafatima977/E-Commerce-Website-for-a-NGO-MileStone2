@@ -1,4 +1,3 @@
-import CallFakeStoreAPI from "../Call-fake-store-api";
 const ShoppingNavigationReducer = (
   state = {
     Search: "",
