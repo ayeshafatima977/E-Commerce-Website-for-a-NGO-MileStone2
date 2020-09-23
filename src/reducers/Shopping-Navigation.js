@@ -27,14 +27,7 @@ const ShoppingNavigationReducer = (
           displayCopy.push(product);
         }
       }
-
-      // Reset back initial product list if the search is empty
-      if (stateCopy.Search === "") {
-        displayCopy = state.products;
-      }
-      // If no results are shown display no search results found
       stateCopy.displayProducts = displayCopy;
-
       return stateCopy;
     }
     case "SORT_PRODUCT": {
@@ -187,13 +180,14 @@ const ShoppingNavigationReducer = (
       }
       return stateCopy;
     }
-    case("INITIAL_LIST"): {
+    case "INITIAL_LIST": {
       stateCopy.products = action.payload;
       stateCopy.displayProducts = action.payload;
       return stateCopy;
     }
-    default:
+    default: {
       return state;
+    }
   }
 };
 

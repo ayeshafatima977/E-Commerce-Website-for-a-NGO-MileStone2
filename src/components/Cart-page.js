@@ -1,6 +1,6 @@
 /*cspell:disable*/
 import React from "react";
-import ShoppingCartComponent from "Shopping-cart";
+import ShoppingCartComponent from "./Shopping-cart";
 
 /*=============================================
 =            Cart page React Component        =

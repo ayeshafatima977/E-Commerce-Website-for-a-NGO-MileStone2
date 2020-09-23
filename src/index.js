@@ -14,6 +14,12 @@ import ShoppingNavigation from './components/Shopping-navigation';
 //import FooterComponent from "./components/FooterComponent";
 import ShoppingCartComponent from './components/Shopping-cart';
 import DonationFormComponent from './components/Donation-form';
+import KnowUsPageComponent from './components/Knowus-page';
+import NewsEventsPageComponent from './components/News-events-page';
+import CartPageComponent from './components/Cart-page';
+import LandingPageComponent from './components/Landing-page';
+import ShoppingPageComponent from './components/Shopping-page';
+import DonationPageComponent from './components/Donation-page';
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -24,16 +30,15 @@ ReactDOM.render(
     <Router>
       <h1>Hello Scriptorce</h1>
 
-      <Route path="/" exact />
-      <Route path="/about" exact />
-      <Route path="/events" exact />
-      <Route path="/news" exact />
-      <Route path="/donation" exact />
-      <Route path="/shop" exact />
+      <Route path="/" exact component ={LandingPageComponent}/>
+      <Route path="/about" exact component={KnowUsPageComponent}/>
+      <Route path="/events" exact component={NewsEventsPageComponent}/>
+      <Route path="/news" exact component={NewsEventsPageComponent}/>
+      <Route path="/donation" exact component={DonationPageComponent}/>
+      <Route path="/shop" exact component={ShoppingPageComponent}/>
       <Route path="/volunteer" exact />
-      <Route path="/cart" exact />
-      <Route path="/donation" component ={DonationFormComponent} exact />
-      <Route path="/shop" component ={ShoppingCartComponent} exact />
+      <Route path="/contact" exact component={ContactFormComponent} /> {/*! This line will be removed after we implement CSS overlay */}
+      <Route path="/cart" exact component={CartPageComponent}/>
     </Router> 
   </Provider>,
   document.getElementById("root")

@@ -1,6 +1,6 @@
 /*cspell:disable*/
 import React from "react";
-import DonationFormComponent from "Donation-form";
+import DonationFormComponent from "./Donation-form";
 
 /*=============================================
 =        Donation page React Component        =
