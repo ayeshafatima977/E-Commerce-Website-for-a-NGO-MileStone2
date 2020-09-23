@@ -10,8 +10,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 //import HeaderComponent from "./components/HeaderComponent";
 //import FooterComponent from "./components/FooterComponent";
-import ShoppingCartComponent from "./components/Shopping-cart";
+
 import CreditCardComponent from "./components/Credit-card";
+import ShoppingCartComponent from "./components/Shopping-cart";
+import DonationFormComponent from "./components/Donation-form";
 
 const GlobalStore = createStore(
   combinedReducer,
@@ -21,7 +23,6 @@ ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
       <h1>Hello Scriptorce</h1>
-
       <Route path="/" exact />
       <Route path="/about" exact />
       <Route path="/events" exact />
@@ -30,7 +31,8 @@ ReactDOM.render(
       <Route path="/shop" exact />
       <Route path="/volunteer" exact />
       <Route path="/cart" exact />
-      <Route path="/creditCard" component={ShoppingCartComponent} exact />
+      <Route path="/donation" component={DonationFormComponent} exact />
+      <Route path="/shop" component={ShoppingCartComponent} exact />
     </Router>
   </Provider>,
   document.getElementById("root")

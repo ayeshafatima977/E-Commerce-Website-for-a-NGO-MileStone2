@@ -1,11 +1,9 @@
 /*cspell:disable*/
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { FaCalendarAlt } from "react-icons/fa";
-//import CreditCardComponent from "Credit-card";
-//import BillingDetailsComponent from "Billing-details";
+import CreditCardComponent from "./Credit-card";
+import BillingDetailsComponent from "./Billing-details";
 import { IncreaseCartQty, DecreaseCartQty, SetCartQty } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
@@ -25,6 +23,8 @@ const ShoppingCartComponent = () => {
     //Remove product from the subtotal and order altogether if 0 when user hit submit
     //global validation function
   };
+  const creditCardRef = useRef();
+  const billingInfoRef = useRef();
 
   return (
     <>
@@ -61,8 +61,6 @@ const ShoppingCartComponent = () => {
             </div>
           );
         })}
-        {/* =========== */}
-
         <Link to="/shop">Back To Shopping</Link>
         <p> Subtotal</p>
         <p> $ {subTotal} </p>
@@ -71,17 +69,21 @@ const ShoppingCartComponent = () => {
           #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up items at
           the head office instead of in-store
         </p>
-
         <DatePickerComponent />
         <FaCalendarAlt />
-
         <p>Schedule a pickup appointment *</p>
         <p> Subtotal</p>
         <p> $ {subTotal} </p>
-        {/*  <CreditCardComponent /> */}
-        <h3>Billing Details</h3>
-        <input type="submit" value="Place Your Order"></input>
-        {/* <BillingDetailsComponent /> */}
+        <CreditCardComponent ref={creditCardRef} />
+        <BillingDetailsComponent ref={billingInfoRef} />
+        <button
+          onClick={() => {
+            creditCardRef.current.runCreditCardDispatch();
+            billingInfoRef.current.runBillingInfoDispatch();
+          }}
+        >
+          Click
+        </button>
       </form>
     </>
   );

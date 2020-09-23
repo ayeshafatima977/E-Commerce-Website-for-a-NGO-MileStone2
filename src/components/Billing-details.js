@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
-const BillingDetailsComponent = () => {
+
+
+
+const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -26,19 +29,17 @@ const BillingDetailsComponent = () => {
     phone: userPhone,
     emailID: userEmail,
   };
-  //NEED TO VALIDATE CC FORM validationForm
-  const validationForm = (e) => {
-    e.preventDefault();
-    
-    // Dispatch the new object back to the reducer to update the state :dispatch(actionFunction(payload));
-    dispatch(ChangeBillingInfo(BillingInfoCopy));
-  };
+
+  useImperativeHandle(ref, () => ({
+    runBillingInfoDispatch() {
+      dispatch(ChangeBillingInfo(BillingInfoCopy));
+    },
+  }));
 
   return (
     <>
       <h2>Billing Details</h2>
-      {/* DO WE NEED A SUBMIT HERE */}
-      <form onSubmit={validationForm}>
+      <form>
         <label htmlFor="First Name">First Name</label>
         <input
           type="text"
@@ -112,11 +113,9 @@ const BillingDetailsComponent = () => {
             setUserEmail(e.target.value);
           }}
         />
-        {/* TESTING BUTTON */}
-        <button type="Submit">Send</button>
       </form>
     </>
   );
-};
+});
 
 export default BillingDetailsComponent;
