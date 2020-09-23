@@ -8,6 +8,7 @@ const ShoppingLayoutComponent = () => {
   const displayProductList = globalState.ShopNav.displayProducts;
   const dispatch = useDispatch();
 
+  // Add Loading text when API is not loaded
   // If the store is empty, call the API
   if (displayProductList.length < 1) {
     fetch("https://fakestoreapi.com/products?limit=20")

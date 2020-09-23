@@ -19,8 +19,6 @@ const ShoppingNavigationReducer = (
     case "SEARCH_PRODUCT": {
       // Update the search state
       stateCopy.Search = action.payload;
-      // Create a new array for only items with search term
-      let displayCopy = [];
 
       // Add to the array if item contains the search term
       for (const product of state.displayProducts) {
@@ -34,6 +32,7 @@ const ShoppingNavigationReducer = (
       if (stateCopy.Search === "") {
         displayCopy = state.products;
       }
+      // If no results are shown display no search results found
       stateCopy.displayProducts = displayCopy;
 
       return stateCopy;
@@ -42,10 +41,10 @@ const ShoppingNavigationReducer = (
       // The two functions below are used for sorting alphabetically.
       // The Compare function code snippet was found from:
       // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-      function compareAZ(a, b) {
+      function compareProductAZ(productA, productB) {
         // This function will sort an array based on the title alphabetically.
-        const titleA = a.title.toUpperCase();
-        const titleB = b.title.toUpperCase();
+        const titleA = productA.title.toUpperCase();
+        const titleB = productB.title.toUpperCase();
 
         let comparison = 0;
         if (titleA > titleB) {
@@ -75,29 +74,29 @@ const ShoppingNavigationReducer = (
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
         // Create a copy of the product list.
-        let products = [...state.displayProducts];
+        let productsCopy = [...state.displayProducts];
 
         // Keep a copy of the current display and save it.
         stateCopy.previousDisplayProducts = state.displayProducts;
         switch (action.payload) {
           case "PRICE_H_L": {
-            products.sort((a, b) => b.price - a.price);
-            stateCopy.displayProducts = products;
+            productsCopy.sort((a, b) => b.price - a.price);
+            stateCopy.displayProducts = productsCopy;
             break;
           }
           case "PRICE_L_H": {
-            products.sort((a, b) => a.price - b.price);
-            stateCopy.displayProducts = products;
+            productsCopy.sort((a, b) => a.price - b.price);
+            stateCopy.displayProducts = productsCopy;
             break;
           }
           case "ALPHA_A_Z": {
-            products.sort(compareAZ);
-            stateCopy.displayProducts = products;
+            productsCopy.sort(compareProductAZ);
+            stateCopy.displayProducts = productsCopy;
             break;
           }
           case "ALPHA_Z_A": {
-            products.sort(compareZA);
-            stateCopy.displayProducts = products;
+            productsCopy.sort(compareZA);
+            stateCopy.displayProducts = productsCopy;
             break;
           }
           default: {
@@ -173,7 +172,7 @@ const ShoppingNavigationReducer = (
           filterHigh = 10000;
         }
 
-        // For loop through displayProducts and check the price  in between filterLow and filterHigh
+        // For loop through displayProducts and check the price in between filterLow and filterHigh
         for (const product of state.displayProducts) {
           if (product.price > filterLow && product.price < filterHigh) {
             displayCopy.push(product);
