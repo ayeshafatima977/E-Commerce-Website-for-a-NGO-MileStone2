@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddToCart, RemoveFromCart } from '../actions/Cart';
 import { FaShoppingCart } from 'react-icons/fa'
-import { BsEye } from 'react-icons/Bs';
+
 import '../css/Product-card.css';
 
 const ProductCard = (props) => {
@@ -37,8 +37,8 @@ const ProductCard = (props) => {
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-      {inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}><FaShoppingCart />Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}><FaShoppingCart />Add to Cart</button>}
-      <p className="product-view"><BsEye />Quick View</p>
+      {inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}><FaShoppingCart />Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}><FaShoppingCart />Add to Cart<FaShoppingCart /></button>}
+      <p className="product-view">Quick View</p>
     </div>
   );
 };

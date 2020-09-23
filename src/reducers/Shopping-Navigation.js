@@ -5,9 +5,9 @@ const ShoppingNavigationReducer = (
     Sort: "",
     Browse: "",
     Filter: "",
-    products: CallFakeStoreAPI(),
+    products: [],
     previousDisplayProducts: [],
-    displayProducts: [...CallFakeStoreAPI()],
+    displayProducts: [],
   },
   action
 ) => {
@@ -187,6 +187,11 @@ const ShoppingNavigationReducer = (
         displayCopy = state.previousDisplayProducts;
         stateCopy.displayProducts = displayCopy;
       }
+      return stateCopy;
+    }
+    case("INITIAL_LIST"): {
+      stateCopy.products = action.payload;
+      stateCopy.displayProducts = action.payload;
       return stateCopy;
     }
     default:
