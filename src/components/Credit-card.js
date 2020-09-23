@@ -31,12 +31,13 @@ const CreditCardComponent = () => {
   const validationForm = (e) => {
     e.preventDefault();
     // Dispatch the new object back to the reducer to update the state :dispatch(actionFunction(payload));
-    dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+    // dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
   };
 
   return (
     <>
-      <form onSubmit={validationForm}>
+      <form>
+        {" /* onSubmit={validationForm} */ "}
         <h2>Credit Card</h2>
         <p>
           <FaCcMastercard />
@@ -56,25 +57,25 @@ const CreditCardComponent = () => {
         <p>
           <SiGooglepay />
         </p>
-
         <label htmlFor="Card Number">Card Number</label>
         <input
           type="number"
           placeholder="Enter your Credit Card Number"
           onChange={(e) => {
             setUserCreditNumber(e.target.value);
+            dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
           }}
         />
         <p>
           <FaCreditCard />
         </p>
-
         <label htmlFor="Expiry Date">Expiry Date*</label>
         <input
           type="number"
           placeholder="Enter your Expiry Date"
           onChange={(e) => {
             setUserExpiry(e.target.value);
+            dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
           }}
         />
         <label htmlFor="Card Code(CVC)">Card Code (CVC) *</label>
@@ -83,6 +84,7 @@ const CreditCardComponent = () => {
           placeholder="Enter your CVC"
           onChange={(e) => {
             setUserCVC(e.target.value);
+            dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
           }}
         />
         <input
@@ -91,11 +93,12 @@ const CreditCardComponent = () => {
           onChange={(e) => {
             // If the checkbox is checked it returns true else returns false
             setUserInfoSave(e.target.checked);
+            dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
           }}
         />
         {/* Testing */}
         {/* {console.log(userInfoSave)} */}
-        <button type="Submit">Save</button>
+        {/* <button type="Submit">Save</button> */}
       </form>
     </>
   );

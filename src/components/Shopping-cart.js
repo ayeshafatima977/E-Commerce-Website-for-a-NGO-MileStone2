@@ -28,60 +28,61 @@ const ShoppingCartComponent = () => {
 
   return (
     <>
-          <form
+      <form
         onSubmit={(e) => {
           e.preventDefault();
           ValidateYourOrderForm();
         }}
       >
+        {inCartProducts.map((inCartProduct) => {
+          subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
 
-      {inCartProducts.map((inCartProduct) => {
-        subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
+          return (
+            <div>
+              <h2>{inCartProduct.title}</h2>
+              <img src={inCartProduct.image} width="200px" height="200px" />
+              <p>{inCartProduct.description}</p>
+              <p>$ {inCartProduct.price}</p>
+              <button /* onClick={dispatch(IncreaseCartQty(inCartProduct.id))} */
+              >
+                +
+              </button>
+              <input
+                type="number"
+                onChange={(e) => {
+                  dispatch(SetCartQty(inCartProduct.id, e.targe.value));
+                }}
+                value={inCartProduct.inCartQty}
+              ></input>
+              <button /* onClick={dispatch(DecreaseCartQty(inCartProduct.id))} */
+              >
+                -
+              </button>
+            </div>
+          );
+        })}
+        {/* =========== */}
 
-        return (
-          <div>
-            <h2>{inCartProduct.title}</h2>
-            <img src={inCartProduct.image} width="200px" height="200px" />
-            <p>{inCartProduct.description}</p>
-            <p>$ {inCartProduct.price}</p>
-            <button /* onClick={dispatch(IncreaseCartQty(inCartProduct.id))} */>
-              +
-            </button>
-            <input
-              type="number"
-              onChange={(e) => {
-                dispatch(SetCartQty(inCartProduct.id, e.targe.value));
-              }}
-              value={inCartProduct.inCartQty}
-            ></input>
-            <button /* onClick={dispatch(DecreaseCartQty(inCartProduct.id))} */>
-              -
-            </button>
-          </div>
-        );
-      })}
-      {/* =========== */}
+        <Link to="/shop">Back To Shopping</Link>
+        <p> Subtotal</p>
+        <p> $ {subTotal} </p>
+        <h2> Local Pickup </h2>
+        <p>
+          #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up items at
+          the head office instead of in-store
+        </p>
 
-      <Link to="/shop">Back To Shopping</Link>
-      <p> Subtotal</p>
-      <p> $ {subTotal} </p>
-      <h2> Local Pickup </h2>
-      <p>
-        #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up items at
-        the head office instead of in-store
-      </p>
-      
-      <DatePickerComponent />
-      <FaCalendarAlt />
-     
-      <p>Schedule a pickup appointment *</p>
-      <p> Subtotal</p>
-      <p> $ {subTotal} </p>
-      {/*  <CreditCardComponent /> */}
-      <h3>Billing Details</h3>
-      <input type="submit" value="Place Your Order"></input>
-      {/* <BillingDetailsComponent /> */}
-       </form>
+        <DatePickerComponent />
+        <FaCalendarAlt />
+
+        <p>Schedule a pickup appointment *</p>
+        <p> Subtotal</p>
+        <p> $ {subTotal} </p>
+        {/*  <CreditCardComponent /> */}
+        <h3>Billing Details</h3>
+        <input type="submit" value="Place Your Order"></input>
+        {/* <BillingDetailsComponent /> */}
+      </form>
     </>
   );
 };
