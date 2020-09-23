@@ -5,7 +5,6 @@ const ShoppingNavigationReducer = (
     Browse: "",
     Filter: "",
     products: [],
-    previousDisplayProducts: [],
     displayProducts: [],
   },
   action
@@ -23,24 +22,24 @@ const ShoppingNavigationReducer = (
   // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
   function compareProductAZ(productA, productB) {
     // This function will sort an array based on the title alphabetically.
-    const titleA = productA.title.toUpperCase();
-    const titleB = productB.title.toUpperCase();
+    const productTitleA = productA.title.toUpperCase();
+    const productTitleB = productB.title.toUpperCase();
 
     let comparison = 0;
-    if (titleA > titleB) {
+    if (productTitleA > productTitleB) {
       comparison = 1;
     } else {
       comparison = -1;
     }
     return comparison;
   }
-  function compareZA(a, b) {
+  function compareZA(productA, productB) {
     // This function will sort an array based on the title alphabetically reversed.
-    const titleA = a.title.toUpperCase();
-    const titleB = b.title.toUpperCase();
+    const productTitleA = productA.title.toUpperCase();
+    const productTitleB = productB.title.toUpperCase();
 
     let comparison = 0;
-    if (titleA < titleB) {
+    if (productTitleA < productTitleB) {
       comparison = 1;
     } else {
       comparison = -1;
