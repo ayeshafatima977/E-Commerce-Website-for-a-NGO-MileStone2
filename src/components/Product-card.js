@@ -4,6 +4,7 @@ import { AddToCart, RemoveFromCart } from '../actions/Cart';
 import { FaShoppingCart } from 'react-icons/fa'
 
 import '../css/Product-card.css';
+import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
   const globalState = useSelector(state => state);
@@ -14,6 +15,7 @@ const ProductCard = (props) => {
   const imageURL = props.image;
   const briefDescription = props.briefDescription;
   const price = props.price;
+  const id = props.id;
 
   const inCartCheck = () => {
     for(let item of cartState) {
@@ -37,8 +39,12 @@ const ProductCard = (props) => {
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-      {inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}><FaShoppingCart />Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}><FaShoppingCart />Add to Cart<FaShoppingCart /></button>}
-      <p className="product-view">Quick View</p>
+      <FaShoppingCart />{inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}>Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}>Add to Cart</button>}
+      <Link to="/product"
+        params = {
+          {productId: id}
+        }
+        ><p className="product-view">Quick View</p></Link>
     </div>
   );
 };

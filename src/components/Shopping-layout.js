@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product-card";
-import { InitialProductAdd } from '../actions/Shopping-navigation';
+import { InitialProductAdd } from "../actions/Shopping-navigation";
+import ProductDetailsOverlayComponent from "./Product-details-overlay";
 
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);
@@ -21,21 +22,24 @@ const ShoppingLayoutComponent = () => {
         // Update the global store.
         dispatch(InitialProductAdd(productList));
       });
-    }
+  }
   // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
     <>
       {displayProductList.map((individProd) => {
         return (
-          <Product
-            title={individProd.title}
-            image={individProd.image}
-            price={individProd.price}
-            briefDescription={individProd.briefDescription}
-            obj={individProd}
-            key={individProd.id}
-          />
+          <>
+            <Product
+              title={individProd.title}
+              image={individProd.image}
+              price={individProd.price}
+              briefDescription={individProd.briefDescription}
+              obj={individProd}
+              key={individProd.id}
+            />
+            {/* <ProductDetailsOverlayComponent productId={individProd.id} /> */}
+          </>
         );
       })}
     </>

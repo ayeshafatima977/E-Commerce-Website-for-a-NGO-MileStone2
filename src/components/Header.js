@@ -23,7 +23,7 @@ const HeaderComponent = () =>
         {
             callingForm = document.getElementsByClassName("loginform-overlay"); 
         }
-        callingForm.classList.add("form-overlay");      
+        // callingForm.classList.add("form-overlay");      
         
     }
     
@@ -38,13 +38,13 @@ const HeaderComponent = () =>
                     <li><Link to="/about">ABOUT</Link></li>
                     <li><Link to="/events">EVENTS</Link></li>
                     <li><Link to="/news">NEWS</Link></li>
-                    <li><Link to="/donate">DONATE</Link></li>
+                    <li><Link to="/donation">DONATE</Link></li>
                     <li><Link to="/shop">SHOP</Link></li>
                     <li><Link to="/volunteer">VOLUNTEER</Link></li>{/*!Parking lot item */}
                 </ul>
                 <ul>
-                    <li><a href=""  onClick={ShowOverLay("login")} >LOGIN</a></li>
-                    <li><a href=""  onClick={ShowOverLay("contact")}>CONTACT</a></li>
+                    <li><a href=""  onClick={ShowOverLay("login")} className="login-form-overlay">LOGIN</a></li>
+                    <li><Link to="/contact" onClick={ShowOverLay("contact")} className="contactform-overlay">CONTACT</Link></li>
                     <li><Link to="/cart">CART<FaShoppingCart /></Link></li>                   
                 </ul>
             </nav>
