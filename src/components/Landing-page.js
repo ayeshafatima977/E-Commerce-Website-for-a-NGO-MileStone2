@@ -1,8 +1,6 @@
 /*cspell:disable*/
 import React from "react";
-import HeaderComponent from "./Header";
 import HeroSectionComponent from "./Hero-section";
-import HeroFooterComponent from "./Hero-footer";
 import ContactFormComponent from "./Contact-form";
 
 /*=============================================
@@ -11,11 +9,9 @@ import ContactFormComponent from "./Contact-form";
 
 const LandingPageComponent = () => {
   return (
-    <>
-      <HeaderComponent />
+    <>      
       <HeroSectionComponent />
-      <ContactFormComponent className="contactform-overlay" />
-      <HeroFooterComponent />
+      <ContactFormComponent className="contactform-overlay" />      
     </>
   );
 };
