@@ -15,6 +15,7 @@ import ProductDetailsOverlayComponent from "./components/Product-details-overlay
 import GlobalStore from "./components/store"
 
 
+
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
