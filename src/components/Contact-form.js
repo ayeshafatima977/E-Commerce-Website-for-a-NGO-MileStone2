@@ -1,7 +1,6 @@
 import React from "react";
-import { GrFormClose } from "react-icons/gr";
+import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
-
 const ContactFormComponent = () => {
   /*==================================================
             MAILTO VIA CONTACT FORM LOGIC
@@ -34,7 +33,7 @@ const ContactFormComponent = () => {
                 .classList.remove("overlayShow");
             }}
           >
-            <GrFormClose />
+            <FaWindowClose />
           </button>
         </div>
 

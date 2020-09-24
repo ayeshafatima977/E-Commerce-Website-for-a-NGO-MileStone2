@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaEye } from "react-icons/fa";
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,15 @@ const ProductCard = (props) => {
           state: { productId: props.obj.id },
         }}
       >
-        Quick View
+        <button
+          onClick={() => {
+            document
+              .getElementsByClassName("loginform-overlay")[0]
+              .classList.add("overlayShow");
+          }}
+        >
+          <FaEye />
+        </button>
       </Link>
     </div>
   );
