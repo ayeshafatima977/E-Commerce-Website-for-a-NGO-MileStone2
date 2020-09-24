@@ -49,7 +49,7 @@ Source:https://stackoverflow.com/questions/37949981/call-child-method-from-paren
 
 (1) File Name: Shopping-navigation.js (Reducer file)
 
-Citation: (Line 44)
+Citation: The sorting function was adapted so that it could sort an array based on the product objects title. 
 Source: https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
 Reason: A function to sort an array based on the inner object properties (title) was needed.
 
@@ -57,7 +57,7 @@ Reason: A function to sort an array based on the inner object properties (title)
 
 (2) File Name: Shopping-navigation.js (Reducer file)
 
-Citation: (Line 75)
+Citation: The sorting function was adapted so that it could sort an array based on the product objects price. 
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 Reason: A function to sort an array based on the inner object properties (price) was needed.
 
