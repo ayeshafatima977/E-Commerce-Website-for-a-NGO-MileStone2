@@ -9,28 +9,28 @@ const ContactFormComponent = () => {
 */
   const SubmitForm = (e) => {
     e.preventDefault();
-    if(
-      FormValidation(fname, "fname", "fname") &&
-      FormValidation(lname, "lname", "lname") &&
-      FormValidation(email, "email", "email")
-      FormValidation(subject, "email", "email")
-    )
-    {document
-      .getElementsByClassName("thanks-msg")[0]
-      .classList.add("msg-show");
-    let link =
-      "mailto:testemail@gmail.com" +
-      "?subject=" +
-      encodeURIComponent(document.getElementById("subject").value) +
-      "&body=" +
-      encodeURIComponent(document.getElementById("message").value);
-    window.location.href = link;
-  }
-  else {
-    document
-      .getElementsByClassName("thanks-msg")[0]
-      .classList.remove("msg-show");
-  }
+  //   if(
+  //     FormValidation(fname, "fname", "fname") &&
+  //     FormValidation(lname, "lname", "lname") &&
+  //     FormValidation(email, "email", "email") &&
+  //     FormValidation(subject, "email", "email")
+  //   )
+  //   {document
+  //     .getElementsByClassName("thanks-msg")[0]
+  //     .classList.add("msg-show");
+  //   let link =
+  //     "mailto:testemail@gmail.com" +
+  //     "?subject=" +
+  //     encodeURIComponent(document.getElementById("subject").value) +
+  //     "&body=" +
+  //     encodeURIComponent(document.getElementById("message").value);
+  //   window.location.href = link;
+  // }
+  // else {
+  //   document
+  //     .getElementsByClassName("thanks-msg")[0]
+  //     .classList.remove("msg-show");
+  // }
 
 
   

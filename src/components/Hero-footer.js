@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-icons/fa";
-import '../css/Hero-footer.css';
+import FormValidation from '../functions/Form-validation.js'
+
 
 /*=============================================
 =            FooterComponent            =
@@ -8,62 +9,27 @@ import '../css/Hero-footer.css';
 
 const FooterComponent = () => {
   
-  const [firstName, SetFirstName] = useState('');
-  const [lastName, SetLastName] = useState('');
-  const [email, SetEmail] = useState('');
+  const [fname, setFName] = useState('');
+  const [lname, setLName] = useState('');
+  const [email, setEmail] = useState('');
   
 
   const NewsLetterSubscribe = (e) => {
     e.preventDefault(); 
-    NewsLetterFormValidation();  
-  }
-
-  const NewsLetterFormValidation = () => {
-    let errorCntr = 0;
-    if(!/^[A-Za-z]+$/.test(firstName))
-    {
-      document.getElementsByClassName('fname-error')[0].classList.add('msg-show');
-      document.getElementsByClassName('fname')[0].classList.add('input-error');
-      errorCntr++;
-    }
-    else
-    {
-      document.getElementsByClassName('fname-error')[0].classList.remove('msg-show')
-      document.getElementsByClassName('fname')[0].classList.remove('input-error');
-    }
-    if(!/^[A-Za-z]+$/.test(lastName))
-    {
-      document.getElementsByClassName('lname-error')[0].classList.add('msg-show');
-      document.getElementsByClassName('lname')[0].classList.add('input-error');
-      errorCntr++;     
-    }
-    else
-    {
-      document.getElementsByClassName('lname-error')[0].classList.remove('msg-show');
-      document.getElementsByClassName('lname')[0].classList.remove('input-error');
-    }
-    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
-    {
-      document.getElementsByClassName('email-error')[0].classList.add('msg-show');
-      document.getElementsByClassName('email')[0].classList.add('input-error');
-      errorCntr++;
-    }
-    else
-    {
-      document.getElementsByClassName('email-error')[0].classList.remove('msg-show');
-      document.getElementsByClassName('email')[0].classList.remove('input-error');
-    }
-    if (errorCntr === 0) 
-    {
-      document.getElementsByClassName('thanks-msg')[0].classList.add('msg-show');
+    if (
+        FormValidation(fname, "fname", "fname") &&
+        FormValidation(lname, "lname", "lname") &&
+        FormValidation(email, "email", "email")
+    ) {
+      document
+        .getElementsByClassName("thanks-msg")[0]
+        .classList.add("msg-show");
+    } else {
+      document
+        .getElementsByClassName("thanks-msg")[0]
+        .classList.remove("msg-show");
     }  
-    else
-    {
-      document.getElementsByClassName('thanks-msg')[0].classList.remove('msg-show');
-    }      
   }
-
-
 
   return (
     <footer>
@@ -102,23 +68,23 @@ const FooterComponent = () => {
             <label htmlFor="fname" className="screen-reader-text" >
               First Name
             </label>
-            <input type="text" className="fname" placeholder="First name" value={firstName}
-              onChange={ event => { SetFirstName( event.target.value ); } } />
+            <input type="text" className="fname" placeholder="First name" value={fname}
+              onChange={ event => { setFName( event.target.value ); } } />
             <label htmlFor="lname" className="screen-reader-text">
               Last Name
             </label>
-            <input type="text" className="lname" placeholder="Last name" value={lastName}
-              onChange={ event => { SetLastName( event.target.value ); } } />
+            <input type="text" className="lname" placeholder="Last name" value={lname}
+              onChange={ event => { setLName( event.target.value ); } } />
             <label htmlFor="email" className="screen-reader-text">
               Email Address
             </label>
             <input type="text" className="email" placeholder="Email Address" value={email}
-              onChange={ event => { SetEmail( event.target.value ); } } />
+              onChange={ event => { setEmail( event.target.value ); } } />
             <button type="submit"><FaEnvelope /></button>
-            <p className="fname-error msg-hide" >Please enter correct First Name</p>
-            <p className="lname-error msg-hide ">Please enter correct Last Name</p>
-            <p className="email-error msg-hide ">Please enter valid email Id</p>
-            <p className="thanks-msg msg-hide">Thank you for Subscribing to our newsletter...!</p>
+            <p className="fname-error msg-hide">Please enter correct First Name</p>
+            <p className="lname-error msg-hide">Please enter correct Last Name</p>
+            <p className="email-error msg-hide">Please enter valid email Id</p>
+            <p className="thanks-msg  msg-hide">Thank you for Subscribing to our newsletter...!</p>
           </form>
           
         </div>

@@ -11,7 +11,7 @@ const DonationFormComponent = () => {
   const [donationAmount, setDonationAmount] = useState(0);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const ValidateYourOrderForm = () => {
+  const SubmitForm = () => {
     console.log("Hello World!");
     //Remove product from the subtotal and order altogether if 0 when user hit submit
     //global validation function
@@ -25,7 +25,7 @@ const DonationFormComponent = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          ValidateYourOrderForm();
+          SubmitForm();
         }}
       >
         <h1>Donation Details</h1>
