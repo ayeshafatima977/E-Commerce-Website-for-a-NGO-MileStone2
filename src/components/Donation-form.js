@@ -18,8 +18,18 @@ const DonationFormComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
     if (
-      FormValidation(donationAmount, "donationAmount", "donationAmount") &&
-      FormValidation(donationMsg, "donationMsg", "donationMsg")
+      FormValidation(
+        donationAmount,
+        "donationAmount",
+        "donationAmount",
+        "donationAmount-error"
+      ) &&
+      FormValidation(
+        donationMsg,
+        "donationMsg",
+        "donationMsg",
+        "donationMsg-error"
+      )
     ) {
       document
         .getElementsByClassName("donation-thanks-msg")[0]
@@ -103,7 +113,7 @@ const DonationFormComponent = () => {
         <p className="donationAmount-error msg-hide">
           Please enter Donation amount
         </p>
-        <p className="donationMsg msg-hide">
+        <p className="donationMsg-error msg-hide">
           Please don't exceed 500 characters.
         </p>
         <p className="donation-thanks-msg msg-hide">

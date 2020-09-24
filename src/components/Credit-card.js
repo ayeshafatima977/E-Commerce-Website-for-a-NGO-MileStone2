@@ -39,10 +39,16 @@ const CreditCardComponent = forwardRef((props, ref) => {
       FormValidation(
         userCreditNumber,
         "userCreditNumber",
-        "userCreditNumber"
+        "userCreditNumber",
+        "userCreditNumber-error"
       ) &&
-      FormValidation(userExpiry, "userExpiry,", "userExpiry") &&
-      FormValidation(userCVC, "userCVC", "userCVC")
+      FormValidation(
+        userExpiry,
+        "userExpiry,",
+        "userExpiry",
+        "userExpiry-error"
+      ) &&
+      FormValidation(userCVC, "userCVC", "userCVC", "userCVC-error")
     ) {
       document
         .getElementsByClassName("credit-thanks-msg")[0]

@@ -38,17 +38,32 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const SubmitForm = (e) => {
     e.preventDefault();
     if (
-      FormValidation(userFirstName, "userFirstName", "userFirstName") &&
-      FormValidation(userLastName, "userLastName", "userLastName") &&
-      FormValidation(userEmail, "userEmail", "userEmail") &&
-      FormValidation(userPhone, "userPhone", "userPhone") &&
+      FormValidation(
+        userFirstName,
+        "userFirstName",
+        "userFirstName",
+        "userFirstName-error"
+      ) &&
+      FormValidation(
+        userLastName,
+        "userLastName",
+        "userLastName",
+        "userLastName-error"
+      ) &&
+      FormValidation(userEmail, "userEmail", "userEmail", "userEmail-error ") &&
+      FormValidation(userPhone, "userPhone", "userPhone", "userPhone-error") &&
       FormValidation(
         userStreetAddress,
         "userStreetAddress",
         "userStreetAddress"
       ) &&
-      FormValidation(userCity, "userCity", "userCity") &&
-      FormValidation(userPostalCode, "userPostalCode", "userPostalCode")
+      FormValidation(userCity, "userCity", "userCity", "userCity-error") &&
+      FormValidation(
+        userPostalCode,
+        "userPostalCode",
+        "userPostalCode",
+        "userPostalCode-error"
+      )
     ) {
       document
         .getElementsByClassName("billing-thanks-msg")[0]

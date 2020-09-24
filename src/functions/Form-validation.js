@@ -6,7 +6,7 @@ export default function FormValidation(
   inputFieldContent,
   inputFieldType,
   inputFieldClassName,
-  errorMessageClassName = "fname-error"
+  errorMessageClassName 
 ) {
   let PassIndicator = true;
   switch (inputFieldType) {

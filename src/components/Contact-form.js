@@ -19,8 +19,18 @@ const ContactFormComponent = () => {
         "contactEmail",
         "contactEmail-error"
       ) &&
-      FormValidation(contactSubject, "subject", "contactSubject") &&
-      FormValidation(contactMessage, "message", "contactMessage")
+      FormValidation(
+        contactSubject,
+        "subject",
+        "contactSubject",
+        "contactSubject-error"
+      ) &&
+      FormValidation(
+        contactMessage,
+        "message",
+        "contactMessage",
+        "contactMessage-error"
+      )
     ) {
       document
         .getElementsByClassName("contact-thanks-msg")[0]
