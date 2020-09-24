@@ -31,7 +31,7 @@ const HeaderComponent = () =>
     return(
         
         <>
-            <logo>Logo</logo>
+            <logo><Link to="/">Logo</Link></logo>
             <h1>Make A DIFFERENCE</h1>
             <nav>           
                 <ul>    
