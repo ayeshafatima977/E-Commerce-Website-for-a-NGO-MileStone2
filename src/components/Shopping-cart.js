@@ -33,7 +33,7 @@ const ShoppingCartComponent = () => {
       >
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
-
+          // if (inCartProduct.inCartQty > 0) {
           return (
             <div>
               <h2>{inCartProduct.title}</h2>

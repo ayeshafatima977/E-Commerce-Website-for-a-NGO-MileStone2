@@ -66,21 +66,11 @@ const CartReducer = (state = [
     }
     case "DECREASE_CART_QTY": {
       // Do not let user drop the qty below 0 in the cart
-      let i = -1;
-      let noItem = false;
       for (let item of cartCopy) {
-        // increment the internal counter
-        i++;
         if (item.id === action.payload) {
           item.inCartQty--;
-          if (item.inCartQty === 0) {
-            noItem = true;
           }
         }
-      }
-      if (noItem) {
-        cartCopy.splice(i, 1);
-      }
       return cartCopy;
     }
     case "SET_CART_QTY": {
