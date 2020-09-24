@@ -1,24 +1,28 @@
-h2 {
-  position: relative;
-  height: 100px;
+/* h2 {
+
+  width: 315px;
+  height: 48px;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
   line-height: 47px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   text-transform: capitalize;
+
   color: #ffffff;
-}
+} */
+
+/* Note Cant target by tags else its applying to Shop */
 
 .contactform-overlay {
   position: fixed;
   display: none;
   width: 100%;
   height: 100%;
-  top: 10;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -28,7 +32,7 @@ h2 {
 }
 
 #close {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   font-size: 50px;
@@ -45,7 +49,7 @@ h2 {
 #contactForm {
   width: 500px;
   height: auto;
-  background-color: #4d626e;
+  background-color: ;
   /* Smoothening of the border */
   border-radius: 10px;
   padding: 20px;
@@ -55,22 +59,22 @@ h2 {
   position: relative;
 }
 
-input {
+/* input {
   width: 70%;
   display: block;
   /* To space between the inputs */
-  margin: 20px auto;
+/* margin: 20px auto;
   border: 2px solid #000000;
   font-size: 14px;
-}
-textarea {
+} */
+/* textarea {
   width: 70%;
   display: block;
   /* To space between the inputs */
-  margin: 20px auto;
+/* margin: 20px auto;
   border: 2px solid #000000;
   font-size: 14px;
-}
+} */
 
 send {
   background-color: #708090;

@@ -41,6 +41,7 @@ const ProductDetailsOverlayComponent = (props) => {
   }
   return (
     <section>
+      {/* Close ur window =>return to product shop*/}
       <button><FaWindowClose /></button>
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>

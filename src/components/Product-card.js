@@ -50,11 +50,14 @@ const ProductCard = (props) => {
           Add to Cart
         </button>
       )}
-      <Link to={
-      {
-        pathname: "/product-quick-view",
-        state: {productId: props.obj.id}}}
-        >
+
+      {/* Add/Remove */}
+      <Link
+        to={{
+          pathname: "/product-quick-view",
+          state: { productId: props.obj.id },
+        }}
+      >
         Quick View
       </Link>
     </div>
