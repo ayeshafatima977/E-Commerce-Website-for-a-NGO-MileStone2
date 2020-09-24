@@ -4,7 +4,11 @@ const ShoppingNavigationReducer = (
     Sort: "",
     Browse: "",
     Filter: "",
-    products: [],
+    products: [
+      {id: 0,
+      title: "initial",
+      category: "initial"
+      }],
     displayProducts: [],
   },
   action
