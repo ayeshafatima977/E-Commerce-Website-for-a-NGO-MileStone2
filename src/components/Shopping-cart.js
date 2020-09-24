@@ -54,6 +54,9 @@ const ShoppingCartComponent = () => {
                   dispatch(SetCartQty(inCartProduct.id, e.target.value));
                 }}
                 value={inCartProduct.inCartQty}
+                min="0"
+                id="qtyInput"
+                oninput="validity.valid||(value='');"
               ></input>
               <button
                 onClick={() => {
