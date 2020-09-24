@@ -1,5 +1,9 @@
+.sticky-header {
+  display: none;
+}
 @media screen and (max-width:600px) {
   .sticky-header {
+    display: block;
     position: fixed;
     top: 0;
     z-index: 1;

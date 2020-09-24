@@ -22,13 +22,13 @@ const HamburgerMenuComponent = () => {
       </div>
       <div id="menu" className="hide">
         <ul>
-          <li><Link to="/shop">Shop</Link></li>
-          <li><Link to="/donation">Donate</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/events">Events</Link></li>
-          <li><Link to="/news">News</Link></li>
-          <li><Link to="/volunteer">Volunteer</Link></li>
+          <li><Link to="/shop" onClick={ShowOverlayMenu}>Shop</Link></li>
+          <li><Link to="/donation" onClick={ShowOverlayMenu}>Donate</Link></li>
+          <li><Link to="/contact" onClick={ShowOverlayMenu}>Contact</Link></li>
+          <li><Link to="/about" onClick={ShowOverlayMenu}>About</Link></li>
+          <li><Link to="/events" onClick={ShowOverlayMenu}>Events</Link></li>
+          <li><Link to="/news" onClick={ShowOverlayMenu}>News</Link></li>
+          <li><Link to="/volunteer" onClick={ShowOverlayMenu}>Volunteer</Link></li>
         </ul>
       </div>
     </>
