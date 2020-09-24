@@ -1,0 +1,13 @@
+.react-datepicker__header {
+  background-color: #4d626e;
+}
+.react-datepicker {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: white;
+}
+.react-datepicker__day--selected{
+    background-color:#4d626e;
+}

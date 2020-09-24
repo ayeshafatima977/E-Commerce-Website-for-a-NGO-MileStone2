@@ -5,16 +5,55 @@ import { Search, Sort, Browse, Filter } from "../actions/Shopping-navigation";
 const ShoppingNavigationComponent = () => {
   const dispatch = useDispatch();
 
-  const SortOption = (id) => {
-    dispatch(Sort(id));
+  const SortOption = (target) => {
+    const sortOptions = document.getElementsByClassName("sortOption");
+    if (target.checked) {
+      for (const checkbox of sortOptions) {
+        if (!(target === checkbox)) {
+          checkbox.disabled = true;
+        }
+      }
+    }
+    else {
+      for (const checkbox of sortOptions) {
+        checkbox.disabled = false;
+      }
+    }
+    dispatch(Sort(target.id));
   };
 
-  const BrowseOption = (id) => {
-    dispatch(Browse(id));
+  const BrowseOption = (target) => {
+    const browseOptions = document.getElementsByClassName("browseOption");
+    if (target.checked) {
+      for (const checkbox of browseOptions) {
+        if (!(target === checkbox)) {
+          checkbox.disabled = true;
+        }
+      }
+    }
+    else {
+      for (const checkbox of browseOptions) {
+        checkbox.disabled = false;
+      }
+    }
+    dispatch(Browse(target.id));
   };
 
-  const FilterOption = (id) => {
-    dispatch(Filter(id));
+  const FilterOption = (target) => {
+    const filterOptions = document.getElementsByClassName("filterOption");
+    if (target.checked) {
+      for (const checkbox of filterOptions) {
+        if (!(target === checkbox)) {
+          checkbox.disabled = true;
+        }
+      }
+    }
+    else {
+      for (const checkbox of filterOptions) {
+        checkbox.disabled = false;
+      }
+    }
+    dispatch(Filter(target.id));
   };
 
   return (
@@ -33,32 +72,36 @@ const ShoppingNavigationComponent = () => {
       <input
         type="checkbox"
         id="PRICE_H_L"
+        className="sortOption"
         onChange={(e) => {
-          SortOption(e.target.id);
+          SortOption(e.target);
         }}
       />
       <label htmlFor="PriceHL">Price high to low</label>
       <input
         type="checkbox"
         id="PRICE_L_H"
+        className="sortOption"
         onChange={(e) => {
-          SortOption(e.target.id);
+          SortOption(e.target);
         }}
       />
       <label htmlFor="PriceLH">Price low to high</label>
       <input
         type="checkbox"
         id="ALPHA_A_Z"
+        className="sortOption"
         onChange={(e) => {
-          SortOption(e.target.id);
+          SortOption(e.target);
         }}
       />
       <label htmlFor="AlphaA">Alphabetical A-Z</label>
       <input
         type="checkbox"
         id="ALPHA_Z_A"
+        className="sortOption"
         onChange={(e) => {
-          SortOption(e.target.id);
+          SortOption(e.target);
         }}
       />
       <label htmlFor="AlphaZ">Alphabetical Z-A</label>
@@ -67,32 +110,36 @@ const ShoppingNavigationComponent = () => {
       <input
         type="checkbox"
         id="men clothing"
+        className="browseOption"
         onChange={(e) => {
-          BrowseOption(e.target.id);
+          BrowseOption(e.target);
         }}
       />
       <label htmlFor="MenC">Men Clothing</label>
       <input
         type="checkbox"
         id="jewelery"
+        className="browseOption"
         onChange={(e) => {
-          BrowseOption(e.target.id);
+          BrowseOption(e.target);
         }}
       />
       <label htmlFor="Jewel">Jewelery</label>
       <input
         type="checkbox"
         id="electronics"
+        className="browseOption"
         onChange={(e) => {
-          BrowseOption(e.target.id);
+          BrowseOption(e.target);
         }}
       />
       <label htmlFor="Elec">Electronics</label>
       <input
         type="checkbox"
         id="women clothing"
+        className="browseOption"
         onChange={(e) => {
-          BrowseOption(e.target.id);
+          BrowseOption(e.target);
         }}
       />
       <label htmlFor="WomenC">Women Clothing</label>
@@ -101,32 +148,36 @@ const ShoppingNavigationComponent = () => {
       <input
         type="checkbox"
         id="20"
+        className="filterOption"
         onChange={(e) => {
-          FilterOption(e.target.id);
+          FilterOption(e.target);
         }}
       />
       <label htmlFor="0-20">$0-$20</label>
       <input
         type="checkbox"
         id="100"
+        className="filterOption"
         onChange={(e) => {
-          FilterOption(e.target.id);
+          FilterOption(e.target);
         }}
       />
       <label htmlFor="21-100">$21-$100</label>
       <input
         type="checkbox"
         id="200"
+        className="filterOption"
         onChange={(e) => {
-          FilterOption(e.target.id);
+          FilterOption(e.target);
         }}
       />
       <label htmlFor="101-200">$101-$200</label>
       <input
         type="checkbox"
         id="201"
+        className="filterOption"
         onChange={(e) => {
-          FilterOption(e.target.id);
+          FilterOption(e.target);
         }}
       />
       <label htmlFor="201">$201+</label>
