@@ -50,13 +50,14 @@ const ShoppingCartComponent = () => {
 
               <input
                 type="number"
-                onChange={(e) => {
-                  dispatch(SetCartQty(inCartProduct.id, e.target.value));
-                }}
                 value={inCartProduct.inCartQty}
                 min="0"
-                id="qtyInput"
-                oninput="validity.valid||(value='');"
+                onChange={(e) => {
+                  (e.target.value > -1 || (e.target.value = "0"));
+                  if (e.target.value > -1) {
+                    dispatch(SetCartQty(inCartProduct.id, e.target.value));
+                  }
+                }}
               ></input>
               <button
                 onClick={() => {

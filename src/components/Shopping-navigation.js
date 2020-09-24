@@ -77,7 +77,16 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="PriceHL">Price high to low</label>
+      <label htmlFor="PRICE_H_L">Price high to low</label>
+      <input
+        type="checkbox"
+        id="PRICE_H_L"
+        className="sortOption"
+        onChange={(e) => {
+          SortOption(e.target);
+        }}
+      />
+      <label htmlFor="PRICE_L_H">Price low to high</label>
       <input
         type="checkbox"
         id="PRICE_L_H"
@@ -86,7 +95,7 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="PriceLH">Price low to high</label>
+      <label htmlFor="AlphaA">Alphabetical A-Z</label>
       <input
         type="checkbox"
         id="ALPHA_A_Z"
@@ -95,7 +104,7 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="AlphaA">Alphabetical A-Z</label>
+      <label htmlFor="AlphaZ">Alphabetical Z-A</label>
       <input
         type="checkbox"
         id="ALPHA_Z_A"
@@ -104,7 +113,6 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="AlphaZ">Alphabetical Z-A</label>
 
       <h3>Browse Categories</h3>
       <input
