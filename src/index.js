@@ -13,7 +13,7 @@ import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Hero-footer";
 import ProductDetailsOverlayComponent from "./components/Product-details-overlay";
 import GlobalStore from "./components/store"
-import HamburgerMenuComponent from "./components/Hamburger-menu";
+import StickyHeaderComponent from "./components/Sticky-header";
 
 
 ReactDOM.render(
@@ -27,8 +27,7 @@ ReactDOM.render(
       <Route path="/news" exact component={NewsEventsPageComponent} />
       <Route path="/donation" exact component={DonationPageComponent} />
       <Route path="/shop" exact component={ShoppingPageComponent} />
-      <Route path="/volunteer" exact component={HamburgerMenuComponent} />
-     {/*  <Route path="/contact" exact component={ContactFormComponent} /> */} {/*! This line will be removed after we implement CSS overlay */}
+      <Route path="/volunteer" exact component={StickyHeaderComponent} />
       <Route path="/cart" exact component={CartPageComponent}/>
       <Route path="/product-quick-view" exact component={ProductDetailsOverlayComponent} />
       <FooterComponent />

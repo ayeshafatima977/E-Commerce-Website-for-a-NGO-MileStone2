@@ -1,0 +1,21 @@
+@media screen and (max-width:600px) {
+  .sticky-header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 50px;
+    background-color: #B5B1AC;
+    width: 100vw;
+  }
+
+  .sticky-header > #cart-button {
+    position: fixed;
+    right: 75px;
+    top: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1C3656;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
