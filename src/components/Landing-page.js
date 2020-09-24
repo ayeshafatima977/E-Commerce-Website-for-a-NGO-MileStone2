@@ -2,7 +2,6 @@
 import React from "react";
 import HeroSectionComponent from "./Hero-section";
 import ContactFormComponent from "./Contact-form";
-import "../css/Contact-form.css";
 
 /*=============================================
 =         Landing page React Component        =

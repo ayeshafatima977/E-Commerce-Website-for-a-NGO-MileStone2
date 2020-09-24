@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaEye } from "react-icons/fa";
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
 import { Link } from "react-router-dom";
-
 import "../css/Product-card.css";
 
 const ProductCard = (props) => {
@@ -51,12 +50,39 @@ const ProductCard = (props) => {
         </button>
       )}
 
-      <Link to={
+      {/* Add/Remove */}
       {
-        pathname: "/product-quick-view",
-        state: {productId: props.obj.id}}}
+        /* 
+/*=============================================
+=            Messup Area            =
+=============================================*/
+        <button
+          onClick={() => {
+            document
+              .getElementsByClassName("product-overlay")[0]
+              .classList.add("overlayShow");
+            document.getElementById("trial2").click();
+          }}
         >
-        Quick View
+          QuickView trail
+        </button>
+
+        /*=====  End of Messup Area  ======*/
+      }
+
+      <Link
+        id="trail2"
+        to={{
+          pathname: "/product-quick-view",
+          state: { productId: props.obj.id },
+        }}
+        // onClick={() => {
+        //   document
+        //     .getElementsByClassName("product-overlay")[0]
+        //     .classList.add("overlayShow");
+        // }}
+      >
+        <FaEye />
       </Link>
     </div>
   );

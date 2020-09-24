@@ -7,7 +7,6 @@ import BillingDetailsComponent from "./Billing-details";
 import { IncreaseCartQty, DecreaseCartQty, SetCartQty } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
-
 const ShoppingCartComponent = () => {
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -34,32 +33,35 @@ const ShoppingCartComponent = () => {
       >
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
-          
+
           return (
             <div>
               <h2>{inCartProduct.title}</h2>
               <img src={inCartProduct.image} width="200px" height="200px" />
               <p>{inCartProduct.description}</p>
               <p>$ {inCartProduct.price}</p>
-              <button  onClick={()=>{dispatch(DecreaseCartQty(inCartProduct.id))}} 
+              <button
+                onClick={() => {
+                  dispatch(DecreaseCartQty(inCartProduct.id));
+                }}
               >
                 &#8722; {/* Minus sign */}
               </button>
-              
+
               <input
                 type="number"
                 onChange={(e) => {
                   dispatch(SetCartQty(inCartProduct.id, e.target.value));
-                  
                 }}
                 value={inCartProduct.inCartQty}
               ></input>
-              <button 
-              onClick={()=>{dispatch(IncreaseCartQty(inCartProduct.id))}}
+              <button
+                onClick={() => {
+                  dispatch(IncreaseCartQty(inCartProduct.id));
+                }}
               >
                 &#43; {/* Plus sign */}
               </button>
-
             </div>
           );
         })}

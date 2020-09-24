@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaWindowClose } from "react-icons/fa";
 import { useLocation, Link } from "react-router-dom";
+import "../css/Product-overlay.css";
 
 /*=============================================
 =            Product Details Overlay Component           =
@@ -38,8 +39,23 @@ const ProductDetailsOverlayComponent = (props) => {
     dispatch(RemoveFromCart(productIdCopy));
   };
   return (
-    <section>
-      <Link to="/shop"><FaWindowClose /></Link>
+    <section className="product-overlay">
+      {/* Close ur window =>return to product shop*/}
+
+      <div class="close">
+        {/* To deactivate or remove the class from Child component we use classList Remove here */}
+        <button
+          onClick={() => {
+            document
+              .getElementsByClassName("product-overlay")[0]
+              .classList.remove("overlayShow");
+            console.log(document.getElementsByClassName("product-overlay"));
+          }}
+        >
+          <FaWindowClose />
+        </button>
+      </div>
+
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>
       <p>{productPriceCopy}</p>

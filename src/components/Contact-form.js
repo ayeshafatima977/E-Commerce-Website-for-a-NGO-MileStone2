@@ -1,7 +1,6 @@
 import React from "react";
-import { GrFormClose } from "react-icons/gr";
+import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
-
 const ContactFormComponent = () => {
   /*==================================================
             MAILTO VIA CONTACT FORM LOGIC
@@ -25,7 +24,7 @@ const ContactFormComponent = () => {
       <div className="contactform-overlay">
         <h2>CONTACT US</h2>
 
-        <div id="close">
+        <div class="close">
           {/* To deactivate or remove the class from Child component we use classList Remove here */}
           <button
             onClick={() => {
@@ -34,7 +33,7 @@ const ContactFormComponent = () => {
                 .classList.remove("overlayShow");
             }}
           >
-            <GrFormClose />
+            <FaWindowClose />
           </button>
         </div>
 
