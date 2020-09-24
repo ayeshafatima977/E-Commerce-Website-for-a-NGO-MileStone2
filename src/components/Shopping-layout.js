@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardComponent from "./Product-card";
 import { InitialProductAdd } from "../actions/Shopping-navigation";
-import ProductDetailsOverlayComponent from "./Product-details-overlay";
 
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
 import { useSelector, useDispatch } from "react-redux";
+import '../css/Donation-form.css';
 
 const DonationFormComponent = () => {
   let x = false;
@@ -43,15 +44,13 @@ const DonationFormComponent = () => {
         <label htmlFor="donation-amount" className="screen-reader-text">
           Donation Amount
         </label>
-        $
-        <input
+        <span>$<input
           id="donation-amount"
           type="number"
           onChange={(e) => setDonationAmount(e.target.value)}
           placeholder="Donation Amount"
-          holder="Enter Amount"
           value={donationAmount}
-        ></input>
+        ></input></span>
         <h2>Fund</h2>
         <label htmlFor="func-type" className="screen-reader-text">
           Fund Type

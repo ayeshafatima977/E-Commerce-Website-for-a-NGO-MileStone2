@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux';
 import ShoppingNavigationReducer from './Shopping-navigation';
 import CartReducer from './Cart';
-import BillingInfoReducer from './Billing-Info';
+import BillingInfoReducer from './Billing-info';
 import CreditCardReducer from './Credit-card';
 
 
 const UserDataReducer = combineReducers({
   BillingInfo: BillingInfoReducer,
-  CreditCardInfo: CreditCardReducer
-})
+  CreditCardInfo: CreditCardReducer,
+});
 
 const GlobalReducer = combineReducers({
   ShopNav: ShoppingNavigationReducer,
   Cart: CartReducer,
-  UserData: UserDataReducer
-})
+  UserData: UserDataReducer,
+});
 
 export default GlobalReducer;

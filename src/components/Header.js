@@ -7,16 +7,6 @@ import { FaShoppingCart } from "react-icons/fa";
 =============================================*/
 
 const HeaderComponent = () => {
-  const ShowOverLay = (toShowFormName) => {
-    let callingForm;
-    if (toShowFormName === "contact") {
-      callingForm = document.getElementsByClassName("contactform-overlay");
-    } else if (toShowFormName === "login") {
-      callingForm = document.getElementsByClassName("loginform-overlay");
-    }
-    // callingForm.classList.add("form-overlay");
-  };
-
   return (
     <>
       <logo>Logo</logo>
@@ -45,22 +35,30 @@ const HeaderComponent = () => {
         </ul>
         <ul>
           <li>
-            <a
-              href=""
-              onClick={ShowOverLay("login")}
-              className="login-form-overlay"
+            <button
+              onClick={() => {
+                document
+                  .getElementsByClassName("loginform-overlay")[0]
+                  .classList.add("overlayShow");
+              }}
             >
               LOGIN
-            </a>
+            </button>
           </li>
           <li>
-            <Link
-              to="/contact"
-              onClick={ShowOverLay("contact")}
-              className="contactform-overlay"
+            {/* Here we are
+            calling Child Component -Contact Us Form and adding a Class to
+            overlay on the Header page which is the parent component-We use CSS
+            to Show/Hide the overlay */}
+            <button
+              onClick={() => {
+                document
+                  .getElementsByClassName("contactform-overlay")[0]
+                  .classList.add("overlayShow");
+              }}
             >
               CONTACT
-            </Link>
+            </button>
           </li>
           <li>
             <Link to="/cart">
