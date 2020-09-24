@@ -21,9 +21,8 @@ const ProductDetailsOverlayComponent = (props) => {
       productInCartQtyCopy,
       productObj;
       let callingCard = useLocation();
-      console.log(callingCard);
   for (const product of productList) {
-    if (Number(callingCard.state) === product.id) {
+    if (Number(callingCard.state.productId) === product.id) {
       productTitleCopy = product.title;
       productDescriptionCopy = product.description;
       productPriceCopy = product.price;

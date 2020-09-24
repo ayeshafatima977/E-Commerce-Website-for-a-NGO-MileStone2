@@ -57,15 +57,17 @@ const HeaderComponent = () => {
             </a>
           </li>
           <li>
-            <Link
-              to="/contact"
+            <button
+              
               onClick={() => {
+                alert("I am here");
+                console.log( document.getElementsByClassName("contactform-overlay"));
                 document.getElementsByClassName("contactform-overlay").display =
                   "block";
               }}
             >
               CONTACT
-            </Link>
+            </button>
           </li>
           <li>
             <Link to="/cart">

@@ -43,13 +43,12 @@ const DonationFormComponent = () => {
         <label htmlFor="donation-amount" className="screen-reader-text">
           Donation Amount
         </label>
-        $
         <input
           id="donation-amount"
-          type="number"
+          type="text"
           onChange={(e) => setDonationAmount(e.target.value)}
           placeholder="Donation Amount"
-          value={donationAmount}
+          value={"$ "+ donationAmount}
         ></input>
         <h2>Fund</h2>
         <label htmlFor="func-type" className="screen-reader-text">

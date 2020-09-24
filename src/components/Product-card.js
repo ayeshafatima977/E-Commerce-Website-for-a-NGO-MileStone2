@@ -16,7 +16,7 @@ const ProductCard = (props) => {
   const imageURL = props.image;
   const briefDescription = props.briefDescription;
   const price = props.price;
-  const id = props.id;
+  const id = props.obj.id;
 
   const inCartCheck = () => {
     for (let item of cartState) {
@@ -53,7 +53,7 @@ const ProductCard = (props) => {
       <Link to={
       {
         pathname: "/product-quick-view",
-        state: {CallingProductCard: props.id }}}
+        state: {productId: props.obj.id}}}
         >
         Quick View
       </Link>
