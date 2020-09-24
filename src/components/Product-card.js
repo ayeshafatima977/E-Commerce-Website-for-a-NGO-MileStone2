@@ -37,7 +37,7 @@ const ProductCard = (props) => {
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-      {inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}><FaShoppingCart />Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}><FaShoppingCart />Add to Cart<FaShoppingCart /></button>}
+      <p>{inCartCheck(title) ? <button className="cart-option" onClick={RemoveSingleProductToCart}><FaShoppingCart />Remove From Cart</button> : <button className="cart-option" onClick={AddSingleProductToCart}><FaShoppingCart />Add to Cart</button>}</p>
       <p className="product-view">Quick View</p>
     </div>
   );

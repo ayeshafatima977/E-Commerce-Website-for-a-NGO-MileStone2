@@ -73,8 +73,8 @@
   line-height: 23px;
   display: flex;
   align-items: center;
-  
-  color: #FFFFFF;
+  background-color: #4D626E;
+  color:#ffff;
 }
 
 .product-view {
