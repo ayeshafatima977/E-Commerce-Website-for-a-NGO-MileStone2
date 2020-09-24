@@ -31,10 +31,12 @@ GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-
 11. https://stackoverflow.com/questions/21187028/javascript-submit-multiple-forms-with-one-button
 12. https://www.pluralsight.com/guides/handling-multiple-inputs-with-single-onchange-handler-react
 
+13. https://stackoverflow.com/questions/17787680/overlay-the-div-on-the-div-of-contact-form
+14. OverLay Component Package: https://binodswain.github.io/react-overlay-component/
+
 Citation:
 
-
-(1) File Names: 
+(1) File Names:
 components/Billing-details.js
 components/Credit-card.js
 components/Donation-form.js
@@ -53,7 +55,7 @@ Reason: A function to sort an array based on the inner object properties (title)
 
 ==============================================================================================
 
-(2) File Name: Shopping-navigation.js (Reducer file) 
+(2) File Name: Shopping-navigation.js (Reducer file)
 
 Citation: (Line 75)
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort

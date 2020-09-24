@@ -1,9 +1,24 @@
+h2 {
+  position: relative;
+  height: 100px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
 .contactform-overlay {
   position: fixed;
   display: none;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 10;
   left: 0;
   right: 0;
   bottom: 0;
@@ -13,11 +28,60 @@
 }
 
 #close {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   font-size: 50px;
   color: white;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.overlayShow {
+  display: block;
+}
+
+/* Styling the content in the contact form */
+#contactForm {
+  width: 500px;
+  height: auto;
+  background-color: #4d626e;
+  /* Smoothening of the border */
+  border-radius: 10px;
+  padding: 20px;
+  /* For image and content of the form to center */
+  text-align: center;
+  /* Position relative is used here for better styling to maintain the X inside and on top of form.If popupContent is relative since it is the closest parent for close and close position would be absolute instead of position as fixed*/
+  position: relative;
+}
+
+input {
+  width: 70%;
+  display: block;
+  /* To space between the inputs */
+  margin: 20px auto;
+  border: 2px solid #000000;
+  font-size: 14px;
+}
+textarea {
+  width: 70%;
+  display: block;
+  /* To space between the inputs */
+  margin: 20px auto;
+  border: 2px solid #000000;
+  font-size: 14px;
+}
+
+send {
+  background-color: #708090;
+  color: #000000;
+}
+.close {
+  /*Position absolute could be used here for better styling.*/
+  position: absolute;
+  /* Top of popupContent */
+  top: 5%;
+  right: 14px;
+  font-size: 42px;
+  cursor: pointer;
 }
