@@ -11,7 +11,7 @@ const FooterComponent = () => {
   const [firstName, SetFirstName] = useState('');
   const [lastName, SetLastName] = useState('');
   const [email, SetEmail] = useState('');
-  const [errorMsg, SetErrorMsg] = useState('');
+  
 
   const NewsLetterSubscribe = (e) => {
     e.preventDefault(); 
@@ -22,39 +22,44 @@ const FooterComponent = () => {
     let errorCntr = 0;
     if(!/^[A-Za-z]+$/.test(firstName))
     {
-      document.getElementsByClassName('fname-error')[0].classList.add('fname-error-show');
-      document.getElementsByClassName('fname')[0].classList.add('fname-input-error');
+      document.getElementsByClassName('fname-error')[0].classList.add('msg-show');
+      document.getElementsByClassName('fname')[0].classList.add('input-error');
       errorCntr++;
     }
     else
     {
-      document.getElementsByClassName('fname-error')[0].classList.remove('fname-error-show')
+      document.getElementsByClassName('fname-error')[0].classList.remove('msg-show')
+      document.getElementsByClassName('fname')[0].classList.remove('input-error');
     }
     if(!/^[A-Za-z]+$/.test(lastName))
     {
-      document.getElementsByClassName('lname-error')[0].classList.add('lname-error-show');
+      document.getElementsByClassName('lname-error')[0].classList.add('msg-show');
+      document.getElementsByClassName('lname')[0].classList.add('input-error');
       errorCntr++;     
     }
     else
     {
-      document.getElementsByClassName('lname-error')[0].classList.remove('lname-error-show');
+      document.getElementsByClassName('lname-error')[0].classList.remove('msg-show');
+      document.getElementsByClassName('lname')[0].classList.remove('input-error');
     }
     if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
     {
-      document.getElementsByClassName('email-error')[0].classList.add('email-error-show');
+      document.getElementsByClassName('email-error')[0].classList.add('msg-show');
+      document.getElementsByClassName('email')[0].classList.add('input-error');
       errorCntr++;
     }
     else
     {
-      document.getElementsByClassName('email-error')[0].classList.remove('email-error-show');
+      document.getElementsByClassName('email-error')[0].classList.remove('msg-show');
+      document.getElementsByClassName('email')[0].classList.remove('input-error');
     }
     if (errorCntr === 0) 
     {
-      document.getElementsByClassName('thanks-msg')[0].classList.add('thanks-msg-show');
+      document.getElementsByClassName('thanks-msg')[0].classList.add('msg-show');
     }  
     else
     {
-      document.getElementsByClassName('thanks-msg')[0].classList.remove('thanks-msg-show');
+      document.getElementsByClassName('thanks-msg')[0].classList.remove('msg-show');
     }      
   }
 
@@ -102,18 +107,18 @@ const FooterComponent = () => {
             <label htmlFor="lname" className="screen-reader-text">
               Last Name
             </label>
-            <input type="text" id="lname" placeholder="Last name" value={lastName}
+            <input type="text" className="lname" placeholder="Last name" value={lastName}
               onChange={ event => { SetLastName( event.target.value ); } } />
             <label htmlFor="email" className="screen-reader-text">
               Email Address
             </label>
-            <input type="text" id="email" placeholder="Email Address" value={email}
+            <input type="text" className="email" placeholder="Email Address" value={email}
               onChange={ event => { SetEmail( event.target.value ); } } />
             <button type="submit"><FaEnvelope /></button>
-            <p className="fname-error" >Please enter correct First Name</p>
-            <p className="lname-error">Please enter correct Last Name</p>
-            <p className="email-error">Please enter valid email Id</p>
-            <p className="thanks-msg">Thank you for Subscribing to our newsletter...!</p>
+            <p className="fname-error msg-hide" >Please enter correct First Name</p>
+            <p className="lname-error msg-hide ">Please enter correct Last Name</p>
+            <p className="email-error msg-hide ">Please enter valid email Id</p>
+            <p className="thanks-msg msg-hide">Thank you for Subscribing to our newsletter...!</p>
           </form>
           
         </div>
