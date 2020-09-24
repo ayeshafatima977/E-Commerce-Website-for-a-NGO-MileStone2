@@ -22,7 +22,7 @@
   /* height: 396px; */
   background: #4D626E;
   border-radius: 15px;
-  margin: 20px auto;
+  margin: 20px;
   display: flex;
   flex-direction: column;
 }

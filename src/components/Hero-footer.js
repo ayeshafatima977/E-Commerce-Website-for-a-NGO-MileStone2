@@ -6,30 +6,34 @@ import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-ic
 =============================================*/
 
 const FooterComponent = () => {
-
-  // const fName = document.getElementById('fname').value;
-  // console.log(fName);
+  
   const [firstName, SetFirstName] = useState('');
   const [lastName, SetLastName] = useState('');
   const [email, SetEmail] = useState('');
+  const [errorMsg, SetErrorMsg] = useState('');
 
   const NewsLetterSubscribe = (e) => {
     e.preventDefault(); 
-    if(/^[A-Za-z]+$/.test(firstName))
+    NewsLetterFormValidation();  
+  }
+
+  const NewsLetterFormValidation = () => {
+
+    if(!/^[A-Za-z]+$/.test(firstName))
     {
-      alert('Please enter correct Username');
+      SetErrorMsg('Please enter correct First Name');
     }
-    else if(/^[A-Za-z]+$/.test(lastName))
+    else if(!/^[A-Za-z]+$/.test(lastName))
     {
-      alert('Please enter correct Lastname');
+      SetErrorMsg('Please enter correct Last Name');
     }
-    else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+    else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
     {
-      alert('Please enter valid email Address');
+      SetErrorMsg('Please enter valid email Id');
     }
     else 
     {
-      alert('Thank you for Subscribing...!');
+      SetErrorMsg('Thank you for Subscribing to our newsletter...!');
     }        
   }
 
@@ -85,6 +89,7 @@ const FooterComponent = () => {
             <input type="email" id="email" placeholder="Email Address" value={email}
               onChange={ event => { SetEmail( event.target.value ); } } />
             <button type="submit"><FaEnvelope /></button>
+            <p>{errorMsg}</p>
           </form>
           
         </div>
