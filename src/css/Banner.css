@@ -1,6 +1,6 @@
 /* Banner 1 */
 .banner {
-  width: 1440px;
+  width: 100vw;
   height: 230px;
   
   /* Positional css can change in the actual page layout */

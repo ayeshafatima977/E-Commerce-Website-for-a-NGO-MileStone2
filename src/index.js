@@ -21,13 +21,14 @@ ReactDOM.render(
     <Router>
       <h1>Hello Scriptorce</h1>
       <HeaderComponent />
+      <StickyHeaderComponent />
       <Route path="/" exact component={LandingPageComponent} />
       <Route path="/about" exact component={KnowUsPageComponent} />
       <Route path="/events" exact component={NewsEventsPageComponent} />
       <Route path="/news" exact component={NewsEventsPageComponent} />
       <Route path="/donation" exact component={DonationPageComponent} />
       <Route path="/shop" exact component={ShoppingPageComponent} />
-      <Route path="/volunteer" exact component={StickyHeaderComponent} />
+      <Route path="/volunteer" exact />
       <Route path="/cart" exact component={CartPageComponent}/>
       <Route path="/product-quick-view" exact component={ProductDetailsOverlayComponent} />
       <FooterComponent />
