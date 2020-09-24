@@ -54,7 +54,12 @@ const ShoppingNavigationReducer = (
   switch (action.type) {
     case "SEARCH_PRODUCT": {
       // Update the search state
-      stateCopy.Search = action.payload;
+      if (action.payload === "") {
+        stateCopy.Search = '(.*)';
+      }
+      else {
+        stateCopy.Search = action.payload;
+      }
       break;
     }
     case "SORT_PRODUCT": {
@@ -114,7 +119,9 @@ const ShoppingNavigationReducer = (
       // Initial action to populate the store.
       stateCopy.products = action.payload;
       stateCopy.displayProducts = action.payload;
-      break;
+      stateCopy.Browse = '(.*)';
+      stateCopy.Search = '(.*)';
+      return stateCopy;
     }
     default: {
     }
@@ -122,7 +129,7 @@ const ShoppingNavigationReducer = (
 
   // The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed.
   for (const product of state.products) {
-    if (product.title.includes(stateCopy.Search) && product.category.match(RegExp(stateCopy.Browse))
+    if (product.title.match(RegExp(stateCopy.Search)) && product.category.match(RegExp(stateCopy.Browse))
        && (product.price > filterLow && product.price < filterHigh)) {
       displayCopy.push(product);
     }

@@ -14,19 +14,20 @@ const ShoppingLayoutComponent = () => {
   if (productsList[0].id === 0) {
     fetch("https://fakestoreapi.com/products?limit=20")
       .then((response) => response.json())
-      .then((productList) => {
+      .then((APIProductList) => {
         // Add the inCartQty property to each product in our store.
-        for (let product of productList) {
+        for (let product of APIProductList) {
           product.inCartQty = 0;
         }
         // Update the global store.
-        dispatch(InitialProductAdd(productList));
+        dispatch(InitialProductAdd(APIProductList));
       });
   }
   // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
     <>
+     {displayProductList.length > 0 ? <div></div> : <p>No search results found. Please ease search restrictions.</p>}
       {displayProductList.map((individProd) => {
         return (
           <>
