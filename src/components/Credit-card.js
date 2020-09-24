@@ -19,7 +19,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
   const [userExpiry, setUserExpiry] = useState("0");
   const [userCVC, setUserCVC] = useState("0");
   const [userInfoSave, setUserInfoSave] = useState("");
+
   // Creating a Copy with parameters assigned in the Creditcard reducer
+
   const CreditCardStateInfoCopy = {
     No: userCreditNumber,
     ExpDate: userExpiry,
@@ -38,17 +40,17 @@ const CreditCardComponent = forwardRef((props, ref) => {
     if (
       FormValidation(
         userCreditNumber,
-        "userCreditNumber",
+        "cc-number-input",
         "userCreditNumber",
         "userCreditNumber-error"
       ) &&
       FormValidation(
         userExpiry,
-        "userExpiry,",
+        "cc-number-input",
         "userExpiry",
         "userExpiry-error"
       ) &&
-      FormValidation(userCVC, "userCVC", "userCVC", "userCVC-error")
+      FormValidation(userCVC, "cc-number-input", "userCVC", "userCVC-error")
     ) {
       document
         .getElementsByClassName("credit-thanks-msg")[0]

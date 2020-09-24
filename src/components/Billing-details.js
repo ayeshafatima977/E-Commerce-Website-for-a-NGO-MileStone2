@@ -40,17 +40,17 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
     if (
       FormValidation(
         userFirstName,
-        "userFirstName",
+        "fname",
         "userFirstName",
         "userFirstName-error"
       ) &&
       FormValidation(
         userLastName,
-        "userLastName",
+        "lname",
         "userLastName",
         "userLastName-error"
       ) &&
-      FormValidation(userEmail, "userEmail", "userEmail", "userEmail-error ") &&
+      FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
       FormValidation(userPhone, "userPhone", "userPhone", "userPhone-error") &&
       FormValidation(
         userStreetAddress,
