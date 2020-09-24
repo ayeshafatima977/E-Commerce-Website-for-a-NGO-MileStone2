@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaEnvelope } from "react-icons/fa";
+import '../css/Hero-footer.css';
 
 /*=============================================
 =            FooterComponent            =
@@ -18,23 +19,43 @@ const FooterComponent = () => {
   }
 
   const NewsLetterFormValidation = () => {
-
+    let errorCntr = 0;
     if(!/^[A-Za-z]+$/.test(firstName))
     {
-      SetErrorMsg('Please enter correct First Name');
+      document.getElementsByClassName('fname-error')[0].classList.add('fname-error-show');
+      document.getElementsByClassName('fname')[0].classList.add('fname-input-error');
+      errorCntr++;
     }
-    else if(!/^[A-Za-z]+$/.test(lastName))
+    else
     {
-      SetErrorMsg('Please enter correct Last Name');
+      document.getElementsByClassName('fname-error')[0].classList.remove('fname-error-show')
     }
-    else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+    if(!/^[A-Za-z]+$/.test(lastName))
     {
-      SetErrorMsg('Please enter valid email Id');
+      document.getElementsByClassName('lname-error')[0].classList.add('lname-error-show');
+      errorCntr++;     
     }
-    else 
+    else
     {
-      SetErrorMsg('Thank you for Subscribing to our newsletter...!');
-    }        
+      document.getElementsByClassName('lname-error')[0].classList.remove('lname-error-show');
+    }
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+    {
+      document.getElementsByClassName('email-error')[0].classList.add('email-error-show');
+      errorCntr++;
+    }
+    else
+    {
+      document.getElementsByClassName('email-error')[0].classList.remove('email-error-show');
+    }
+    if (errorCntr === 0) 
+    {
+      document.getElementsByClassName('thanks-msg')[0].classList.add('thanks-msg-show');
+    }  
+    else
+    {
+      document.getElementsByClassName('thanks-msg')[0].classList.remove('thanks-msg-show');
+    }      
   }
 
 
@@ -76,7 +97,7 @@ const FooterComponent = () => {
             <label htmlFor="fname" className="screen-reader-text" >
               First Name
             </label>
-            <input type="text" id="fname" placeholder="First name" value={firstName}
+            <input type="text" className="fname" placeholder="First name" value={firstName}
               onChange={ event => { SetFirstName( event.target.value ); } } />
             <label htmlFor="lname" className="screen-reader-text">
               Last Name
@@ -86,10 +107,13 @@ const FooterComponent = () => {
             <label htmlFor="email" className="screen-reader-text">
               Email Address
             </label>
-            <input type="email" id="email" placeholder="Email Address" value={email}
+            <input type="text" id="email" placeholder="Email Address" value={email}
               onChange={ event => { SetEmail( event.target.value ); } } />
             <button type="submit"><FaEnvelope /></button>
-            <p>{errorMsg}</p>
+            <p className="fname-error" >Please enter correct First Name</p>
+            <p className="lname-error">Please enter correct Last Name</p>
+            <p className="email-error">Please enter valid email Id</p>
+            <p className="thanks-msg">Thank you for Subscribing to our newsletter...!</p>
           </form>
           
         </div>

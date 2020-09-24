@@ -1,0 +1,12 @@
+/* ! style with red border in the case of Error */
+.fname-error, .lname-error,.email-error, .thanks-msg, .thanks-msg {
+    display: none;
+}
+ 
+.fname-error-show, .lname-error-show, .email-error-show, .thanks-msg-show {
+    display: block;
+}
+
+.fname-input-error {
+    outline: 1px solid red;
+}
