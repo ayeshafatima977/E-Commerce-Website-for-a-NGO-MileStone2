@@ -24,7 +24,7 @@ const ContactFormComponent = () => {
       <div className="contactform-overlay">
         <h2>CONTACT US</h2>
 
-        <div id="close">
+        <div class="close">
           {/* To deactivate or remove the class from Child component we use classList Remove here */}
           <button
             onClick={() => {

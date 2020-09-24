@@ -4,7 +4,6 @@ import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaShoppingCart, FaEye } from "react-icons/fa";
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
 import { Link } from "react-router-dom";
-
 import "../css/Product-card.css";
 
 const ProductCard = (props) => {
@@ -52,21 +51,38 @@ const ProductCard = (props) => {
       )}
 
       {/* Add/Remove */}
+      {
+        /* 
+/*=============================================
+=            Messup Area            =
+=============================================*/
+        <button
+          onClick={() => {
+            document
+              .getElementsByClassName("product-overlay")[0]
+              .classList.add("overlayShow");
+            document.getElementById("trial2").click();
+          }}
+        >
+          QuickView trail
+        </button>
+
+        /*=====  End of Messup Area  ======*/
+      }
+
       <Link
+        id="trail2"
         to={{
           pathname: "/product-quick-view",
           state: { productId: props.obj.id },
         }}
+        // onClick={() => {
+        //   document
+        //     .getElementsByClassName("product-overlay")[0]
+        //     .classList.add("overlayShow");
+        // }}
       >
-        <button
-          onClick={() => {
-            document
-              .getElementsByClassName("loginform-overlay")[0]
-              .classList.add("overlayShow");
-          }}
-        >
-          <FaEye />
-        </button>
+        <FaEye />
       </Link>
     </div>
   );
