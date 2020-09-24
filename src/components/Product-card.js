@@ -50,6 +50,7 @@ const ProductCard = (props) => {
           Add to Cart
         </button>
       )}
+
       <Link to={
       {
         pathname: "/product-quick-view",
