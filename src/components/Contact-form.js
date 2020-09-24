@@ -38,7 +38,7 @@ const ContactFormComponent = () => {
           </button>
         </div>
 
-        <form onSubmit={sendMail}>
+        <form onSubmit={sendMail} id="contactForm">
           <label htmlFor="Email" className="screen-reader-text">
             Email Address:
           </label>
