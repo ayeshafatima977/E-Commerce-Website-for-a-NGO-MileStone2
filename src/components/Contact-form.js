@@ -1,13 +1,23 @@
 import React from "react";
 import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
+import FormValidation from "../functions/Form-validation.js";
 const ContactFormComponent = () => {
   /*==================================================
             MAILTO VIA CONTACT FORM LOGIC
 *==================================================
 */
-  const sendMail = (e) => {
+  const SubmitForm = (e) => {
     e.preventDefault();
+    if(
+      FormValidation(fname, "fname", "fname") &&
+      FormValidation(lname, "lname", "lname") &&
+      FormValidation(email, "email", "email")
+      FormValidation(subject, "email", "email")
+    )
+    {document
+      .getElementsByClassName("thanks-msg")[0]
+      .classList.add("msg-show");
     let link =
       "mailto:testemail@gmail.com" +
       "?subject=" +
@@ -15,6 +25,16 @@ const ContactFormComponent = () => {
       "&body=" +
       encodeURIComponent(document.getElementById("message").value);
     window.location.href = link;
+  }
+  else {
+    document
+      .getElementsByClassName("thanks-msg")[0]
+      .classList.remove("msg-show");
+  }
+
+
+  
+  
   };
   /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
 
@@ -37,7 +57,7 @@ const ContactFormComponent = () => {
           </button>
         </div>
 
-        <form onSubmit={sendMail} id="contactForm">
+        <form onSubmit={SubmitForm} id="contactForm">
           <label htmlFor="Email">Email Address:</label>
           <input
             type="text"
@@ -49,6 +69,16 @@ const ContactFormComponent = () => {
           <label htmlFor="Message">Message:</label>
           <textarea placeholder="Enter your Message" id="message" />
           <input type="submit" value="SEND" />
+          <p className="fname-error msg-hide">
+            Please enter correct First Name
+          </p>
+          <p className="lname-error msg-hide">Please enter correct Last Name</p>
+          <p className="email-error msg-hide">Please enter valid email Id</p>
+          <p className="subject-error msg-hide">
+            Please enter correct First Name
+          </p>
+          <p className="lname-error msg-hide">Please enter correct Last Name</p>
+          <p className="email-error msg-hide">Please enter valid email Id</p>
         </form>
       </div>
     </>
