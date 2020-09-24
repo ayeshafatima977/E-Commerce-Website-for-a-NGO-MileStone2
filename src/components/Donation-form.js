@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
 import { useSelector, useDispatch } from "react-redux";
-import '../css/Donation-form.css';
+import "../css/Donation-form.css";
+import FormValidation from "../functions/Form-validation.js";
 
 const DonationFormComponent = () => {
   let x = false;
@@ -11,10 +12,24 @@ const DonationFormComponent = () => {
   const [donationAmount, setDonationAmount] = useState(0);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const ValidateYourOrderForm = () => {
-    console.log("Hello World!");
+  const [donationMsg, setdonationmsg] = useState("");
+
+  //Global validation function
+  const SubmitForm = (e) => {
+    e.preventDefault();
+    if (
+      FormValidation(donationAmount, "donationAmount", "donationAmount") &&
+      FormValidation(donationMsg, "donationMsg", "donationMsg")
+    ) {
+      document
+        .getElementsByClassName("donation-thanks-msg")[0]
+        .classList.add("msg-show");
+    } else {
+      document
+        .getElementsByClassName("donation-thanks-msg")[0]
+        .classList.remove("msg-show");
+    }
     //Remove product from the subtotal and order altogether if 0 when user hit submit
-    //global validation function
   };
 
   const creditCardRef = useRef();
@@ -25,14 +40,12 @@ const DonationFormComponent = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          ValidateYourOrderForm();
+          SubmitForm();
         }}
       >
         <h1>Donation Details</h1>
         <h2> Amount </h2>
-        <label htmlFor="donation-freq" className="screen-reader-text">
-          Donation Frequency
-        </label>
+        <label htmlFor="donation-freq">Donation Frequency</label>
         <select
           id="donation-freq"
           onChange={(e) => setDonationFreq(e.target.value)}
@@ -41,40 +54,39 @@ const DonationFormComponent = () => {
           <option value="Donate Now">Donate Now </option>
           <option value="Donate Monthly">Donate Monthly </option>
         </select>
-        <label htmlFor="donation-amount" className="screen-reader-text">
-          Donation Amount
-        </label>
-        <span>$<input
-          id="donation-amount"
-          type="number"
-          onChange={(e) => setDonationAmount(e.target.value)}
-          placeholder="Donation Amount"
-          value={donationAmount}
-        ></input></span>
+        <label htmlFor="donation-amount">Donation Amount</label>
+        <span>
+          $
+          <input
+            className="donationAmount"
+            type="number"
+            onChange={(e) => setDonationAmount(e.target.value)}
+            placeholder="Donation Amount"
+            value={donationAmount}
+          ></input>
+        </span>
         <h2>Fund</h2>
-        <label htmlFor="func-type" className="screen-reader-text">
-          Fund Type
-        </label>
+        <label htmlFor="fund-type">Fund Type</label>
         <select
-          id="func-type"
+          id="fund-type"
           onChange={(e) => setFundType(e.target.value)}
           value={fundType}
         >
           <option value="General">General </option>
           <option value="Kids Sports and Arts Fund">
-            Kids Sports and Arts Fund{" "}
+            Kids Sports and Arts Fund
           </option>
           <option value="Help to Feed a Kid">Help to Feed a Kid </option>
           <option value="Kids Education Fund">Kids Education Fund </option>
           <option value="Kids Clothing Fund">Kids Clothing Fund </option>
         </select>
-        <label htmlFor="donation-message" className="screen-reader-text">
-          Message
-        </label>
+        <label htmlFor="donation-message">Message</label>
         <input
+          className="donationMsg"
           id="donation-message"
           type="textarea"
-          placeholder="Send us a message"
+          placeholder="Send us a message. Max 500 Character"
+          maxlength="5"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
 
@@ -87,6 +99,16 @@ const DonationFormComponent = () => {
         >
           Click
         </button>
+
+        <p className="donationAmount-error msg-hide">
+          Please enter Donation amount
+        </p>
+        <p className="donationMsg msg-hide">
+          Please don't exceed 500 characters.
+        </p>
+        <p className="donation-thanks-msg msg-hide">
+          Thankyou for your Donation,Your Donation has been received.
+        </p>
       </form>
     </>
   );

@@ -5,7 +5,8 @@ import "../css/Form-validation.css";
 export default function FormValidation(
   inputFieldContent,
   inputFieldType,
-  inputFieldClassName
+  inputFieldClassName,
+  errorMessageClassName = "fname-error"
 ) {
   let PassIndicator = true;
   switch (inputFieldType) {
@@ -49,7 +50,7 @@ export default function FormValidation(
         )
       ) {
         document
-          .getElementsByClassName("email-error")[0]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
@@ -57,7 +58,7 @@ export default function FormValidation(
         PassIndicator = false;
       } else {
         document
-          .getElementsByClassName("email-error")[0]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.remove("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
