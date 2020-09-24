@@ -1,4 +1,4 @@
-.product-overlay {
+.product-details-overlay {
   position: fixed;
   display: none;
   width: 100%;
@@ -24,4 +24,17 @@
 
 .overlayShow {
   display: block;
+}
+
+img{
+  width:200px;
+  height:200px;
+}
+
+.product-overlay-section{
+  background-color: gray;
+  display:flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
 }

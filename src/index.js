@@ -1,5 +1,5 @@
 import React from "react";
-import { createStore } from "redux";
+
 import ReactDOM from "react-dom";
 import "./css/index.css";
 import { Provider } from "react-redux";
@@ -15,11 +15,9 @@ import DonationPageComponent from './components/Donation-page';
 import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Hero-footer";
 import ProductDetailsOverlayComponent from "./components/Product-details-overlay";
+import GlobalStore from "./components/store"
 
-const GlobalStore = createStore(
-  combinedReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>

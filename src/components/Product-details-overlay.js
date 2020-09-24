@@ -2,8 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaWindowClose } from "react-icons/fa";
-import { useLocation, Link } from "react-router-dom";
-import "../css/Product-overlay.css";
 
 /*=============================================
 =            Product Details Overlay Component           =
@@ -19,9 +17,10 @@ const ProductDetailsOverlayComponent = (props) => {
     productIdCopy,
     productInCartQtyCopy,
     productObj;
-  let callingCard = useLocation();
+
+  console.log(GlobalStateInfo.ShopNav.products);
   for (const product of productList) {
-    if (Number(callingCard.state.productId) === product.id) {
+    if (Number(props.productId) === product.id) {
       productTitleCopy = product.title;
       productDescriptionCopy = product.description;
       productPriceCopy = product.price;
@@ -39,23 +38,16 @@ const ProductDetailsOverlayComponent = (props) => {
     dispatch(RemoveFromCart(productIdCopy));
   };
   return (
-    <section className="product-overlay">
-      {/* Close ur window =>return to product shop*/}
-
-      <div class="close">
-        {/* To deactivate or remove the class from Child component we use classList Remove here */}
-        <button
-          onClick={() => {
-            document
-              .getElementsByClassName("product-overlay")[0]
-              .classList.remove("overlayShow");
-            console.log(document.getElementsByClassName("product-overlay"));
-          }}
-        >
-          <FaWindowClose />
-        </button>
-      </div>
-
+    <section className="product-overlay-section">
+      <button
+        onClick={() => {
+          document
+            .getElementsByClassName("product-details-overlay")[0]
+            .classList.remove("overlayShow");
+        }}
+      >
+        <FaWindowClose />
+      </button>
       <h2>{productTitleCopy}</h2>
       <p>{productDescriptionCopy}</p>
       <p>{productPriceCopy}</p>

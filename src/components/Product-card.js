@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaShoppingCart, FaEye } from "react-icons/fa";
 import ProductDetailsOverlayComponent from "./Product-details-overlay";
-import { Link } from "react-router-dom";
 import "../css/Product-card.css";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import GlobalStore from "./store";
 
 const ProductCard = (props) => {
   const globalState = useSelector((state) => state);
@@ -50,40 +52,23 @@ const ProductCard = (props) => {
         </button>
       )}
 
-      {/* Add/Remove */}
-      {
-        /* 
-/*=============================================
-=            Messup Area            =
-=============================================*/
-        <button
-          onClick={() => {
-            document
-              .getElementsByClassName("product-overlay")[0]
-              .classList.add("overlayShow");
-            document.getElementById("trial2").click();
-          }}
-        >
-          QuickView trail
-        </button>
-
-        /*=====  End of Messup Area  ======*/
-      }
-
-      <Link
-        id="trail2"
-        to={{
-          pathname: "/product-quick-view",
-          state: { productId: props.obj.id },
+      <button
+        onClick={() => {
+          ReactDOM.render(
+            <>
+              <Provider store={GlobalStore}>
+                <ProductDetailsOverlayComponent productId={props.obj.id} />
+              </Provider>
+            </>,
+            document.getElementById("product-details-overlay-div")
+          );
+          document
+            .getElementsByClassName("product-details-overlay")[0]
+            .classList.add("overlayShow");
         }}
-        // onClick={() => {
-        //   document
-        //     .getElementsByClassName("product-overlay")[0]
-        //     .classList.add("overlayShow");
-        // }}
       >
-        <FaEye />
-      </Link>
+        QuickView trail <FaEye />
+      </button>
     </div>
   );
 };
