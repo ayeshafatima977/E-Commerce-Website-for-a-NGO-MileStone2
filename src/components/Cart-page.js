@@ -1,6 +1,8 @@
 /*cspell:disable*/
 import React from "react";
-import ShoppingCartComponent from "Shopping-cart";
+import BannerComponent from "./Banner";
+import ShoppingCartComponent from "./Shopping-cart";
+import ContactFormComponent from "./Contact-form";
 
 /*=============================================
 =            Cart page React Component        =
@@ -8,7 +10,13 @@ import ShoppingCartComponent from "Shopping-cart";
 
 /* Assuming routing would be in middle section between header/banner and footer */
 const CartPageComponent = () => {
-  return <ShoppingCartComponent />;
+  return (
+    <>
+      <BannerComponent />
+      <ShoppingCartComponent />
+      <ContactFormComponent />
+    </>
+  );
 };
 
 /*=====  End of Cart page React Component  ======*/

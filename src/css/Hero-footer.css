@@ -1,0 +1,16 @@
+
+.msg-hide {
+    display: none;
+}
+ 
+.msg-show{
+    display: block;
+    color: red;
+}
+
+.input-error {
+    outline: 1px solid red;
+}
+.thanks-msg {
+    color: black;
+}

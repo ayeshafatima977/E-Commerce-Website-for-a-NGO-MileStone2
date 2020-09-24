@@ -1,0 +1,101 @@
+.contactform-overlay h2 {
+  width: 315px;
+  height: 48px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  display: flex;
+  align-items: left;
+  text-transform: capitalize;
+
+  color: #ffffff;
+}
+
+/* Note Cant target by tags else its applying to Shop */
+
+.contactform-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.overlayShow {
+  display: block;
+}
+
+/* Styling the content in the contact form */
+.contactform-overlay #contactForm {
+  width: 500px;
+  height: auto;
+  background-color: #4d626e;
+  /* Smoothening of the border */
+  border-radius: 20px;
+  padding: 20px;
+  /* For image and content of the form to center */
+  text-align: left;
+  /* Position relative is used here for better styling to maintain the X inside and on top of form.If popupContent is relative since it is the closest parent for close and close position would be absolute instead of position as fixed*/
+  position: relative;
+}
+
+.contactform-overlay input {
+  width: 100%;
+  display: block;
+  /* To space between the inputs */
+  margin: 20px auto;
+  border: 2px solid #000000;
+  font-size: 15px;
+}
+
+/* To add Focus when user clicks the input field */
+.contactform-overlay input[type="text"]:focus {
+  background-color: lightblue;
+}
+/* To add Focus when user clicks the input field */
+
+.contactform-overlay textarea {
+  width: 100%;
+  display: block;
+  /* To space between the inputs */
+
+  margin: auto;
+  border: 2px solid #000000;
+  font-size: 14px;
+}
+
+.contactform-overlay textarea:focus {
+  background-color: lightblue;
+}
+.contactform-overlay send {
+  color: #000000;
+  position: absolute;
+  width: 178px;
+  height: 51px;
+  background: #ffffff;
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+.contactform-overlay input[type="submit"]:hover {
+  background-color: #4d626e;
+}
+
+.contactform-overlay .close {
+  /*Position absolute is used here for better styling.*/
+  position: absolute;
+  /* Top of OverlayContent */
+  top: 2%;
+  right: 15px;
+  font-size: 42px;
+  cursor: pointer;
+}

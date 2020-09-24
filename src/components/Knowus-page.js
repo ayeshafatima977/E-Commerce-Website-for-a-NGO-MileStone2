@@ -1,5 +1,7 @@
 /*cspell:disable*/
 import React from "react";
+import BannerComponent from "./Banner";
+import ContactFormComponent from "./Contact-form";
 
 /*=============================================
 =         Know us page React Component        =
@@ -9,9 +11,9 @@ import React from "react";
 const KnowUsPageComponent = () => {
   return (
     <>
+      <BannerComponent />
       <h2> About Us</h2>
       <p>
-        
         We envision a community where hunger does not exist, where all citizens
         have access to an adequate and nutritious supply of food.
       </p>
@@ -53,6 +55,7 @@ const KnowUsPageComponent = () => {
           laborum accusamus dolorum odio fugiat vel.
         </li>
       </ul>
+      <ContactFormComponent />
     </>
   );
 };

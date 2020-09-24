@@ -1,9 +1,9 @@
 .product-title {
   /* position: absolute; */
-  width: 248px;
+  /* width: 248px;
   height: 27px;
   left: 87px;
-  top: 489px;
+  top: 489px; */
 
   font-family: Roboto;
   font-style: normal;
@@ -22,6 +22,9 @@
   /* height: 396px; */
   background: #4D626E;
   border-radius: 15px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-price {
@@ -56,6 +59,7 @@
   width: 273px;
   height: 227px;
   border-radius: 15px;
+  margin: 0 auto;
 }
 
 .divider {
@@ -64,7 +68,7 @@
   border: 1px solid #FFFFFF; 
 }
 .cart-option {
-  width: 103px;
+  /* width: 103px; */
   height: 23px;
   font-family: Roboto;
   font-style: normal;
@@ -73,8 +77,8 @@
   line-height: 23px;
   display: flex;
   align-items: center;
-  
-  color: #FFFFFF;
+  background-color: #4D626E;
+  color:#ffff;
 }
 
 .product-view {

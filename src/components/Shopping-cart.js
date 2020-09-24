@@ -7,15 +7,12 @@ import BillingDetailsComponent from "./Billing-details";
 import { IncreaseCartQty, DecreaseCartQty, SetCartQty } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
-
 const ShoppingCartComponent = () => {
-  const [pickupDate, setPickupDate] = useState("");
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const inCartProducts = Array.from(
     globalStateInfo.Cart
   ); /* array of in cart products */
-  console.log("in cart products", inCartProducts);
   let subTotal = 0;
 
   const ValidateYourOrderForm = () => {
@@ -36,35 +33,41 @@ const ShoppingCartComponent = () => {
       >
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
-
+          // if (inCartProduct.inCartQty > 0) {
           return (
             <div>
               <h2>{inCartProduct.title}</h2>
               <img src={inCartProduct.image} width="200px" height="200px" />
               <p>{inCartProduct.description}</p>
               <p>$ {inCartProduct.price}</p>
-              <button /* onClick={dispatch(IncreaseCartQty(inCartProduct.id))} */
+              <button
+                onClick={() => {
+                  dispatch(DecreaseCartQty(inCartProduct.id));
+                }}
               >
-                +
+                &#8722; {/* Minus sign */}
               </button>
+
               <input
                 type="number"
                 onChange={(e) => {
-                  dispatch(SetCartQty(inCartProduct.id, e.targe.value));
+                  dispatch(SetCartQty(inCartProduct.id, e.target.value));
                 }}
                 value={inCartProduct.inCartQty}
               ></input>
-              <button /* onClick={dispatch(DecreaseCartQty(inCartProduct.id))} */
+              <button
+                onClick={() => {
+                  dispatch(IncreaseCartQty(inCartProduct.id));
+                }}
               >
-                -
+                &#43; {/* Plus sign */}
               </button>
             </div>
           );
         })}
-
         <Link to="/shop">Back To Shopping</Link>
         <p> Subtotal</p>
-        <p> $ {subTotal} </p>
+        <p> $ {subTotal.toFixed(2)} </p>
         <h2> Local Pickup </h2>
         <p>
           #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up items at
@@ -74,7 +77,7 @@ const ShoppingCartComponent = () => {
         <FaCalendarAlt />
         <p>Schedule a pickup appointment *</p>
         <p> Subtotal</p>
-        <p> $ {subTotal} </p>
+        <p> $ {subTotal.toFixed(2)} </p>
         <CreditCardComponent ref={creditCardRef} />
         <BillingDetailsComponent ref={billingInfoRef} />
         <button

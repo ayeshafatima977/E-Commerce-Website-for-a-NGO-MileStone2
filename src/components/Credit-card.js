@@ -1,5 +1,5 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ChangeCreditInfo } from "../actions/Credit-card";
 import {
   FaCcMastercard,
@@ -12,7 +12,6 @@ import {
 import { SiGooglepay } from "react-icons/si";
 
 const CreditCardComponent = forwardRef((props, ref) => {
-  const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   //Creating Local states
   const [userCreditNumber, setUserCreditNumber] = useState("0");
