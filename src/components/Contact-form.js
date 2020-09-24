@@ -38,21 +38,15 @@ const ContactFormComponent = () => {
         </div>
 
         <form onSubmit={sendMail} id="contactForm">
-          <label htmlFor="Email" className="screen-reader-text">
-            Email Address:
-          </label>
+          <label htmlFor="Email">Email Address:</label>
           <input
             type="text"
             placeholder="Enter your email address"
             id="email"
           />
-          <label htmlFor="Subject" className="screen-reader-text">
-            Subject:
-          </label>
+          <label htmlFor="Subject">Subject:</label>
           <input type="text" placeholder="Enter the subject" id="subject" />
-          <label htmlFor="Message" className="screen-reader-text">
-            Message:
-          </label>
+          <label htmlFor="Message">Message:</label>
           <textarea placeholder="Enter your Message" id="message" />
           <input type="submit" value="SEND" />
         </form>
