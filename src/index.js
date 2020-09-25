@@ -13,21 +13,23 @@ import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Hero-footer";
 import ProductDetailsOverlayComponent from "./components/Product-details-overlay";
 import GlobalStore from "./components/store"
+import StickyHeaderComponent from "./components/Sticky-header";
+import VolunteerFormComponent from "./components/Volunteer-form";
+
 
 
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
-      <h1>Hello Scriptorce</h1>
       <HeaderComponent />
+      <StickyHeaderComponent />
       <Route path="/" exact component={LandingPageComponent} />
       <Route path="/about" exact component={KnowUsPageComponent} />
       <Route path="/events" exact component={NewsEventsPageComponent} />
       <Route path="/news" exact component={NewsEventsPageComponent} />
       <Route path="/donation" exact component={DonationPageComponent} />
       <Route path="/shop" exact component={ShoppingPageComponent} />
-      <Route path="/volunteer" exact />
-     {/*  <Route path="/contact" exact component={ContactFormComponent} /> */} {/*! This line will be removed after we implement CSS overlay */}
+      <Route path="/volunteer" exact component={VolunteerFormComponent}/>
       <Route path="/cart" exact component={CartPageComponent}/>
       <Route path="/product-quick-view" exact component={ProductDetailsOverlayComponent} />
       <FooterComponent />

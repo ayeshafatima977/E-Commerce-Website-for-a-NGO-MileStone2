@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import GlobalStore from "./store";
 
-const ProductCard = (props) => {
+const ProductCardComponent = (props) => {
   const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
   const cartState = [...globalState.Cart];
@@ -21,7 +21,7 @@ const ProductCard = (props) => {
 
   const inCartCheck = () => {
     for (let item of cartState) {
-      if (title === item.title) {
+      if (id === item.id) {
         return true;
       }
     }
@@ -31,7 +31,7 @@ const ProductCard = (props) => {
     dispatch(AddToCart(props.obj));
   };
   const RemoveSingleProductToCart = () => {
-    dispatch(RemoveFromCart(props.obj));
+    dispatch(RemoveFromCart(props.obj.id));
   };
 
   return (
@@ -73,4 +73,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default ProductCardComponent;

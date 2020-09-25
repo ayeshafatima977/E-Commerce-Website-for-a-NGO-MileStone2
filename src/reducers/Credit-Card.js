@@ -3,13 +3,13 @@ const CreditCardReducer = (
     No: 0,
     ExpDate: "",
     CVC: 0,
-    SaveCCInfo: true
+    SaveCCInfo: true,
   },
-  action) => {
+  action
+) => {
   switch (action.type) {
-    case ("CHANGE_CREDIT_INFO"):
-    {
-      const CreditInfoCopy = {...state};
+    case "CHANGE_CREDIT_INFO": {
+      const CreditInfoCopy = { ...state };
       CreditInfoCopy.No = action.payload.No;
       CreditInfoCopy.ExpDate = action.payload.ExpDate;
       CreditInfoCopy.CVC = action.payload.CVC;
@@ -17,8 +17,8 @@ const CreditCardReducer = (
       return CreditInfoCopy;
     }
     default:
-       return state;
-  };
+      return state;
+  }
 };
 
 export default CreditCardReducer;
