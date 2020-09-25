@@ -1,0 +1,16 @@
+form {
+  width: 50%;
+  margin: 10px;
+  padding: 10px;
+}
+#volunteer-info {
+  padding: 10px;
+}
+#emergency-info {
+  border: solid 2px black;
+  padding: 10px;
+}
+input {
+  border: none;
+  border-bottom: solid 2px black;
+}
