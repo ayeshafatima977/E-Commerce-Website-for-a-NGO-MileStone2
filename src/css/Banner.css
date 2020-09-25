@@ -1,7 +1,7 @@
 /* Banner 1 */
 .banner {
   width: 100vw;
-  height: 230px;
+  height: 20vh;
   background: url("../img/Banner.jpg");
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }

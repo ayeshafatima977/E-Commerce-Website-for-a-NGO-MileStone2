@@ -6,8 +6,8 @@
 #search-icon {
   position: relative;
   display: inline;
-  right: 40px;
-  top: 5px;
+  left: 200px;
+  bottom: 35px;
   color: #fff;
 }
 #search-input {
@@ -22,4 +22,24 @@
   opacity: 0.5;
   font-style: italic;
   font-size: 25px;
+}
+.shopping-navigation-component h3 {
+  color: #1c3656;
+  margin: 10px 0;
+}
+.shopping-navigation-component label {
+  color: #4d626e;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  display: inline-block;
+  margin-left: 10px;
+  width: 90%;
+}
+.shopping-navigation-component > .shopping-nav-container {
+  border-top: 1px solid #000000;
+  width: 65%;
+  padding-bottom: 5px;
+  margin-left: 15%;
 }
