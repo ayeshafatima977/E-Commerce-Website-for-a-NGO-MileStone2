@@ -102,8 +102,6 @@ const ContactFormComponent = () => {
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
           </p>
-
-          
         </form>
       </div>
     </>

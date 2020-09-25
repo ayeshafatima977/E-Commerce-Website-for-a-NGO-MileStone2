@@ -28,40 +28,48 @@ const CreditCardComponent = forwardRef((props, ref) => {
     CVC: userCVC,
     SaveCCInfo: userInfoSave,
   };
+  useImperativeHandle(ref, () => 
+  (
+  {
+    runCreditCardDispatch() 
+    {
+      //Think of it as onsubmit function
+      //This fn will run onsubmit from parent-Shopping Cart or the Donation form
+      if (
+        FormValidation(
+          userCreditNumber,
+          "cc-number-input",
+          "userCreditNumber",
+          "userCreditNumber-error"
+        ) &&
+        FormValidation(
+          userExpiry,
+          "cc-number-input",
+          "userExpiry",
+          "userExpiry-error"
+        ) &&
+        FormValidation(userCVC, "cc-number-input", "userCVC", "userCVC-error")
+      ) 
+      
+        // {
+        //   document
+        //     .getElementsByClassName("credit-thanks-msg")[0]
+        //     .classList.add("msg-show");
+        // } else {
+        //   document
+        //     .getElementsByClassName("credit-thanks-msg")[0]
+        //     .classList.remove("msg-show");
+        // }
 
-  useImperativeHandle(ref, () => ({
-    runCreditCardDispatch() {
-      dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+        // After validation sucessfull it will perform dispatch
+
+        dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+        return true;
+      
     },
-  }));
-
-  const SubmitForm = (e) => {
-    e.preventDefault();
-    if (
-      FormValidation(
-        userCreditNumber,
-        "cc-number-input",
-        "userCreditNumber",
-        "userCreditNumber-error"
-      ) &&
-      FormValidation(
-        userExpiry,
-        "cc-number-input",
-        "userExpiry",
-        "userExpiry-error"
-      ) &&
-      FormValidation(userCVC, "cc-number-input", "userCVC", "userCVC-error")
-    ) {
-      document
-        .getElementsByClassName("credit-thanks-msg")[0]
-        .classList.add("msg-show");
-    } else {
-      document
-        .getElementsByClassName("credit-thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
-  };
-
+  }
+  ));
+// Note:Wrap the INPUTS IN FORM 
   return (
     <>
       <h2>Credit Card</h2>
@@ -96,45 +104,43 @@ const CreditCardComponent = forwardRef((props, ref) => {
       <p>
         <FaCreditCard />
       </p>
-      <form onSubmit={SubmitForm} id="creditForm">
-        <label htmlFor="Expiry Date">Expiry Date*</label>
-        <input
-          type="number"
-          placeholder="Enter your Expiry Date"
-          className="userExpiry"
-          onChange={(e) => {
-            setUserExpiry(e.target.value);
-          }}
-        />
-        <label htmlFor="Card Code(CVC)">Card Code (CVC) *</label>
-        <input
-          type="text"
-          placeholder="Enter your CVC"
-          className="userCVC"
-          maxLength="3"
-          onChange={(e) => {
-            setUserCVC(e.target.value);
-          }}
-        />
-        <input
-          type="checkbox"
-          id="checkboxes"
-          onChange={(e) => {
-            // If the checkbox is checked it returns true else returns false
-            setUserInfoSave(e.target.checked);
-          }}
-        />
-        <p className="userCreditNumber-error msg-hide">
-          Please enter correct Credit Card Number
-        </p>
-        <p className="userExpiry-error msg-hide">
-          Please enter correct expiry date
-        </p>
-        <p className="userCVC-error msg-hide">Please enter correct CVC</p>
-        <p className="credit-thanks-msg msg-hide">
-          Thankyou ,Your Payment has been received.
-        </p>
-      </form>
+      <label htmlFor="Expiry Date">Expiry Date*</label>
+      <input
+        type="number"
+        placeholder="Enter your Expiry Date"
+        className="userExpiry"
+        onChange={(e) => {
+          setUserExpiry(e.target.value);
+        }}
+      />
+      <label htmlFor="Card Code(CVC)">Card Code (CVC) *</label>
+      <input
+        type="text"
+        placeholder="Enter your CVC"
+        className="userCVC"
+        maxLength="3"
+        onChange={(e) => {
+          setUserCVC(e.target.value);
+        }}
+      />
+      <input
+        type="checkbox"
+        id="checkboxes"
+        onChange={(e) => {
+          // If the checkbox is checked it returns true else returns false
+          setUserInfoSave(e.target.checked);
+        }}
+      />
+      <p className="userCreditNumber-error msg-hide">
+        Please enter correct Credit Card Number
+      </p>
+      <p className="userExpiry-error msg-hide">
+        Please enter correct expiry date
+      </p>
+      <p className="userCVC-error msg-hide">Please enter correct CVC</p>
+      {/* <p className="credit-thanks-msg msg-hide">
+        Thankyou ,Your Payment has been received.
+      </p> */}
     </>
   );
 });

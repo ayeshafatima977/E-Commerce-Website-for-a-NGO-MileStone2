@@ -7,7 +7,15 @@ import BillingDetailsComponent from "./Billing-details";
 import { IncreaseCartQty, DecreaseCartQty, SetCartQty } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
+
 const ShoppingCartComponent = () => {
+  const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
+    false
+  );
+  const [
+    BillingDetailsValidationStatus,
+    SetBillingDetailsValidationStatus,
+  ] = useState(false);
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const inCartProducts = Array.from(
@@ -15,22 +23,19 @@ const ShoppingCartComponent = () => {
   ); /* array of in cart products */
   let subTotal = 0;
 
-  const ValidateYourOrderForm = () => {
-    console.log("Hello World!");
-    //Remove product from the subtotal and order altogether if 0 when user hit submit
-    //global validation function
+  const SubmitForm = (e) => {
+    e.preventDefault();
+    //Display the Message only when Credit Card and Billing Details are Validated
+    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
+      alert("Thanks for your order, it will be shipped to you soon");
+    }
   };
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
   return (
     <>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          ValidateYourOrderForm();
-        }}
-      >
+      <form onSubmit={{ SubmitForm }}>
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
           // if (inCartProduct.inCartQty > 0) {
@@ -82,8 +87,14 @@ const ShoppingCartComponent = () => {
         <BillingDetailsComponent ref={billingInfoRef} />
         <button
           onClick={() => {
-            creditCardRef.current.runCreditCardDispatch();
-            billingInfoRef.current.runBillingInfoDispatch();
+            SetCreditCardValidationStatus(
+              creditCardRef.current.runCreditCardDispatch()
+            );
+            SetBillingDetailsValidationStatus(
+              billingInfoRef.current.runBillingInfoDispatch()
+            );
+
+            console.log(creditCardRef.current.runCreditCardDispatch());
           }}
         >
           Click
