@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import ContactFormComponent from "./Contact-form";
 import LoginFormComponent from "./Login-form";
+import UpdateBrowsingHistory from "../actions/Browsing-history";
+import { useDispatch } from "react-redux";
+import "../css/Header.css";
 
 /*=============================================
 =            HeaderComponent            =
@@ -13,6 +16,8 @@ const HeaderComponent = () => {
   dispatch(UpdateBrowsingHistory("/"));
   return (
     <>
+      <ContactFormComponent />
+      <LoginFormComponent />
       <section className="common-header">
         <div>
           <logo>Logo</logo>

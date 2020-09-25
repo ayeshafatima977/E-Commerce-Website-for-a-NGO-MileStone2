@@ -66,7 +66,6 @@ const NewsEventsPageComponent = () => {
           alt="place holder image"
         ></img>
       </section>
-      <ContactFormComponent />
     </>
   );
 };
