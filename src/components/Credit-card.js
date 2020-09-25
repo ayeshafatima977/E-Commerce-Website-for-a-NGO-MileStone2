@@ -29,6 +29,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
       dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+      return true;
     },
   }));
 
@@ -55,7 +56,8 @@ const CreditCardComponent = forwardRef((props, ref) => {
       </p>
       <label htmlFor="Card Number">Card Number</label>
       <input
-        type="number"
+        type="text"
+        maxLength = "16"
         placeholder="Enter your Credit Card Number"
         onChange={(e) => {
           setUserCreditNumber(e.target.value);
@@ -88,6 +90,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
           setUserInfoSave(e.target.checked);
         }}
       />
+
     </>
   );
 });

@@ -2,7 +2,6 @@
 import React from "react";
 import BannerComponent from "./Banner";
 import DonationFormComponent from "./Donation-form";
-import ContactFormComponent from "./Contact-form";
 
 /*=============================================
 =        Donation page React Component        =
@@ -14,7 +13,6 @@ const DonationPageComponent = () => {
     <>
       <BannerComponent />
       <DonationFormComponent />
-      <ContactFormComponent />
     </>
   );
 };

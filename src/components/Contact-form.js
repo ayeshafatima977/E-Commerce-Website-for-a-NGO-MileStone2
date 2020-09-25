@@ -2,10 +2,9 @@ import React from "react";
 import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
 const ContactFormComponent = () => {
-  /*==================================================
+/*==================================================
             MAILTO VIA CONTACT FORM LOGIC
-*==================================================
-*/
+*==================================================*/
   const sendMail = (e) => {
     e.preventDefault();
     let link =
@@ -16,28 +15,26 @@ const ContactFormComponent = () => {
       encodeURIComponent(document.getElementById("message").value);
     window.location.href = link;
   };
+  /* Close contact form @ click outside the form container */
+  const closeEventHandle = () => {
+    const modal = document.getElementsByClassName("contactform-overlay")[0];
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("overlayShow");
+      }
+    });
+  };
   /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
-
   return (
     <>
-      {/* Here we wrap the Target element i.e form so as to dispaly in the Parent element which is our header to display the contact form when button is clicked */}
-      <div className="contactform-overlay">
-        <h2>CONTACT US</h2>
-
-        <div class="close">
-          {/* To deactivate or remove the class from Child component we use classList Remove here */}
-          <button
-            onClick={() => {
-              document
-                .getElementsByClassName("contactform-overlay")[0]
-                .classList.remove("overlayShow");
-            }}
-          >
-            <FaWindowClose />
-          </button>
-        </div>
-
+      <div
+        className="contactform-overlay"
+        onClick={() => {
+          closeEventHandle();
+        }}
+      >
         <form onSubmit={sendMail} id="contactForm">
+          <h2>CONTACT US</h2>
           <label htmlFor="Email">Email Address:</label>
           <input
             type="text"
@@ -47,8 +44,8 @@ const ContactFormComponent = () => {
           <label htmlFor="Subject">Subject:</label>
           <input type="text" placeholder="Enter the subject" id="subject" />
           <label htmlFor="Message">Message:</label>
-          <textarea placeholder="Enter your Message" id="message" />
-          <input type="submit" value="SEND" />
+          <textarea rows="6" placeholder="Enter your Message" id="message" />
+          <input type="submit" id="send" value="Send" />
         </form>
       </div>
     </>

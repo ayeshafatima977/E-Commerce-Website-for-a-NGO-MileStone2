@@ -1,4 +1,5 @@
 
+@import url("./normalize.css");
 .msg-hide {
     display: none;
 }

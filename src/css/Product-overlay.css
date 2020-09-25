@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 .product-details-overlay {
   position: fixed;
   display: none;
@@ -26,14 +27,14 @@
   display: block;
 }
 
-img{
-  width:200px;
-  height:200px;
+.product-details-overlay img {
+  width: 200px;
+  height: 200px;
 }
 
-.product-overlay-section{
+.product-overlay-section {
   background-color: gray;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: right;
   flex-direction: column;

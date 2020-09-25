@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LandingPage from "../img/LandingPage.jpg";
+import "../css/Hero-section.css"
 
 const HeroSectionComponent = () => {
   return (
     <>
-      <img src={LandingPage} alt="A Kid eating Mango" />
-      <p>
+    <div className="hero-section">
+{/*       <img src={LandingPage} alt="A Kid eating Mango" />
+ */}      <p>
         We Strive To Make A Difference for Those Kids In Need.Empowering people
         to rise out of poverty.
       </p>
@@ -19,6 +21,7 @@ const HeroSectionComponent = () => {
       <Link to="/shop">SHOP</Link>
       {/* <input type="submit" id="shop" value="SHOP"></input> */}
       <p>Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.</p>
+      </div>
     </>
   );
 };

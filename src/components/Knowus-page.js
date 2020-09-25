@@ -1,7 +1,6 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-import ContactFormComponent from "./Contact-form";
 
 /*=============================================
 =         Know us page React Component        =
@@ -55,7 +54,6 @@ const KnowUsPageComponent = () => {
           laborum accusamus dolorum odio fugiat vel.
         </li>
       </ul>
-      <ContactFormComponent />
     </>
   );
 };

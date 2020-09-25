@@ -21,7 +21,7 @@ const ProductCardComponent = (props) => {
 
   const inCartCheck = () => {
     for (let item of cartState) {
-      if (title === item.title) {
+      if (id === item.id) {
         return true;
       }
     }
@@ -31,7 +31,7 @@ const ProductCardComponent = (props) => {
     dispatch(AddToCart(props.obj));
   };
   const RemoveSingleProductToCart = () => {
-    dispatch(RemoveFromCart(props.obj));
+    dispatch(RemoveFromCart(props.obj.id));
   };
 
   return (

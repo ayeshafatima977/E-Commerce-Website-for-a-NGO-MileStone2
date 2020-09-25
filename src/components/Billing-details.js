@@ -33,6 +33,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     runBillingInfoDispatch() {
       dispatch(ChangeBillingInfo(BillingInfoCopy));
+      return true;
     },
   }));
 

@@ -20,7 +20,6 @@ import VolunteerFormComponent from "./components/Volunteer-form";
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
-      <h1>Hello Scriptorce</h1>
       <HeaderComponent />
       <StickyHeaderComponent />
       <Route path="/" exact component={LandingPageComponent} />
