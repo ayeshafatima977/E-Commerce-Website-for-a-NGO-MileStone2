@@ -69,7 +69,7 @@ const ContactFormComponent = () => {
           <label htmlFor="Message">Message:</label>
           <textarea placeholder="Enter your Message" id="message" />
           <input type="submit" value="SEND" />
-          <p className="fname-error msg-hide">
+          {/* <p className="fname-error msg-hide">
             Please enter correct First Name
           </p>
           <p className="lname-error msg-hide">Please enter correct Last Name</p>
@@ -78,7 +78,7 @@ const ContactFormComponent = () => {
             Please enter correct First Name
           </p>
           <p className="lname-error msg-hide">Please enter correct Last Name</p>
-          <p className="email-error msg-hide">Please enter valid email Id</p>
+          <p className="email-error msg-hide">Please enter valid email Id</p> */}
         </form>
       </div>
     </>

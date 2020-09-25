@@ -17,9 +17,9 @@ const FooterComponent = () => {
   const NewsLetterSubscribe = (e) => {
     e.preventDefault(); 
     if (
-        FormValidation(fname, "fname", "fname") &&
-        FormValidation(lname, "lname", "lname") &&
-        FormValidation(email, "email", "email")
+        FormValidation(fname, "fname", "fname","fname-error") &&
+        FormValidation(lname, "lname", "lname", "lname-error") &&
+        FormValidation(email, "email", "email", "email-error")
     ) {
       document
         .getElementsByClassName("thanks-msg")[0]

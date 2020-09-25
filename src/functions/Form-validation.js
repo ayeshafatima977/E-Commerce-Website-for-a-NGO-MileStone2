@@ -42,6 +42,7 @@ export default function FormValidation (
       
       
     case "lname":
+      
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
         document
           .getElementsByClassName(errorMsgClassName)[1]
@@ -67,13 +68,15 @@ export default function FormValidation (
       /* Email Start */     
 
     case "email":
+      console.log(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        inputFieldContent));
       if (
         !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
           inputFieldContent
         )
       ) {
         document
-          .getElementsByClassName(errorMsgClassName)[1]
+          .getElementsByClassName(errorMsgClassName)[0]
           .classList.add("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
@@ -81,7 +84,7 @@ export default function FormValidation (
         PassIndicator = false;
       } else {
         document
-          .getElementsByClassName(errorMsgClassName)[1]
+          .getElementsByClassName(errorMsgClassName)[0]
           .classList.remove("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
