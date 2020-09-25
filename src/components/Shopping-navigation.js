@@ -63,13 +63,14 @@ const ShoppingNavigationComponent = () => {
       <form id="search-form">
         <label className="screen-reader-text">Search</label>
         <input
+        id="search-input"
           type="text"
           placeholder="Search"
           onChange={(e) => {
             dispatch(Search(e.target.value));
           }}
         />
-        <span id="search-icon"><BiSearch /></span>
+        <span id="search-icon"><BiSearch size="25px"/></span>
       </form>
       <h3>Sort</h3>
       <input

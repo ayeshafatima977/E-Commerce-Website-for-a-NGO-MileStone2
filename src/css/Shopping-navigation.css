@@ -1,5 +1,25 @@
+#search-form {
+  margin-right: auto;
+  margin-left: auto;
+  width: 75vw;
+}
 #search-icon {
   position: relative;
-  right: 20px;
-  top: 2px;
+  display: inline;
+  right: 40px;
+  top: 5px;
+  color: #fff;
+}
+#search-input {
+  width: 246px;
+  height: 46px;
+  border-radius: 15px;
+  background-color: #4d626e;
+}
+::placeholder {
+  padding-left: 25px;
+  color: #fff;
+  opacity: 0.5;
+  font-style: italic;
+  font-size: 25px;
 }
