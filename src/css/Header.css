@@ -1,8 +1,8 @@
 @import "./normalize.css";
 
-* {
+/* * {
   outline: 1px solid black;
-}
+} */
 .common-header {
   display: flex;
   flex-direction: column;
