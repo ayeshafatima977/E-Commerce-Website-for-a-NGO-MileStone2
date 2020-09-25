@@ -2,14 +2,16 @@
 .hero-section {
   /* position: absolute; */
   background-image: url("../img/LandingPage.jpg");
-  width: 374px;
+  width: 100vw;
   height: 588px;
-  left: 374px;
-  top: 94px;
   transform: scaleX(-1);
+  background-position: right;
+  background-position-x: 75%;
+  background-size: cover;
 }
 .hero-section p {
   transform: scaleX(-1);
+  display: none;
 }
 
 @media screen and (min-width: 700px) {
@@ -25,5 +27,6 @@
 
   .hero-section p {
     transform: scaleX(-1);
+    display: block;
   }
 }
