@@ -1,8 +1,7 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
-
-
+import FormValidation from "../functions/Form-validation.js";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
@@ -36,14 +35,51 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
     },
   }));
 
+  const SubmitForm = (e) => {
+    e.preventDefault();
+    if (
+      FormValidation(
+        userFirstName,
+        "fname",
+        "userFirstName",
+        "userFirstName-error"
+      ) &&
+      FormValidation(
+        userLastName,
+        "lname",
+        "userLastName",
+        "userLastName-error"
+      ) &&
+      FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
+      FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
+      FormValidation(userStreetAddress, "address", "userStreetAddress") &&
+      FormValidation(userCity, "city", "userCity", "userCity-error") &&
+      FormValidation(
+        userPostalCode,
+        "postal",
+        "userPostalCode",
+        "userPostalCode-error"
+      )
+    ) {
+      document
+        .getElementsByClassName("billing-thanks-msg")[0]
+        .classList.add("msg-show");
+    } else {
+      document
+        .getElementsByClassName("billing-thanks-msg")[0]
+        .classList.remove("msg-show");
+    }
+  };
+
   return (
     <>
       <h2>Billing Details</h2>
-      <form>
+      <form onSubmit={SubmitForm} id="billingForm">
         <label htmlFor="First Name">First Name</label>
         <input
           type="text"
           placeholder="Enter your First Name"
+          className="userFirstName"
           onChange={(e) => {
             setUserFirstName(e.target.value);
           }}
@@ -52,6 +88,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="Enter your Last Name"
+          className="userLastName"
           onChange={(e) => {
             setUserLastName(e.target.value);
           }}
@@ -60,6 +97,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="Enter your Street Address"
+          className="userStreetAddress"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
           }}
@@ -68,6 +106,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="Enter your City"
+          className="userCity"
           onChange={(e) => {
             setUserCity(e.target.value);
           }}
@@ -93,6 +132,8 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="Enter your Postal Code"
+          className="userPostalCode"
+          maxLength="6"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
@@ -100,7 +141,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <label htmlFor="Phone">Phone</label>
         <input
           type="number"
+          maxLength="10"
           placeholder="Enter your Phone Number"
+          className="userPhone"
           onChange={(e) => {
             setUserPhone(e.target.value);
           }}
@@ -109,10 +152,29 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="Enter your Email Address"
+          className="userEmail"
           onChange={(e) => {
             setUserEmail(e.target.value);
           }}
         />
+        <p className="userFirstName-error msg-hide">
+          Please enter correct First Name
+        </p>
+        <p className="userLastName-error msg-hide">
+          Please enter correct Last Name
+        </p>
+        <p className="userPhone-error msg-hide">
+          Please enter a valid phone number
+        </p>
+        <p className="userEmail-error msg-hide">Please enter valid email Id</p>
+        <p className="userStreetAddress-error msg-hide">
+          Please enter a valid Street address
+        </p>
+        <p className="userCity-error msg-hide">Please enter a city</p>
+        <p className="userPostalCode-error msg-hide">
+          Please enter a PostalCode
+        </p>
+        <p className="billing-thanks-msg msg-hide">Thankyou.</p>
       </form>
     </>
   );
