@@ -22,4 +22,8 @@
     padding: 10px;
     border-radius: 10px;
   }
+  .sticky-header > a > #sticky-icon {
+    display: flex;
+    justify-content: center;
+  }
 }

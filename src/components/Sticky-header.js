@@ -10,7 +10,7 @@ const StickyHeaderComponent = () => {
   return (
     <div className="sticky-header">
       <span>LOGO</span>
-      <Link to="/cart" id="cart-button">Cart<FaShoppingCart /></Link>
+      <Link to="/cart" id="cart-button"><span id="sticky-icon"><FaShoppingCart />&nbsp;CART</span></Link>
       <span><HamburgerMenuComponent /></span>
       <ContactFormComponent />
       <LoginFormComponent />
