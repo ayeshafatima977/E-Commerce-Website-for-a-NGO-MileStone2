@@ -10,7 +10,7 @@ const VolunteerFormComponent = () => {
   return (
     <>
       <h2>Volunteer Application</h2>
-      <form onSubmit={SubmitVolunteerForm}>
+      <form id="volunteer-form" onSubmit={SubmitVolunteerForm}>
         <div id="volunteer-info">
           <label htmlFor="volunteer-name">Name:</label>
           <br />

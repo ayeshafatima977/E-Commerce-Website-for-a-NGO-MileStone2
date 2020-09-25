@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 .sticky-header {
   display: none;
 }

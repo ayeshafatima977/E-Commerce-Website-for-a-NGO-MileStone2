@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 @media screen and (max-width :600px) {
   .menu-wrap {
     position: fixed;

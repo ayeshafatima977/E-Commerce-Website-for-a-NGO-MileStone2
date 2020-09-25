@@ -1,3 +1,5 @@
+@import url("../css/normalize.css");
+
 .shopping-product-layout-container {
   width: 90%;
   margin-left: auto;
