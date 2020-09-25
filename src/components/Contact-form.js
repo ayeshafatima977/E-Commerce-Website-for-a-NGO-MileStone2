@@ -69,20 +69,26 @@ const ContactFormComponent = () => {
         </div>
 
         <form onSubmit={SubmitForm} id="contactForm">
-          <label htmlFor="Email">Email Address:</label>
+          <label htmlFor="Email">
+            Email Address<span className="required-field">*</span>
+          </label>
           <input
             type="text"
             placeholder="Enter your email address"
             className="contactEmail"
           />
-          <label htmlFor="Subject">Subject:</label>
+          <label htmlFor="Subject">
+            Subject<span className="required-field">*</span>
+          </label>
           <input
             type="text"
             placeholder="Enter the subject"
             className="contactSubject"
             maxLength="20"
           />
-          <label htmlFor="Message">Message:</label>
+          <label htmlFor="Message">
+            Message <span className="required-field">*</span>
+          </label>
           <textarea
             placeholder="Enter your Message"
             className="contactMessage"

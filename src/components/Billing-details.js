@@ -78,7 +78,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
     <>
       <h2>Billing Details</h2>
       <form id="billingForm">
-        <label htmlFor="First Name">First Name</label>
+        <label htmlFor="First Name">
+          First Name<span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your First Name"
@@ -87,7 +89,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserFirstName(e.target.value);
           }}
         />
-        <label htmlFor=" Last Name">Last Name</label>
+        <label htmlFor=" Last Name">
+          Last Name<span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your Last Name"
@@ -96,7 +100,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserLastName(e.target.value);
           }}
         />
-        <label htmlFor="StreetAddress">Street Address</label>
+        <label htmlFor="StreetAddress">
+          Street Address<span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your Street Address"
@@ -105,7 +111,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserStreetAddress(e.target.value);
           }}
         />
-        <label htmlFor="City">City</label>
+        <label htmlFor="City">
+          City<span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your City"
@@ -115,7 +123,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           }}
         />
 
-        <label htmlFor="Province">Province</label>
+        <label htmlFor="Province">
+          Province<span className="required-field">*</span>
+        </label>
         <select
           onChange={(e) => {
             setUserProvince(e.target.value);
@@ -131,7 +141,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           <option value="NB">NB</option>
           <option value="NS">NS</option>
         </select>
-        <label htmlFor="Postal Code">Postal Code</label>
+        <label htmlFor="Postal Code">
+          Postal Code<span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your Postal Code"
@@ -141,7 +153,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserPostalCode(e.target.value);
           }}
         />
-        <label htmlFor="Phone">Phone</label>
+        <label htmlFor="Phone">
+          Phone<span className="required-field">*</span>
+        </label>
         <input
           type="number"
           maxLength="10"
@@ -151,7 +165,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserPhone(e.target.value);
           }}
         />
-        <label htmlFor="Email Address">Email Address *</label>
+        <label htmlFor="Email Address">
+          Email Address <span className="required-field">*</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your Email Address"
