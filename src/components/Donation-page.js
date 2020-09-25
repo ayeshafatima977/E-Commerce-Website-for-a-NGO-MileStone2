@@ -2,7 +2,6 @@
 import React from "react";
 import BannerComponent from "./Banner";
 import DonationFormComponent from "./Donation-form";
-
 /*=============================================
 =        Donation page React Component        =
 =============================================*/

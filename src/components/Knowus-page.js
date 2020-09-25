@@ -1,7 +1,6 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-
 /*=============================================
 =         Know us page React Component        =
 =============================================*/

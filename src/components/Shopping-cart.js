@@ -29,9 +29,10 @@ const ShoppingCartComponent = () => {
     globalStateInfo.Cart
   ); /* array of in cart products */
   let subTotal = 0;
-console.log('products: ',globalStateInfo);
   const SubmitForm = (e) => {
     e.preventDefault();
+    //Display the Message only when Credit Card and Billing Details are Validated
+
     if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
       alert("Thanks for your order, it will be shipped to you soon");
     }
@@ -43,7 +44,8 @@ console.log('products: ',globalStateInfo);
 
   return (
     <>
-      <form id="shopping-cart" onSubmit={SubmitForm}>
+
+      <form id="shopping-cart" onSubmit={{ SubmitForm }}>
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
           return (
@@ -115,8 +117,11 @@ console.log('products: ',globalStateInfo);
             SetBillingDetailsValidationStatus(
               billingInfoRef.current.runBillingInfoDispatch()
             );
+
+            console.log(creditCardRef.current.runCreditCardDispatch()); /* !REMOVE */
           }}
         >
+           {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
       </form>

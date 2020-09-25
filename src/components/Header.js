@@ -23,7 +23,6 @@ const HeaderComponent = () => {
           <logo>Logo</logo>
           <h1>MAKE A DIFFERENCE</h1>
         </div>
-
         <nav>
           <ul>
             <li>

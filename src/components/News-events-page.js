@@ -1,7 +1,7 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-import ContactFormComponent from "./Contact-form";
+
 /*=============================================
 =      News and Events page React Component   =
 =============================================*/
