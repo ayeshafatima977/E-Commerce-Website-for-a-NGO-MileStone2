@@ -8,8 +8,42 @@ export default function FormValidation(
   inputFieldClassName,
   errorMessageClassName
 ) {
+  const canadianMobilePrefix = [
+    226,
+    249,
+    289,
+    343,
+    365,
+    416,
+    437,
+    519,
+    548,
+    613,
+    647,
+    705,
+    807,
+    905,
+    403,
+    587,
+    780,
+    825,
+    236,
+    250,
+    604,
+    672,
+    778,
+    506,
+    709,
+    782,
+    902,
+    204,
+    431,
+    306,
+    867,
+    639
+  ];
   let PassIndicator = true;
-  inputFieldContent=inputFieldContent.trim();
+  inputFieldContent = inputFieldContent.trim();
   switch (inputFieldType) {
     /* First Name Start */
     /* ! We should have just name */
@@ -63,7 +97,7 @@ export default function FormValidation(
     case "email":
       // @Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
 
-      if (!/\S+@\S+\.\S+/.test(inputFieldContent)) {
+      if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)) {
         // console.log(!/\S+@\S+\.\S+/.test(inputFieldContent));
         document
           .getElementsByClassName(errorMessageClassName)[0]
@@ -151,10 +185,10 @@ export default function FormValidation(
     case "postal":
       if (!/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(inputFieldContent)) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {
@@ -168,12 +202,12 @@ export default function FormValidation(
       return PassIndicator;
 
     case "city":
-      if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
+      if (!/^[A-Za-z\s]+$/.test(inputFieldContent)) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {
@@ -188,12 +222,15 @@ export default function FormValidation(
 
     // @Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
     case "address":
-      if (!/^[a-zA-Z0-9\s,'-]*$/.test(inputFieldContent)) {
+      if (
+        inputFieldContent === "" ||
+        !/^[a-zA-Z0-9\s,'-.]*$/.test(inputFieldContent)
+      ) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {
@@ -206,16 +243,28 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-      /* Mobile Number Start */
+    /* Mobile Number Start */
     // Citation :  Mobile Number RegExpression, Accept input in XXX-XXX-XXXX or XXX.XXX.XXXX or XXX XXX XXXX
     // Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
     case "phone":
-      if (!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(inputFieldContent)) {
+      const inputFieldContentPrefix = inputFieldContent.slice(0, 3);
+      console.log(inputFieldContentPrefix);
+     const aCanadianNbr = canadianMobilePrefix.includes(Number(inputFieldContentPrefix));
+     console.log(aCanadianNbr);
+     console.log(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
+      inputFieldContent) )
+
+
+     if (
+        !(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
+          inputFieldContent) &&
+        aCanadianNbr)
+      ) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {

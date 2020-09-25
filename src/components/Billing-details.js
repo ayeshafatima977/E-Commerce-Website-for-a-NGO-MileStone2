@@ -12,7 +12,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const [userLastName, setUserLastName] = useState("");
   const [userStreetAddress, setUserStreetAddress] = useState("");
   const [userCity, setUserCity] = useState("");
-  const [userProvince, setUserProvince] = useState("");
+  const [userProvince, setUserProvince] = useState("AB");
   const [userPostalCode, setUserPostalCode] = useState("");
   const [userPhone, setUserPhone] = useState("0");
   const [userEmail, setUserEmail] = useState("");
@@ -44,16 +44,20 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           "userLastName",
           "userLastName-error"
         ) &&
-        FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
-        FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
-        FormValidation(userStreetAddress, "address", "userStreetAddress") &&
+        FormValidation(userStreetAddress, "address", "userStreetAddress","userStreetAddress-error") &&
         FormValidation(userCity, "city", "userCity", "userCity-error") &&
         FormValidation(
           userPostalCode,
           "postal",
           "userPostalCode",
           "userPostalCode-error"
-        )
+        )&&
+        FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
+        FormValidation(userEmail, "email", "userEmail", "userEmail-error ") 
+      
+        
+        
+       
       ) {
         // {
         //   document
@@ -133,7 +137,6 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserProvince(e.target.value);
           }}
         >
-          <option value="">--Please Select Your Province--</option>
           <option value="AB">AB </option>
           <option value="BC">BC </option>
           <option value="MAN">MAN </option>
@@ -150,7 +153,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           type="text"
           placeholder="Enter your Postal Code"
           className="userPostalCode"
-          maxLength="6"
+          maxLength="7"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
@@ -159,7 +162,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Phone<span className="required-field">*</span>
         </label>
         <input
-          type="number"
+          type="text"
           maxLength="10"
           placeholder="Enter your Phone Number"
           className="userPhone"
