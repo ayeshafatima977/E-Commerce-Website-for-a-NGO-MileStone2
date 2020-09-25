@@ -60,11 +60,10 @@ export default function FormValidation(
     /* Email Start */
 
     case "email":
-      if (
-        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          inputFieldContent
-        )
-      ) {
+      // @Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+
+      if (!/\S+@\S+\.\S+/.test(inputFieldContent)) {
+        // console.log(!/\S+@\S+\.\S+/.test(inputFieldContent));
         document
           .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
@@ -147,9 +146,48 @@ export default function FormValidation(
           .classList.remove("input-error");
       }
       return PassIndicator;
+    // @Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
+    case "postal":
+      if (!/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(inputFieldContent)) {
+        document
+          .getElementsByClassName(errorMessageClassName)[1]
+          .classList.add("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[1]
+          .classList.add("input-error");
+        PassIndicator = false;
+      } else {
+        document
+          .getElementsByClassName(errorMessageClassName)[0]
+          .classList.remove("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[0]
+          .classList.remove("input-error");
+      }
+      return PassIndicator;
 
-      case "lname":
+    case "city":
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
+        document
+          .getElementsByClassName(errorMessageClassName)[1]
+          .classList.add("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[1]
+          .classList.add("input-error");
+        PassIndicator = false;
+      } else {
+        document
+          .getElementsByClassName(errorMessageClassName)[0]
+          .classList.remove("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[0]
+          .classList.remove("input-error");
+      }
+      return PassIndicator;
+
+    // @Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
+    case "address":
+      if (!/^[a-zA-Z0-9\s,'-]*$/.test(inputFieldContent)) {
         document
           .getElementsByClassName(errorMessageClassName)[1]
           .classList.add("msg-show");

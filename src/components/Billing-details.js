@@ -51,16 +51,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         "userLastName-error"
       ) &&
       FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
-      FormValidation(userPhone, "userPhone", "userPhone", "userPhone-error") &&
-      FormValidation(
-        userStreetAddress,
-        "userStreetAddress",
-        "userStreetAddress"
-      ) &&
-      FormValidation(userCity, "userCity", "userCity", "userCity-error") &&
+      FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
+      FormValidation(userStreetAddress, "address", "userStreetAddress") &&
+      FormValidation(userCity, "city", "userCity", "userCity-error") &&
       FormValidation(
         userPostalCode,
-        "userPostalCode",
+        "postal",
         "userPostalCode",
         "userPostalCode-error"
       )
