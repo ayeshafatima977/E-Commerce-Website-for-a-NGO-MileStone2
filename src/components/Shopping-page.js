@@ -15,8 +15,8 @@ const ShoppingPageComponent = () => {
   return (
     <>
       <BannerComponent />
-      <ShoppingLayoutComponent />
       <ShoppingNavigationComponent />
+      <ShoppingLayoutComponent />
       <div
         className="product-details-overlay"
         id="product-details-overlay-div"
