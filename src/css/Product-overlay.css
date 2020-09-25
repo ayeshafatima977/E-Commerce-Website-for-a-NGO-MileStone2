@@ -39,3 +39,7 @@
   justify-content: right;
   flex-direction: column;
 }
+.product-overlay-section .shopping-cart {
+  display: flex;
+  justify-content: center;  
+}
