@@ -16,9 +16,9 @@ const HeroSectionComponent = () => {
           We bring real and lasting change to the lives of the world’s most
           vulnerable children. For good.
         </p>
-        <Link to="/donation">DONATE</Link>
+        <Link to="/donation" id="hero-donate-link">DONATE</Link>
         {/* <input type="submit" id="donate" value="DONATE" ></input> */}
-        <Link to="/shop">SHOP</Link>
+        <Link to="/shop" id="hero-shop-link" >SHOP</Link>
         {/* <input type="submit" id="shop" value="SHOP"></input> */}
         <p>
           Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.
