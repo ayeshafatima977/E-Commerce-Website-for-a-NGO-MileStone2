@@ -1,16 +1,29 @@
 @import "./normalize.css";
-
-.hero-section{
-
-  opacity: 1;
-  width: 1280px;
-  height: 720px;
+.hero-section {
+  /* position: absolute; */
   background-image: url("../img/LandingPage.jpg");
-  background-size: contain;
-  background-repeat: round;
+  width: 374px;
+  height: 588px;
+  left: 374px;
+  top: 94px;
+  transform: scaleX(-1);
+}
+.hero-section p {
   transform: scaleX(-1);
 }
 
-.hero-section p{
+@media screen and (min-width: 700px) {
+  .hero-section {
+    opacity: 1;
+    width: 1280px;
+    height: 720px;
+    background-image: url("../img/LandingPage.jpg");
+    background-size: contain;
+    background-repeat: round;
     transform: scaleX(-1);
+  }
+
+  .hero-section p {
+    transform: scaleX(-1);
+  }
 }

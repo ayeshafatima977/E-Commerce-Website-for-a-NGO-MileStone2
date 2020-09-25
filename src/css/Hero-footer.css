@@ -1,0 +1,103 @@
+@import url("./normalize.css");
+footer {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Roboto;
+  text-align: center;
+}
+footer h2 {
+  padding: 15px 0;
+}
+.contact-us-info {
+  background-color: #c1862c;
+  padding-bottom: 20px;
+}
+.contact-us-info > h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+}
+.contact-us-info > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.social-info {
+  background-color: #ada29b;
+  padding-bottom: 20px;
+}
+
+.social-info > h2 {  
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.social-info > span {
+  margin: 0 25px;
+}
+
+.social-info > p {
+  padding-top: 15px;
+}
+
+.newsletter-info {
+  background-color: rgba(35, 61, 76, 0.8);
+  padding-bottom: 20px;
+}
+
+.newsletter-info > h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.newsletter-info > p {
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 23px;
+}
+.newsletter-info input {
+  background-color: rgba(35, 61, 76, 0.05);
+  font-size: 20px;
+}
+.newsletter-info > form {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+.newsletter-info > form > .fname,
+.newsletter-info > form > .lname {
+  display: inline;
+  margin-bottom: 20px;
+}
+.newsletter-info > form > .fname {
+  width: 40%;
+}
+
+.newsletter-info > form > .lname {
+  margin-left: 30px;
+  width: 40%;
+}
+
+.newsletter-info > form > input {
+  border-bottom: solid #FFF 1px;
+}
+.newsletter-info > form > .email {
+  display: inline;
+  width: 75%;
+  margin-bottom: 50px;
+  margin-right: 15px;
+}
+.newsletter-info > form > button {
+  display: inline;
+  background-color: rgba(35, 61, 76, 0.05);
+}
