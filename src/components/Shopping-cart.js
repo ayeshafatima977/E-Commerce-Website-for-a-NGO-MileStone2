@@ -32,7 +32,6 @@ const ShoppingCartComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
     //Display the Message only when Credit Card and Billing Details are Validated
-
     if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
       alert("Thanks for your order, it will be shipped to you soon");
     }
@@ -45,8 +44,8 @@ const ShoppingCartComponent = () => {
   return (
     <>
 
-      <form id="shopping-cart" onSubmit={{ SubmitForm }}>
-        {inCartProducts.map((inCartProduct) => {
+      <form id="shopping-cart" onSubmit={ SubmitForm }>
+       {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
           return (
             <div>
@@ -56,7 +55,8 @@ const ShoppingCartComponent = () => {
               <p>$ {inCartProduct.price}</p>
               <button
                 type="button"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   dispatch(DecreaseCartQty(inCartProduct.id));
                 }}
               >
@@ -117,8 +117,6 @@ const ShoppingCartComponent = () => {
             SetBillingDetailsValidationStatus(
               billingInfoRef.current.runBillingInfoDispatch()
             );
-
-            console.log(creditCardRef.current.runCreditCardDispatch()); /* !REMOVE */
           }}
         >
            {/* NOTE REPLACE BUTTON AS PER FIGMA */}

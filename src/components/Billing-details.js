@@ -65,6 +65,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         //     .classList.remove("msg-show");
         // }
         dispatch(ChangeBillingInfo(BillingInfoCopy));
+        console.log("Inside Billing Details Component:", BillingInfoCopy);
         return true;
       }
     },
@@ -87,6 +88,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           className="userFirstName"
           onChange={(e) => {
             setUserFirstName(e.target.value);
+            
           }}
         />
         <label htmlFor=" Last Name">

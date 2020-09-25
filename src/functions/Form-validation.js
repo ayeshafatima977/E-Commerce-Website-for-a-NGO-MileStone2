@@ -11,7 +11,7 @@ export default function FormValidation(
   let PassIndicator = true;
   switch (inputFieldType) {
     /* First Name Start */
-
+/* ! We should have just name */
     case "fname":
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
         document
@@ -39,10 +39,10 @@ export default function FormValidation(
     case "lname":
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {

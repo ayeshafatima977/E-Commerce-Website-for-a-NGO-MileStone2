@@ -66,8 +66,9 @@ const ContactFormComponent = () => {
           closeEventHandle();
         }}
       >
-        <h2>CONTACT US</h2>
+
         <form onSubmit={SubmitForm} id="contactForm">
+        <h2>CONTACT US</h2>
           <label htmlFor="Email">
             Email Address<span className="required-field">*</span>
           </label>
@@ -81,6 +82,7 @@ const ContactFormComponent = () => {
             Subject<span className="required-field">*</span>
           </label>
           <input
+            id="subject"
             type="text"
             placeholder="Enter the subject"
             className="contactSubject"
@@ -90,14 +92,12 @@ const ContactFormComponent = () => {
             Message <span className="required-field">*</span>
           </label>
           <textarea
+            id="message"
             placeholder="Enter your Message"
             className="contactMessage"
             maxlength="500"
           />
-          <label htmlFor="Subject">Subject:</label>
-          <input type="text" placeholder="Enter the subject" id="subject" />
-          <label htmlFor="Message">Message:</label>
-          <textarea rows="6" placeholder="Enter your Message" id="message" />
+
           <input type="submit" id="send" value="Send" />
           <p className="contactEmail-error msg-hide">
             Please enter valid email Id

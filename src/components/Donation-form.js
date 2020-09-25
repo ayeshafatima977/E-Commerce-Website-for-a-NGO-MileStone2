@@ -100,7 +100,6 @@ const DonationFormComponent = () => {
             SetBillingDetailsValidationStatus(
               billingInfoRef.current.runBillingInfoDispatch()
             );
-            console.log(creditCardRef.current.runCreditCardDispatch());
           }}
         >
           {/* NOTE REPLACE BUTTON AS PER FIGMA */}
