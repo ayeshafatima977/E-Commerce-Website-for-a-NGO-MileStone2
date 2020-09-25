@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import GlobalStore from "./store";
 
-const ProductCard = (props) => {
+const ProductCardComponent = (props) => {
   const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
   const cartState = [...globalState.Cart];
@@ -73,4 +73,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default ProductCardComponent;

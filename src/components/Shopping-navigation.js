@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { BiSearch } from 'react-icons/bi';
 import { Search, Sort, Browse, Filter } from "../actions/Shopping-navigation";
+import '../css/Shopping-navigation.css'
 
 const ShoppingNavigationComponent = () => {
   const dispatch = useDispatch();
@@ -58,7 +60,7 @@ const ShoppingNavigationComponent = () => {
 
   return (
     <>
-      <form>
+      <form id="search-form">
         <label className="screen-reader-text">Search</label>
         <input
           type="text"
@@ -67,6 +69,7 @@ const ShoppingNavigationComponent = () => {
             dispatch(Search(e.target.value));
           }}
         />
+        <span id="search-icon"><BiSearch /></span>
       </form>
       <h3>Sort</h3>
       <input
@@ -77,7 +80,8 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="PriceHL">Price high to low</label>
+      <label htmlFor="PRICE_H_L">Price high to low</label>
+
       <input
         type="checkbox"
         id="PRICE_L_H"
@@ -86,7 +90,8 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="PriceLH">Price low to high</label>
+      <label htmlFor="PRICE_L_H">Price low to high</label>
+
       <input
         type="checkbox"
         id="ALPHA_A_Z"
@@ -95,7 +100,8 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="AlphaA">Alphabetical A-Z</label>
+      <label htmlFor="ALPHA_A_Z">Alphabetical A-Z</label>
+
       <input
         type="checkbox"
         id="ALPHA_Z_A"
@@ -104,7 +110,7 @@ const ShoppingNavigationComponent = () => {
           SortOption(e.target);
         }}
       />
-      <label htmlFor="AlphaZ">Alphabetical Z-A</label>
+      <label htmlFor="ALPHA_Z_A">Alphabetical Z-A</label>
 
       <h3>Browse Categories</h3>
       <input

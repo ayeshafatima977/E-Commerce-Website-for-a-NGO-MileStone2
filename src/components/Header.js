@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import UpdateBrowsingHistory from "../actions/Browsing-history";
-import { useDispatch } from "react-redux";
-import "../css/Header.css";
+import ContactFormComponent from "./Contact-form";
+import LoginFormComponent from "./Login-form";
+
 /*=============================================
 =            HeaderComponent            =
 =============================================*/

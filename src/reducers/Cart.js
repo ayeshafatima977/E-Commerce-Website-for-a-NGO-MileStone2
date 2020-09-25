@@ -69,9 +69,11 @@ const CartReducer = (state = [
       // Do not let user drop the qty below 0 in the cart
       for (let item of cartCopy) {
         if (item.id === action.payload) {
-          item.inCartQty--;
+          if (item.inCartQty > 0) {
+            item.inCartQty--;
           }
         }
+      }
       return cartCopy;
     }
     case "SET_CART_QTY": {

@@ -63,12 +63,14 @@ console.log('products: ',globalStateInfo);
 
               <input
                 type="number"
-                min = "0"
-                onChange={(e) => {
-                  dispatch(SetCartQty(inCartProduct.id, e.target.value));
-                  (e.target.value > -1||(e.target.value="0"));
-                }}
                 value={inCartProduct.inCartQty}
+                min="0"
+                onChange={(e) => {
+                  (e.target.value > -1 || (e.target.value = "0"));
+                  if (e.target.value > -1) {
+                    dispatch(SetCartQty(inCartProduct.id, e.target.value));
+                  }
+                }}
               ></input>
               <button
                 type="button"
