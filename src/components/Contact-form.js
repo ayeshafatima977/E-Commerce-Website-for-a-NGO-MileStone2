@@ -12,41 +12,41 @@ const ContactFormComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
 
-    // if (
-    //   FormValidation(
-    //     contactEmail,
-    //     "email",
-    //     "contactEmail",
-    //     "contactEmail-error"
-    //   ) &&
-    //   FormValidation(
-    //     contactSubject,
-    //     "subject",
-    //     "contactSubject",
-    //     "contactSubject-error"
-    //   ) &&
-    //   FormValidation(
-    //     contactMessage,
-    //     "message",
-    //     "contactMessage",
-    //     "contactMessage-error"
-    //   )
-    // ) {
-    //   document
-    //     .getElementsByClassName("contact-thanks-msg")[0]
-    //     .classList.add("msg-show");
-    //   let link =
-    //     "mailto:testemail@gmail.com" +
-    //     "?subject=" +
-    //     encodeURIComponent(contactSubject) +
-    //     "&body=" +
-    //     encodeURIComponent(contactMessage);
-    //   window.location.href = link;
-    // } else {
-    //   document
-    //     .getElementsByClassName("contact-thanks-msg")[0]
-    //     .classList.remove("msg-show");
-    // }
+    if (
+      FormValidation(
+        contactEmail,
+        "email",
+        "contactEmail",
+        "contactEmail-error"
+      ) &&
+      FormValidation(
+        contactSubject,
+        "subject",
+        "contactSubject",
+        "contactSubject-error"
+      ) &&
+      FormValidation(
+        contactMessage,
+        "message",
+        "contactMessage",
+        "contactMessage-error"
+      )
+    ) {
+      document
+        .getElementsByClassName("contact-thanks-msg")[0]
+        .classList.add("msg-show");
+      let link =
+        "mailto:testemail@gmail.com" +
+        "?subject=" +
+        encodeURIComponent(contactSubject) +
+        "&body=" +
+        encodeURIComponent(contactMessage);
+      window.location.href = link;
+    } else {
+      document
+        .getElementsByClassName("contact-thanks-msg")[0]
+        .classList.remove("msg-show");
+    }
   };
   /* Close contact form @ click outside the form container */
   const closeEventHandle = () => {
