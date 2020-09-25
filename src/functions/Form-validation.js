@@ -164,7 +164,7 @@ export default function FormValidation(
 
     /* Message End */
     case "cc-number-input":
-      if (inputFieldContent === "" || !/^\d+$/.test(inputFieldContent)) {
+      if (!/^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$/.test(inputFieldContent)) {
         document
           .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
@@ -224,7 +224,7 @@ export default function FormValidation(
     case "address":
       if (
         inputFieldContent === "" ||
-        !/^[a-zA-Z0-9\s,'-.]*$/.test(inputFieldContent)
+      !/^[a-zA-Z0-9\s,'-.]*$/.test(inputFieldContent)
       ) {
         document
           .getElementsByClassName(errorMessageClassName)[0]
@@ -278,6 +278,42 @@ export default function FormValidation(
       return PassIndicator;
     /* Mobile Number end */
 
+    case "cc-exp":
+      if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(inputFieldContent)) {
+        document
+          .getElementsByClassName(errorMessageClassName)[0]
+          .classList.add("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[0]
+          .classList.add("input-error");
+        PassIndicator = false;
+      } else {
+        document
+          .getElementsByClassName(errorMessageClassName)[0]
+          .classList.remove("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[0]
+          .classList.remove("input-error");
+      }
+      return PassIndicator;
+      case "cc-cvc":
+        if (!/^[0-9]{3,4}$/.test(inputFieldContent)) {
+          document
+            .getElementsByClassName(errorMessageClassName)[0]
+            .classList.add("msg-show");
+          document
+            .getElementsByClassName(inputFieldClassName)[0]
+            .classList.add("input-error");
+          PassIndicator = false;
+        } else {
+          document
+            .getElementsByClassName(errorMessageClassName)[0]
+            .classList.remove("msg-show");
+          document
+            .getElementsByClassName(inputFieldClassName)[0]
+            .classList.remove("input-error");
+        }
+        return PassIndicator;
     default:
       return;
   }

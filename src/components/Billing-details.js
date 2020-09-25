@@ -14,7 +14,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const [userCity, setUserCity] = useState("");
   const [userProvince, setUserProvince] = useState("AB");
   const [userPostalCode, setUserPostalCode] = useState("");
-  const [userPhone, setUserPhone] = useState("0");
+  const [userPhone, setUserPhone] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
   // Creating a Copy with parameters assigned in the Billing Information reducer
@@ -69,7 +69,6 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         //     .classList.remove("msg-show");
         // }
         dispatch(ChangeBillingInfo(BillingInfoCopy));
-        console.log("Inside Billing Details Component:", BillingInfoCopy);
         return true;
       }
     },

@@ -15,9 +15,9 @@ import FormValidation from "../functions/Form-validation.js";
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
-  const [userCreditNumber, setUserCreditNumber] = useState("0");
-  const [userExpiry, setUserExpiry] = useState("0");
-  const [userCVC, setUserCVC] = useState("0");
+  const [userCreditNumber, setUserCreditNumber] = useState("");
+  const [userExpiry, setUserExpiry] = useState("");
+  const [userCVC, setUserCVC] = useState("");
   const [userInfoSave, setUserInfoSave] = useState("");
 
   // Creating a Copy with parameters assigned in the Creditcard reducer
@@ -41,11 +41,11 @@ const CreditCardComponent = forwardRef((props, ref) => {
         ) &&
         FormValidation(
           userExpiry,
-          "cc-number-input",
+          "cc-exp",
           "userExpiry",
           "userExpiry-error"
         ) &&
-        FormValidation(userCVC, "cc-number-input", "userCVC", "userCVC-error")
+        FormValidation(userCVC, "cc-cvc", "userCVC", "userCVC-error")
       )
         // {
         //   document
@@ -58,8 +58,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
         // }
 
         // After validation sucessfull it will perform dispatch
+        console.log("Inside Credit Card Component:", CreditCardStateInfoCopy);
 
-        dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+      dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;
     },
   }));
@@ -85,40 +86,42 @@ const CreditCardComponent = forwardRef((props, ref) => {
       <p>
         <SiGooglepay />
       </p>
-      <label htmlFor="Card Number">
-        Card Number<span className="required-field">*</span>
+      <div>
+        <label htmlFor="Card Number">
+        Number on Card<span className="required-field">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="xxxx xxxx xxxx xxxx"
+          className="userCreditNumber"
+          maxLength="16"
+          onChange={(e) => {
+            setUserCreditNumber(e.target.value);
+          }}
+        />
+        <FaCreditCard />
+      </div>
+
+      <label htmlFor="Expiry Date">
+        Expires<span className="required-field">*</span>
       </label>
       <input
         type="text"
-        placeholder="Enter your Credit Card Number"
-        className="userCreditNumber"
-        maxLength="16"
-        onChange={(e) => {
-          setUserCreditNumber(e.target.value);
-        }}
-      />
-      <p>
-        <FaCreditCard />
-      </p>
-      <label htmlFor="Expiry Date">
-        Expiry Date<span className="required-field">*</span>
-      </label>
-      <input
-        type="number"
-        placeholder="Enter your Expiry Date"
+        maxlength="5"
+        placeholder="YY MM"
         className="userExpiry"
         onChange={(e) => {
           setUserExpiry(e.target.value);
         }}
       />
       <label htmlFor="Card Code(CVC)">
-        Card Code (CVC) <span className="required-field">*</span>
+        Security Code <span className="required-field">*</span>
       </label>
       <input
         type="text"
-        placeholder="Enter your CVC"
+        placeholder="xxx"
         className="userCVC"
-        maxLength="3"
+        maxLength="4"
         onChange={(e) => {
           setUserCVC(e.target.value);
         }}
