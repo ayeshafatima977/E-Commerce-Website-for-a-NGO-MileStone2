@@ -6,6 +6,7 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
+import FormValidation from '../functions/Form-validation.js';
 // import '../css/Hero-footer.css';
 
 /*=============================================
@@ -13,73 +14,31 @@ import {
 =============================================*/
 
 const FooterComponent = () => {
-  const [firstName, SetFirstName] = useState("");
-  const [lastName, SetLastName] = useState("");
-  const [email, SetEmail] = useState("");
+  const [fname, setFName] = useState("");
+  const [lname, setLName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const NewsLetterSubscribe = (e) => {
+  const SubmitForm = (e) => {
     e.preventDefault();
-    NewsLetterFormValidation();
-  };
 
-  const NewsLetterFormValidation = () => {
-    let errorCntr = 0;
-    if (!/^[A-Za-z]+$/.test(firstName)) {
-      document
-        .getElementsByClassName("fname-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("fname")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("fname-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("fname")[0]
-        .classList.remove("input-error");
-    }
-    if (!/^[A-Za-z]+$/.test(lastName)) {
-      document
-        .getElementsByClassName("lname-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("lname")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("lname-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("lname")[0]
-        .classList.remove("input-error");
-    }
     if (
-        FormValidation(fname, "fname", "fname","fname-error") &&
-        FormValidation(lname, "lname", "lname", "lname-error") &&
-        FormValidation(email, "email", "email", "email-error")
-    ) {
-      document
-        .getElementsByClassName("email-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("email")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("email-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("email")[0]
-        .classList.remove("input-error");
+      FormValidation( fname,"fname", "fname", "fname-error" ) &&
+      FormValidation(lname,"lname","lname","lname-error"    ) &&
+      FormValidation( email,"email", "email", "email-error" )
+    ) {      
+        document
+          .getElementsByClassName("thanks-msg")[0]
+          .classList.add("msg-show");
+      } else {
+        document
+          .getElementsByClassName("thanks-msg")[0]
+          .classList.remove("msg-show");
+      }
     }
-    if (errorCntr === 0) {
-      document
-        .getElementsByClassName("thanks-msg")[0]
-        .classList.add("msg-show");
-    } else {
-      document
-        .getElementsByClassName("thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
-  };
+    
+  
+
+  
 
   return (
     <footer>
@@ -122,7 +81,7 @@ const FooterComponent = () => {
           <p>
             Stay up to date with our work and how you can help - learn more.
           </p>
-          <form onSubmit={NewsLetterSubscribe}>
+          <form onSubmit={SubmitForm}>
             <label htmlFor="fname" className="screen-reader-text">
               First Name
             </label>
@@ -130,9 +89,9 @@ const FooterComponent = () => {
               type="text"
               className="fname"
               placeholder="First name"
-              value={firstName}
+              value={fname}
               onChange={(event) => {
-                SetFirstName(event.target.value);
+                setFName(event.target.value);
               }}
             />
             <label htmlFor="lname" className="screen-reader-text">
@@ -142,9 +101,9 @@ const FooterComponent = () => {
               type="text"
               className="lname"
               placeholder="Last name"
-              value={lastName}
+              value={lname}
               onChange={(event) => {
-                SetLastName(event.target.value);
+                setLName(event.target.value);
               }}
             />
             <label htmlFor="email" className="screen-reader-text">
@@ -156,7 +115,7 @@ const FooterComponent = () => {
               placeholder="Email Address"
               value={email}
               onChange={(event) => {
-                SetEmail(event.target.value);
+                setEmail(event.target.value);
               }}
             />
             <button type="submit">

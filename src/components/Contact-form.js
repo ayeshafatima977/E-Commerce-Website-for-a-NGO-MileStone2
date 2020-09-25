@@ -12,41 +12,41 @@ const ContactFormComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
 
-    if (
-      FormValidation(
-        contactEmail,
-        "email",
-        "contactEmail",
-        "contactEmail-error"
-      ) &&
-      FormValidation(
-        contactSubject,
-        "subject",
-        "contactSubject",
-        "contactSubject-error"
-      ) &&
-      FormValidation(
-        contactMessage,
-        "message",
-        "contactMessage",
-        "contactMessage-error"
-      )
-    ) {
-      document
-        .getElementsByClassName("contact-thanks-msg")[0]
-        .classList.add("msg-show");
-      let link =
-        "mailto:testemail@gmail.com" +
-        "?subject=" +
-        encodeURIComponent(contactSubject) +
-        "&body=" +
-        encodeURIComponent(contactMessage);
-      window.location.href = link;
-    } else {
-      document
-        .getElementsByClassName("contact-thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
+    // if (
+    //   FormValidation(
+    //     contactEmail,
+    //     "email",
+    //     "contactEmail",
+    //     "contactEmail-error"
+    //   ) &&
+    //   FormValidation(
+    //     contactSubject,
+    //     "subject",
+    //     "contactSubject",
+    //     "contactSubject-error"
+    //   ) &&
+    //   FormValidation(
+    //     contactMessage,
+    //     "message",
+    //     "contactMessage",
+    //     "contactMessage-error"
+    //   )
+    // ) {
+    //   document
+    //     .getElementsByClassName("contact-thanks-msg")[0]
+    //     .classList.add("msg-show");
+    //   let link =
+    //     "mailto:testemail@gmail.com" +
+    //     "?subject=" +
+    //     encodeURIComponent(contactSubject) +
+    //     "&body=" +
+    //     encodeURIComponent(contactMessage);
+    //   window.location.href = link;
+    // } else {
+    //   document
+    //     .getElementsByClassName("contact-thanks-msg")[0]
+    //     .classList.remove("msg-show");
+    // }
   };
 
   return (
@@ -89,7 +89,7 @@ const ContactFormComponent = () => {
             maxlength="500"
           />
           <input type="submit" value="SEND" />
-          <p className="contactEmail-error msg-hide">
+          {/* <p className="contactEmail-error msg-hide">
             Please enter valid email Id
           </p>
           <p className="contactSubject-error msg-hide">
@@ -99,11 +99,11 @@ const ContactFormComponent = () => {
             Please enter a message
           </p>
           <p className="lname-error msg-hide">Please enter correct Last Name</p>
-          <p className="email-error msg-hide">Please enter valid email Id</p> */}
+          <p className="email-error msg-hide">Please enter valid email Id</p> 
           <p className="contact-thanks-msg msg-hide">
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
-          </p>
+          </p> */}
 
           
         </form>

@@ -13,6 +13,8 @@ export default function FormValidation(
     /* First Name Start */
 
     case "fname":
+      console.log(document
+        .getElementsByClassName('fname-error'));
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
         document
           .getElementsByClassName(errorMessageClassName)[0]
@@ -40,10 +42,10 @@ export default function FormValidation(
       
       if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
         document
-          .getElementsByClassName(errorMessageClassName)[1]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
-          .getElementsByClassName(inputFieldClassName)[1]
+          .getElementsByClassName(inputFieldClassName)[0]
           .classList.add("input-error");
         PassIndicator = false;
       } else {
@@ -69,7 +71,7 @@ export default function FormValidation(
         )
       ) {
         document
-          .getElementsByClassName(errorMsgClassName)[0]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.add("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
@@ -77,7 +79,7 @@ export default function FormValidation(
         PassIndicator = false;
       } else {
         document
-          .getElementsByClassName(errorMsgClassName)[0]
+          .getElementsByClassName(errorMessageClassName)[0]
           .classList.remove("msg-show");
         document
           .getElementsByClassName(inputFieldClassName)[0]
