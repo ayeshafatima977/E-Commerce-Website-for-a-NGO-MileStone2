@@ -83,7 +83,7 @@ const FooterComponent = () => {
           </p>
           <form onSubmit={SubmitForm}>
             <label htmlFor="fname" className="screen-reader-text">
-              First Name
+              First Name <span className= "required-field">*</span>
             </label>
             <input
               type="text"
