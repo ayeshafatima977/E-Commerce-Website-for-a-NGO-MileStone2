@@ -28,11 +28,8 @@ const CreditCardComponent = forwardRef((props, ref) => {
     CVC: userCVC,
     SaveCCInfo: userInfoSave,
   };
-  useImperativeHandle(ref, () => 
-  (
-  {
-    runCreditCardDispatch() 
-    {
+  useImperativeHandle(ref, () => ({
+    runCreditCardDispatch() {
       //Think of it as onsubmit function
       //This fn will run onsubmit from parent-Shopping Cart or the Donation form
       if (
@@ -49,8 +46,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
           "userExpiry-error"
         ) &&
         FormValidation(userCVC, "cc-number-input", "userCVC", "userCVC-error")
-      ) 
-      
+      )
         // {
         //   document
         //     .getElementsByClassName("credit-thanks-msg")[0]
@@ -64,12 +60,10 @@ const CreditCardComponent = forwardRef((props, ref) => {
         // After validation sucessfull it will perform dispatch
 
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
-        return true;
-      
+      return true;
     },
-  }
-  ));
-// Note:Wrap the INPUTS IN FORM 
+  }));
+  // Note:Wrap the INPUTS IN FORM
   return (
     <>
       <h2>Credit Card</h2>
@@ -91,7 +85,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
       <p>
         <SiGooglepay />
       </p>
-      <label htmlFor="Card Number">Card Number</label>
+      <label htmlFor="Card Number">
+        Card Number<span className="required-field">*</span>
+      </label>
       <input
         type="text"
         placeholder="Enter your Credit Card Number"
@@ -104,7 +100,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
       <p>
         <FaCreditCard />
       </p>
-      <label htmlFor="Expiry Date">Expiry Date*</label>
+      <label htmlFor="Expiry Date">
+        Expiry Date<span className="required-field">*</span>
+      </label>
       <input
         type="number"
         placeholder="Enter your Expiry Date"
@@ -113,7 +111,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
           setUserExpiry(e.target.value);
         }}
       />
-      <label htmlFor="Card Code(CVC)">Card Code (CVC) *</label>
+      <label htmlFor="Card Code(CVC)">
+        Card Code (CVC) <span className="required-field">*</span>
+      </label>
       <input
         type="text"
         placeholder="Enter your CVC"

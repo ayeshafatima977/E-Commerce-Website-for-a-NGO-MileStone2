@@ -65,7 +65,7 @@ const NewsEventsPageComponent = () => {
           src="https://via.placeholder.com/350x200"
           alt="place holder image"
         ></img>
-      </section>      
+      </section>
     </>
   );
 };

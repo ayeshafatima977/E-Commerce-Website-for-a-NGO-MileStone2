@@ -2,7 +2,6 @@
 import React from "react";
 import HeroSectionComponent from "./Hero-section";
 
-
 /*=============================================
 =         Landing page React Component        =
 =============================================*/
@@ -10,7 +9,7 @@ import HeroSectionComponent from "./Hero-section";
 const LandingPageComponent = () => {
   return (
     <>
-      <HeroSectionComponent />      
+      <HeroSectionComponent />
     </>
   );
 };

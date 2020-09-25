@@ -48,41 +48,47 @@ const ContactFormComponent = () => {
     //     .classList.remove("msg-show");
     // }
   };
-
+  /* Close contact form @ click outside the form container */
+  const closeEventHandle = () => {
+    const modal = document.getElementsByClassName("contactform-overlay")[0];
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("overlayShow");
+      }
+    });
+  };
+  /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
   return (
     <>
-      {/* Here we wrap the Target element i.e form so as to dispaly in the Parent element which is our header to display the contact form when button is clicked */}
-      <div className="contactform-overlay">
+      <div
+        className="contactform-overlay"
+        onClick={() => {
+          closeEventHandle();
+        }}
+      >
         <h2>CONTACT US</h2>
-
-        <div class="close">
-          {/* To deactivate or remove the class from Child component we use classList Remove here */}
-          <button
-            onClick={() => {
-              document
-                .getElementsByClassName("contactform-overlay")[0]
-                .classList.remove("overlayShow");
-            }}
-          >
-            <FaWindowClose />
-          </button>
-        </div>
-
         <form onSubmit={SubmitForm} id="contactForm">
-          <label htmlFor="Email">Email Address:</label>
+          <label htmlFor="Email">
+            Email Address<span className="required-field">*</span>
+          </label>
+
           <input
             type="text"
             placeholder="Enter your email address"
             className="contactEmail"
           />
-          <label htmlFor="Subject">Subject:</label>
+          <label htmlFor="Subject">
+            Subject<span className="required-field">*</span>
+          </label>
           <input
             type="text"
             placeholder="Enter the subject"
             className="contactSubject"
             maxLength="20"
           />
-          <label htmlFor="Message">Message:</label>
+          <label htmlFor="Message">
+            Message <span className="required-field">*</span>
+          </label>
           <textarea
             placeholder="Enter your Message"
             className="contactMessage"
@@ -90,6 +96,12 @@ const ContactFormComponent = () => {
           />
           <input type="submit" value="SEND" />
           {/* <p className="contactEmail-error msg-hide">
+          <label htmlFor="Subject">Subject:</label>
+          <input type="text" placeholder="Enter the subject" id="subject" />
+          <label htmlFor="Message">Message:</label>
+          <textarea rows="6" placeholder="Enter your Message" id="message" />
+          <input type="submit" id="send" value="Send" />
+          <p className="contactEmail-error msg-hide">
             Please enter valid email Id
           </p>
           <p className="contactSubject-error msg-hide">
@@ -103,10 +115,7 @@ const ContactFormComponent = () => {
           <p className="contact-thanks-msg msg-hide">
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
-          </p> */}
-
-          
-         
+          </p> */}        
 
         </form>
       </div>

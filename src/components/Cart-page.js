@@ -3,7 +3,6 @@ import React from "react";
 import BannerComponent from "./Banner";
 import ShoppingCartComponent from "./Shopping-cart";
 
-
 /*=============================================
 =            Cart page React Component        =
 =============================================*/
@@ -13,7 +12,7 @@ const CartPageComponent = () => {
   return (
     <>
       <BannerComponent />
-      <ShoppingCartComponent />      
+      <ShoppingCartComponent />
     </>
   );
 };

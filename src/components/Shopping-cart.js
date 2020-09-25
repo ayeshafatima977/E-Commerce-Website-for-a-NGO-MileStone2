@@ -1,12 +1,19 @@
 /*cspell:disable*/
+/* Import dependencies for the shopping cart component */
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaCalendarAlt } from "react-icons/fa";
 import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
-import { IncreaseCartQty, DecreaseCartQty, SetCartQty } from "../actions/Cart";
+import {
+  IncreaseCartQty,
+  DecreaseCartQty,
+  SetCartQty,
+  RemoveFromCart,
+} from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
+import "../css/Shopping-cart.css";
 
 const ShoppingCartComponent = () => {
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
@@ -22,23 +29,25 @@ const ShoppingCartComponent = () => {
     globalStateInfo.Cart
   ); /* array of in cart products */
   let subTotal = 0;
-
   const SubmitForm = (e) => {
     e.preventDefault();
     //Display the Message only when Credit Card and Billing Details are Validated
+
     if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
       alert("Thanks for your order, it will be shipped to you soon");
     }
   };
+
+  /* Using useRef hook to access the creditcard and billing info components */
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
   return (
     <>
-      <form onSubmit={{ SubmitForm }}>
+
+      <form id="shopping-cart" onSubmit={{ SubmitForm }}>
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
-          // if (inCartProduct.inCartQty > 0) {
           return (
             <div>
               <h2>{inCartProduct.title}</h2>
@@ -46,6 +55,7 @@ const ShoppingCartComponent = () => {
               <p>{inCartProduct.description}</p>
               <p>$ {inCartProduct.price}</p>
               <button
+                type="button"
                 onClick={() => {
                   dispatch(DecreaseCartQty(inCartProduct.id));
                 }}
@@ -55,21 +65,33 @@ const ShoppingCartComponent = () => {
 
               <input
                 type="number"
-                onChange={(e) => {
-                  dispatch(SetCartQty(inCartProduct.id, e.target.value));
-                }}
                 value={inCartProduct.inCartQty}
+                min="0"
+                onChange={(e) => {
+                  (e.target.value > -1 || (e.target.value = "0"));
+                  if (e.target.value > -1) {
+                    dispatch(SetCartQty(inCartProduct.id, e.target.value));
+                  }
+                }}
               ></input>
               <button
-                onClick={() => {
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
                   dispatch(IncreaseCartQty(inCartProduct.id));
                 }}
               >
                 &#43; {/* Plus sign */}
               </button>
+              <button 
+              type= 'button'
+              onClick={()=>{dispatch(RemoveFromCart(inCartProduct.id))}}>
+                Remove From Cart
+              </button>
             </div>
           );
         })}
+
         <Link to="/shop">Back To Shopping</Link>
         <p> Subtotal</p>
         <p> $ {subTotal.toFixed(2)} </p>
@@ -86,6 +108,8 @@ const ShoppingCartComponent = () => {
         <CreditCardComponent ref={creditCardRef} />
         <BillingDetailsComponent ref={billingInfoRef} />
         <button
+          form="shopping-cart"
+          type="submit"
           onClick={() => {
             SetCreditCardValidationStatus(
               creditCardRef.current.runCreditCardDispatch()
@@ -94,7 +118,7 @@ const ShoppingCartComponent = () => {
               billingInfoRef.current.runBillingInfoDispatch()
             );
 
-            console.log(creditCardRef.current.runCreditCardDispatch());
+            console.log(creditCardRef.current.runCreditCardDispatch()); /* !REMOVE */
           }}
         >
            {/* NOTE REPLACE BUTTON AS PER FIGMA */}

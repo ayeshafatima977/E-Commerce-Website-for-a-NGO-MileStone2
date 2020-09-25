@@ -50,7 +50,9 @@ const DonationFormComponent = () => {
           <option value="Donate Now">Donate Now </option>
           <option value="Donate Monthly">Donate Monthly </option>
         </select>
-        <label htmlFor="donation-amount">Donation Amount</label>
+        <label htmlFor="donation-amount">
+          Donation Amount<span className="required-field">*</span>
+        </label>
         <span>
           $
           <input
@@ -101,7 +103,6 @@ const DonationFormComponent = () => {
             console.log(creditCardRef.current.runCreditCardDispatch());
           }}
         >
-
           {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
