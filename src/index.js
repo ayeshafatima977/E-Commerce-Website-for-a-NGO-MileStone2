@@ -18,7 +18,6 @@ import GlobalStore from "./components/store"
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
-      <h1>Hello Scriptorce</h1>
       <HeaderComponent />
       <Route path="/" exact component={LandingPageComponent} />
       <Route path="/about" exact component={KnowUsPageComponent} />

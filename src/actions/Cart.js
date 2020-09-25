@@ -30,4 +30,7 @@ const SetCartQty = (productID, qty) => {
     payloadTwo: qty
   };
 };
-export { AddToCart, RemoveFromCart, IncreaseCartQty, DecreaseCartQty, SetCartQty };
+
+
+
+export { AddToCart, RemoveFromCart, IncreaseCartQty, DecreaseCartQty, SetCartQty};

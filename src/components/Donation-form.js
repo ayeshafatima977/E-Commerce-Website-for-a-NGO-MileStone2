@@ -74,7 +74,8 @@ const DonationFormComponent = () => {
         <input
           id="donation-message"
           type="textarea"
-          placeholder="Send us a message"
+          maxlength="5"
+          placeholder="Send us a message... Max 500 Character"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
 

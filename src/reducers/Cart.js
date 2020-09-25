@@ -48,12 +48,13 @@ const CartReducer = (state = [
         // increment the internal counter
         i++;
         if (item.id === action.payload) {
-          item.inCartQty--;
+          /* item.inCartQty--; */
+          cartCopy.splice(i, 1);
         }
       }
       // Once the index of the item is found, remove that item from the array
-      cartCopy.splice(i, 1);
-      return cartCopy;
+/*       cartCopy.splice(i, 1);
+ */      return cartCopy;
 
     }
     case "INCREASE_CART_QTY": {
@@ -81,6 +82,7 @@ const CartReducer = (state = [
       }
       return cartCopy;
     }
+    
     default:
       return state;
   }
