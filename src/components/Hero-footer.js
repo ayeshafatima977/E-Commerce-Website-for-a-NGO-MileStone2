@@ -57,18 +57,18 @@ const FooterComponent = () => {
       <section>
         <div>
           <h2>Get Social</h2>
-          <p>
+          <a href='https://www.facebook.com' target='_blanc'>
             <FaFacebookF />
-          </p>
-          <p>
+          </a>
+          <a href='https://www.instagram.com' target='_blanc'>
             <FaInstagram />
-          </p>
-          <p>
+          </a>
+          <a href='https://www.twitter.com' target='_blanc'>
             <FaTwitter />
-          </p>
-          <p>
+          </a>
+          <a href='https://www.youtube.com' target='_blanc'>
             <FaYoutube />
-          </p>
+          </a>
         </div>
         <p>Privacy Policy | Terms &amp; Conditions</p>
       </section>

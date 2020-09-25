@@ -15,7 +15,7 @@ const LoginFormComponent = () => {
       </span>
       <h2>Log in</h2>
       <form>
-        <label htmlFor="login-email-input" />
+        <label htmlFor="login-email-input"  />
         <input
           type="email"
           id="login-email-input"
