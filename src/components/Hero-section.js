@@ -8,6 +8,9 @@ const HeroSectionComponent = () => {
     <>
       <div className="hero-section">
         {/* <img src={LandingPage} alt="A Kid eating Mango" /> */}
+        <p id="mobile-landing-text">
+          Make a difference. Donate today.
+        </p>
         <p>
           We Strive To Make A Difference for Those Kids In Need.Empowering
           people to rise out of poverty.
