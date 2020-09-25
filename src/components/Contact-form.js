@@ -97,16 +97,6 @@ const ContactFormComponent = () => {
             className="contactMessage"
             maxlength="500"
           />
-<<<<<<< HEAD
-
-=======
-          <input type="submit" value="SEND" />
-          {/* <p className="contactEmail-error msg-hide">
-          <label htmlFor="Subject">Subject:</label>
-          <input type="text" placeholder="Enter the subject" id="subject" />
-          <label htmlFor="Message">Message:</label>
-          <textarea rows="6" placeholder="Enter your Message" id="message" />
->>>>>>> 10db4a42d63b5053d2b312e1120721240ce96163
           <input type="submit" id="send" value="Send" />
           <p className="contactEmail-error msg-hide">
             Please enter valid email Id
@@ -122,7 +112,7 @@ const ContactFormComponent = () => {
           <p className="contact-thanks-msg msg-hide">
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
-          </p> */}        
+          </p>       
 
         </form>
       </div>
