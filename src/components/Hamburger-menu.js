@@ -22,6 +22,11 @@ const HamburgerMenuComponent = () => {
       </div>
       <div id="menu" className="hide">
         <ul>
+          <li onClick={() => {
+            document
+            .getElementsByClassName("loginform-overlay")[0]
+            .classList.add("overlayShow");
+          }}>Login</li>
           <li><Link to="/shop" onClick={ShowOverlayMenu}>Shop</Link></li>
           <li><Link to="/donation" onClick={ShowOverlayMenu}>Donate</Link></li>
           <li><Link to="/contact" onClick={ShowOverlayMenu}>Contact</Link></li>

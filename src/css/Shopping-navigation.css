@@ -16,7 +16,7 @@
   border-radius: 15px;
   background-color: #4d626e;
 }
-::placeholder {
+#search-input::placeholder {
   padding-left: 25px;
   color: #fff;
   opacity: 0.5;

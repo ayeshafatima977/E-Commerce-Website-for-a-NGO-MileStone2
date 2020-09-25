@@ -36,7 +36,8 @@
     text-align: center;
     font-size: 55px;
   }
-  #menu > ul > li > a {
+  #menu > ul > li > a,
+  #menu > ul > li {
     text-decoration: none;
     color: #C1862C;
   }
