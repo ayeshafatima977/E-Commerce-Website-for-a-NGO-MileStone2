@@ -129,11 +129,11 @@ const ShoppingNavigationReducer = (
 
   switch (stateCopy.Sort) {
     case "PRICE_H_L": {
-      displayCopy.sort((a, b) => a.price - b.price);
+      displayCopy.sort((a, b) => b.price - a.price);
       break;
     }
     case "PRICE_L_H": {
-      displayCopy.sort((a, b) => b.price - a.price);
+      displayCopy.sort((a, b) => a.price - b.price);
       break;
     }
     case "ALPHA_A_Z": {
