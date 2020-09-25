@@ -1,7 +1,7 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-import ContactFormComponent from "./Contact-form";
+
 /*=============================================
 =      News and Events page React Component   =
 =============================================*/
@@ -65,8 +65,7 @@ const NewsEventsPageComponent = () => {
           src="https://via.placeholder.com/350x200"
           alt="place holder image"
         ></img>
-      </section>
-      <ContactFormComponent />
+      </section>      
     </>
   );
 };

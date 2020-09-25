@@ -2,7 +2,7 @@
 import React from "react";
 import BannerComponent from "./Banner";
 import ShoppingCartComponent from "./Shopping-cart";
-import ContactFormComponent from "./Contact-form";
+
 
 /*=============================================
 =            Cart page React Component        =
@@ -13,8 +13,7 @@ const CartPageComponent = () => {
   return (
     <>
       <BannerComponent />
-      <ShoppingCartComponent />
-      <ContactFormComponent />
+      <ShoppingCartComponent />      
     </>
   );
 };

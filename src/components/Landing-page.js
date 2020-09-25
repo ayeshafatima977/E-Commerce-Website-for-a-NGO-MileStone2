@@ -1,7 +1,7 @@
 /*cspell:disable*/
 import React from "react";
 import HeroSectionComponent from "./Hero-section";
-import ContactFormComponent from "./Contact-form";
+
 
 /*=============================================
 =         Landing page React Component        =
@@ -10,8 +10,7 @@ import ContactFormComponent from "./Contact-form";
 const LandingPageComponent = () => {
   return (
     <>
-      <HeroSectionComponent />
-      <ContactFormComponent />
+      <HeroSectionComponent />      
     </>
   );
 };

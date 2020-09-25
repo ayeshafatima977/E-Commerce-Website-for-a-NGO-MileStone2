@@ -7,6 +7,13 @@ import FormValidation from "../functions/Form-validation.js";
 
 const DonationFormComponent = () => {
   let x = false;
+  const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
+    false
+  );
+  const [
+    BillingDetailsValidationStatus,
+    SetBillingDetailsValidationStatus,
+  ] = useState(false);
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const [donationAmount, setDonationAmount] = useState(0);
@@ -17,9 +24,12 @@ const DonationFormComponent = () => {
   //Global validation function
   const SubmitForm = (e) => {
     e.preventDefault();
-    document
-      .getElementsByClassName("donation-thanks-msg")[0]
-      .classList.add("msg-show");
+    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
+      alert("Thankyou! Your Donation has been received");
+    }
+    // document
+    //   .getElementsByClassName("donation-thanks-msg")[0]
+    //   .classList.add("msg-show");
     //Remove product from the subtotal and order altogether if 0 when user hit submit
   };
 
@@ -79,26 +89,34 @@ const DonationFormComponent = () => {
           maxlength="500"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
-
         <BillingDetailsComponent ref={billingInfoRef} />
         <button
           onClick={() => {
-            creditCardRef.current.runCreditCardDispatch();
-            billingInfoRef.current.runBillingInfoDispatch();
+            SetCreditCardValidationStatus(
+              creditCardRef.current.runCreditCardDispatch()
+            );
+            SetBillingDetailsValidationStatus(
+              billingInfoRef.current.runBillingInfoDispatch()
+            );
+            console.log(creditCardRef.current.runCreditCardDispatch());
           }}
         >
+
+          {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
 
-        <p className="donationAmount-error msg-hide">
-          Please enter Donation amount
+        {/* <p className="donationAmount-error msg-hide">
+         Please enter Donation amount //{" "}
         </p>
+        
         <p className="donationMsg-error msg-hide">
-          Please don't exceed 500 characters.
+          Please don't exceed 500 characters. //{" "}
         </p>
+      
         <p className="donation-thanks-msg msg-hide">
-          Thankyou for your Donation,Your Donation has been received.
-        </p>
+        Thankyou for your Donation,Your Donation has been received. //{" "}
+        </p> */}
       </form>
     </>
   );

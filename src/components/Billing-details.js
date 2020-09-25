@@ -31,50 +31,53 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     runBillingInfoDispatch() {
-      dispatch(ChangeBillingInfo(BillingInfoCopy));
+      if (
+        FormValidation(
+          userFirstName,
+          "fname",
+          "userFirstName",
+          "userFirstName-error"
+        ) &&
+        FormValidation(
+          userLastName,
+          "lname",
+          "userLastName",
+          "userLastName-error"
+        ) &&
+        FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
+        FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
+        FormValidation(userStreetAddress, "address", "userStreetAddress") &&
+        FormValidation(userCity, "city", "userCity", "userCity-error") &&
+        FormValidation(
+          userPostalCode,
+          "postal",
+          "userPostalCode",
+          "userPostalCode-error"
+        )
+      ) {
+        // {
+        //   document
+        //     .getElementsByClassName("billing-thanks-msg")[0]
+        //     .classList.add("msg-show");
+        // } else {
+        //   document
+        //     .getElementsByClassName("billing-thanks-msg")[0]
+        //     .classList.remove("msg-show");
+        // }
+        dispatch(ChangeBillingInfo(BillingInfoCopy));
+        return true;
+      }
     },
   }));
 
-  const SubmitForm = (e) => {
-    e.preventDefault();
-    if (
-      FormValidation(
-        userFirstName,
-        "fname",
-        "userFirstName",
-        "userFirstName-error"
-      ) &&
-      FormValidation(
-        userLastName,
-        "lname",
-        "userLastName",
-        "userLastName-error"
-      ) &&
-      FormValidation(userEmail, "email", "userEmail", "userEmail-error ") &&
-      FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
-      FormValidation(userStreetAddress, "address", "userStreetAddress") &&
-      FormValidation(userCity, "city", "userCity", "userCity-error") &&
-      FormValidation(
-        userPostalCode,
-        "postal",
-        "userPostalCode",
-        "userPostalCode-error"
-      )
-    ) {
-      document
-        .getElementsByClassName("billing-thanks-msg")[0]
-        .classList.add("msg-show");
-    } else {
-      document
-        .getElementsByClassName("billing-thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
-  };
+  // const SubmitForm = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <>
       <h2>Billing Details</h2>
-      <form onSubmit={SubmitForm} id="billingForm">
+      <form id="billingForm">
         <label htmlFor="First Name">First Name</label>
         <input
           type="text"
@@ -174,7 +177,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <p className="userPostalCode-error msg-hide">
           Please enter a PostalCode
         </p>
-        <p className="billing-thanks-msg msg-hide">Thankyou.</p>
+        {/* <p className="billing-thanks-msg msg-hide">Thankyou.</p> */}
       </form>
     </>
   );
