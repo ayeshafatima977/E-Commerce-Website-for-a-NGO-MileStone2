@@ -101,6 +101,8 @@ const DonationFormComponent = () => {
             console.log(creditCardRef.current.runCreditCardDispatch());
           }}
         >
+
+          {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
 
