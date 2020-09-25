@@ -12,41 +12,41 @@ const ContactFormComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
 
-    if (
-      FormValidation(
-        contactEmail,
-        "email",
-        "contactEmail",
-        "contactEmail-error"
-      ) &&
-      FormValidation(
-        contactSubject,
-        "subject",
-        "contactSubject",
-        "contactSubject-error"
-      ) &&
-      FormValidation(
-        contactMessage,
-        "message",
-        "contactMessage",
-        "contactMessage-error"
-      )
-    ) {
-      document
-        .getElementsByClassName("contact-thanks-msg")[0]
-        .classList.add("msg-show");
-      let link =
-        "mailto:testemail@gmail.com" +
-        "?subject=" +
-        encodeURIComponent(contactSubject) +
-        "&body=" +
-        encodeURIComponent(contactMessage);
-      window.location.href = link;
-    } else {
-      document
-        .getElementsByClassName("contact-thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
+    // if (
+    //   FormValidation(
+    //     contactEmail,
+    //     "email",
+    //     "contactEmail",
+    //     "contactEmail-error"
+    //   ) &&
+    //   FormValidation(
+    //     contactSubject,
+    //     "subject",
+    //     "contactSubject",
+    //     "contactSubject-error"
+    //   ) &&
+    //   FormValidation(
+    //     contactMessage,
+    //     "message",
+    //     "contactMessage",
+    //     "contactMessage-error"
+    //   )
+    // ) {
+    //   document
+    //     .getElementsByClassName("contact-thanks-msg")[0]
+    //     .classList.add("msg-show");
+    //   let link =
+    //     "mailto:testemail@gmail.com" +
+    //     "?subject=" +
+    //     encodeURIComponent(contactSubject) +
+    //     "&body=" +
+    //     encodeURIComponent(contactMessage);
+    //   window.location.href = link;
+    // } else {
+    //   document
+    //     .getElementsByClassName("contact-thanks-msg")[0]
+    //     .classList.remove("msg-show");
+    // }
   };
   /* Close contact form @ click outside the form container */
   const closeEventHandle = () => {
@@ -97,7 +97,16 @@ const ContactFormComponent = () => {
             className="contactMessage"
             maxlength="500"
           />
+<<<<<<< HEAD
 
+=======
+          <input type="submit" value="SEND" />
+          {/* <p className="contactEmail-error msg-hide">
+          <label htmlFor="Subject">Subject:</label>
+          <input type="text" placeholder="Enter the subject" id="subject" />
+          <label htmlFor="Message">Message:</label>
+          <textarea rows="6" placeholder="Enter your Message" id="message" />
+>>>>>>> 10db4a42d63b5053d2b312e1120721240ce96163
           <input type="submit" id="send" value="Send" />
           <p className="contactEmail-error msg-hide">
             Please enter valid email Id
@@ -108,10 +117,13 @@ const ContactFormComponent = () => {
           <p className="contactMessage-error msg-hide">
             Please enter a message
           </p>
+          <p className="lname-error msg-hide">Please enter correct Last Name</p>
+          <p className="email-error msg-hide">Please enter valid email Id</p> 
           <p className="contact-thanks-msg msg-hide">
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
-          </p>
+          </p> */}        
+
         </form>
       </div>
     </>
