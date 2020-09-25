@@ -58,7 +58,7 @@ const ShoppingNavigationReducer = (
         stateCopy.Search = '(.*)';
       }
       else {
-        stateCopy.Search = action.payload;
+        stateCopy.Search = action.payload.trim();
       }
       break;
     }

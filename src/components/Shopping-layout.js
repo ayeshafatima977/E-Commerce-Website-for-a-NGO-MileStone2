@@ -27,7 +27,7 @@ const ShoppingLayoutComponent = () => {
 
   return (
     <>
-     {displayProductList.length > 0 ? <div></div> : <p>No search results found. Please ease search restrictions.</p>}
+     {displayProductList.length > 0 ? <div></div> : <p>No search results found. Please ease search restrictions.</p>} {/* Div may cause problems later on */}
       {displayProductList.map((individProd) => {
         return (
           <>
