@@ -148,6 +148,25 @@ export default function FormValidation(
       }
       return PassIndicator;
 
+      case "lname":
+      if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
+        document
+          .getElementsByClassName(errorMessageClassName)[1]
+          .classList.add("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[1]
+          .classList.add("input-error");
+        PassIndicator = false;
+      } else {
+        document
+          .getElementsByClassName(errorMessageClassName)[0]
+          .classList.remove("msg-show");
+        document
+          .getElementsByClassName(inputFieldClassName)[0]
+          .classList.remove("input-error");
+      }
+      return PassIndicator;
+
     default:
       return;
   }

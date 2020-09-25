@@ -17,28 +17,9 @@ const DonationFormComponent = () => {
   //Global validation function
   const SubmitForm = (e) => {
     e.preventDefault();
-    if (
-      FormValidation(
-        donationAmount,
-        "donationAmount",
-        "donationAmount",
-        "donationAmount-error"
-      ) &&
-      FormValidation(
-        donationMsg,
-        "donationMsg",
-        "donationMsg",
-        "donationMsg-error"
-      )
-    ) {
-      document
-        .getElementsByClassName("donation-thanks-msg")[0]
-        .classList.add("msg-show");
-    } else {
-      document
-        .getElementsByClassName("donation-thanks-msg")[0]
-        .classList.remove("msg-show");
-    }
+    document
+      .getElementsByClassName("donation-thanks-msg")[0]
+      .classList.add("msg-show");
     //Remove product from the subtotal and order altogether if 0 when user hit submit
   };
 
@@ -47,12 +28,7 @@ const DonationFormComponent = () => {
 
   return (
     <>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          SubmitForm();
-        }}
-      >
+      <form onSubmit={SubmitForm}>
         <h1>Donation Details</h1>
         <h2> Amount </h2>
         <label htmlFor="donation-freq">Donation Frequency</label>
@@ -70,9 +46,13 @@ const DonationFormComponent = () => {
           <input
             className="donationAmount"
             type="number"
-            onChange={(e) => setDonationAmount(e.target.value)}
+            onChange={(e) => {
+              if (setDonationAmount(e.target.value));
+              e.target.value > 5 || (e.target.value = "0");
+            }}
             placeholder="Donation Amount"
             value={donationAmount}
+            min="5"
           ></input>
         </span>
         <h2>Fund</h2>
@@ -96,7 +76,7 @@ const DonationFormComponent = () => {
           id="donation-message"
           type="textarea"
           placeholder="Send us a message. Max 500 Character"
-          maxlength="5"
+          maxlength="500"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
 
