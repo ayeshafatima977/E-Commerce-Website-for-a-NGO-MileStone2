@@ -5,9 +5,9 @@
 }
  */
 
- #shopping-cart {
-   border: solid black 1px;
-   border-radius: 10px;
-   background-color: #4D626E;
-   color: #FFF;
- }
+#shopping-cart {
+  border: solid black 1px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #4d626e;
+}
