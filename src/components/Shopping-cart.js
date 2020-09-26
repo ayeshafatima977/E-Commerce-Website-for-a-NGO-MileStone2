@@ -33,11 +33,22 @@ const ShoppingCartComponent = () => {
   let subTotal = 0;
   const SubmitForm = (e) => {
     e.preventDefault();
-    //Display the Message only when Credit Card and Billing Details are Validated
-    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
-      alert("Thanks for your order, it will be shipped to you soon");
+  //Display the Message only when Credit Card and Billing Details are Validated
+  if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
+    for (let inCartProduct of globalStateInfo.Cart) {
+      if (inCartProduct.inCartQty < 1) {
+        if (prompt("Are you sure you want to remove ",inCartProduct.title," from your cart")){
+          dispatch(RemoveFromCart(inCartProduct.id));
+        }
+        else{
+          dispatch(SetCartQty(inCartProduct.id,"1"));
+        }
+        
+      }
     }
-  };
+    alert("Thanks for your order, it will be shipped to you soon");
+  }
+};
 
   /* Using useRef hook to access the credit card and billing info components */
   const creditCardRef = useRef();

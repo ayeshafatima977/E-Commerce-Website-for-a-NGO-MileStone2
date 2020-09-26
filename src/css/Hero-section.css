@@ -51,10 +51,7 @@
 }
 
 @media screen and (min-width: 700px) {
-  #root {
-    width: 100%;
-    padding: 0 5% 0 5%;
-  }
+
 
   .hero-section {
     display: flex;

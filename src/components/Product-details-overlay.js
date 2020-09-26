@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaWindowClose, FaShoppingCart } from "react-icons/fa";
-
+import "../css/Product-overlay.css";
 /*=============================================
 =            Product Details Overlay Component           =
 =============================================*/
@@ -45,35 +45,55 @@ const ProductDetailsOverlayComponent = (props) => {
   };
   return (
     <section className="product-overlay-section">
-      <button
-        onClick={() => {
-          document
-            .getElementsByClassName("product-details-overlay")[0]
-            .classList.remove("overlayShow");
-        }}
-      >
-        <FaWindowClose />
-      </button>
-      <h2>{productTitleCopy}</h2>
-      <p>{productDescriptionCopy}</p>
-      <p>{productPriceCopy}</p>
-      <img src={productImgCopy} alt={productDescriptionCopy} />
+      <div id="overlay-rightside">
+        <div id="h2-close">
+          <h2>{productTitleCopy}</h2>
+          <button
+            className="close-button"
+            onClick={() => {
+              document
+                .getElementsByClassName("product-details-overlay")[0]
+                .classList.remove("overlayShow");
+            }}
+          >
+            <FaWindowClose className="close-button" />
+          </button>
+        </div>
+        <div id="img-desc">
+          <img src={productImgCopy} alt={productDescriptionCopy} />
+          <p id="prod-desc">{productDescriptionCopy}</p>
+        </div>
 
-      {inCartCheck() ? (
-        <button onClick={RemoveSingleProductFromCart}>
-          <span className="shopping-cart">
-            <FaShoppingCart />
-            &nbsp;Remove from Cart
-          </span>
-        </button>
-      ) : (
-        <button onClick={AddSingleProductToCart}>
-          <span className="shopping-cart">
-            <FaShoppingCart />
-            &nbsp;Add to Cart
-          </span>
-        </button>
-      )}
+        <div id="cartbtn-price">
+          <p id="price-tag">
+            <span>$</span>
+            {productPriceCopy}
+          </p>
+          {inCartCheck() ? (
+            <button
+              type="button"
+              className="shpingbtn"
+              onClick={RemoveSingleProductFromCart}
+            >
+              <span className="shopping-cart">
+                Remove From Cart&nbsp;
+                <FaShoppingCart />
+              </span>
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="shpingbtn"
+              onClick={AddSingleProductToCart}
+            >
+              <span className="shopping-cart">
+                Add to Cart&nbsp;
+                <FaShoppingCart />
+              </span>
+            </button>
+          )}
+        </div>
+      </div>
     </section>
   );
 };
