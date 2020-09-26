@@ -16,7 +16,7 @@ const DonationFormComponent = () => {
   ] = useState(false);
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [donationAmount, setDonationAmount] = useState(0);
+  const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
   const [donationMsg, setdonationmsg] = useState("");
@@ -60,9 +60,9 @@ const DonationFormComponent = () => {
             type="number"
             onChange={(e) => {
               if (setDonationAmount(e.target.value));
-              e.target.value > 5 || (e.target.value = "0");
+              e.target.value > 5 || (e.target.value = "5");
             }}
-            placeholder="Donation Amount"
+            placeholder="Min $5 for online"
             value={donationAmount}
             min="5"
           ></input>
@@ -87,7 +87,7 @@ const DonationFormComponent = () => {
           className="donationMsg"
           id="donation-message"
           type="textarea"
-          placeholder="Send us a message. Max 500 Character"
+          placeholder="We love to hear from your ... 500 character max"
           maxlength="500"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
@@ -105,18 +105,6 @@ const DonationFormComponent = () => {
           {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
-
-        {/* <p className="donationAmount-error msg-hide">
-         Please enter Donation amount //{" "}
-        </p>
-        
-        <p className="donationMsg-error msg-hide">
-          Please don't exceed 500 characters. //{" "}
-        </p>
-      
-        <p className="donation-thanks-msg msg-hide">
-        Thankyou for your Donation,Your Donation has been received. //{" "}
-        </p> */}
       </form>
     </>
   );

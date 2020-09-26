@@ -64,7 +64,7 @@ const ShoppingNavigationComponent = () => {
         <label className="screen-reader-text">Search</label>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Lookup merchandise"
           onChange={(e) => {
             dispatch(Search(e.target.value));
           }}

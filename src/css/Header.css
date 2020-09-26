@@ -40,6 +40,7 @@ logo {
   color: #c1862c;
   font-weight: 700;
   font-size:18px;
+  cursor: pointer;
   
 }
 .common-header nav ul li:nth-of-type(7) {

@@ -87,47 +87,56 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         </label>
         <input
           type="text"
-          placeholder="Enter your First Name"
+          placeholder="e.g., Johnny"
           className="userFirstName"
           onChange={(e) => {
             setUserFirstName(e.target.value);
             
           }}
         />
+        <p className="userFirstName-error msg-hide">
+          Please enter correct First Name
+        </p>
         <label htmlFor=" Last Name">
           Last Name<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Last Name"
+          placeholder="e.g., Bravo"
           className="userLastName"
           onChange={(e) => {
             setUserLastName(e.target.value);
           }}
         />
+        <p className="userLastName-error msg-hide">
+          Please enter correct Last Name
+        </p>
         <label htmlFor="StreetAddress">
           Street Address<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Street Address"
+          placeholder="e.g., 123st."
           className="userStreetAddress"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
           }}
         />
+        <p className="userStreetAddress-error msg-hide">
+          Please enter a valid Street address
+        </p>
         <label htmlFor="City">
           City<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your City"
+          placeholder="e.g., Edmonton"
           className="userCity"
           onChange={(e) => {
             setUserCity(e.target.value);
           }}
         />
-
+ <p className="userCity-error msg-hide">Please enter a city</p>
         <label htmlFor="Province">
           Province<span className="required-field">*</span>
         </label>
@@ -150,54 +159,44 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         </label>
         <input
           type="text"
-          placeholder="Enter your Postal Code"
+          placeholder="e.g., T2A 1E3"
           className="userPostalCode"
           maxLength="7"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
         />
+         
+         <p className="userPostalCode-error msg-hide">
+          Please enter a PostalCode
+        </p>
         <label htmlFor="Phone">
           Phone<span className="required-field">*</span>
         </label>
         <input
           type="text"
           maxLength="10"
-          placeholder="Enter your Phone Number"
+          placeholder="e.g., 780-123-4567"
           className="userPhone"
           onChange={(e) => {
             setUserPhone(e.target.value);
           }}
         />
+        <p className="userPhone-error msg-hide">
+          Please enter a valid phone number
+        </p>
         <label htmlFor="Email Address">
           Email Address <span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Email Address"
+          placeholder="e.g., example@domain.com"
           className="userEmail"
           onChange={(e) => {
             setUserEmail(e.target.value);
           }}
         />
-        <p className="userFirstName-error msg-hide">
-          Please enter correct First Name
-        </p>
-        <p className="userLastName-error msg-hide">
-          Please enter correct Last Name
-        </p>
-        <p className="userPhone-error msg-hide">
-          Please enter a valid phone number
-        </p>
-        <p className="userEmail-error msg-hide">Please enter valid email Id</p>
-        <p className="userStreetAddress-error msg-hide">
-          Please enter a valid Street address
-        </p>
-        <p className="userCity-error msg-hide">Please enter a city</p>
-        <p className="userPostalCode-error msg-hide">
-          Please enter a PostalCode
-        </p>
-        {/* <p className="billing-thanks-msg msg-hide">Thankyou.</p> */}
+      <p className="userEmail-error msg-hide">Please enter valid email Id</p>
       </form>
     </>
   );

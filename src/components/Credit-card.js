@@ -67,6 +67,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   // Note:Wrap the INPUTS IN FORM
   return (
     <>
+    <form id="creditcardform">
       <h2>Credit Card</h2>
       <p>
         <FaCcMastercard />
@@ -92,7 +93,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
         </label>
         <input
           type="text"
-          placeholder="xxxx xxxx xxxx xxxx"
+          placeholder="0123 4567 8910 1112"
           className="userCreditNumber"
           maxLength="16"
           onChange={(e) => {
@@ -100,6 +101,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
           }}
         />
         <FaCreditCard />
+        <p className="userCreditNumber-error msg-hide">
+        Please enter correct Credit Card Number
+      </p>
       </div>
 
       <label htmlFor="Expiry Date">
@@ -107,25 +111,29 @@ const CreditCardComponent = forwardRef((props, ref) => {
       </label>
       <input
         type="text"
-        maxlength="5"
-        placeholder="YY MM"
+        maxLength="5"
+        placeholder="yy/mm"
         className="userExpiry"
         onChange={(e) => {
           setUserExpiry(e.target.value);
         }}
       />
+      <p className="userExpiry-error msg-hide">
+        Please enter correct expiry date
+      </p>
       <label htmlFor="Card Code(CVC)">
         Security Code <span className="required-field">*</span>
       </label>
       <input
         type="text"
-        placeholder="xxx"
+        placeholder="e.g.,1234"
         className="userCVC"
         maxLength="4"
         onChange={(e) => {
           setUserCVC(e.target.value);
         }}
       />
+       <p className="userCVC-error msg-hide">Please enter correct CVC</p>
       <input
         type="checkbox"
         id="checkboxes"
@@ -134,16 +142,8 @@ const CreditCardComponent = forwardRef((props, ref) => {
           setUserInfoSave(e.target.checked);
         }}
       />
-      <p className="userCreditNumber-error msg-hide">
-        Please enter correct Credit Card Number
-      </p>
-      <p className="userExpiry-error msg-hide">
-        Please enter correct expiry date
-      </p>
-      <p className="userCVC-error msg-hide">Please enter correct CVC</p>
-      {/* <p className="credit-thanks-msg msg-hide">
-        Thankyou ,Your Payment has been received.
-      </p> */}
+    
+      </form>
     </>
   );
 });

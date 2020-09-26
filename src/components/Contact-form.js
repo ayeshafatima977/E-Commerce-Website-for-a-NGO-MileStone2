@@ -5,48 +5,48 @@ import FormValidation from "../functions/Form-validation.js";
 
 const ContactFormComponent = () => {
   // Creating Local states only for Validation purpose
-  const [contactEmail, setcontactEmail] = useState("");
-  const [contactSubject, setcontactSubject] = useState("");
-  const [contactMessage, setcontactMessage] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactSubject, setContactSubject] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
 
   const SubmitForm = (e) => {
     e.preventDefault();
 
-    // if (
-    //   FormValidation(
-    //     contactEmail,
-    //     "email",
-    //     "contactEmail",
-    //     "contactEmail-error"
-    //   ) &&
-    //   FormValidation(
-    //     contactSubject,
-    //     "subject",
-    //     "contactSubject",
-    //     "contactSubject-error"
-    //   ) &&
-    //   FormValidation(
-    //     contactMessage,
-    //     "message",
-    //     "contactMessage",
-    //     "contactMessage-error"
-    //   )
-    // ) {
-    //   document
-    //     .getElementsByClassName("contact-thanks-msg")[0]
-    //     .classList.add("msg-show");
-    //   let link =
-    //     "mailto:testemail@gmail.com" +
-    //     "?subject=" +
-    //     encodeURIComponent(contactSubject) +
-    //     "&body=" +
-    //     encodeURIComponent(contactMessage);
-    //   window.location.href = link;
-    // } else {
-    //   document
-    //     .getElementsByClassName("contact-thanks-msg")[0]
-    //     .classList.remove("msg-show");
-    // }
+    if (
+      FormValidation(
+        contactEmail,
+        "email",
+        "contactEmail",
+        "contactEmail-error"
+      ) &&
+      FormValidation(
+        contactSubject,
+        "subject",
+        "contactSubject",
+        "contactSubject-error"
+      ) &&
+      FormValidation(
+        contactMessage,
+        "message",
+        "contactMessage",
+        "contactMessage-error"
+      )
+    ) {
+      document
+        .getElementsByClassName("contact-thanks-msg")[0]
+        .classList.add("msg-show");
+      let link =
+        "mailto:example@domain.com" +
+        "?subject=" +
+        encodeURIComponent(contactSubject) +
+        "&body=" +
+        encodeURIComponent(contactMessage);
+      window.location.href = link;
+    } else {
+      document
+        .getElementsByClassName("contact-thanks-msg")[0]
+        .classList.remove("msg-show");
+    }
   };
   /* Close contact form @ click outside the form container */
   const closeEventHandle = () => {
@@ -66,54 +66,60 @@ const ContactFormComponent = () => {
           closeEventHandle();
         }}
       >
-
         <form onSubmit={SubmitForm} id="contactForm">
-        <h2>CONTACT US</h2>
+          <h2>CONTACT US</h2>
           <label htmlFor="Email">
-            Email Address<span className="required-field">*</span>
+            Email<span className="required-field">*</span>
           </label>
 
           <input
             type="text"
-            placeholder="Enter your email address"
+            placeholder="e.g., example@domain.com"
             className="contactEmail"
+            onChange={(e) => {
+              setContactEmail(e.target.value);
+            }}
           />
+          <p className="contactEmail-error msg-hide">
+            Please enter valid email Id
+          </p>
           <label htmlFor="Subject">
             Subject<span className="required-field">*</span>
           </label>
           <input
             id="subject"
             type="text"
-            placeholder="Enter the subject"
+            placeholder="e.g., participate in event"
             className="contactSubject"
             maxLength="20"
+            onChange={(e) => {
+              setContactSubject(e.target.value);
+            }}
           />
+          <p className="contactSubject-error msg-hide">
+            Please enter a valid Subject
+          </p>
           <label htmlFor="Message">
             Message <span className="required-field">*</span>
           </label>
           <textarea
             id="message"
-            placeholder="Enter your Message"
+            placeholder="We love to hear from your ... 500 character max"
             className="contactMessage"
-            maxlength="500"
+            maxLength="500"
+            onChange={(e) => {
+              setContactMessage(e.target.value);
+            }}
           />
-          <input type="submit" id="send" value="Send" />
-          <p className="contactEmail-error msg-hide">
-            Please enter valid email Id
-          </p>
-          <p className="contactSubject-error msg-hide">
-            Please enter a valid Subject
-          </p>
           <p className="contactMessage-error msg-hide">
             Please enter a message
           </p>
-          <p className="lname-error msg-hide">Please enter correct Last Name</p>
-          <p className="email-error msg-hide">Please enter valid email Id</p> 
+          <input type="submit" id="send" value="Send" />
+
           <p className="contact-thanks-msg msg-hide">
             Thankyou ,Your Message has been received.We will get back to you
             shortly!
-          </p>       
-
+          </p>
         </form>
       </div>
     </>

@@ -22,9 +22,9 @@ const FooterComponent = () => {
     e.preventDefault();
 
     if (
-      FormValidation( fname,"fname", "fname", "fname-error" ) &&
-      FormValidation(lname,"lname","lname","lname-error"    ) &&
-      FormValidation( email,"email", "email", "email-error" )
+      FormValidation( fname,"fname", "fname", "fname-error","newsletter-fname-error-msg" ) &&
+      FormValidation(lname,"lname","lname","lname-error", "newsletter-lname-error-msg"   ) &&
+      FormValidation( email,"email", "email", "email-error", "newsletter-email-error-msg")
     ) {      
         document
           .getElementsByClassName("thanks-msg")[0]
@@ -88,47 +88,47 @@ const FooterComponent = () => {
             <input
               type="text"
               className="fname"
-              placeholder="First name"
+              placeholder="e.g., Johnny"
               value={fname}
               onChange={(event) => {
                 setFName(event.target.value);
               }}
             />
+              <p className="newsletter-fname-error-msg msg-hide">
+              Please enter correct First Name
+            </p>
             <label htmlFor="lname" className="screen-reader-text">
               Last Name
             </label>
             <input
               type="text"
               className="lname"
-              placeholder="Last name"
+              placeholder="e.g., Bravo"
               value={lname}
               onChange={(event) => {
                 setLName(event.target.value);
               }}
             />
+             <p className="newsletter-lname-error-msg msg-hide ">
+              Please enter correct Last Name
+            </p>
             <label htmlFor="email" className="screen-reader-text">
               Email Address
             </label>
             <input
               type="text"
               className="email"
-              placeholder="Email Address"
+              placeholder="e.g., example@domain.com"
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
             />
+             <p className="newsletter-email-error-msg msg-hide ">Please enter valid email Id</p>
             <button type="submit">
               <FaEnvelope />
-            </button>
-            <p className="fname-error msg-hide">
-              Please enter correct First Name
-            </p>
-            <p className="lname-error msg-hide ">
-              Please enter correct Last Name
-            </p>
-            <p className="email-error msg-hide ">Please enter valid email Id</p>
-            <p className="thanks-msg msg-hide">
+            </button>           
+            <p className="newsletter-thanks-msg msg-hide">
               Thank you for Subscribing to our newsletter...!
             </p>
           </form>
