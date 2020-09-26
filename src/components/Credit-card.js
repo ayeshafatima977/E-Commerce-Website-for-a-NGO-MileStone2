@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
-import DatePickerCCExpComponent from "./Date-picker-ccexp"
+import DatePickerCCExpComponent from "./Date-picker-ccexp";
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
@@ -30,8 +30,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   };
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
-      //Think of it as onsubmit function
-      //This fn will run onsubmit from parent-Shopping Cart or the Donation form
+      //This function will run onsubmit from parent-Shopping Cart or the Donation form
       if (
         FormValidation(
           userCreditNumber,
@@ -46,16 +45,17 @@ const CreditCardComponent = forwardRef((props, ref) => {
           "user-credit-expiry-error"
         ) &&
         FormValidation(
-          userCVC, 
-          "cc-cvc", 
-          "user-credit-cvc", 
-          "user-credit-cvc-error")
+          userCVC,
+          "cc-cvc",
+          "user-credit-cvc",
+          "user-credit-cvc-error"
+        )
       )
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;
     },
   }));
-  // Note:Wrap the INPUTS IN FORM
+
   return (
     <>
       <form id="credit-card-form">
@@ -79,11 +79,12 @@ const CreditCardComponent = forwardRef((props, ref) => {
           <SiGooglepay />
         </p>
         <div>
-          <label htmlFor="Card Number">
-            Number on Card<span className="required-field">*</span>
+          <label htmlFor="card number">
+            Number on Card<sup className="required-field">*</sup>
           </label>
           <input
             type="text"
+            id="user-credit-number-id"
             placeholder="0123 4567 8910 1112"
             className="user-credit-number"
             maxLength="16"
@@ -97,11 +98,12 @@ const CreditCardComponent = forwardRef((props, ref) => {
           </p>
         </div>
 
-        <label htmlFor="Expiry Date">
-          Expires<span className="required-field">*</span>
+        <label htmlFor="expiry date">
+          Expires<sup className="required-field">*</sup>
         </label>
-        <DatePickerCCExpComponent/>
+        <DatePickerCCExpComponent />
         <input
+          id="user-credit-expiry-id"
           type="text"
           maxLength="5"
           placeholder="yy/mm"
@@ -113,11 +115,12 @@ const CreditCardComponent = forwardRef((props, ref) => {
         <p className="user-credit-expiry-error msg-hide">
           Please enter correct expiry date
         </p>
-        <label htmlFor="Card Code(CVC)">
-          Security Code <span className="required-field">*</span>
+        <label htmlFor="card code(CVC)">
+          Security Code <sup className="required-field">*</sup>
         </label>
         <input
           type="text"
+          id="user-credit-cvc-id"
           placeholder="e.g.,1234"
           className="user-credit-cvc"
           maxLength="4"
@@ -125,7 +128,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
             setUserCVC(e.target.value);
           }}
         />
-        <p className="user-credit-cvc-error msg-hide">Please enter correct CVC</p>
+        <p className="user-credit-cvc-error msg-hide">
+          Please enter correct CVC
+        </p>
         <input
           type="checkbox"
           id="checkboxes"
