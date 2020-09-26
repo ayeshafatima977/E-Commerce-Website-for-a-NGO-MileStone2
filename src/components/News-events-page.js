@@ -1,7 +1,10 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-import NewsImageOne from "../img/food-support-news-comp.jpg";
+import NewsImageOne from "../img/covid-news-comp.jpg";
+import NewsImageTwo from "../img/food-support-news-comp.jpg";
+import EventImageOne from "../img/children-day-event-comp.jpg";
+import EventImageTwo from "../img/christmas-event-comp.jpg";
 
 /*=============================================
 =      News and Events page React Component   =
@@ -27,7 +30,10 @@ const NewsEventsPageComponent = () => {
           get through this health crisis.
         </p>
         <img
-          
+          src={NewsImageOne}  
+          alt="covid 19 text image"
+          width="350px"
+          height="200px"
         ></img>
         <h2>Provided food to support for families in need</h2>
         <p>
@@ -39,7 +45,7 @@ const NewsEventsPageComponent = () => {
           need.
         </p>
         <img
-          src={NewsImageOne}   
+          src={NewsImageTwo}   
           alt="People providing food to needy"
           width="350px"
           height="200px"
@@ -58,8 +64,10 @@ const NewsEventsPageComponent = () => {
           U.N. Convention on the Rights of the Child.
         </p>
         <img
-          src="https://via.placeholder.com/350x200"
-          alt="place holder image"
+          src={EventImageOne}   
+          alt="All children standing and doing activities together in room"
+          width="350px"
+          height="200px"
         ></img>
         <h2>Christmas Event: Saturday, December 26, 2020</h2>
         <p>
@@ -71,8 +79,10 @@ const NewsEventsPageComponent = () => {
           who need help putting food on the table.
         </p>
         <img
-          src="https://via.placeholder.com/350x200"
-          alt="place holder image"
+          src={EventImageTwo}   
+          alt="Christmas image with different lights"
+          width="350px"
+          height="200px"
         ></img>
       </section>
     </>
