@@ -29,7 +29,12 @@ const HamburgerMenuComponent = () => {
           }}>Login</li>
           <li><Link to="/shop" onClick={ShowOverlayMenu}>Shop</Link></li>
           <li><Link to="/donation" onClick={ShowOverlayMenu}>Donate</Link></li>
-          <li><Link to="/contact" onClick={ShowOverlayMenu}>Contact</Link></li>
+          <li><span onClick={() => {
+                  document
+                    .getElementsByClassName("contactform-overlay")[0]
+                    .classList.add("overlayShow")}}>Contact
+              </span>
+          </li>
           <li><Link to="/about" onClick={ShowOverlayMenu}>About</Link></li>
           <li><Link to="/events" onClick={ShowOverlayMenu}>Events</Link></li>
           <li><Link to="/news" onClick={ShowOverlayMenu}>News</Link></li>
