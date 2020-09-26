@@ -101,7 +101,7 @@ const FooterComponent = () => {
           </p>
           <form className="newsletter-form" onSubmit={SubmitForm}>
             <div id="fname-lname">
-              <label htmlFor="fname" className=".screen-reader-text">
+              <label htmlFor="fname" id="fname-label" className=".screen-reader-text">
                 First Name
               </label>
               <input
@@ -116,7 +116,7 @@ const FooterComponent = () => {
               <p className="newsletter-fname-error-msg msg-hide">
                 Please enter correct First Name
               </p>
-              <label htmlFor="lname" className=".screen-reader-text">
+              <label htmlFor="lname" id="lname-label" className=".screen-reader-text">
                 Last Name
               </label>
               <input
@@ -133,7 +133,7 @@ const FooterComponent = () => {
               </p>
             </div>
             <div id="emailid-send">
-              <label htmlFor="email" className=".screen-reader-text">
+              <label htmlFor="email" id="newsletter-email-label" className=".screen-reader-text">
                 Email Address
               </label>
               <input
@@ -148,9 +148,9 @@ const FooterComponent = () => {
               <p className="newsletter-email-error-msg msg-hide ">
                 Please enter valid email Id
               </p>
-              <button type="submit">
+              <button id="newsletter-submit" type="submit">
                 <IconContext.Provider
-                  value={{ color: "#FFF", style: { opacity: 0.5 } }}
+                  value={{ color: "#000", style: { opacity: 1 } }}
                 >
                   <FaEnvelope size="30px" />
                 </IconContext.Provider>
