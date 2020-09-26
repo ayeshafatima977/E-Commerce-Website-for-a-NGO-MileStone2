@@ -16,20 +16,20 @@ const ContactFormComponent = () => {
       FormValidation(
         contactEmail,
         "email",
-        "contactEmail",
-        "contactEmail-error"
+        "contact-email",
+        "contact-email-error"
       ) &&
       FormValidation(
         contactSubject,
-        "subject",
-        "contactSubject",
-        "contactSubject-error"
+        "required-field",
+        "contact-subject",
+        "contact-subject-error"
       ) &&
       FormValidation(
         contactMessage,
-        "message",
-        "contactMessage",
-        "contactMessage-error"
+        "required-field",
+        "contact-message",
+        "contact-message-error"
       )
     ) {
       document
@@ -66,7 +66,7 @@ const ContactFormComponent = () => {
           closeEventHandle();
         }}
       >
-        <form onSubmit={SubmitForm} id="contactForm">
+        <form onSubmit={SubmitForm} id="contactform">
           <h2>CONTACT US</h2>
           <label htmlFor="Email">
             Email<span className="required-field">*</span>
@@ -75,12 +75,12 @@ const ContactFormComponent = () => {
           <input
             type="text"
             placeholder="e.g., example@domain.com"
-            className="contactEmail"
+            className="contact-email"
             onChange={(e) => {
               setContactEmail(e.target.value);
             }}
           />
-          <p className="contactEmail-error msg-hide">
+          <p className="contact-email-error msg-hide">
             Please enter valid email Id
           </p>
           <label htmlFor="Subject">
@@ -90,13 +90,13 @@ const ContactFormComponent = () => {
             id="subject"
             type="text"
             placeholder="e.g., participate in event"
-            className="contactSubject"
+            className="contact-subject"
             maxLength="20"
             onChange={(e) => {
               setContactSubject(e.target.value);
             }}
           />
-          <p className="contactSubject-error msg-hide">
+          <p className="contact-subject-error msg-hide">
             Please enter a valid Subject
           </p>
           <label htmlFor="Message">
@@ -105,13 +105,13 @@ const ContactFormComponent = () => {
           <textarea
             id="message"
             placeholder="We love to hear from your ... 500 character max"
-            className="contactMessage"
+            className="contact-message"
             maxLength="500"
             onChange={(e) => {
               setContactMessage(e.target.value);
             }}
           />
-          <p className="contactMessage-error msg-hide">
+          <p className="contact-message-error msg-hide">
             Please enter a message
           </p>
           <input type="submit" id="send" value="Send" />

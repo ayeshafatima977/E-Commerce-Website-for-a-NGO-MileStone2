@@ -3,12 +3,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../css/Date-picker.css";
 
-
 const DatePickerComponent = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    return (
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} minDate={new Date()}/>
-    );
-  };
+  const [startDate, setStartDate] = useState(new Date());
+  return (
+    <DatePicker
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      minDate={new Date()}
+      dateFormat="dd/MM/yyyy"      
+    />
+  );
+};
 
 export default DatePickerComponent;

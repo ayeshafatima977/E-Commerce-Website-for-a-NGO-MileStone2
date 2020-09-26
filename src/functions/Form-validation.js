@@ -1,7 +1,12 @@
 import "../css/Form-validation.css";
 
-/* Add more cases per the input types that you would like to validate */
-/* We don't need to play with CSS */
+/* Citation:
+*@Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+*@Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
+*Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
+*@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
+*@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+*/
 export default function FormValidation(
   inputFieldContent,
   inputFieldType,
@@ -64,16 +69,8 @@ export default function FormValidation(
   };
 
   switch (inputFieldType) {
-    case "fname":
-      if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
-        manipulateDoMError();
-      } else {
-        manipulateDoMClearError();
-      }
-      return PassIndicator;
-
-    case "lname":
-      if (!/^[A-Za-z]+$/.test(inputFieldContent)) {
+    case "name":
+      if (!/^[A-Za-z/s]+$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
         manipulateDoMClearError();
@@ -81,7 +78,6 @@ export default function FormValidation(
       return PassIndicator;
 
     case "email":
-      // @Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
       if (
         !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)
       ) {
@@ -91,15 +87,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "subject":
-      if (inputFieldContent === "") {
-        manipulateDoMError();
-      } else {
-        manipulateDoMClearError();
-      }
-      return PassIndicator;
-
-    case "message":
+    case "required-field":
       if (inputFieldContent === "") {
         manipulateDoMError();
       } else {
@@ -115,15 +103,6 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "city":
-      if (!/^[A-Za-z\s]+$/.test(inputFieldContent)) {
-        manipulateDoMError();
-      } else {
-        manipulateDoMClearError();
-      }
-      return PassIndicator;
-
-    // @Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
     case "address":
       if (
         inputFieldContent === "" ||
@@ -135,9 +114,6 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    /* Mobile Number Start */
-    // Citation :  Mobile Number RegExpression, Accept input in XXX-XXX-XXXX or XXX.XXX.XXXX or XXX XXX XXXX
-    // Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
     case "phone":
       const inputFieldContentPrefix = inputFieldContent.slice(0, 3);
       const aCanadianNbr = canadianMobilePrefix.includes(
@@ -168,7 +144,6 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    // @Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
     case "cc-exp":
       if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(inputFieldContent)) {
         manipulateDoMError();
@@ -185,7 +160,6 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    //@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     case "password":
       if (
         !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8}$/.test(
@@ -197,19 +171,7 @@ export default function FormValidation(
         manipulateDoMClearError();
       }
       return PassIndicator;
-
-    case "dob":
-      if (
-        !/^((?:0[1-9])|(?:1[0-2]))\/((?:0[0-9])|(?:[1-2][0-9])|(?:3[0-1]))\/(\d{4})$/.test(
-          inputFieldContent
-        )
-      ) {
-        manipulateDoMError();
-      } else {
-        manipulateDoMClearError();
-      }
-      return PassIndicator;
-
+      
     default:
       return;
   }

@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import DatePickerDobComponent from "./Date-picker-dob";
+import DatePickerComponent from "./Date-picker";
 import "../css/Volunteer-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
 const VolunteerFormComponent = () => {
   const [volunteerName, setVolunteerName] = useState("");
-  const [volunteerBirthdate, setVolunteerBirthdate] = useState("");
   const [volunteerAddress, setVolunteerAddress] = useState("");
   const [volunteerPhone, setVolunteerPhone] = useState("");
   const [volunteerEmail, setVolunteerEmail] = useState("");
-  const [volunteerStartDate, setVolunteerStartDate] = useSate(new Date());
   const [volunteerReference, setVolunteerReference] = useState("Social Media");
   const [emergencyContact, setEmergencyContact] = useState("");
+  const [emergencyPhone, setEmergencyPhone] = useState("");
   const [emergencyRelationship, setEmergencyRelationship] = useState(
     "Family member"
   );
-  const [emergencyPhone, setEmergencyPhone] = useState("");
 
   const SubmitForm = (e) => {
     e.preventDefault();
@@ -23,16 +22,10 @@ const VolunteerFormComponent = () => {
     if (
       FormValidation(
         volunteerName,
-        "fname",
+        "name",
         "volunteerName",
         "volunteerName-error"
-      ) &&
-      FormValidation(
-        volunteerBirthdate,
-        "dob",
-        "volunteerDOB",
-        "volunteerDOB-error"
-      ) &&
+        ) &&
       FormValidation(
         volunteerAddress,
         "address",
@@ -53,8 +46,8 @@ const VolunteerFormComponent = () => {
       ) &&
       FormValidation(
         emergencyContact,
-        "fname",
-        "volunteerEmergency",
+        "name",
+        "emergencyContact",
         "volunteerEmergency-error"
       ) &&
       FormValidation(
@@ -65,7 +58,7 @@ const VolunteerFormComponent = () => {
       )
     ) {
       document
-        .getElementsByClassName(volunteer - thankyou - msg)[0]
+        .getElementsByClassName("volunteer-thankyou-msg")[0]
         .classList.remove("msg-hide");
     }
   };
@@ -80,7 +73,7 @@ const VolunteerFormComponent = () => {
             id="volunteer-name"
             className="volunteerName"
             placeholder="e.g., Johnny Bravo"
-            onChange={() => {
+            onChange={(e) => {
               setVolunteerName(e.target.value);
             }}
           />
@@ -89,36 +82,31 @@ const VolunteerFormComponent = () => {
           </p>
 
           <label htmlFor="volunteer-birthdate">Birthday</label>
-       <DatePicker
-            placeholderText="mm/dd/yy"
-            onChange={(date) => setVolunteerBirthdate(date)}
-            className="volunteerDOB"
+          <DatePickerDobComponent      
           />
-          <p className="volunteerDOB-error msg-hide">
-            Volunteer must be older than 18 years.
-          </p>
-          
+          <p className="volunteerAddress-error">Enter valid Birthday date</p>
           <label htmlFor="volunteer-address">Mailing Address</label>
           <input
             type="text"
             id="volunteer-address"
             placeholder="e.g., 123st SW Your City-Name, Province "
             className="volunteerAddress"
-            onChange={() => {
+            onChange={(e) => {
               setVolunteerAddress(e.target.value);
             }}
           />
           <p className="volunteerAddress-error msg-hide">
             Please enter a valid address
           </p>
-          
+
           <label htmlFor="volunteer-phone">Phone</label>
           <input
             type="text"
+            maxLength="10"
             id="volunteer-phone"
             className="volunteerPhone"
             placeholder="e.g., 780-123-1234"
-            onChange={() => {
+            onChange={(e) => {
               setVolunteerPhone(e.target.value);
             }}
           />
@@ -131,7 +119,8 @@ const VolunteerFormComponent = () => {
             type="text"
             id="volunteer-email"
             className="volunteerEmail"
-            onChange={() => {
+            placeholder="e.g., example@domain.com"
+            onChange={(e) => {
               setVolunteerEmail(e.target.value);
             }}
           />
@@ -155,29 +144,27 @@ const VolunteerFormComponent = () => {
           </select>
 
           <label htmlFor="volunteer-start-date">Start Date</label>
-          <DatePicker
+          <DatePickerComponent
             placeholderText="mm/dd/yy"
-            onChange={(date) => setStartDate(date)}
             className="volunteer-start-date"
           />
-          <p className="volunteer-start-date-error msg-hide">
-          </p>
-
+          <p className="volunteer-start-date-error msg-hide"></p>
         </div>
         <div id="emergency-info">
           <label htmlFor="emergency-contact">Emergency Contact</label>
           <input
             type="text"
             id="emergency-contact"
+            placeholder="e.g., Johnny Bravo"
             className="emergencyContact"
-            onChange={() => {
+            onChange={(e) => {
               setEmergencyContact(e.target.value);
             }}
           />
           <p className="volunteerEmergency-error msg-hide">
             Please enter your Emergency Contact name
           </p>
-          
+
           <label htmlFor="emergency-relationship">Contact Relationship</label>
           <select
             id="emergency-relationship"
@@ -195,7 +182,9 @@ const VolunteerFormComponent = () => {
             type="text"
             id="emergency-phone"
             className="volunteerEmergencyPhone"
-            onChange={() => {
+            placeholder="e.g., 780-123-1234"
+            maxLength="10"
+            onChange={(e) => {
               setEmergencyPhone(e.target.value);
             }}
           />

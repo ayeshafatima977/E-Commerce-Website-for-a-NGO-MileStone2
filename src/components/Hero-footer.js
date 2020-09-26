@@ -6,7 +6,7 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
-import FormValidation from '../functions/Form-validation.js';
+import FormValidation from "../functions/Form-validation.js";
 // import '../css/Hero-footer.css';
 
 /*=============================================
@@ -22,23 +22,34 @@ const FooterComponent = () => {
     e.preventDefault();
 
     if (
-      FormValidation( fname,"fname", "fname", "fname-error","newsletter-fname-error-msg" ) &&
-      FormValidation(lname,"lname","lname","lname-error", "newsletter-lname-error-msg"   ) &&
-      FormValidation( email,"email", "email", "email-error", "newsletter-email-error-msg")
-    ) {      
-        document
-          .getElementsByClassName("thanks-msg")[0]
-          .classList.add("msg-show");
-      } else {
-        document
-          .getElementsByClassName("thanks-msg")[0]
-          .classList.remove("msg-show");
-      }
+      FormValidation(
+        fname,
+        "name",
+        "newsletter-fname",
+        "newsletter-fname-error-msg"
+      ) &&
+      FormValidation(
+        lname,
+        "name",
+        "newsletter-lname",
+        "newsletter-lname-error-msg"
+      ) &&
+      FormValidation(
+        email,
+        "email",
+        "newsletter-email",
+        "newsletter-email-error-msg"
+      )
+    ) {
+      document
+        .getElementsByClassName("newsletter-thanks-msg")[0]
+        .classList.add("msg-show");
+    } else {
+      document
+        .getElementsByClassName("newsletter-thanks-msg")[0]
+        .classList.remove("msg-show");
     }
-    
-  
-
-  
+  };
 
   return (
     <footer>
@@ -82,52 +93,51 @@ const FooterComponent = () => {
             Stay up to date with our work and how you can help - learn more.
           </p>
           <form onSubmit={SubmitForm}>
-            <label htmlFor="fname" className="screen-reader-text">
-              First Name <span className= "required-field">*</span>
+            <label htmlFor="fname">
+              First Name <span className="required-field">*</span>
             </label>
             <input
               type="text"
-              className="fname"
+              className="newsletter-fname"
               placeholder="e.g., Johnny"
-              value={fname}
               onChange={(event) => {
                 setFName(event.target.value);
               }}
             />
-              <p className="newsletter-fname-error-msg msg-hide">
+            <p className="newsletter-fname-error-msg msg-hide">
               Please enter correct First Name
             </p>
-            <label htmlFor="lname" className="screen-reader-text">
+            <label htmlFor="lname">
               Last Name
             </label>
             <input
               type="text"
-              className="lname"
+              className="newsletter-lname"
               placeholder="e.g., Bravo"
-              value={lname}
               onChange={(event) => {
                 setLName(event.target.value);
               }}
             />
-             <p className="newsletter-lname-error-msg msg-hide ">
+            <p className="newsletter-lname-error-msg msg-hide ">
               Please enter correct Last Name
             </p>
-            <label htmlFor="email" className="screen-reader-text">
+            <label htmlFor="email">
               Email Address
             </label>
             <input
               type="text"
-              className="email"
+              className="newsletter-email"
               placeholder="e.g., example@domain.com"
-              value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
             />
-             <p className="newsletter-email-error-msg msg-hide ">Please enter valid email Id</p>
+            <p className="newsletter-email-error-msg msg-hide ">
+              Please enter valid email Id
+            </p>
             <button type="submit">
               <FaEnvelope />
-            </button>           
+            </button>
             <p className="newsletter-thanks-msg msg-hide">
               Thank you for Subscribing to our newsletter...!
             </p>

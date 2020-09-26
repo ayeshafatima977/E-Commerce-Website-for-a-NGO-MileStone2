@@ -27,10 +27,6 @@ const DonationFormComponent = () => {
     if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
       alert("Thankyou! Your Donation has been received");
     }
-    // document
-    //   .getElementsByClassName("donation-thanks-msg")[0]
-    //   .classList.add("msg-show");
-    //Remove product from the subtotal and order altogether if 0 when user hit submit
   };
 
   const creditCardRef = useRef();
@@ -88,7 +84,7 @@ const DonationFormComponent = () => {
           id="donation-message"
           type="textarea"
           placeholder="We love to hear from your ... 500 character max"
-          maxlength="500"
+          maxLength="500"
         ></input>
         <CreditCardComponent ref={creditCardRef} />
         <BillingDetailsComponent ref={billingInfoRef} />

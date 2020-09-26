@@ -34,30 +34,27 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
       if (
         FormValidation(
           userFirstName,
-          "fname",
-          "userFirstName",
-          "userFirstName-error"
+          "name",
+          "billing-firstname",
+          "billing-firstname-error"
         ) &&
         FormValidation(
           userLastName,
-          "lname",
-          "userLastName",
-          "userLastName-error"
+          "name",
+          "billing-lastname",
+          "billing-lastname-error"
         ) &&
-        FormValidation(userStreetAddress, "address", "userStreetAddress","userStreetAddress-error") &&
-        FormValidation(userCity, "city", "userCity", "userCity-error") &&
+        FormValidation(userStreetAddress, "address", "billing-streetaddress","billing-streetaddress-error") &&
+        FormValidation(userCity, "name", "billing-city", "billing-city-error") &&
         FormValidation(
           userPostalCode,
           "postal",
-          "userPostalCode",
-          "userPostalCode-error"
+          "billing-postalcode",
+          "billing-postalcode-error"
         )&&
-        FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
-        FormValidation(userEmail, "email", "userEmail", "userEmail-error ") 
-      
-        
-        
-       
+        FormValidation(userPhone, "phone", "billing-phone", "billing-phone-error") &&
+        FormValidation(userEmail, "email", "billing-email", "billing-email-error ") 
+
       ) {
         // {
         //   document
@@ -81,20 +78,20 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   return (
     <>
       <h2>Billing Details</h2>
-      <form id="billingForm">
+      <form id="billingform">
         <label htmlFor="First Name">
           First Name<span className="required-field">*</span>
         </label>
         <input
           type="text"
           placeholder="e.g., Johnny"
-          className="userFirstName"
+          className="billing-firstname"
           onChange={(e) => {
             setUserFirstName(e.target.value);
             
           }}
         />
-        <p className="userFirstName-error msg-hide">
+        <p className="billing-firstname-error msg-hide">
           Please enter correct First Name
         </p>
         <label htmlFor=" Last Name">
@@ -103,12 +100,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g., Bravo"
-          className="userLastName"
+          className="billing-lastname"
           onChange={(e) => {
             setUserLastName(e.target.value);
           }}
         />
-        <p className="userLastName-error msg-hide">
+        <p className="billing-lastname-error msg-hide">
           Please enter correct Last Name
         </p>
         <label htmlFor="StreetAddress">
@@ -117,12 +114,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g., 123st."
-          className="userStreetAddress"
+          className="billing-streetaddress"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
           }}
         />
-        <p className="userStreetAddress-error msg-hide">
+        <p className="billing-streetaddress-error msg-hide">
           Please enter a valid Street address
         </p>
         <label htmlFor="City">
@@ -131,12 +128,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g., Edmonton"
-          className="userCity"
+          className="billing-city"
           onChange={(e) => {
             setUserCity(e.target.value);
           }}
         />
- <p className="userCity-error msg-hide">Please enter a city</p>
+ <p className="billing-city-error msg-hide">Please enter a city</p>
         <label htmlFor="Province">
           Province<span className="required-field">*</span>
         </label>
@@ -160,14 +157,14 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g., T2A 1E3"
-          className="userPostalCode"
+          className="billing-postalcode"
           maxLength="7"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
         />
          
-         <p className="userPostalCode-error msg-hide">
+         <p className="billing-postalcode-error msg-hide">
           Please enter a PostalCode
         </p>
         <label htmlFor="Phone">
@@ -177,12 +174,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           type="text"
           maxLength="10"
           placeholder="e.g., 780-123-4567"
-          className="userPhone"
+          className="billing-phone"
           onChange={(e) => {
             setUserPhone(e.target.value);
           }}
         />
-        <p className="userPhone-error msg-hide">
+        <p className="billing-phone-error msg-hide">
           Please enter a valid phone number
         </p>
         <label htmlFor="Email Address">
@@ -191,12 +188,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g., example@domain.com"
-          className="userEmail"
+          className="billing-email"
           onChange={(e) => {
             setUserEmail(e.target.value);
           }}
         />
-      <p className="userEmail-error msg-hide">Please enter valid email Id</p>
+      <p className="billing-email-error msg-hide">Please enter valid email Id</p>
       </form>
     </>
   );

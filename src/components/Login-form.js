@@ -39,7 +39,7 @@ const LoginFormComponent = () => {
 
       <form onSubmit={SubmitForm} id="loginForm">
       <h2>LOG IN</h2>
-        <label htmlFor="login-email-input" />
+        <label htmlFor="login-email-input">Email</label>
         <input
           type="text"
           id="login-email-input"
@@ -51,7 +51,7 @@ const LoginFormComponent = () => {
           }}
         />
         <p className="loginEmail-error msg-hide">Please enter valid email Id</p>
-        <label htmlFor="login-password-input" />
+        <label htmlFor="login-password-input">Password</label>
         <input
           type="password"
           id="login-password-input"
