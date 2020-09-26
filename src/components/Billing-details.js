@@ -85,130 +85,145 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   return (
     <>
       <form id="billing-form">
-        <label htmlFor="first name">
-          First Name<sup className="required-field">*</sup>
-        </label>
-        <input
-          id="billing-firstname-id"
-          type="text"
-          placeholder="Johnny"
-          className="billing-firstname"
-          onChange={(e) => {
-            setUserFirstName(e.target.value);
-          }}
-        />
-        <p className="billing-firstname-error msg-hide">
-          Please enter correct First Name
-        </p>
-        <label htmlFor="last name">
-          Last Name<sup className="required-field">*</sup>
-        </label>
-        <input
-          id="billing-lastname-id"
-          type="text"
-          placeholder="Bravo"
-          className="billing-lastname"
-          onChange={(e) => {
-            setUserLastName(e.target.value);
-          }}
-        />
-        <p className="billing-lastname-error msg-hide">
-          Please enter correct Last Name
-        </p>
-        <label htmlFor="street address">
-          Street Address<sup className="required-field">*</sup>
-        </label>
-        <input
-          id="billing-streetaddress-id"
-          type="text"
-          placeholder="123st."
-          className="billing-streetaddress"
-          onChange={(e) => {
-            setUserStreetAddress(e.target.value);
-          }}
-        />
-        <p className="billing-streetaddress-error msg-hide">
-          Please enter a valid Street address
-        </p>
-        <label htmlFor="city">
-          City<sup className="required-field">*</sup>
-        </label>
-        <input
-          id="billing-city-id"
-          type="text"
-          placeholder="Edmonton"
-          className="billing-city"
-          onChange={(e) => {
-            setUserCity(e.target.value);
-          }}
-        />
-        <p className="billing-city-error msg-hide">Please enter a city</p>
-
-        <label htmlFor="province">
-          Province<sup className="required-field">*</sup>
-        </label>
-        <select
-          id="province-id"
-          onChange={(e) => {
-            setUserProvince(e.target.value);
-          }}
-        >
-          <option value="AB">AB </option>
-          <option value="BC">BC </option>
-          <option value="MAN">MAN </option>
-          <option value="SK">SK</option>
-          <option value="ONT">ONT </option>
-          <option value="QC">QC </option>
-          <option value="NB">NB</option>
-          <option value="NS">NS</option>
-        </select>
-        <label htmlFor="postal Code">
-          Postal Code<sup className="required-field">*</sup>
-        </label>
-        <input
-          type="text"
-          id="billing-postalcode-id"
-          placeholder="T2A 1E3"
-          className="billing-postalcode"
-          maxLength="7"
-          onChange={(e) => {
-            setUserPostalCode(e.target.value);
-          }}
-        />
-        <p className="billing-postalcode-error msg-hide">
-          Please enter a PostalCode
-        </p>
-        <label htmlFor="phone">
-          Phone<sup className="required-field">*</sup>
-        </label>
-        <input
-          type="text"
-          id="billing-phone-id"
-          maxLength="10"
-          placeholder="780-123-4567"
-          className="billing-phone"
-          onChange={(e) => {
-            setUserPhone(e.target.value);
-          }}
-        />
-        <p className="billing-phone-error msg-hide">
-          Please enter a valid phone number
-        </p>
-        <label htmlFor="email address">
-          Email Address <sup className="required-field">*</sup>
-        </label>
-        <input
-          id="billing-email-id"
-          type="text"
-          placeholder="example@domain.com"
-          className="billing-email"
-          onChange={(e) => {
-            setUserEmail(e.target.value);
-          }}
-        />
-        <p className="billing-email-error msg-hide">
-          Please enter valid email Id
-        </p>
+        <div id="billing-form-first-name-container">
+          <label htmlFor="billing-firstname-id">
+            First Name<sup className="required-field">*</sup>
+          </label>
+          <input
+            id="billing-firstname-id"
+            type="text"
+            placeholder="Johnny"
+            className="billing-firstname"
+            onChange={(e) => {
+              setUserFirstName(e.target.value);
+            }}
+          />
+          <p className="billing-firstname-error msg-hide">
+            Please enter correct First Name
+          </p>
+        </div>
+        <div id="billing-form-last-name-container">
+          <label htmlFor="billing-lastname-id">
+            Last Name<sup className="required-field">*</sup>
+          </label>
+          <input
+            id="billing-lastname-id"
+            type="text"
+            placeholder="Bravo"
+            className="billing-lastname"
+            onChange={(e) => {
+              setUserLastName(e.target.value);
+            }}
+          />
+          <p className="billing-lastname-error msg-hide">
+            Please enter correct Last Name
+          </p>
+        </div>
+        <div id="billing-form-street-address-container">
+          <label htmlFor="billing-streetaddress-id">
+            Street Address<sup className="required-field">*</sup>
+          </label>
+          <input
+            id="billing-streetaddress-id"
+            type="text"
+            placeholder="123st."
+            className="billing-streetaddress"
+            onChange={(e) => {
+              setUserStreetAddress(e.target.value);
+            }}
+          />
+          <p className="billing-streetaddress-error msg-hide">
+            Please enter a valid Street address
+          </p>
+        </div>
+        <div id="billing-form-city-container">
+          <label htmlFor="billing-city-id">
+            City<sup className="required-field">*</sup>
+          </label>
+          <input
+            id="billing-city-id"
+            type="text"
+            placeholder="Edmonton"
+            className="billing-city"
+            onChange={(e) => {
+              setUserCity(e.target.value);
+            }}
+          />
+          <p className="billing-city-error msg-hide">Please enter a city</p>
+        </div>
+        <div id="billing-form-province-container">
+          <label htmlFor="province-id">
+            Province<sup className="required-field">*</sup>
+          </label>
+          <select
+            id="province-id"
+            onChange={(e) => {
+              setUserProvince(e.target.value);
+            }}
+          >
+            <option value="AB">AB </option>
+            <option value="BC">BC </option>
+            <option value="MAN">MAN </option>
+            <option value="SK">SK</option>
+            <option value="ONT">ONT </option>
+            <option value="QC">QC </option>
+            <option value="NB">NB</option>
+            <option value="NS">NS</option>
+          </select>
+        </div>
+        <div id="billing-form-postal-code-container">
+          <label htmlFor="billing-postalcode-id">
+            Postal Code<sup className="required-field">*</sup>
+          </label>
+          <input
+            type="text"
+            id="billing-postalcode-id"
+            placeholder="T2A 1E3"
+            className="billing-postalcode"
+            maxLength="7"
+            onChange={(e) => {
+              setUserPostalCode(e.target.value);
+            }}
+          />
+          <p className="billing-postalcode-error msg-hide">
+            Please enter a PostalCode
+          </p>
+        </div>
+        <div id="billing-form-phone-container">
+          <label htmlFor="billing-phone-id">
+            Phone<sup className="required-field">*</sup>
+          </label>
+          <input
+            type="text"
+            id="billing-phone-id"
+            maxLength="10"
+            placeholder="780-123-4567"
+            className="billing-phone"
+            onChange={(e) => {
+              setUserPhone(e.target.value);
+            }}
+          />
+          <p className="billing-phone-error msg-hide">
+            Please enter a valid phone number
+          </p>
+        </div>
+        <div id="billing-form-email-container">
+          <label htmlFor="billing-email-id">
+            Email Address <sup className="required-field">*</sup>
+          </label>
+          <input
+            id="billing-email-id"
+            type="text"
+            placeholder="example@domain.com"
+            className="billing-email"
+            onChange={(e) => {
+              setUserEmail(e.target.value);
+            }}
+          />
+          <p className="billing-email-error msg-hide">
+            Please enter valid email Id
+          </p>
+        </div>
       </form>
     </>
   );

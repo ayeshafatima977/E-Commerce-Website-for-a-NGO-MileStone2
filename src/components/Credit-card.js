@@ -78,8 +78,8 @@ const CreditCardComponent = forwardRef((props, ref) => {
         <p>
           <SiGooglepay />
         </p>
-        <div>
-          <label htmlFor="card number">
+        <div id="credit-number-container">
+          <label htmlFor="user-credit-number-id">
             Number on Card<sup className="required-field">*</sup>
           </label>
           <input
@@ -97,48 +97,54 @@ const CreditCardComponent = forwardRef((props, ref) => {
             Please enter correct Credit Card Number
           </p>
         </div>
-
-        <label htmlFor="expiry date">
-          Expires<sup className="required-field">*</sup>
-        </label>
-        <DatePickerCCExpComponent />
-        <input
-          id="user-credit-expiry-id"
-          type="text"
-          maxLength="5"
-          placeholder="yy/mm"
-          className="user-credit-expiry"
-          onChange={(e) => {
-            setUserExpiry(e.target.value);
-          }}
-        />
-        <p className="user-credit-expiry-error msg-hide">
-          Please enter correct expiry date
-        </p>
-        <label htmlFor="card code(CVC)">
-          Security Code <sup className="required-field">*</sup>
-        </label>
-        <input
-          type="text"
-          id="user-credit-cvc-id"
-          placeholder="e.g.,1234"
-          className="user-credit-cvc"
-          maxLength="4"
-          onChange={(e) => {
-            setUserCVC(e.target.value);
-          }}
-        />
-        <p className="user-credit-cvc-error msg-hide">
-          Please enter correct CVC
-        </p>
-        <input
-          type="checkbox"
-          id="checkboxes"
-          onChange={(e) => {
-            // If the checkbox is checked it returns true else returns false
-            setUserInfoSave(e.target.checked);
-          }}
-        />
+        <div id="credit-exp-date-container">
+          <label htmlFor="user-credit-expiry-id">
+            Expires<sup className="required-field">*</sup>
+          </label>
+          <DatePickerCCExpComponent />
+          <input
+            id="user-credit-expiry-id"
+            type="text"
+            maxLength="5"
+            placeholder="yy/mm"
+            className="user-credit-expiry"
+            onChange={(e) => {
+              setUserExpiry(e.target.value);
+            }}
+          />
+          <p className="user-credit-expiry-error msg-hide">
+            Please enter correct expiry date
+          </p>
+        </div>
+        <div id="credit-CVC-container">
+          <label htmlFor="user-credit-cvc-id">
+            Security Code <sup className="required-field">*</sup>
+          </label>
+          <input
+            type="text"
+            id="user-credit-cvc-id"
+            placeholder="e.g.,1234"
+            className="user-credit-cvc"
+            maxLength="4"
+            onChange={(e) => {
+              setUserCVC(e.target.value);
+            }}
+          />
+          <p className="user-credit-cvc-error msg-hide">
+            Please enter correct CVC
+          </p>
+        </div>
+        <div id="credit-save-container">
+          <input
+            type="checkbox"
+            id="checkboxes"
+            onChange={(e) => {
+              // If the checkbox is checked it returns true else returns false
+              setUserInfoSave(e.target.checked);
+            }}
+          />
+          <label htmlFor="checkboxes">Save payment information</label>
+        </div>
       </form>
     </>
   );
