@@ -31,6 +31,4 @@ const SetCartQty = (productID, qty) => {
   };
 };
 
-
-
 export { AddToCart, RemoveFromCart, IncreaseCartQty, DecreaseCartQty, SetCartQty};

@@ -80,3 +80,6 @@ Images Credit goes to:
 ==============================================================================================
 
 ! General Notes:
+
+Inline styles were only used on icons from the react-icons package as per the react-icons documentation.
+Documentation: https://github.com/react-icons/react-icons

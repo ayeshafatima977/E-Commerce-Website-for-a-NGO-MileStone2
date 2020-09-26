@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 const BrowsingHistoryReducer = (
     state = [],
     action

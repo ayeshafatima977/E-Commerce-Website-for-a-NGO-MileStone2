@@ -43,19 +43,16 @@ const CartReducer = (state = [
     }
     case "REMOVE_PRODUCT_FROM_CART": {
       // internal cart item counter
-      let i = -1;
+      let internalCartCount = -1;
       for (let item of cartCopy) {
         // increment the internal counter
-        i++;
+        internalCartCount++;
         if (item.id === action.payload) {
-          /* item.inCartQty--; */
-          cartCopy.splice(i, 1);
+          // Once the item is found, remove that item from the array
+          cartCopy.splice(internalCartCount, 1);
         }
       }
-      // Once the index of the item is found, remove that item from the array
-/*       cartCopy.splice(i, 1);
- */      return cartCopy;
-
+      return cartCopy;
     }
     case "INCREASE_CART_QTY": {
       for (let item of cartCopy) {
@@ -66,9 +63,9 @@ const CartReducer = (state = [
       return cartCopy;
     }
     case "DECREASE_CART_QTY": {
-      // Do not let user drop the qty below 0 in the cart
       for (let item of cartCopy) {
         if (item.id === action.payload) {
+          // Do not let user drop the qty below 0 in the cart
           if (item.inCartQty > 0) {
             item.inCartQty--;
           }

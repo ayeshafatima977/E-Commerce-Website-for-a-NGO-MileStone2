@@ -47,8 +47,8 @@ const ShoppingNavigationReducer = (
   // Reducer Actions
   switch (action.type) {
     case "SEARCH_PRODUCT": {
-      // Update the search state
       if (action.payload === "") {
+        // Wild card RegEx to match anything
         stateCopy.Search = "(.*)";
       } else {
         stateCopy.Search = action.payload.trim();
@@ -64,12 +64,11 @@ const ShoppingNavigationReducer = (
       break;
     }
     case "BROWSE_PRODUCT": {
-      // Change the browse state to the desired input.
       if (stateCopy.Browse !== "" && stateCopy.Browse !== "(.*)") {
-        // Wild card to match anything
+        // Wild card RegEx to match anything
         stateCopy.Browse = "(.*)";
       } else {
-        // The browse must match the category starting with the same point.
+        // The browse must match the category starting with the same character.
         stateCopy.Browse = "^" + action.payload;
       }
       break;
@@ -103,7 +102,7 @@ const ShoppingNavigationReducer = (
       break;
     }
     case "INITIAL_LIST": {
-      // Initial action to populate the store.
+      // Initial action request to populate the store.
       stateCopy.products = action.payload;
       stateCopy.displayProducts = action.payload;
       stateCopy.Browse = "(.*)";
