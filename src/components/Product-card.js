@@ -41,7 +41,6 @@ const ProductCardComponent = (props) => {
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-
       {inCartCheck(title) ? (
         <button className="cart-option" onClick={RemoveSingleProductToCart}>
           <span className="shopping-cart">
@@ -54,8 +53,8 @@ const ProductCardComponent = (props) => {
           <span className="shopping-cart">
             <FaShoppingCart />
             &nbsp;Add to Cart
-          </span>{" "}
-        </button>
+          </span>
+     </button>
       )}
 
       <button
@@ -73,9 +72,7 @@ const ProductCardComponent = (props) => {
             .classList.add("overlayShow");
         }}
       >
-        <span className="quick-view">
-          <FaEye />&nbsp;QuickView trail
-        </span> 
+        <span>Quick View <FaEye /></span>
       </button>
     </div>
   );

@@ -21,7 +21,17 @@ const HeaderComponent = () => {
       <LoginFormComponent />
       <section className="common-header">
         <div className="logo-container">
-          <Link className="logo" to="/"><img src={logo} alt="Logo" /></Link>
+          <logo>
+            <Link
+            className="logo"
+              to="/"
+              onClick={() => {
+                dispatch(UpdateBrowsingHistory("/"));
+              }}
+            >
+              <img src={logo} alt="Logo" />
+            </Link>
+          </logo>
           <h1>MAKE A DIFFERENCE</h1>
         </div>
         <nav>
@@ -88,11 +98,13 @@ const HeaderComponent = () => {
             </li>
             {/*!Parking lot item */}
             <li>
-              <a className="right-side-buttons"
+              <a
+                className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("loginform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/loginform"));
                 }}
               >
                 LOGIN
@@ -103,25 +115,30 @@ const HeaderComponent = () => {
             calling Child Component -Contact Us Form and adding a Class to
             overlay on the Header page which is the parent component-We use CSS
             to Show/Hide the overlay */}
-              <a className="right-side-buttons"
+              <a
+                className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("contactform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/contactform"));
+                    
                 }}
               >
                 CONTACT
               </a>
             </li>
             <li>
-              <Link className="right-side-buttons"
+              <Link
+                className="right-side-buttons"
                 to="/cart"
                 onClick={() => {
                   dispatch(UpdateBrowsingHistory("/cart"));
                 }}
               >
                 <span>
-                 <FaShoppingCart />&nbsp;CART
+                  <FaShoppingCart />
+                  &nbsp;CART
                 </span>
               </Link>
             </li>

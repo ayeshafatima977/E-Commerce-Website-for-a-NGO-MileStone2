@@ -1,4 +1,12 @@
-.login-input {
+@import url("./normalize.css");
+.login-email-input {
+  width: 80vw;
+  height: 50px;
+  border: solid 2px black;
+  margin: 10px 20px;
+  font-size: 30px;
+}
+.login-password-input {
   width: 80vw;
   height: 50px;
   border: solid 2px black;
@@ -19,9 +27,22 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(255,255,255,0.85);
   z-index: 3;
+}
+.loginform-overlay > span {
+  position: relative;
+  top: 25px;
+  left: 30px;
+}
+.loginform-overlay > h2 {
+  font-size: 55px;
+  margin: 55px 0 20px 40px;
 }
 .overlayShow {
   display: block;
+}
+.login-input::placeholder {
+  font-size: 30px;
+  color: black;
 }

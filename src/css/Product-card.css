@@ -23,7 +23,7 @@
   /* height: 396px; */
   background: #4D626E;
   border-radius: 15px;
-  margin: 20px;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
 }
@@ -96,4 +96,13 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+
+  color: #FFFFFF;
+}
+#product-shop-icon {
+  padding: 0 10px;
 }

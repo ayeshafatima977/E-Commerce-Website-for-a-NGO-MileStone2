@@ -13,8 +13,8 @@ import {
 } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
-import "../css/Shopping-cart.css";
-
+/* import "../css/Shopping-cart.css";
+ */
 const ShoppingCartComponent = () => {
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
     false
@@ -43,9 +43,8 @@ const ShoppingCartComponent = () => {
 
   return (
     <>
-
-      <form id="shopping-cart" onSubmit={ SubmitForm }>
-       {inCartProducts.map((inCartProduct) => {
+      <form id="shopping-cart" onSubmit={SubmitForm}>
+        {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
           return (
             <div>
@@ -53,6 +52,28 @@ const ShoppingCartComponent = () => {
               <img src={inCartProduct.image} width="200px" height="200px" />
               <p>{inCartProduct.description}</p>
               <p>$ {inCartProduct.price}</p>
+
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(IncreaseCartQty(inCartProduct.id));
+                }}
+              >
+                &#43; {/* Plus sign */}
+              </button>
+              <input
+                type="number"
+                value={inCartProduct.inCartQty}
+                min="0"
+                onChange={(e) => {
+                  e.target.value > -1 || (e.target.value = "0");
+                  if (e.target.value > -1) {
+                    dispatch(SetCartQty(inCartProduct.id, e.target.value));
+                  }
+                }}
+              ></input>
+
               <button
                 type="button"
                 onClick={(e) => {
@@ -63,29 +84,12 @@ const ShoppingCartComponent = () => {
                 &#8722; {/* Minus sign */}
               </button>
 
-              <input
-                type="number"
-                value={inCartProduct.inCartQty}
-                min="0"
-                onChange={(e) => {
-                  (e.target.value > -1 || (e.target.value = "0"));
-                  if (e.target.value > -1) {
-                    dispatch(SetCartQty(inCartProduct.id, e.target.value));
-                  }
-                }}
-              ></input>
               <button
                 type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(IncreaseCartQty(inCartProduct.id));
+                onClick={() => {
+                  dispatch(RemoveFromCart(inCartProduct.id));
                 }}
               >
-                &#43; {/* Plus sign */}
-              </button>
-              <button 
-              type= 'button'
-              onClick={()=>{dispatch(RemoveFromCart(inCartProduct.id))}}>
                 Remove From Cart
               </button>
             </div>
@@ -119,7 +123,7 @@ const ShoppingCartComponent = () => {
             );
           }}
         >
-           {/* NOTE REPLACE BUTTON AS PER FIGMA */}
+          {/* NOTE REPLACE BUTTON AS PER FIGMA */}
           Click
         </button>
       </form>

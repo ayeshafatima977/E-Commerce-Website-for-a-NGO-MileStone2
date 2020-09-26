@@ -33,6 +33,7 @@ GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-
 
 13. https://stackoverflow.com/questions/17787680/overlay-the-div-on-the-div-of-contact-form
 14. OverLay Component Package: https://binodswain.github.io/react-overlay-component/
+    15.Static content: https://donate.worldvision.ca/pages/gift-catalogue-frequently-asked-questions?_ga=2.92856925.1149032770.1601052606-1805505462.1600439777&_gac=1.82702692.1601052621.Cj0KCQjwqrb7BRDlARIsACwGad6iGgWtrCOINhqHqsaU67Ph83Ng6zyCJMPZHUwsGN0wBJ5RmFv7R2UaAgO5EALw_wcB
 
 Citation:
 
@@ -49,7 +50,7 @@ Source:https://stackoverflow.com/questions/37949981/call-child-method-from-paren
 
 (1) File Name: Shopping-navigation.js (Reducer file)
 
-Citation: The sorting function was adapted so that it could sort an array based on the product objects title. 
+Citation: The sorting function was adapted so that it could sort an array based on the product objects title.
 Source: https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
 Reason: A function to sort an array based on the inner object properties (title) was needed.
 
@@ -57,7 +58,7 @@ Reason: A function to sort an array based on the inner object properties (title)
 
 (2) File Name: Shopping-navigation.js (Reducer file)
 
-Citation: The sorting function was adapted so that it could sort an array based on the product objects price. 
+Citation: The sorting function was adapted so that it could sort an array based on the product objects price.
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 Reason: A function to sort an array based on the inner object properties (price) was needed.
 

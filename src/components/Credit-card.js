@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
-
+import DatePickerCCExpComponent from "./Date-picker-ccexp"
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
@@ -36,114 +36,105 @@ const CreditCardComponent = forwardRef((props, ref) => {
         FormValidation(
           userCreditNumber,
           "cc-number-input",
-          "userCreditNumber",
-          "userCreditNumber-error"
+          "user-credit-number",
+          "user-credit-number-error"
         ) &&
         FormValidation(
           userExpiry,
           "cc-exp",
-          "userExpiry",
-          "userExpiry-error"
+          "user-credit-expiry",
+          "user-credit-expiry-error"
         ) &&
-        FormValidation(userCVC, "cc-cvc", "userCVC", "userCVC-error")
+        FormValidation(
+          userCVC, 
+          "cc-cvc", 
+          "user-credit-cvc", 
+          "user-credit-cvc-error")
       )
-        // {
-        //   document
-        //     .getElementsByClassName("credit-thanks-msg")[0]
-        //     .classList.add("msg-show");
-        // } else {
-        //   document
-        //     .getElementsByClassName("credit-thanks-msg")[0]
-        //     .classList.remove("msg-show");
-        // }
-
-        // After validation sucessfull it will perform dispatch
-        console.log("Inside Credit Card Component:", CreditCardStateInfoCopy);
-
-      dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
+        dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;
     },
   }));
   // Note:Wrap the INPUTS IN FORM
   return (
     <>
-      <h2>Credit Card</h2>
-      <p>
-        <FaCcMastercard />
-      </p>
-      <p>
-        <FaCcVisa />
-      </p>
-      <p>
-        <FaCcPaypal />
-      </p>
-      <p>
-        <FaCcAmazonPay />
-      </p>
-      <p>
-        <FaCcApplePay />
-      </p>
-      <p>
-        <SiGooglepay />
-      </p>
-      <div>
-        <label htmlFor="Card Number">
-        Number on Card<span className="required-field">*</span>
+      <form id="credit-card-form">
+        <h2>Credit Card</h2>
+        <p>
+          <FaCcMastercard />
+        </p>
+        <p>
+          <FaCcVisa />
+        </p>
+        <p>
+          <FaCcPaypal />
+        </p>
+        <p>
+          <FaCcAmazonPay />
+        </p>
+        <p>
+          <FaCcApplePay />
+        </p>
+        <p>
+          <SiGooglepay />
+        </p>
+        <div>
+          <label htmlFor="Card Number">
+            Number on Card<span className="required-field">*</span>
+          </label>
+          <input
+            type="text"
+            placeholder="0123 4567 8910 1112"
+            className="user-credit-number"
+            maxLength="16"
+            onChange={(e) => {
+              setUserCreditNumber(e.target.value);
+            }}
+          />
+          <FaCreditCard />
+          <p className="user-credit-number-error msg-hide">
+            Please enter correct Credit Card Number
+          </p>
+        </div>
+
+        <label htmlFor="Expiry Date">
+          Expires<span className="required-field">*</span>
+        </label>
+        <DatePickerCCExpComponent/>
+        <input
+          type="text"
+          maxLength="5"
+          placeholder="yy/mm"
+          className="user-credit-expiry"
+          onChange={(e) => {
+            setUserExpiry(e.target.value);
+          }}
+        />
+        <p className="user-credit-expiry-error msg-hide">
+          Please enter correct expiry date
+        </p>
+        <label htmlFor="Card Code(CVC)">
+          Security Code <span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="xxxx xxxx xxxx xxxx"
-          className="userCreditNumber"
-          maxLength="16"
+          placeholder="e.g.,1234"
+          className="user-credit-cvc"
+          maxLength="4"
           onChange={(e) => {
-            setUserCreditNumber(e.target.value);
+            setUserCVC(e.target.value);
           }}
         />
-        <FaCreditCard />
-      </div>
-
-      <label htmlFor="Expiry Date">
-        Expires<span className="required-field">*</span>
-      </label>
-      <input
-        type="text"
-        maxlength="5"
-        placeholder="YY MM"
-        className="userExpiry"
-        onChange={(e) => {
-          setUserExpiry(e.target.value);
-        }}
-      />
-      <label htmlFor="Card Code(CVC)">
-        Security Code <span className="required-field">*</span>
-      </label>
-      <input
-        type="text"
-        placeholder="xxx"
-        className="userCVC"
-        maxLength="4"
-        onChange={(e) => {
-          setUserCVC(e.target.value);
-        }}
-      />
-      <input
-        type="checkbox"
-        id="checkboxes"
-        onChange={(e) => {
-          // If the checkbox is checked it returns true else returns false
-          setUserInfoSave(e.target.checked);
-        }}
-      />
-      <p className="userCreditNumber-error msg-hide">
-        Please enter correct Credit Card Number
-      </p>
-      <p className="userExpiry-error msg-hide">
-        Please enter correct expiry date
-      </p>
-      <p className="userCVC-error msg-hide">Please enter correct CVC</p>
-      {/* <p className="credit-thanks-msg msg-hide">
-        Thankyou ,Your Payment has been received.
-      </p> */}
+        <p className="user-credit-cvc-error msg-hide">Please enter correct CVC</p>
+        <input
+          type="checkbox"
+          id="checkboxes"
+          onChange={(e) => {
+            // If the checkbox is checked it returns true else returns false
+            setUserInfoSave(e.target.checked);
+          }}
+        />
+      </form>
     </>
   );
 });

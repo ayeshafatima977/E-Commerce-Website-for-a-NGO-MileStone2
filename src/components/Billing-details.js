@@ -2,6 +2,7 @@ import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
 import FormValidation from "../functions/Form-validation.js";
+import "../css/Billing-details.css";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
@@ -34,99 +35,93 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
       if (
         FormValidation(
           userFirstName,
-          "fname",
-          "userFirstName",
-          "userFirstName-error"
+          "name",
+          "billing-firstname",
+          "billing-firstname-error"
         ) &&
         FormValidation(
           userLastName,
-          "lname",
-          "userLastName",
-          "userLastName-error"
+          "name",
+          "billing-lastname",
+          "billing-lastname-error"
         ) &&
-        FormValidation(userStreetAddress, "address", "userStreetAddress","userStreetAddress-error") &&
-        FormValidation(userCity, "city", "userCity", "userCity-error") &&
+        FormValidation(userStreetAddress, "address", "billing-streetaddress","billing-streetaddress-error") &&
+        FormValidation(userCity, "name", "billing-city", "billing-city-error") &&
         FormValidation(
           userPostalCode,
           "postal",
-          "userPostalCode",
-          "userPostalCode-error"
+          "billing-postalcode",
+          "billing-postalcode-error"
         )&&
-        FormValidation(userPhone, "phone", "userPhone", "userPhone-error") &&
-        FormValidation(userEmail, "email", "userEmail", "userEmail-error ") 
-      
-        
-        
-       
+        FormValidation(userPhone, "phone", "billing-phone", "billing-phone-error") &&
+        FormValidation(userEmail, "email", "billing-email", "billing-email-error ") 
+
       ) {
-        // {
-        //   document
-        //     .getElementsByClassName("billing-thanks-msg")[0]
-        //     .classList.add("msg-show");
-        // } else {
-        //   document
-        //     .getElementsByClassName("billing-thanks-msg")[0]
-        //     .classList.remove("msg-show");
-        // }
+        
         dispatch(ChangeBillingInfo(BillingInfoCopy));
         return true;
       }
     },
   }));
 
-  // const SubmitForm = (e) => {
-  //   e.preventDefault();
-  // };
-
   return (
     <>
-      <h2>Billing Details</h2>
-      <form id="billingForm">
+      <form id="billing-form">
         <label htmlFor="First Name">
           First Name<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your First Name"
-          className="userFirstName"
+          placeholder="e.g., Johnny"
+          className="billing-firstname"
           onChange={(e) => {
             setUserFirstName(e.target.value);
             
           }}
         />
+        <p className="billing-firstname-error msg-hide">
+          Please enter correct First Name
+        </p>
         <label htmlFor=" Last Name">
           Last Name<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Last Name"
-          className="userLastName"
+          placeholder="e.g., Bravo"
+          className="billing-lastname"
           onChange={(e) => {
             setUserLastName(e.target.value);
           }}
         />
+        <p className="billing-lastname-error msg-hide">
+          Please enter correct Last Name
+        </p>
         <label htmlFor="StreetAddress">
           Street Address<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Street Address"
-          className="userStreetAddress"
+          placeholder="e.g., 123st."
+          className="billing-streetaddress"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
           }}
         />
+        <p className="billing-streetaddress-error msg-hide">
+          Please enter a valid Street address
+        </p>
         <label htmlFor="City">
           City<span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your City"
-          className="userCity"
+          placeholder="e.g., Edmonton"
+          className="billing-city"
           onChange={(e) => {
             setUserCity(e.target.value);
           }}
         />
+ <p className="billing-city-error msg-hide">Please enter a city</p>
 
         <label htmlFor="Province">
           Province<span className="required-field">*</span>
@@ -150,54 +145,44 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         </label>
         <input
           type="text"
-          placeholder="Enter your Postal Code"
-          className="userPostalCode"
+          placeholder="e.g., T2A 1E3"
+          className="billing-postalcode"
           maxLength="7"
           onChange={(e) => {
             setUserPostalCode(e.target.value);
           }}
         />
+         
+         <p className="billing-postalcode-error msg-hide">
+          Please enter a PostalCode
+        </p>
         <label htmlFor="Phone">
           Phone<span className="required-field">*</span>
         </label>
         <input
           type="text"
           maxLength="10"
-          placeholder="Enter your Phone Number"
-          className="userPhone"
+          placeholder="e.g., 780-123-4567"
+          className="billing-phone"
           onChange={(e) => {
             setUserPhone(e.target.value);
           }}
         />
+        <p className="billing-phone-error msg-hide">
+          Please enter a valid phone number
+        </p>
         <label htmlFor="Email Address">
           Email Address <span className="required-field">*</span>
         </label>
         <input
           type="text"
-          placeholder="Enter your Email Address"
-          className="userEmail"
+          placeholder="e.g., example@domain.com"
+          className="billing-email"
           onChange={(e) => {
             setUserEmail(e.target.value);
           }}
         />
-        <p className="userFirstName-error msg-hide">
-          Please enter correct First Name
-        </p>
-        <p className="userLastName-error msg-hide">
-          Please enter correct Last Name
-        </p>
-        <p className="userPhone-error msg-hide">
-          Please enter a valid phone number
-        </p>
-        <p className="userEmail-error msg-hide">Please enter valid email Id</p>
-        <p className="userStreetAddress-error msg-hide">
-          Please enter a valid Street address
-        </p>
-        <p className="userCity-error msg-hide">Please enter a city</p>
-        <p className="userPostalCode-error msg-hide">
-          Please enter a PostalCode
-        </p>
-        {/* <p className="billing-thanks-msg msg-hide">Thankyou.</p> */}
+      <p className="billing-email-error msg-hide">Please enter valid email Id</p>
       </form>
     </>
   );

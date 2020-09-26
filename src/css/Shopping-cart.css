@@ -1,6 +1,13 @@
-@import "./normalize.css";
+@import url("./normalize.css");
 
 /* * {
   outline: 1px solid red;
 }
  */
+
+ #shopping-cart {
+   border: solid black 1px;
+   border-radius: 10px;
+   background-color: #4D626E;
+   color: #FFF;
+ }
