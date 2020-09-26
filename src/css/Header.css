@@ -1,8 +1,7 @@
 @import "./normalize.css";
 
 .common-header {
-  display: flex;
-  flex-direction: column;
+  display: none;
 }
 .common-header div {
   display: flex;

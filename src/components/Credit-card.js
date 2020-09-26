@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
-import DatePickerCCExpComponent from "./Date-picker-ccexp"
+import DatePickerCCExpComponent from "./Date-picker-ccexp";
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
@@ -30,8 +30,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   };
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
-      //Think of it as onsubmit function
-      //This fn will run onsubmit from parent-Shopping Cart or the Donation form
+      //This function will run onsubmit from parent-Shopping Cart or the Donation form
       if (
         FormValidation(
           userCreditNumber,
@@ -46,16 +45,17 @@ const CreditCardComponent = forwardRef((props, ref) => {
           "user-credit-expiry-error"
         ) &&
         FormValidation(
-          userCVC, 
-          "cc-cvc", 
-          "user-credit-cvc", 
-          "user-credit-cvc-error")
+          userCVC,
+          "cc-cvc",
+          "user-credit-cvc",
+          "user-credit-cvc-error"
+        )
       )
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;
     },
   }));
-  // Note:Wrap the INPUTS IN FORM
+
   return (
     <>
       <form id="credit-card-form">
@@ -78,12 +78,13 @@ const CreditCardComponent = forwardRef((props, ref) => {
         <p>
           <SiGooglepay />
         </p>
-        <div>
-          <label htmlFor="Card Number">
-            Number on Card<span className="required-field">*</span>
+        <div id="credit-number-container">
+          <label htmlFor="user-credit-number-id">
+            Number on Card<sup className="required-field">*</sup>
           </label>
           <input
             type="text"
+            id="user-credit-number-id"
             placeholder="0123 4567 8910 1112"
             className="user-credit-number"
             maxLength="16"
@@ -96,44 +97,54 @@ const CreditCardComponent = forwardRef((props, ref) => {
             Please enter correct Credit Card Number
           </p>
         </div>
-
-        <label htmlFor="Expiry Date">
-          Expires<span className="required-field">*</span>
-        </label>
-        <DatePickerCCExpComponent/>
-        <input
-          type="text"
-          maxLength="5"
-          placeholder="yy/mm"
-          className="user-credit-expiry"
-          onChange={(e) => {
-            setUserExpiry(e.target.value);
-          }}
-        />
-        <p className="user-credit-expiry-error msg-hide">
-          Please enter correct expiry date
-        </p>
-        <label htmlFor="Card Code(CVC)">
-          Security Code <span className="required-field">*</span>
-        </label>
-        <input
-          type="text"
-          placeholder="e.g.,1234"
-          className="user-credit-cvc"
-          maxLength="4"
-          onChange={(e) => {
-            setUserCVC(e.target.value);
-          }}
-        />
-        <p className="user-credit-cvc-error msg-hide">Please enter correct CVC</p>
-        <input
-          type="checkbox"
-          id="checkboxes"
-          onChange={(e) => {
-            // If the checkbox is checked it returns true else returns false
-            setUserInfoSave(e.target.checked);
-          }}
-        />
+        <div id="credit-exp-date-container">
+          <label htmlFor="user-credit-expiry-id">
+            Expires<sup className="required-field">*</sup>
+          </label>
+          <DatePickerCCExpComponent />
+          <input
+            id="user-credit-expiry-id"
+            type="text"
+            maxLength="5"
+            placeholder="yy/mm"
+            className="user-credit-expiry"
+            onChange={(e) => {
+              setUserExpiry(e.target.value);
+            }}
+          />
+          <p className="user-credit-expiry-error msg-hide">
+            Please enter correct expiry date
+          </p>
+        </div>
+        <div id="credit-CVC-container">
+          <label htmlFor="user-credit-cvc-id">
+            Security Code <sup className="required-field">*</sup>
+          </label>
+          <input
+            type="text"
+            id="user-credit-cvc-id"
+            placeholder="e.g.,1234"
+            className="user-credit-cvc"
+            maxLength="4"
+            onChange={(e) => {
+              setUserCVC(e.target.value);
+            }}
+          />
+          <p className="user-credit-cvc-error msg-hide">
+            Please enter correct CVC
+          </p>
+        </div>
+        <div id="credit-save-container">
+          <input
+            type="checkbox"
+            id="checkboxes"
+            onChange={(e) => {
+              // If the checkbox is checked it returns true else returns false
+              setUserInfoSave(e.target.checked);
+            }}
+          />
+          <label htmlFor="checkboxes">Save payment information</label>
+        </div>
       </form>
     </>
   );
