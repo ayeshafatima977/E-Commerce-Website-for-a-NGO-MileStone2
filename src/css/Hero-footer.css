@@ -112,11 +112,15 @@ footer {
   width: 100%;
 }
 #email {
-  width: 50%;
+  width: 70%;
 }
 #newsletter-submit {
   background-color: rgba(35, 61, 76, 0.01); 
   width: 20%;
+}
+#minor-footer {
+  color: #4D626E;
+  font-size: 15px;
 }
 /*=============================================
 =            Tablet Media Query            =
