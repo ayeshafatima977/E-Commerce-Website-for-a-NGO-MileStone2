@@ -67,13 +67,14 @@ const ContactFormComponent = () => {
       >
         <form onSubmit={SubmitForm} id="contact-form">
           <h2>CONTACT US</h2>
-          <label htmlFor="Email">
+          <label htmlFor="email">
             Email<sup className="required-field"> *</sup>
           </label>
 
           <input
             type="text"
-            placeholder="e.g., example@domain.com"
+            id="contact-email-id"
+            placeholder="example@domain.com"
             className="contact-email"
             onChange={(e) => {
               setContactEmail(e.target.value);
@@ -82,13 +83,13 @@ const ContactFormComponent = () => {
           <p className="contact-email-error msg-hide">
             Please enter valid email Id
           </p>
-          <label htmlFor="Subject">
+          <label htmlFor="subject">
             Subject<sup className="required-field"> *</sup>
           </label>
           <input
-            id="subject"
+            id="contact-subject-id"
             type="text"
-            placeholder="e.g., participate in event"
+            placeholder="participate in event"
             className="contact-subject"
             maxLength="20"
             onChange={(e) => {
@@ -98,11 +99,11 @@ const ContactFormComponent = () => {
           <p className="contact-subject-error msg-hide">
             Please enter a valid Subject
           </p>
-          <label htmlFor="Message">
+          <label htmlFor="message">
             Message <sup className="required-field">*</sup>
           </label>
           <textarea
-            id="message"
+            id="contact-message"
             placeholder="We love to hear from your ... 500 character max"
             className="contact-message"
             maxLength="500"
