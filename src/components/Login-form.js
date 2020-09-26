@@ -45,7 +45,7 @@ const LoginFormComponent = () => {
           id="login-email-input"
           //Check with KENJI if used else where, Previously classNAme-"login-input"
           className="login-email-input"
-          placeholder="e.g., example@domain.com"
+          placeholder="example@domain.com"
           onChange={(e) => {
             setLoginEmail(e.target.value);
           }}

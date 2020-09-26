@@ -13,12 +13,11 @@ import EventImageTwo from "../img/christmas-event-comp.jpg";
 /* Assuming routing would be in middle section between header/banner and footer */
 const NewsEventsPageComponent = () => {
   return (
-    <>
+    <article>
       <BannerComponent />
       {/*=============News Section===============*/}
 
       <h1> News </h1>
-
       <section>
         <h2>COVID 19 update</h2>
         <p>
@@ -85,7 +84,7 @@ const NewsEventsPageComponent = () => {
           height="200px"
         ></img>
       </section>
-    </>
+    </article>
   );
 };
 

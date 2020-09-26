@@ -20,7 +20,7 @@
   color: #4d626e;
   padding: 0 2rem 0 0;
 }
-.common-header .logo img {
+.common-header #logo img {
   width: 100px;
   height: auto;
   margin-left:10%
