@@ -100,12 +100,13 @@ const FooterComponent = () => {
         <form className="newsletter-form" onSubmit={SubmitForm}>
           <div id="fname-lname">
             <label htmlFor="fname" className=".screen-reader-text">
-              First Name <span className="required-field">*</span>
+              First Name 
             </label>
             <input
               type="text"
+              id="fname"
               className="newsletter-fname"
-              placeholder="e.g., Johnny"
+              placeholder="Johnny"
               onChange={(event) => {
                 setFName(event.target.value);
               }}
@@ -114,12 +115,13 @@ const FooterComponent = () => {
               Please enter correct First Name
             </p>
             <label htmlFor="lname" className=".screen-reader-text">
-              Last Name <span className="required-field">*</span>
+              Last Name 
             </label>
             <input
               type="text"
+              id="lname"
               className="newsletter-lname"
-              placeholder="e.g., Bravo"
+              placeholder="Bravo"
               onChange={(event) => {
                 setLName(event.target.value);
               }}
@@ -134,8 +136,9 @@ const FooterComponent = () => {
             </label>
             <input
               type="text"
+              id="email"
               className="newsletter-email"
-              placeholder="e.g., example@domain.com"
+              placeholder="example@domain.com"
               onChange={(event) => {
                 setEmail(event.target.value);
               }}

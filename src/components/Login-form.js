@@ -44,7 +44,7 @@ const LoginFormComponent = () => {
           type="text"
           id="login-email-input"
           className="login-email-input"
-          placeholder="e.g., example@domain.com"
+          placeholder="example@domain.com"
           onChange={(e) => {
             setLoginEmail(e.target.value);
           }}
