@@ -44,7 +44,6 @@ const ShoppingCartComponent = () => {
 
   return (
     <>
-
       <form id="shopping-cart" onSubmit={{ SubmitForm }}>
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;

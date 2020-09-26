@@ -2,6 +2,7 @@ import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
 import FormValidation from "../functions/Form-validation.js";
+import "../css/Billing-details.css";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
@@ -76,11 +77,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
 
   return (
     <>
-      <h2>Billing Details</h2>
-      <form id="billingForm">
+      <h2 id="billing-form-title">Billing Details</h2>
+      <form id="billing-form">
         <label htmlFor="First Name">
           First Name<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your First Name"
@@ -89,9 +91,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserFirstName(e.target.value);
           }}
         />
+        <br />
         <label htmlFor=" Last Name">
           Last Name<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your Last Name"
@@ -100,9 +104,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserLastName(e.target.value);
           }}
         />
+        <br />
         <label htmlFor="StreetAddress">
           Street Address<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your Street Address"
@@ -111,9 +117,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserStreetAddress(e.target.value);
           }}
         />
+        <br />
         <label htmlFor="City">
           City<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your City"
@@ -122,10 +130,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserCity(e.target.value);
           }}
         />
-
+        <br />
         <label htmlFor="Province">
           Province<span className="required-field">*</span>
         </label>
+        <br />
         <select
           onChange={(e) => {
             setUserProvince(e.target.value);
@@ -141,9 +150,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           <option value="NB">NB</option>
           <option value="NS">NS</option>
         </select>
+        <br />
         <label htmlFor="Postal Code">
           Postal Code<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your Postal Code"
@@ -153,9 +164,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserPostalCode(e.target.value);
           }}
         />
+        <br />
         <label htmlFor="Phone">
           Phone<span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="number"
           maxLength="10"
@@ -165,9 +178,11 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             setUserPhone(e.target.value);
           }}
         />
+        <br />
         <label htmlFor="Email Address">
           Email Address <span className="required-field">*</span>
         </label>
+        <br />
         <input
           type="text"
           placeholder="Enter your Email Address"

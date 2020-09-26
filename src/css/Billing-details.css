@@ -1,0 +1,16 @@
+@import url('./normalize.css');
+#billing-form-title {
+  margin: 10px 0;
+}
+#billing-form > input,
+#billing-form > select {
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+#billing-form {
+  margin-bottom: 15px;
+}
+
