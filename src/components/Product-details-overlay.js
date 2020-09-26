@@ -18,7 +18,6 @@ const ProductDetailsOverlayComponent = (props) => {
     productInCartQtyCopy,
     productObj;
 
-  console.log(GlobalStateInfo.ShopNav.products);
   for (const product of productList) {
     if (Number(props.productId) === product.id) {
       productTitleCopy = product.title;
@@ -30,6 +29,13 @@ const ProductDetailsOverlayComponent = (props) => {
       productObj = product;
     }
   }
+  const inCartCheck = () => {
+    for (let item of GlobalStateInfo.Cart) {
+      if (productIdCopy === item.id) {
+        return true;
+      }
+    }
+  };
 
   const AddSingleProductToCart = () => {
     dispatch(AddToCart(productObj));
@@ -53,16 +59,20 @@ const ProductDetailsOverlayComponent = (props) => {
       <p>{productPriceCopy}</p>
       <img src={productImgCopy} alt={productDescriptionCopy} />
 
-      {productInCartQtyCopy === 0 ? (
-        <button onClick={AddSingleProductToCart}><span className="shopping-cart">
-        <FaShoppingCart />
-        &nbsp;Add to Cart
-      </span></button>
+      {inCartCheck() ? (
+        <button onClick={RemoveSingleProductFromCart}>
+          <span className="shopping-cart">
+            <FaShoppingCart />
+            &nbsp;Remove from Cart
+          </span>
+        </button>
       ) : (
-        <button onClick={RemoveSingleProductFromCart}><span className="shopping-cart">
-        <FaShoppingCart />
-        &nbsp;Remove from Cart
-      </span></button>
+        <button onClick={AddSingleProductToCart}>
+          <span className="shopping-cart">
+            <FaShoppingCart />
+            &nbsp;Add to Cart
+          </span>
+        </button>
       )}
     </section>
   );

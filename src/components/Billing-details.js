@@ -68,11 +68,13 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
     <>
       <form id="billing-form">
         <label htmlFor="First Name">
-          First Name<span className="required-field">*</span>
+          First Name<sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
-          placeholder="e.g., Johnny"
+          placeholder="Johnny"
           className="billing-firstname"
           onChange={(e) => {
             setUserFirstName(e.target.value);
@@ -83,11 +85,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Please enter correct First Name
         </p>
         <label htmlFor=" Last Name">
-          Last Name<span className="required-field">*</span>
+          Last Name<sup
+ className="required-field">*</sup>
         </label>
         <input
           type="text"
-          placeholder="e.g., Bravo"
+          placeholder="Bravo"
           className="billing-lastname"
           onChange={(e) => {
             setUserLastName(e.target.value);
@@ -97,11 +100,13 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Please enter correct Last Name
         </p>
         <label htmlFor="StreetAddress">
-          Street Address<span className="required-field">*</span>
+          Street Address<sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
-          placeholder="e.g., 123st."
+          placeholder="123st."
           className="billing-streetaddress"
           onChange={(e) => {
             setUserStreetAddress(e.target.value);
@@ -111,11 +116,13 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Please enter a valid Street address
         </p>
         <label htmlFor="City">
-          City<span className="required-field">*</span>
+          City<sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
-          placeholder="e.g., Edmonton"
+          placeholder="Edmonton"
           className="billing-city"
           onChange={(e) => {
             setUserCity(e.target.value);
@@ -124,7 +131,9 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
  <p className="billing-city-error msg-hide">Please enter a city</p>
 
         <label htmlFor="Province">
-          Province<span className="required-field">*</span>
+          Province<sup
+ className="required-field">*</sup
+>
         </label>
         <select
           onChange={(e) => {
@@ -141,11 +150,13 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           <option value="NS">NS</option>
         </select>
         <label htmlFor="Postal Code">
-          Postal Code<span className="required-field">*</span>
+          Postal Code<sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
-          placeholder="e.g., T2A 1E3"
+          placeholder="T2A 1E3"
           className="billing-postalcode"
           maxLength="7"
           onChange={(e) => {
@@ -157,12 +168,14 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Please enter a PostalCode
         </p>
         <label htmlFor="Phone">
-          Phone<span className="required-field">*</span>
+          Phone<sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
           maxLength="10"
-          placeholder="e.g., 780-123-4567"
+          placeholder="780-123-4567"
           className="billing-phone"
           onChange={(e) => {
             setUserPhone(e.target.value);
@@ -172,11 +185,13 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           Please enter a valid phone number
         </p>
         <label htmlFor="Email Address">
-          Email Address <span className="required-field">*</span>
+          Email Address <sup
+ className="required-field">*</sup
+>
         </label>
         <input
           type="text"
-          placeholder="e.g., example@domain.com"
+          placeholder="example@domain.com"
           className="billing-email"
           onChange={(e) => {
             setUserEmail(e.target.value);

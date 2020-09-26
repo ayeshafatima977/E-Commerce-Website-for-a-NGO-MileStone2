@@ -162,7 +162,7 @@ export default function FormValidation(
 
     case "password":
       if (
-        !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8}$/.test(
+        !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,},$/.test(
           inputFieldContent
         )
       ) {

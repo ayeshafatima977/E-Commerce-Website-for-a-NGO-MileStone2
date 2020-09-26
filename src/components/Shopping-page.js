@@ -9,7 +9,7 @@ import "../css/Product-overlay.css";
 =        Products page React Component        =
 =============================================*/
 
-/* Assuming routing would be in middle section between header/banner and footer */
+/* Routing would be in middle section between header/banner and footer */
 const ShoppingPageComponent = () => {
   return (
     <>

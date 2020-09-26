@@ -43,7 +43,6 @@ const LoginFormComponent = () => {
         <input
           type="text"
           id="login-email-input"
-          //Check with KENJI if used else where, Previously classNAme-"login-input"
           className="login-email-input"
           placeholder="e.g., example@domain.com"
           onChange={(e) => {
@@ -55,7 +54,6 @@ const LoginFormComponent = () => {
         <input
           type="password"
           id="login-password-input"
-          //Check with KENJI if used else where, Previously classNAme-"login-input"
           className="login-password-input"
           placeholder="Password"
           onChange={(e) => {
@@ -66,7 +64,7 @@ const LoginFormComponent = () => {
           Please enter a Password: Minimum eight (8) in length and at least one upper
           case , one lower case letter, one digit and one special character.
         </p>
-        <input type="submit" id="login-submit" value="LOG IN" />
+        <input type="submit" form = "loginForm" id="login-submit" value="LOG IN" />
       </form>
     </div>
   );

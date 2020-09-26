@@ -1,5 +1,3 @@
-/*cspell:disable*/
-/* Import dependencies for the shopping cart component */
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -13,8 +11,12 @@ import {
 } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
-/* import "../css/Shopping-cart.css";
- */
+import "../css/Shopping-cart.css";
+
+
+/* Shopping cart component where we display the final cart items, asking for
+billing details, and credit card information before order confirmation and checkout */
+
 const ShoppingCartComponent = () => {
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
     false
@@ -27,7 +29,7 @@ const ShoppingCartComponent = () => {
   const dispatch = useDispatch();
   const inCartProducts = Array.from(
     globalStateInfo.Cart
-  ); /* array of in cart products */
+  );
   let subTotal = 0;
   const SubmitForm = (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const ShoppingCartComponent = () => {
     }
   };
 
-  /* Using useRef hook to access the creditcard and billing info components */
+  /* Using useRef hook to access the credit card and billing info components */
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
@@ -47,12 +49,12 @@ const ShoppingCartComponent = () => {
         {inCartProducts.map((inCartProduct) => {
           subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
           return (
-            <div>
+            <section>
               <h2>{inCartProduct.title}</h2>
-              <img src={inCartProduct.image} width="200px" height="200px" />
+              <img src={inCartProduct.image} alt= "Image of product in shopping cart" width="200px" height="200px" />
               <p>{inCartProduct.description}</p>
               <p>$ {inCartProduct.price}</p>
-
+              <div>
               <button
                 type="button"
                 onClick={(e) => {
@@ -92,13 +94,16 @@ const ShoppingCartComponent = () => {
               >
                 Remove From Cart
               </button>
-            </div>
+              </div>
+            </section>
           );
         })}
-
         <Link to="/shop">Back To Shopping</Link>
+        <div>
         <p> Subtotal</p>
         <p> $ {subTotal.toFixed(2)} </p>
+        </div>
+        <div>
         <h2> Local Pickup </h2>
         <p>
           #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up items at
@@ -106,7 +111,8 @@ const ShoppingCartComponent = () => {
         </p>
         <DatePickerComponent />
         <FaCalendarAlt />
-        <p>Schedule a pickup appointment *</p>
+        <p>Schedule a Pickup Appointment</p><sup className="required-field">*</sup>
+        </div>
         <p> Subtotal</p>
         <p> $ {subTotal.toFixed(2)} </p>
         <CreditCardComponent ref={creditCardRef} />
@@ -123,8 +129,7 @@ const ShoppingCartComponent = () => {
             );
           }}
         >
-          {/* NOTE REPLACE BUTTON AS PER FIGMA */}
-          Click
+          Place Order
         </button>
       </form>
     </>
