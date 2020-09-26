@@ -66,7 +66,7 @@ const ShoppingNavigationComponent = () => {
         <input
           id="search-input"
           type="text"
-          placeholder="Lookup merchandise"
+          placeholder="Search"
           onChange={(e) => {
             dispatch(Search(e.target.value));
           }}

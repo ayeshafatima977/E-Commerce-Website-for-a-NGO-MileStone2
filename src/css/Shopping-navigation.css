@@ -50,7 +50,6 @@
   font-style: italic;
   font-weight: normal;
   font-size: 20px;
-
 }
 .shopping-navigation-component h3 {
   color: #1c3656;
@@ -58,4 +57,19 @@
   border-top: solid black 2px;
   width: 100%;
   padding-left: 5%;
+}
+
+@media screen and (min-width: 600px) {
+  #search-input::placeholder {
+    font-size: 20px;
+  }
+  #search-input {
+    padding-left: 15px;
+  }
+  .shopping-nav-container input {
+    transform: scale(1.5);
+  }
+  .shopping-nav-container label {
+    padding-left: 5px;
+  }
 }
