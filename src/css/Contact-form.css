@@ -1,10 +1,9 @@
 @import url("./normalize.css");
-
-.contactform-overlay h2 {
-  margin: 0 0 1rem 0;
-  color: #ffffff;
-  text-align: center;
-  font-size:2rem;
+.overlayShow {
+  display: block;
+}
+body {
+  position: relative;
 }
 .contactform-overlay {
   position: fixed;
@@ -19,42 +18,52 @@
   z-index: 2;
   cursor: pointer;
 }
-.overlayShow {
-  display: block;
-}
-.contactform-overlay #contactForm {
+.contactform-overlay #contact-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
   width: 30%;
   height: auto;
-  background-color: #4d626e;
+  flex-direction: column;
+  background-color: #fff;
   border-radius: 15px;
   padding: 2.5%;
   text-align: left;
-  position: absolute;
-  top: 20%;
-  left: 25%;
+  box-shadow: 5px 5px 8px #888888;
 }
-.contactform-overlay input,.contactform-overlay textarea {
-  width: 100%;
-  height:30px;
-  display: block;
+.contactform-overlay h2 {
   margin: 0 0 1rem 0;
-  font-size: 1rem;
+  color: #4d626e;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.contactform-overlay input,
+.contactform-overlay textarea {
+  display: block;
+  width: 100%;
+  height: 35px;
+  margin: 0 0 1rem 0;
+  padding: 0 0 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #4d626e;
   border: none;
-  padding: 0.2rem 0 0.2rem 0.5rem;
-  border-radius: 5px;
-  font-size: 14px;
+  border-bottom: 1px solid #4d626e;
+  border-top: 1px solid #4d626e;
 }
 .contactform-overlay textarea {
-  width: 100%;
-  height: 25%;
+  padding-top: 0.5rem;
+  height: 100px;
   resize: vertical;
   overflow: auto;
-  padding: 0.5rem 0 0.2rem 0.5rem;
 }
-.contactform-overlay ::placeholder{
-  color:#4d626e;
+.contactform-overlay ::placeholder {
+  color: #4d626e;
+  font-size: 0.65rem;
+  font-style: italic;
 }
 .contactform-overlay input[type="text"]:focus {
   background-color: #d6e4e9;
@@ -63,29 +72,41 @@
   background-color: #d6e4e9;
 }
 .contactform-overlay #send {
-  color: #4d626e;
-  width: 125px;
-  height: 38px;
-  background: #ffffff;
-  font-size: 1.2rem;
+  width: 75px;
+  height: 30px;
+  color: white;
+  background: #4d626e;
+  font-size: 1rem;
   font-weight: 500;
   align-self: flex-end;
-  text-align:center;
-  padding:0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
   border: none;
-  margin:0;
 }
-.contactform-overlay label{
-  margin:  0 0 .25rem .5rem;
-  color: white;
+.contactform-overlay label {
+  margin: 0 0 0.25rem 0.5rem;
+  color: #4d626e;
   font-weight: 500;
-  font-size:1.05rem;
+  font-size: 0.75rem;
+}
+.contactform-overlay .required-field {
+  color: red;
+}
+.contactform-overlay .note {
+  color: red;
+  font-size: 0.55rem;
+  font-style: italic;
 }
 .contactform-overlay #send:hover {
-  background-color: #d6e4e9;
+  background-color: #90aab9;
   cursor: pointer;
 }
-
-.contact-thanks-msg{
-  color:white;
+.contact-thanks-msg {
+  color: #4d626e;
+}
+@media screen and (max-width: 400px) {
+  .contactform-overlay #contact-form {
+    width: 65%;
+  }
 }

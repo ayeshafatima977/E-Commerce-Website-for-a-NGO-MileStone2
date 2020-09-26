@@ -55,11 +55,11 @@ const FooterComponent = () => {
   return (
     <footer>
       {/* Contact Us start */}
+      <div id="major-footer">
       <section className="contact-us-info">
         <h2>Contact Us</h2>
         <p>12332 123 St Nw, Edmonton</p>
         <p>Alberta, T0A 0W0, 780-000-8888</p>
-        <p>Charitable Number 129185310 RR0001</p>
       </section>
       {/* Contact Us end */}
 
@@ -90,7 +90,6 @@ const FooterComponent = () => {
             </a>
           </span>
         </IconContext.Provider>
-        <p>Privacy Policy | Terms &amp; Conditions</p>
       </section>
       {/* Get Social end */}
 
@@ -98,61 +97,72 @@ const FooterComponent = () => {
       <section className="newsletter-info">
         <h2>Newsletter</h2>
         <p>Stay up to date with our work and how you can help - learn more.</p>
-        <form onSubmit={SubmitForm}>
-          <label htmlFor="fname">
-            First Name <span className="required-field">*</span>
-          </label>
-          <input
-            type="text"
-            className="newsletter-fname"
-            placeholder="e.g., Johnny"
-            onChange={(event) => {
-              setFName(event.target.value);
-            }}
-          />
-          <p className="newsletter-fname-error-msg msg-hide">
-            Please enter correct First Name
-          </p>
-          <label htmlFor="lname">
-            Last Name <span className="required-field">*</span>
-          </label>
-          <input
-            type="text"
-            className="newsletter-lname"
-            placeholder="e.g., Bravo"
-            onChange={(event) => {
-              setLName(event.target.value);
-            }}
-          />
-          <p className="newsletter-lname-error-msg msg-hide ">
-            Please enter correct Last Name
-          </p>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="text"
-            className="newsletter-email"
-            placeholder="e.g., example@domain.com"
-            onChange={(event) => {
-              setEmail(event.target.value);
-            }}
-          />
-          <p className="newsletter-email-error-msg msg-hide ">
-            Please enter valid email Id
-          </p>
-          <button type="submit">
-            <IconContext.Provider
-              value={{ color: "#FFF", style: { opacity: 0.5 } }}
-            >
-              <FaEnvelope size="30px" />
-            </IconContext.Provider>
-          </button>
+        <form className="newsletter-form" onSubmit={SubmitForm}>
+          <div id="fname-lname">
+            <label htmlFor="fname" className=".screen-reader-text">
+              First Name <span className="required-field">*</span>
+            </label>
+            <input
+              type="text"
+              className="newsletter-fname"
+              placeholder="e.g., Johnny"
+              onChange={(event) => {
+                setFName(event.target.value);
+              }}
+            />
+            <p className="newsletter-fname-error-msg msg-hide">
+              Please enter correct First Name
+            </p>
+            <label htmlFor="lname" className=".screen-reader-text">
+              Last Name <span className="required-field">*</span>
+            </label>
+            <input
+              type="text"
+              className="newsletter-lname"
+              placeholder="e.g., Bravo"
+              onChange={(event) => {
+                setLName(event.target.value);
+              }}
+            />
+            <p className="newsletter-lname-error-msg msg-hide ">
+              Please enter correct Last Name
+            </p>
+          </div>
+          <div id="emailid-send">
+            <label htmlFor="email" className=".screen-reader-text">
+              Email Address
+            </label>
+            <input
+              type="text"
+              className="newsletter-email"
+              placeholder="e.g., example@domain.com"
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            />
+            <p className="newsletter-email-error-msg msg-hide ">
+              Please enter valid email Id
+            </p>
+            <button type="submit">
+              <IconContext.Provider
+                value={{ color: "#FFF", style: { opacity: 0.5 } }}
+              >
+                <FaEnvelope size="30px" />
+              </IconContext.Provider>
+            </button>
+          </div>
           <p className="newsletter-thanks-msg msg-hide">
             Thank you for Subscribing to our newsletter...!
           </p>
         </form>
-        <p>&copy; 2020 Edmonton Scriptorce</p>
       </section>
+      </div>
       {/* Newsletter end */}
+      <div id="minor-footer">
+        <p>Charitable Number 129185310 RR0001</p>
+        <p>Privacy Policy | Terms &amp; Conditions</p>
+        <p>&copy; 2020 Edmonton Scriptorce</p>
+      </div>
     </footer>
   );
 };

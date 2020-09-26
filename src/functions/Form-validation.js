@@ -69,7 +69,7 @@ export default function FormValidation(
   };
 
   switch (inputFieldType) {
-    case "name":
+    case "name": //first name , second name, full name and city
       if (!/^[A-Za-z/s]+$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
@@ -87,7 +87,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "required-field":
+    case "required-field": //subject, message, date
       if (inputFieldContent === "") {
         manipulateDoMError();
       } else {
@@ -95,7 +95,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "postal":
+    case "postal": // Canadian Postal Code
       if (!/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
@@ -114,7 +114,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "phone":
+    case "phone": // Canadian local phones
       const inputFieldContentPrefix = inputFieldContent.slice(0, 3);
       const aCanadianNbr = canadianMobilePrefix.includes(
         Number(inputFieldContentPrefix)

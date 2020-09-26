@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
@@ -69,7 +68,7 @@ const ContactFormComponent = () => {
         <form onSubmit={SubmitForm} id="contact-form">
           <h2>CONTACT US</h2>
           <label htmlFor="Email">
-            Email<span className="required-field">*</span>
+            Email<sup className="required-field"> *</sup>
           </label>
 
           <input
@@ -84,7 +83,7 @@ const ContactFormComponent = () => {
             Please enter valid email Id
           </p>
           <label htmlFor="Subject">
-            Subject<span className="required-field">*</span>
+            Subject<sup className="required-field"> *</sup>
           </label>
           <input
             id="subject"
@@ -100,7 +99,7 @@ const ContactFormComponent = () => {
             Please enter a valid Subject
           </p>
           <label htmlFor="Message">
-            Message <span className="required-field">*</span>
+            Message <sup className="required-field">*</sup>
           </label>
           <textarea
             id="message"
@@ -111,6 +110,7 @@ const ContactFormComponent = () => {
               setContactMessage(e.target.value);
             }}
           />
+          <sup className="required-field note">* Required Field</sup>
           <p className="contact-message-error msg-hide">
             Please enter a message
           </p>

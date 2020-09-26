@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
-
+import DatePickerCCExpComponent from "./Date-picker-ccexp"
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
@@ -100,6 +100,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
         <label htmlFor="Expiry Date">
           Expires<span className="required-field">*</span>
         </label>
+        <DatePickerCCExpComponent/>
         <input
           type="text"
           maxLength="5"

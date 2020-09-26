@@ -13,8 +13,8 @@ import {
 } from "../actions/Cart";
 import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
-import "../css/Shopping-cart.css";
-
+/* import "../css/Shopping-cart.css";
+ */
 const ShoppingCartComponent = () => {
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
     false

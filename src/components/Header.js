@@ -104,6 +104,7 @@ const HeaderComponent = () => {
                   document
                     .getElementsByClassName("loginform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/loginform"));
                 }}
               >
                 LOGIN
@@ -120,6 +121,8 @@ const HeaderComponent = () => {
                   document
                     .getElementsByClassName("contactform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/contactform"));
+                    
                 }}
               >
                 CONTACT
