@@ -84,13 +84,13 @@ const DonationFormComponent = () => {
             <option value="Kids Clothing Fund">Kids Clothing Fund </option>
           </select>
           <label htmlFor="donation-message">Message</label>
-          <input
+          <textarea
             className="donationMsg"
             id="donation-message"
             type="textarea"
             placeholder="Send us a message. Max 500 Character"
             maxlength="500"
-          ></input>
+          ></textarea>
         </div>
         <div className="donation-form-section-container"></div>
           <BillingDetailsComponent ref={billingInfoRef} />

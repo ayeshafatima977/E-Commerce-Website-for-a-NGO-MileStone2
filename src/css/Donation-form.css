@@ -15,3 +15,14 @@
 .donation-form-section-container {
   border-top: 1px solid #FFF;
 }
+.donation-form-section-container > select,
+.donation-form-section-container > span > input {
+  width: 50%;
+  display: block;
+}
+#donation-message {
+  width: 95%;
+  display: block;
+  height: 50px;
+  margin-bottom: 15px;
+}
