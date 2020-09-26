@@ -12,13 +12,27 @@
   padding-top: 5px;
   margin: 10px 0;
 }
+.donation-form-section-container > h2 {
+  margin-bottom: 5px;
+}
 .donation-form-section-container {
   border-top: 1px solid #FFF;
 }
 .donation-form-section-container > select,
-.donation-form-section-container > span > input {
+.donation-form-section-container > input {
   width: 50%;
   display: block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.donation-form-section-container > span {
+  display: block;
+}
+.donation-form-section-container > span > input {
+  margin-left: 5px;
+  width: 45%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 #donation-message {
   width: 95%;
