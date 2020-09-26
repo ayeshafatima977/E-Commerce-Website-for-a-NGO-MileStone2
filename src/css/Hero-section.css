@@ -1,7 +1,13 @@
 @import "./normalize.css";
 
 .hero-section {
+<<<<<<< HEAD
   /* position: absolute; */
+=======
+  opacity: 1;
+  width: 1280px;
+  height: 720px;
+>>>>>>> 0547680f31e734ead0e5a0e51c9af3afce4e712a
   background-image: url("../img/LandingPage.jpg");
   width: 100vw;
   height: 588px;
@@ -69,5 +75,4 @@
   .hero-section p {
     transform: scaleX(-1);
     display: block;
-  }
-}
+  }}

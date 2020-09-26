@@ -14,8 +14,7 @@ const GlobalReducer = combineReducers({
   ShopNav: ShoppingNavigationReducer,
   Cart: CartReducer,
   UserData: UserDataReducer,
-  BrowsingHistory: BrowsingHistoryReducer
-
+  BrowsingHistory: BrowsingHistoryReducer,
 });
 
 export default GlobalReducer;
