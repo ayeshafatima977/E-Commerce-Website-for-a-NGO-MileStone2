@@ -123,9 +123,9 @@ footer {
   font-size: 15px;
 }
 /*=============================================
-=            Tablet Media Query            =
+=            Tablet Portrait Media Query            =
 =============================================*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   /*  .newsletter-info * {
     outline: 1px solid red;
   } */

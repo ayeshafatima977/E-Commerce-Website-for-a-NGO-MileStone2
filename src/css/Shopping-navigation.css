@@ -12,11 +12,11 @@
 #search-input {
   color: #FFF;
   padding-left: 25px;
-  width: 246px;
+  width: 70%;
   height: 46px;
   border-radius: 15px;
   background-color: #4d626e;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-top: 15px;
 }
 #search-icon {
