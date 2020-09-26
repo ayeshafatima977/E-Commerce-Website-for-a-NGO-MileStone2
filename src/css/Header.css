@@ -13,14 +13,17 @@
 .common-header nav {
   flex-grow: 1;
 }
-.common-header div h1,
-logo {
+.common-header div h1 {
   display: inline;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;
   color: #4d626e;
   padding: 0 2rem 0 0;
+}
+.common-header .logo img {
+  width: 100px;
+  height: 75px;
 }
 .common-header ul {
   display: flex;

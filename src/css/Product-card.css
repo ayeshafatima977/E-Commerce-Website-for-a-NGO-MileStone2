@@ -81,9 +81,17 @@
   background-color: #4D626E;
   color:#ffff;
 }
+.shopping-cart {
+  display: flex;
+  justify-content: center;
+}
 
-.product-view {
-  width: 102px;
+.quick-view {  
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  background-color: #4D626E;
   height: 23px;
   font-family: Roboto;
   font-style: normal;

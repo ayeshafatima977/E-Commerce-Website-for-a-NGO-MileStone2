@@ -67,7 +67,7 @@ const VolunteerFormComponent = () => {
       <form onSubmit={SubmitForm} id="VolunteerForm">
         <h2>Volunteer Application</h2>
         <div id="volunteer-info">
-          <label htmlFor="volunteer-name">Name</label>
+          <label htmlFor="volunteer-name">Name<span className="required-field">*</span> </label>
           <input
             type="text"
             id="volunteer-name"
@@ -81,11 +81,11 @@ const VolunteerFormComponent = () => {
             Please enter correct Name
           </p>
 
-          <label htmlFor="volunteer-birthdate">Birthday</label>
+          <label htmlFor="volunteer-birthdate">Birthday<span className="required-field">*</span> </label>
           <DatePickerDobComponent      
           />
           <p className="volunteerAddress-error">Enter valid Birthday date</p>
-          <label htmlFor="volunteer-address">Mailing Address</label>
+          <label htmlFor="volunteer-address">Mailing Address<span className="required-field">*</span></label>
           <input
             type="text"
             id="volunteer-address"
@@ -99,7 +99,7 @@ const VolunteerFormComponent = () => {
             Please enter a valid address
           </p>
 
-          <label htmlFor="volunteer-phone">Phone</label>
+          <label htmlFor="volunteer-phone">Phone<span className="required-field">*</span></label>
           <input
             type="text"
             maxLength="10"
@@ -114,7 +114,7 @@ const VolunteerFormComponent = () => {
             Please enter a valid phone number
           </p>
 
-          <label htmlFor="volunteer-email">Email</label>
+          <label htmlFor="volunteer-email">Email<span className="required-field">*</span> </label>
           <input
             type="text"
             id="volunteer-email"
@@ -129,7 +129,7 @@ const VolunteerFormComponent = () => {
           </p>
 
           <label htmlFor="volunteer-reference">
-            How did you hear about us?
+            How did you hear about us?<span className="required-field">*</span> 
           </label>
           <select
             onChange={(e) => setVolunteerReference(e.target.value)}
@@ -151,7 +151,7 @@ const VolunteerFormComponent = () => {
           <p className="volunteer-start-date-error msg-hide"></p>
         </div>
         <div id="emergency-info">
-          <label htmlFor="emergency-contact">Emergency Contact</label>
+          <label htmlFor="emergency-contact">Emergency Contact<span className="required-field">*</span></label>
           <input
             type="text"
             id="emergency-contact"
@@ -165,7 +165,7 @@ const VolunteerFormComponent = () => {
             Please enter your Emergency Contact name
           </p>
 
-          <label htmlFor="emergency-relationship">Contact Relationship</label>
+          <label htmlFor="emergency-relationship">Contact Relationship<span className="required-field">*</span></label>
           <select
             id="emergency-relationship"
             onChange={(e) => setEmergencyRelationship(e.target.value)}
@@ -177,7 +177,7 @@ const VolunteerFormComponent = () => {
             <option value="Other">Other</option>
           </select>
 
-          <label htmlFor="emergency-phone">Emergency Phone Number</label>
+          <label htmlFor="emergency-phone">Emergency Phone Number<span className="required-field">*</span></label>
           <input
             type="text"
             id="emergency-phone"
@@ -192,7 +192,6 @@ const VolunteerFormComponent = () => {
             Please enter a valid phone number
           </p>
         </div>
-
         <input type="submit" />
       </form>
       <p className="volunteer-thankyou-msg msg-hide">

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
-import { FaWindowClose } from "react-icons/fa";
+import { FaWindowClose, FaShoppingCart } from "react-icons/fa";
 
 /*=============================================
 =            Product Details Overlay Component           =
@@ -54,9 +54,15 @@ const ProductDetailsOverlayComponent = (props) => {
       <img src={productImgCopy} alt={productDescriptionCopy} />
 
       {productInCartQtyCopy === 0 ? (
-        <button onClick={AddSingleProductToCart}>Add to Cart</button>
+        <button onClick={AddSingleProductToCart}><span className="shopping-cart">
+        <FaShoppingCart />
+        &nbsp;Add to Cart
+      </span></button>
       ) : (
-        <button onClick={RemoveSingleProductFromCart}>Remove from Cart</button>
+        <button onClick={RemoveSingleProductFromCart}><span className="shopping-cart">
+        <FaShoppingCart />
+        &nbsp;Remove from Cart
+      </span></button>
       )}
     </section>
   );

@@ -4,6 +4,7 @@ import BillingDetailsComponent from "./Billing-details";
 import { useSelector, useDispatch } from "react-redux";
 import "../css/Donation-form.css";
 import FormValidation from "../functions/Form-validation.js";
+import { FaMoneyBill } from "react-icons/fa";
 
 const DonationFormComponent = () => {
   let x = false;
@@ -62,7 +63,7 @@ const DonationFormComponent = () => {
             placeholder="Min $5 for online"
             value={donationAmount}
             min="5"
-          ></input>
+          ></input><span><FaMoneyBill /></span>
         </span>
         <h2>Fund</h2>
         <label htmlFor="fund-type">Fund Type</label>

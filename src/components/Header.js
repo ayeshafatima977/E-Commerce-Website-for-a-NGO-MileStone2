@@ -6,6 +6,7 @@ import LoginFormComponent from "./Login-form";
 import UpdateBrowsingHistory from "../actions/Browsing-history";
 import { useDispatch } from "react-redux";
 import "../css/Header.css";
+import logo from "../img/logo.png";
 
 /*=============================================
 =            HeaderComponent            =
@@ -19,18 +20,16 @@ const HeaderComponent = () => {
       <ContactFormComponent />
       <LoginFormComponent />
       <section className="common-header">
-        <div>
+        <div className="logo-container">
           <logo>
             <Link
+            className="logo"
               to="/"
               onClick={() => {
                 dispatch(UpdateBrowsingHistory("/"));
               }}
             >
-              <img
-                src="https://via.placeholder.com/100x100"
-                alt="place holder image"
-              ></img>
+              <img src={logo} alt="Logo" />
             </Link>
           </logo>
           <h1>MAKE A DIFFERENCE</h1>
