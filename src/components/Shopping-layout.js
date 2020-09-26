@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardComponent from "./Product-card";
 import { InitialProductAdd } from "../actions/Shopping-navigation";
+import '../css/Shopping-layout.css';
 
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);
@@ -26,7 +27,7 @@ const ShoppingLayoutComponent = () => {
   // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
-    <>
+    <div className="shopping-product-layout-container">
      {displayProductList.length > 0 ? <div></div> : <p>No search results found. Please ease search restrictions.</p>} {/* Div may cause problems later on */}
       {displayProductList.map((individProd) => {
         return (
@@ -42,7 +43,7 @@ const ShoppingLayoutComponent = () => {
           </>
         );
       })}
-    </>
+    </div>
   );
 };
 

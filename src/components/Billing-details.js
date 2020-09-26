@@ -2,6 +2,7 @@ import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
 import FormValidation from "../functions/Form-validation.js";
+import "../css/Billing-details.css";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
@@ -77,8 +78,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
 
   return (
     <>
-      <h2>Billing Details</h2>
-      <form id="billingform">
+      <form id="billing-form">
         <label htmlFor="First Name">
           First Name<span className="required-field">*</span>
         </label>
@@ -134,6 +134,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
           }}
         />
  <p className="billing-city-error msg-hide">Please enter a city</p>
+
         <label htmlFor="Province">
           Province<span className="required-field">*</span>
         </label>

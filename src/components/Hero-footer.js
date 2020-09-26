@@ -7,7 +7,8 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import FormValidation from "../functions/Form-validation.js";
-// import '../css/Hero-footer.css';
+import { IconContext } from "react-icons/lib";
+import '../css/Hero-footer.css';
 
 /*=============================================
 =            FooterComponent            =
@@ -54,41 +55,38 @@ const FooterComponent = () => {
   return (
     <footer>
       {/* Contact Us start */}
-      <section>
-        <div>
+      <section className="contact-us-info">
           <h2>Contact Us</h2>
           <p>12332 123 St Nw, Edmonton</p>
           <p>Alberta, T0A 0W0, 780-000-8888</p>
-        </div>
         <p>Charitable Number 129185310 RR0001</p>
       </section>
       {/* Contact Us end */}
 
       {/* Get Social start */}
-      <section>
-        <div>
+      <section className="social-info">
+        <IconContext.Provider value={{ color: "#FFF", style: {opacity: 0.5} } } >
           <h2>Get Social</h2>
-          <p>
-            <FaFacebookF />
-          </p>
-          <p>
-            <FaInstagram />
-          </p>
-          <p>
-            <FaTwitter />
-          </p>
-          <p>
-            <FaYoutube />
-          </p>
-        </div>
+          <span>
+            <FaFacebookF size="40px" />
+          </span>
+          <span>
+            <FaInstagram size="40px" />
+          </span>
+          <span>
+            <FaTwitter size="40px" />
+          </span>
+          <span>
+            <FaYoutube size="40px" />
+          </span>
+        </IconContext.Provider>
         <p>Privacy Policy | Terms &amp; Conditions</p>
       </section>
       {/* Get Social end */}
 
       {/* Newsletter start */}
-      <section>
-        <div>
-          <h1>Newsletter</h1>
+      <section className="newsletter-info">
+          <h2>Newsletter</h2>
           <p>
             Stay up to date with our work and how you can help - learn more.
           </p>
@@ -136,13 +134,14 @@ const FooterComponent = () => {
               Please enter valid email Id
             </p>
             <button type="submit">
-              <FaEnvelope />
+            <IconContext.Provider value={{ color: "#FFF", style: {opacity: 0.5} } } >
+              <FaEnvelope size="30px" />
+            </IconContext.Provider>
             </button>
             <p className="newsletter-thanks-msg msg-hide">
               Thank you for Subscribing to our newsletter...!
             </p>
           </form>
-        </div>
         <p>&copy; 2020 Edmonton Scriptorce</p>
       </section>
       {/* Newsletter end */}

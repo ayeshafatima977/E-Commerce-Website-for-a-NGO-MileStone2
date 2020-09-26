@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 .sticky-header {
   display: none;
 }
@@ -21,5 +22,9 @@
     background-color: #1C3656;
     padding: 10px;
     border-radius: 10px;
+  }
+  .sticky-header > a > #sticky-icon {
+    display: flex;
+    justify-content: center;
   }
 }

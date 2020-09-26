@@ -41,7 +41,6 @@ const ProductCardComponent = (props) => {
       <p className="product-brief-description">{briefDescription}</p>
       <div className="divider"></div>
       <p className="product-price">${price}</p>
-
       {inCartCheck(title) ? (
         <button className="cart-option" onClick={RemoveSingleProductToCart}>
           <span>
@@ -54,8 +53,8 @@ const ProductCardComponent = (props) => {
           <span>
             <FaShoppingCart />
             &nbsp;Add to Cart
-          </span>{" "}
-        </button>
+          </span>
+     </button>
       )}
 
       <button

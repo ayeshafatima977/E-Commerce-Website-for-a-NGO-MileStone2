@@ -34,9 +34,10 @@ const DonationFormComponent = () => {
 
   return (
     <>
-      <form onSubmit={SubmitForm}>
+      <form id="donation-form-container" onSubmit={SubmitForm}>
         <h1>Donation Details</h1>
-        <h2> Amount </h2>
+        <div className="donation-form-section-container">
+          <h2> Amount </h2>
         <label htmlFor="donation-freq">Donation Frequency</label>
         <select
           id="donation-freq"
@@ -79,15 +80,19 @@ const DonationFormComponent = () => {
           <option value="Kids Clothing Fund">Kids Clothing Fund </option>
         </select>
         <label htmlFor="donation-message">Message</label>
-        <input
+        <textarea
           className="donationMsg"
           id="donation-message"
           type="textarea"
           placeholder="We love to hear from your ... 500 character max"
           maxLength="500"
-        ></input>
-        <CreditCardComponent ref={creditCardRef} />
-        <BillingDetailsComponent ref={billingInfoRef} />
+        ></textarea>
+       </div>
+        <div className="donation-form-section-container">
+          <BillingDetailsComponent ref={billingInfoRef} /></div>
+        <div className="donation-form-section-container">
+          <CreditCardComponent ref={creditCardRef} />
+        </div>
         <button
           onClick={() => {
             SetCreditCardValidationStatus(
