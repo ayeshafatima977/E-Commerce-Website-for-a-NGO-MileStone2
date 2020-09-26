@@ -36,20 +36,20 @@ const CreditCardComponent = forwardRef((props, ref) => {
         FormValidation(
           userCreditNumber,
           "cc-number-input",
-          "userCreditNumber",
-          "userCreditNumber-error"
+          "user-credit-number",
+          "user-credit-number-error"
         ) &&
         FormValidation(
           userExpiry,
           "cc-exp",
-          "userExpiry",
-          "userExpiry-error"
+          "user-credit-expiry",
+          "user-credit-expiry-error"
         ) &&
         FormValidation(
           userCVC, 
           "cc-cvc", 
-          "userCVC", 
-          "userCVC-error")
+          "user-credit-cvc", 
+          "user-credit-cvc-error")
       )
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;
@@ -58,7 +58,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   // Note:Wrap the INPUTS IN FORM
   return (
     <>
-      <form id="creditcardform">
+      <form id="credit-card-form">
         <h2>Credit Card</h2>
         <p>
           <FaCcMastercard />
@@ -85,14 +85,14 @@ const CreditCardComponent = forwardRef((props, ref) => {
           <input
             type="text"
             placeholder="0123 4567 8910 1112"
-            className="userCreditNumber"
+            className="user-credit-number"
             maxLength="16"
             onChange={(e) => {
               setUserCreditNumber(e.target.value);
             }}
           />
           <FaCreditCard />
-          <p className="userCreditNumber-error msg-hide">
+          <p className="user-credit-number-error msg-hide">
             Please enter correct Credit Card Number
           </p>
         </div>
@@ -104,12 +104,12 @@ const CreditCardComponent = forwardRef((props, ref) => {
           type="text"
           maxLength="5"
           placeholder="yy/mm"
-          className="userExpiry"
+          className="user-credit-expiry"
           onChange={(e) => {
             setUserExpiry(e.target.value);
           }}
         />
-        <p className="userExpiry-error msg-hide">
+        <p className="user-credit-expiry-error msg-hide">
           Please enter correct expiry date
         </p>
         <label htmlFor="Card Code(CVC)">
@@ -118,13 +118,13 @@ const CreditCardComponent = forwardRef((props, ref) => {
         <input
           type="text"
           placeholder="e.g.,1234"
-          className="userCVC"
+          className="user-credit-cvc"
           maxLength="4"
           onChange={(e) => {
             setUserCVC(e.target.value);
           }}
         />
-        <p className="userCVC-error msg-hide">Please enter correct CVC</p>
+        <p className="user-credit-cvc-error msg-hide">Please enter correct CVC</p>
         <input
           type="checkbox"
           id="checkboxes"

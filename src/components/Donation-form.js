@@ -53,7 +53,7 @@ const DonationFormComponent = () => {
         <span>
           $
           <input
-            className="donationAmount"
+            className="donation-amount"
             type="number"
             onChange={(e) => {
               if (setDonationAmount(e.target.value));

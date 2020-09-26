@@ -66,7 +66,7 @@ const ContactFormComponent = () => {
           closeEventHandle();
         }}
       >
-        <form onSubmit={SubmitForm} id="contactform">
+        <form onSubmit={SubmitForm} id="contact-form">
           <h2>CONTACT US</h2>
           <label htmlFor="Email">
             Email<span className="required-field">*</span>

@@ -57,24 +57,12 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
         FormValidation(userEmail, "email", "billing-email", "billing-email-error ") 
 
       ) {
-        // {
-        //   document
-        //     .getElementsByClassName("billing-thanks-msg")[0]
-        //     .classList.add("msg-show");
-        // } else {
-        //   document
-        //     .getElementsByClassName("billing-thanks-msg")[0]
-        //     .classList.remove("msg-show");
-        // }
+        
         dispatch(ChangeBillingInfo(BillingInfoCopy));
         return true;
       }
     },
   }));
-
-  // const SubmitForm = (e) => {
-  //   e.preventDefault();
-  // };
 
   return (
     <>

@@ -1,7 +1,5 @@
 @import url('./normalize.css');
-#billing-form-title {
-  margin: 10px 0;
-}
+
 #billing-form > input,
 #billing-form > select {
   border-radius: 5px;
