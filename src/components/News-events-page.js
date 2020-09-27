@@ -1,10 +1,14 @@
 /*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
-import NewsImageOne from "../img/covid-news-comp.jpg";
-import NewsImageTwo from "../img/food-support-news-comp.jpg";
-import EventImageOne from "../img/children-day-event-comp.jpg";
-import EventImageTwo from "../img/christmas-event-comp.jpg";
+import NewsImageOne from "../img/NewsImageOne.jpg";
+import NewsImageTwo from "../img/NewsImageTwo.jpg";
+import NewsImageThree from "../img/NewsImageThree.jpg";
+import NewsImageFour from "../img/NewsImageFour.jpg";
+import EventImageOne from "../img/EventImageOne.jpg";
+import EventImageTwo from "../img/EventImageTwo.jpg";
+import EventImageThree from "../img/EventImageThree.jpg";
+import EventImageFour from "../img/EventImageFour.jpg";
 import { FaRegCalendar } from "react-icons/fa";
 import "../css/News-event-page.css";
 
@@ -47,9 +51,9 @@ const NewsEventsPageComponent = () => {
             </p>
           </div>
 
-          <h2>COVID 19 update</h2>
+          <h2>Received 50K Donation From Various organizations in Last Year</h2>
           <div className="img-para-wrap">
-            <img src={NewsImageOne} alt="covid 19 text image"></img>
+            <img src={NewsImageThree} alt="Image shows some coins in hand"></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call
@@ -60,9 +64,9 @@ const NewsEventsPageComponent = () => {
             </p>
           </div>
 
-          <h2>Provided food to support for families in need</h2>
+          <h2>Celebrated Canada Day 2020</h2>
           <div className="img-para-wrap">
-            <img src={NewsImageTwo} alt="People providing food to needy"></img>
+            <img src={NewsImageFour} alt="People gathered to celebrate Canada Day"></img>
             <p>
               We have created a temporary support program called fresh food for
               kids, which provides nutritious food baskets to local families in
@@ -116,30 +120,30 @@ const NewsEventsPageComponent = () => {
 
           <h2>World Children Day Event:</h2>
           <h3>
-            <FaRegCalendar /> November 20,2020. From 4PM - 8PM
+            <FaRegCalendar /> November 23,2021. From 4PM - 8PM
           </h3>
           <div className="img-para-wrap">
             <img
-              src={EventImageOne}
-              alt="All children standing and doing activities together in room"
+              src={EventImageThree}
+              alt="children playing in the field"
             ></img>
             <p>
               This year it will be a World Children Day like no other before!
               While we practice Coronavirus social distancing for everyone’s
               safety, we will still come together to celebrate this great day
-              event at our organization. This year we are celebrating the 31st
+              event at our organization. This year we are celebrating the 32st
               anniversary of the U.N. Convention on the Rights of the Child.
             </p>
           </div>
 
           <h2>Christmas Event: </h2>
           <h3>
-            <FaRegCalendar /> December 26, 2020. From 4PM - 8PM
+            <FaRegCalendar /> December 26, 2021. From 4PM - 8PM
           </h3>
           <div className="img-para-wrap">
             <img
-              src={EventImageTwo}
-              alt="Christmas image with different lights"
+              src={EventImageFour}
+              alt="Mug with some lights around"
             ></img>
             <p>
               The Christmas Event is an annual event that is organized by and
