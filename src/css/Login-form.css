@@ -1,48 +1,119 @@
 @import url("./normalize.css");
+
+body {
+  position: relative;
+}
+#loginForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem .5rem 2rem .5rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
 .login-email-input {
-  width: 80vw;
+  display: block;
+  margin: 0 1rem 0.5rem 1rem;
   height: 50px;
-  border: solid 2px black;
-  margin: 10px 20px;
-  font-size: 30px;
+  padding: 0 0 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #4d626e;
+  border: none;
+  border-bottom: 1px solid #4d626e;
+  border-top: 1px solid #4d626e;
 }
 .login-password-input {
-  width: 80vw;
+  display: block;
+  margin: 0 1rem 0.5rem 1rem;
   height: 50px;
-  border: solid 2px black;
-  margin: 10px 20px;
-  font-size: 30px;
+  padding: 0 0 0.25rem 0.75rem;
+  margin: 0 1rem 0 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #4d626e;
+  border: none;
+  border-bottom: 1px solid #4d626e;
+  border-top: 1px solid #4d626e;
 }
 #login-submit {
-  width: 80vw;
-  margin: 10px 20px;
-  padding: 10px 0;
-  background-color: black;
-  color: #fff;
-  font-weight: bold;
+  height: 50px;
+  margin: 1.5rem 2rem 0 2rem;
+  padding: 0 25px;
+  color: white;
+  background: #4d626e;
+  font-size: 1rem;
+  font-weight: 500;
+  align-self: flex-end;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
 }
 .loginform-overlay {
-  display: none;
   position: fixed;
-  top: 0;
+  display: none;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255,255,255,0.85);
+  background-color: 000000a2;
   z-index: 3;
+  cursor: pointer;
 }
-.loginform-overlay > span {
-  position: relative;
-  top: 25px;
-  left: 30px;
+#loginForm span svg{
+  color: #4d626e;
+  width:30px;
+  height:30px;
 }
-.loginform-overlay > h2 {
-  font-size: 55px;
-  margin: 55px 0 20px 40px;
+.loginform-overlay #loginForm > h2 {
+  margin: 0 0 1rem 0;
+  color: #4d626e;
+  text-align: center;
+  font-size: 2rem;
 }
 .overlayShow {
   display: block;
 }
-.login-input::placeholder {
-  font-size: 30px;
-  color: black;
+#login-email-input::placeholder,
+#login-password-input::placeholder {
+  color: #4d626e;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#login-email-input:focus,
+#login-password-input:focus {
+  background-color: #d6e4e9;
+}
+#loginForm > label {
+  margin: 0 0 0 2rem;
+  color: #4d626e;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.required-field {
+  color: red;
+}
+.loginform-overlay .note {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  #loginForm {
+    width: 60%;
+    height: auto;
+    padding: 1.5rem;
+  }
+  @media screen and (min-width: 1000px) {
+    #loginForm {
+      width: 30%;
+      height: auto;
+      padding: 1.5rem;
+    }
+  }
 }

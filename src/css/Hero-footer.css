@@ -21,10 +21,13 @@ footer {
 #minor-footer p {
   height: calc(100% / 3);
   text-align: center;
-  padding-bottom: .25rem;
+  padding-bottom: 0.25rem;
 }
 #minor-footer p:nth-of-type(3) {
   height: calc(100% / 3);
+}
+#minor-footer p:nth-of-type(2) {
+  text-decoration-line: underline;
 }
 footer h2 {
   padding: 15px 0;
@@ -113,7 +116,7 @@ footer h2 {
 }
 #emailid-send input {
   margin: 1rem 0 0 0;
-  width:100%;
+  width: 100%;
 }
 #emailid-send button {
   height: 0;
@@ -128,8 +131,6 @@ footer h2 {
 }
 /* =================Tablet BREAKPOINT================= */
 @media screen and (min-width: 600px) {
-  /*   *{outline:1px solid red;}
- */
   #major-footer {
     display: flex;
     flex-direction: row;
@@ -175,9 +176,9 @@ footer h2 {
 }
 /* =================DESKTOP BREAKPOINT================= */
 @media screen and (min-width: 1000px) {
-
-/*   *{outline:1px solid red;}
- */  footer {
+  /*   *{outline:1px solid red;}
+ */
+  footer {
     flex-direction: column;
   }
   #major-footer,
@@ -202,23 +203,23 @@ footer h2 {
     height: auto;
   }
   #socialmedia-icons {
-     margin: 0.5rem 0 0 0;
+    margin: 0.5rem 0 0 0;
   }
- .newsletter-info {
-      width: calc(100% / 2);
+  .newsletter-info {
+    width: calc(100% / 2);
   }
   .newsletter-info .newsletter-form input::placeholder {
     font-size: 1rem;
   }
   #fname-lname {
     justify-content: space-between;
-    width:100%;
+    width: 100%;
   }
   #emailid-send input {
     width: 100%;
   }
-#minor-footer {
-  font-size: .8rem;
-  margin-bottom:1.5em;
-}
+  #minor-footer {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
+  }
 }

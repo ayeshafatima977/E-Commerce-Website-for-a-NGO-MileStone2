@@ -33,13 +33,14 @@ const LoginFormComponent = () => {
   };
   return (
     <div className="loginform-overlay" id="loginform-overlay">
+       <form onSubmit={SubmitForm} id="loginForm">
       <span onClick={addLoginHideOverlay}>
-        <TiArrowBack size="30px" />
+        <TiArrowBack />
       </span>
-
-      <form onSubmit={SubmitForm} id="loginForm">
-      <h2>LOG IN</h2>
-        <label htmlFor="login-email-input">Email</label>
+        <h2>LOG IN</h2>
+        <label htmlFor="login-email-input">
+          Email<sup className="required-field"> *</sup>
+        </label>
         <input
           type="text"
           id="login-email-input"
@@ -50,7 +51,9 @@ const LoginFormComponent = () => {
           }}
         />
         <p className="loginEmail-error msg-hide">Please enter valid email Id</p>
-        <label htmlFor="login-password-input">Password</label>
+        <label htmlFor="login-password-input">
+          Password<sup className="required-field"> *</sup>
+        </label>
         <input
           type="password"
           id="login-password-input"
@@ -61,10 +64,18 @@ const LoginFormComponent = () => {
           }}
         />
         <p className="loginPassword-error msg-hide">
-          Please enter a Password: Minimum eight (8) in length and at least one upper
-          case , one lower case letter, one digit and one special character.
+          Please enter a Password: Minimum eight (8) in length and at least one
+          upper case , one lower case letter, one digit and one special
+          character.
         </p>
-        <input type="submit" form = "loginForm" id="login-submit" value="LOG IN" />
+
+        <input
+          type="submit"
+          form="loginForm"
+          id="login-submit"
+          value="LOG IN"
+        />
+        <sup className="required-field note">* Required Field</sup>
       </form>
     </div>
   );

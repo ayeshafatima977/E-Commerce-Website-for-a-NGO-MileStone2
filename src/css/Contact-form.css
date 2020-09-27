@@ -107,6 +107,23 @@ body {
 }
 @media screen and (max-width: 400px) {
   .contactform-overlay #contact-form {
-    width: 65%;
+    width: 80%;
+    height: auto;
+
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .contactform-overlay #contact-form {
+    width: 60%;
+    height: auto;
+    padding: 1.5rem;
+  }
+  @media screen and (min-width: 1000px) {
+    .contactform-overlay #contact-form {
+      width: 30%;
+      height: auto;
+      padding: 1.5rem;
+    }
   }
 }
