@@ -6,6 +6,7 @@ import LoginFormComponent from "./Login-form";
 import UpdateBrowsingHistory from "../actions/Browsing-history";
 import { useDispatch } from "react-redux";
 import "../css/Header.css";
+import Logo from "../img/logo-final.png";
 
 /*=============================================
 =            HeaderComponent            =
@@ -19,11 +20,23 @@ const HeaderComponent = () => {
       <ContactFormComponent />
       <LoginFormComponent />
       <section className="common-header">
-        <div>
-          <logo>Logo</logo>
+        {/* Top section for logo and slogan header */}
+        <div className="logo-container">
+          <logo>
+            <Link
+              id="logo"
+              to="/"
+              onClick={() => {
+                dispatch(UpdateBrowsingHistory("/"));
+              }}
+            >
+              <img src={Logo} alt="Logo Image with Some Text" />
+            </Link>
+          </logo>
           <h1>MAKE A DIFFERENCE</h1>
         </div>
         <nav>
+          {/* Navigation section with site routs */}
           <ul>
             <li>
               <Link
@@ -85,13 +98,14 @@ const HeaderComponent = () => {
                 VOLUNTEER
               </Link>
             </li>
-            {/*!Parking lot item */}
             <li>
-              <a className="right-side-buttons"
+              <a
+                className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("loginform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/loginform"));
                 }}
               >
                 LOGIN
@@ -102,25 +116,30 @@ const HeaderComponent = () => {
             calling Child Component -Contact Us Form and adding a Class to
             overlay on the Header page which is the parent component-We use CSS
             to Show/Hide the overlay */}
-              <a className="right-side-buttons"
+              <a
+                className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("contactform-overlay")[0]
                     .classList.add("overlayShow");
+                    dispatch(UpdateBrowsingHistory("/contactform"));
+                    
                 }}
               >
                 CONTACT
               </a>
             </li>
             <li>
-              <Link className="right-side-buttons"
+              <Link
+                className="right-side-buttons"
                 to="/cart"
                 onClick={() => {
                   dispatch(UpdateBrowsingHistory("/cart"));
                 }}
               >
                 <span>
-                 <FaShoppingCart />&nbsp;CART
+                  <FaShoppingCart />
+                  &nbsp;CART
                 </span>
               </Link>
             </li>

@@ -1,3 +1,4 @@
+/* Browsing History Action - Store Browsing History for Security*/
 
 const UpdateBrowsingHistory = (browsingHistory) => {
     return {

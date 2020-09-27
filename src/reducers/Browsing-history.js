@@ -1,4 +1,6 @@
-import { useHistory } from "react-router-dom";
+/* Global state reducer to store the site browsing history details for 
+local use within other components or future backend DB SECURITY applications */
+
 const BrowsingHistoryReducer = (
     state = [],
     action

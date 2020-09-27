@@ -1,12 +1,11 @@
-/*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
 import DonationFormComponent from "./Donation-form";
+
 /*=============================================
-=        Donation page React Component        =
+=            Donation Page Component          =
 =============================================*/
 
-/* Assuming routing would be in middle section between header/banner and footer */
 const DonationPageComponent = () => {
   return (
     <>
@@ -16,6 +15,8 @@ const DonationPageComponent = () => {
   );
 };
 
-/*=====  End of Donation page React Component  ======*/
-
 export default DonationPageComponent;
+
+/*=====  End of Donation Page Component  ======*/
+
+

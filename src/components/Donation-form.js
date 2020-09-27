@@ -3,7 +3,7 @@ import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
 import { useSelector, useDispatch } from "react-redux";
 import "../css/Donation-form.css";
-import FormValidation from "../functions/Form-validation.js";
+import { FaMoneyBill } from "react-icons/fa";
 
 const DonationFormComponent = () => {
   let x = false;
@@ -16,108 +16,125 @@ const DonationFormComponent = () => {
   ] = useState(false);
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [donationAmount, setDonationAmount] = useState(0);
+  /* Dispatch and useSelector setup for future use in case the form to be submitted into DB  */
+  const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const [donationMsg, setdonationmsg] = useState("");
+  const [donationMsg, setDonationMsg] = useState(""); 
+  /* Setup for future use in case the message to be validated for certain criteria  */
 
-  //Global validation function
+  /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
+
   const SubmitForm = (e) => {
     e.preventDefault();
-    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
+    if (
+      CreditCardValidationStatus &&
+      BillingDetailsValidationStatus &&
+      donationAmount >= 5
+    ) {
       alert("Thankyou! Your Donation has been received");
     }
-    // document
-    //   .getElementsByClassName("donation-thanks-msg")[0]
-    //   .classList.add("msg-show");
-    //Remove product from the subtotal and order altogether if 0 when user hit submit
   };
-
+  /* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
   return (
     <>
-      <form onSubmit={SubmitForm}>
+      <form id="donation-form-container" onSubmit={SubmitForm}>
         <h1>Donation Details</h1>
-        <h2> Amount </h2>
-        <label htmlFor="donation-freq">Donation Frequency</label>
-        <select
-          id="donation-freq"
-          onChange={(e) => setDonationFreq(e.target.value)}
-          value={donationFreq}
-        >
-          <option value="Donate Now">Donate Now </option>
-          <option value="Donate Monthly">Donate Monthly </option>
-        </select>
-        <label htmlFor="donation-amount">
-          Donation Amount<span className="required-field">*</span>
-        </label>
-        <span>
-          $
-          <input
-            className="donationAmount"
-            type="number"
-            onChange={(e) => {
-              if (setDonationAmount(e.target.value));
-              e.target.value > 5 || (e.target.value = "0");
+        <div className="donation-form-section-container">
+          <h2> Amount </h2>
+          <div id="donation-amount-container">
+            <div id="donation-freq-container">
+              <label htmlFor="donation-freq">Donation Frequency</label>
+              <select
+                id="donation-freq-id"
+                onChange={(e) => setDonationFreq(e.target.value)}
+                value={donationFreq}
+              >
+                <option value="Donate Now">Donate Now </option>
+                <option value="Donate Monthly">Donate Monthly </option>
+              </select>
+            </div>
+            <div id="donation-amount-input-container">
+              <label id="donation-amount-label" htmlFor="donation-amount">
+                Donation Amount<sup className="required-field">*</sup>
+              </label>
+              <span id="donation-amount-span">
+                $
+                <input
+                  id="donation-amount-id"
+                  className="donation-amount"
+                  type="number"
+                  onChange={(e) => {
+                    if (setDonationAmount(e.target.value));
+                    e.target.value > 5 || (e.target.value = "5");
+                  }}
+                  placeholder="Min $5 for online"
+                  value={donationAmount}
+                  min="5"
+                ></input>
+                <FaMoneyBill />
+              </span>
+            </div>
+          </div>
+          <h2>Fund</h2>
+          <label htmlFor="fund-type">Fund Type</label>
+          <select
+            id="fund-type-id"
+            onChange={(e) => setFundType(e.target.value)}
+            value={fundType}
+          >
+            <option value="General">General </option>
+            <option value="Kids Sports and Arts Fund">
+              Kids Sports and Arts Fund
+            </option>
+            <option value="Help to Feed a Kid">Help to Feed a Kid </option>
+            <option value="Kids Education Fund">Kids Education Fund </option>
+            <option value="Kids Clothing Fund">Kids Clothing Fund </option>
+          </select>
+          <label htmlFor="donation-message">Message</label>
+          <textarea
+            className="donationMsg"
+            id="donation-message-id"
+            type="textarea"
+            placeholder="We love to hear from your ... 500 character max"
+            maxLength="500"
+          ></textarea>
+        </div>
+        {/* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */}
+        <div className="donation-form-section-container">
+          <h2>Donor &amp; Tax Receipt Information</h2>
+          <BillingDetailsComponent ref={billingInfoRef} />
+        </div>
+        <div className="donation-form-section-container">
+          <CreditCardComponent ref={creditCardRef} />
+        </div>
+        <div id="donation-submit-button-container">
+          {/* using useRef and  useImperativeHandle to submit the credit card and billing details */}
+          <button
+            id="donation-submit-button"
+            onClick={() => {
+              SetCreditCardValidationStatus(
+                creditCardRef.current.runCreditCardDispatch()
+              );
+              SetBillingDetailsValidationStatus(
+                billingInfoRef.current.runBillingInfoDispatch()
+              );
             }}
-            placeholder="Donation Amount"
-            value={donationAmount}
-            min="5"
-          ></input>
-        </span>
-        <h2>Fund</h2>
-        <label htmlFor="fund-type">Fund Type</label>
-        <select
-          id="fund-type"
-          onChange={(e) => setFundType(e.target.value)}
-          value={fundType}
-        >
-          <option value="General">General </option>
-          <option value="Kids Sports and Arts Fund">
-            Kids Sports and Arts Fund
-          </option>
-          <option value="Help to Feed a Kid">Help to Feed a Kid </option>
-          <option value="Kids Education Fund">Kids Education Fund </option>
-          <option value="Kids Clothing Fund">Kids Clothing Fund </option>
-        </select>
-        <label htmlFor="donation-message">Message</label>
-        <input
-          className="donationMsg"
-          id="donation-message"
-          type="textarea"
-          placeholder="Send us a message. Max 500 Character"
-          maxlength="500"
-        ></input>
-        <CreditCardComponent ref={creditCardRef} />
-        <BillingDetailsComponent ref={billingInfoRef} />
-        <button
-          onClick={() => {
-            SetCreditCardValidationStatus(
-              creditCardRef.current.runCreditCardDispatch()
-            );
-            SetBillingDetailsValidationStatus(
-              billingInfoRef.current.runBillingInfoDispatch()
-            );
-            console.log(creditCardRef.current.runCreditCardDispatch());
-          }}
-        >
-          {/* NOTE REPLACE BUTTON AS PER FIGMA */}
-          Click
-        </button>
-
-        {/* <p className="donationAmount-error msg-hide">
-         Please enter Donation amount //{" "}
-        </p>
-        
-        <p className="donationMsg-error msg-hide">
-          Please don't exceed 500 characters. //{" "}
-        </p>
-      
-        <p className="donation-thanks-msg msg-hide">
-        Thankyou for your Donation,Your Donation has been received. //{" "}
-        </p> */}
+          >
+            Complete Your Donation
+          </button>
+        </div>
       </form>
     </>
   );

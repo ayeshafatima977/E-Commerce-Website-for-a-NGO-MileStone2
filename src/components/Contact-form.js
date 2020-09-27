@@ -1,42 +1,45 @@
 import React, { useState } from "react";
-import { FaWindowClose } from "react-icons/fa";
 import "../css/Contact-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
 const ContactFormComponent = () => {
-  // Creating Local states only for Validation purpose
-  const [contactEmail, setcontactEmail] = useState("");
-  const [contactSubject, setcontactSubject] = useState("");
-  const [contactMessage, setcontactMessage] = useState("");
+  /* Creating Local states only for Validation purpose*/
+
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactSubject, setContactSubject] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
 
   const SubmitForm = (e) => {
     e.preventDefault();
+
+    /* Calling Global function for Form validation */
 
     if (
       FormValidation(
         contactEmail,
         "email",
-        "contactEmail",
-        "contactEmail-error"
+        "contact-email",
+        "contact-email-error"
       ) &&
       FormValidation(
         contactSubject,
-        "subject",
-        "contactSubject",
-        "contactSubject-error"
+        "required-field",
+        "contact-subject",
+        "contact-subject-error"
       ) &&
       FormValidation(
         contactMessage,
-        "message",
-        "contactMessage",
-        "contactMessage-error"
+        "required-field",
+        "contact-message",
+        "contact-message-error"
       )
     ) {
+      /* Using Mailto function,When user clicks send it pre-populates the field for the user such as receiver's Email address,Subject,Message */
       document
         .getElementsByClassName("contact-thanks-msg")[0]
         .classList.add("msg-show");
       let link =
-        "mailto:testemail@gmail.com" +
+        "mailto:example@domain.com" +
         "?subject=" +
         encodeURIComponent(contactSubject) +
         "&body=" +
@@ -57,7 +60,7 @@ const ContactFormComponent = () => {
       }
     });
   };
-  /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
+
   return (
     <>
       <div
@@ -66,52 +69,68 @@ const ContactFormComponent = () => {
           closeEventHandle();
         }}
       >
-        <h2>CONTACT US</h2>
-        <form onSubmit={SubmitForm} id="contactForm">
-          <label htmlFor="Email">
-            Email Address<span className="required-field">*</span>
-          </label>
-
-          <input
-            type="text"
-            placeholder="Enter your email address"
-            className="contactEmail"
-          />
-          <label htmlFor="Subject">
-            Subject<span className="required-field">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter the subject"
-            className="contactSubject"
-            maxLength="20"
-          />
-          <label htmlFor="Message">
-            Message <span className="required-field">*</span>
-          </label>
-          <textarea
-            placeholder="Enter your Message"
-            className="contactMessage"
-            maxlength="500"
-          />
-          <label htmlFor="Subject">Subject:</label>
-          <input type="text" placeholder="Enter the subject" id="subject" />
-          <label htmlFor="Message">Message:</label>
-          <textarea rows="6" placeholder="Enter your Message" id="message" />
-          <input type="submit" id="send" value="Send" />
-          <p className="contactEmail-error msg-hide">
-            Please enter valid email Id
-          </p>
-          <p className="contactSubject-error msg-hide">
-            Please enter a valid Subject
-          </p>
-          <p className="contactMessage-error msg-hide">
-            Please enter a message
-          </p>
-          <p className="contact-thanks-msg msg-hide">
-            Thankyou ,Your Message has been received.We will get back to you
-            shortly!
-          </p>
+        <form onSubmit={SubmitForm} id="contact-form">
+          <h2>CONTACT US</h2>
+          <div id="contact-email-container">
+            <label htmlFor="email">
+              Email<sup className="required-field"> *</sup>
+            </label>
+            <input
+              type="text"
+              id="contact-email-id"
+              placeholder="example@domain.com"
+              className="contact-email"
+              onChange={(e) => {
+                setContactEmail(e.target.value);
+              }}
+            />
+            <p className="contact-email-error msg-hide">
+              Please enter valid email Id
+            </p>
+          </div>
+          <div id="contact-subjuct-container">
+            <label htmlFor="subject">
+              Subject<sup className="required-field"> *</sup>
+            </label>
+            <input
+              id="contact-subject-id"
+              type="text"
+              placeholder="participate in event"
+              className="contact-subject"
+              maxLength="20"
+              onChange={(e) => {
+                setContactSubject(e.target.value);
+              }}
+            />
+            <p className="contact-subject-error msg-hide">
+              Please enter a valid Subject
+            </p>
+          </div>
+          <div id="contact-message-container">
+            <label htmlFor="message">
+              Message <sup className="required-field">*</sup>
+            </label>
+            <textarea
+              id="contact-message"
+              placeholder="We love to hear from your ... 500 character max"
+              className="contact-message"
+              maxLength="500"
+              onChange={(e) => {
+                setContactMessage(e.target.value);
+              }}
+            />
+            <sup className="required-field note">* Required Field</sup>
+            <p className="contact-message-error msg-hide">
+              Please enter a message
+            </p>
+          </div>
+          <div id="contact-submit-container">
+            <input type="submit" id="send" value="Send" />
+            <p className="contact-thanks-msg msg-hide">
+              Thankyou ,Your Message has been received.We will get back to you
+              shortly!
+            </p>
+          </div>
         </form>
       </div>
     </>

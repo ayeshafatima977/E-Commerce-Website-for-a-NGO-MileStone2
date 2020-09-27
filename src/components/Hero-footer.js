@@ -6,77 +6,50 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
-// import '../css/Hero-footer.css';
+import FormValidation from "../functions/Form-validation.js";
+import "../css/Hero-footer.css";
 
 /*=============================================
 =            FooterComponent            =
 =============================================*/
 
 const FooterComponent = () => {
-  const [firstName, SetFirstName] = useState("");
-  const [lastName, SetLastName] = useState("");
-  const [email, SetEmail] = useState("");
+  const [fname, setFName] = useState("");
+  const [lname, setLName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const NewsLetterSubscribe = (e) => {
+  const SubmitForm = (e) => {
     e.preventDefault();
-    NewsLetterFormValidation();
-  };
 
-  const NewsLetterFormValidation = () => {
-    let errorCntr = 0;
-    if (!/^[A-Za-z]+$/.test(firstName)) {
-      document
-        .getElementsByClassName("fname-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("fname")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("fname-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("fname")[0]
-        .classList.remove("input-error");
-    }
-    if (!/^[A-Za-z]+$/.test(lastName)) {
-      document
-        .getElementsByClassName("lname-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("lname")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("lname-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("lname")[0]
-        .classList.remove("input-error");
-    }
+    /* Calling Global FormValidation function to validate First Name, Last Name and Email */
+    /* if FormValidation === True then Display Thank you message */
+
     if (
-      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-        email
+      FormValidation(
+        fname,
+        "name",
+        "newsletter-fname",
+        "newsletter-fname-error-msg"
+      ) &&
+      FormValidation(
+        lname,
+        "name",
+        "newsletter-lname",
+        "newsletter-lname-error-msg"
+      ) &&
+      FormValidation(
+        email,
+        "email",
+        "newsletter-email",
+        "newsletter-email-error-msg"
       )
     ) {
       document
-        .getElementsByClassName("email-error")[0]
-        .classList.add("msg-show");
-      document.getElementsByClassName("email")[0].classList.add("input-error");
-      errorCntr++;
-    } else {
-      document
-        .getElementsByClassName("email-error")[0]
-        .classList.remove("msg-show");
-      document
-        .getElementsByClassName("email")[0]
-        .classList.remove("input-error");
-    }
-    if (errorCntr === 0) {
-      document
-        .getElementsByClassName("thanks-msg")[0]
+        .getElementsByClassName("newsletter-thanks-msg")[0]
         .classList.add("msg-show");
     } else {
       document
-        .getElementsByClassName("thanks-msg")[0]
+        .getElementsByClassName("newsletter-thanks-msg")[0]
         .classList.remove("msg-show");
     }
   };
@@ -84,99 +57,117 @@ const FooterComponent = () => {
   return (
     <footer>
       {/* Contact Us start */}
-      <section>
-        <div>
+      <div id="major-footer">
+        <section className="contact-us-info">
           <h2>Contact Us</h2>
           <p>12332 123 St Nw, Edmonton</p>
           <p>Alberta, T0A 0W0, 780-000-8888</p>
-        </div>
-        <p>Charitable Number 129185310 RR0001</p>
-      </section>
-      {/* Contact Us end */}
+        </section>
+        {/* Contact Us end */}
 
-      {/* Get Social start */}
-      <section>
-        <div>
+        {/* Get Social start */}
+        <section className="social-info">
           <h2>Get Social</h2>
-          <p>
-            <FaFacebookF />
-          </p>
-          <p>
-            <FaInstagram />
-          </p>
-          <p>
-            <FaTwitter />
-          </p>
-          <p>
-            <FaYoutube />
-          </p>
-        </div>
-        <p>Privacy Policy | Terms &amp; Conditions</p>
-      </section>
-      {/* Get Social end */}
+          <div id="socialmedia-icons">
+            <span>
+              <a href="https://www.facebook.com" target="_blanc">
+                <FaFacebookF />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.instagram.com" target="_blanc">
+                <FaInstagram />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.twitter.com" target="_blanc">
+                <FaTwitter />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.youtube.com" target="_blanc">
+                <FaYoutube />
+              </a>
+            </span>
+          </div>
+        </section>
+        {/* Get Social end */}
 
-      {/* Newsletter start */}
-      <section>
-        <div>
-          <h1>Newsletter</h1>
-          <p>
-            Stay up to date with our work and how you can help - learn more.
-          </p>
-          <form onSubmit={NewsLetterSubscribe}>
-            <label htmlFor="fname" className="screen-reader-text">
-              First Name
-            </label>
-            <input
-              type="text"
-              className="fname"
-              placeholder="First name"
-              value={firstName}
-              onChange={(event) => {
-                SetFirstName(event.target.value);
-              }}
-            />
-            <label htmlFor="lname" className="screen-reader-text">
-              Last Name
-            </label>
-            <input
-              type="text"
-              className="lname"
-              placeholder="Last name"
-              value={lastName}
-              onChange={(event) => {
-                SetLastName(event.target.value);
-              }}
-            />
-            <label htmlFor="email" className="screen-reader-text">
-              Email Address
-            </label>
-            <input
-              type="text"
-              className="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(event) => {
-                SetEmail(event.target.value);
-              }}
-            />
-            <button type="submit">
-              <FaEnvelope />
-            </button>
-            <p className="fname-error msg-hide">
-              Please enter correct First Name
-            </p>
-            <p className="lname-error msg-hide ">
-              Please enter correct Last Name
-            </p>
-            <p className="email-error msg-hide ">Please enter valid email Id</p>
-            <p className="thanks-msg msg-hide">
+        {/* Newsletter start */}
+        <section className="newsletter-info">
+          <h2>Newsletter</h2>
+          <p>Stay up to date with our work and how you can help</p>
+          <form className="newsletter-form" onSubmit={SubmitForm}>
+            <div id="fname-lname">
+              <div>
+                <label htmlFor="fname" className=".screen-reader-text">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="fname"
+                  className="newsletter-fname"
+                  placeholder="First Name"
+                  onChange={(event) => {
+                    setFName(event.target.value);
+                  }}
+                />
+                <p className="newsletter-fname-error-msg msg-hide">
+                  Enter correct First Name
+                </p>
+              </div>
+              <div>
+                <label htmlFor="lname" className=".screen-reader-text">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lname"
+                  className="newsletter-lname"
+                  placeholder="Last Name"
+                  onChange={(event) => {
+                    setLName(event.target.value);
+                  }}
+                />
+                <p className="newsletter-lname-error-msg msg-hide ">
+                  Enter correct Last Name
+                </p>
+              </div>
+            </div>
+            <div id="emailid-send">
+              <div>
+                <label htmlFor="email" className=".screen-reader-text">
+                  Email Address
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  className="newsletter-email"
+                  placeholder="example@domain.com"
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                />
+                <p className="newsletter-email-error-msg msg-hide ">
+                  Enter valid email Id
+                </p>
+              </div>
+              <button type="submit">
+                <FaEnvelope />
+              </button>
+            </div>
+            <p className="newsletter-thanks-msg msg-hide">
               Thank you for Subscribing to our newsletter...!
             </p>
           </form>
-        </div>
-        <p>&copy; 2020 Edmonton Scriptorce</p>
-      </section>
+        </section>
+      </div>
       {/* Newsletter end */}
+      <div id="minor-footer">
+        <p>Charitable Number 129185310 RR0001</p>
+        <p>Privacy Policy | Terms &amp; Conditions</p>
+        <p>&copy; 2020 Edmonton Scriptorce</p>
+      </div>
     </footer>
   );
 };

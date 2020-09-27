@@ -1,0 +1,232 @@
+@import url("./normalize.css");
+/*=============================================
+=            Foot Section            =
+=============================================*/
+footer {
+  text-align: center;
+}
+#major-footer {
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.699);
+}
+#major-footer,
+#minor-footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#minor-footer {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+#minor-footer p {
+  height: calc(100% / 3);
+  text-align: center;
+  padding-bottom: 0.25rem;
+}
+#minor-footer p:nth-of-type(3) {
+  height: calc(100% / 3);
+}
+#minor-footer p:nth-of-type(2) {
+  text-decoration-line: underline;
+}
+footer h2 {
+  padding: 15px 0;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+/*=============================================
+=            Contact Us Section            =
+=============================================*/
+.contact-us-info {
+  background-color: #c1862c;
+  height: calc(100% / 3);
+}
+.contact-us-info > p {
+  font-size: 20px;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.social-info {
+  background-color: #ada29b;
+  height: calc(100% / 3);
+}
+#socialmedia-icons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem 0 1.5rem 0;
+}
+#socialmedia-icons span a svg {
+  width: 35px;
+  height: 35px;
+  color: #000000;
+  opacity: 0.5;
+}
+.newsletter-info {
+  display: flex;
+  flex-direction: column;
+  width: height(100% / 3);
+  background-color: #4d626e;
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.newsletter-info .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20% 0 20%;
+}
+.newsletter-info p {
+  margin: 0 10% 1rem 10%;
+}
+#fname-lname {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-grow: 1;
+}
+#fname,
+#lname {
+  width: 90%;
+}
+#fname-lname div p,
+#emailid-send div p {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#emailid-send div {
+  width: 85%;
+}
+.newsletter-info .newsletter-form input {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+.newsletter-info .newsletter-form input::placeholder {
+  padding: 0 0 0 0.5rem;
+  color: #c1862c;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.newsletter-info .newsletter-form label {
+  display: none;
+}
+#emailid-send {
+  display: flex;
+  justify-content: flex-start;
+}
+#emailid-send input {
+  margin: 1rem 0 0 0;
+  width: 100%;
+}
+#emailid-send button {
+  height: 0;
+  width: 40px;
+}
+#emailid-send button svg {
+  margin: 1rem 0 0 0;
+  height: 20px;
+  width: 60px;
+  cursor: pointer;
+  fill: #c1862c;
+}
+/* =================Tablet BREAKPOINT================= */
+@media screen and (min-width: 600px) {
+  #major-footer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  #minor-footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+  .contact-us-info {
+    width: calc(100% / 2);
+    height: auto;
+  }
+  .social-info {
+    width: calc(100% / 2);
+    height: auto;
+  }
+  .newsletter-info {
+    display: flex;
+    width: calc(100%);
+    height: auto;
+  }
+  #fname-lname {
+    display: flex;
+    justify-content: center;
+  }
+  #lname {
+    transform: translateX(25px);
+  }
+  #emailid-send input {
+    width: 90%;
+    transform: translateX(35px);
+  }
+}
+/* =================DESKTOP BREAKPOINT================= */
+@media screen and (min-width: 1000px) {
+  /*   *{outline:1px solid red;}
+ */
+  footer {
+    flex-direction: column;
+  }
+  #major-footer,
+  #minor-footer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  #minor-footer p {
+    width: calc(100% / 4);
+    text-align: center;
+  }
+  #minor-footer p:nth-of-type(3) {
+    width: calc(100% / 2);
+  }
+  .contact-us-info {
+    width: calc(100% / 4);
+    height: auto;
+  }
+  .social-info {
+    width: calc(100% / 4);
+    height: auto;
+  }
+  #socialmedia-icons {
+    margin: 0.5rem 0 0 0;
+  }
+  .newsletter-info {
+    width: calc(100% / 2);
+  }
+  .newsletter-info .newsletter-form input::placeholder {
+    font-size: 1rem;
+  }
+  #fname-lname {
+    justify-content: space-between;
+    width: 100%;
+  }
+  #emailid-send input {
+    width: 100%;
+  }
+  #minor-footer {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
+  }
+}

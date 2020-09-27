@@ -1,0 +1,13 @@
+@import url("../css/normalize.css");
+
+.shopping-product-layout-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .shopping-product-layout-container {
+    width: 100%;
+  }
+}

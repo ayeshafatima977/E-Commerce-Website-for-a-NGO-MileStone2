@@ -1,4 +1,6 @@
-@media screen and (max-width :600px) {
+@import url("./normalize.css");
+
+@media screen and (max-width: 1000px) {
   .menu-wrap {
     position: fixed;
     top: 0;
@@ -6,7 +8,7 @@
     z-index: 2;
     width: 50px;
     height: 50px;
-    background-color: #B5B1AC;
+    background-color: rgba(183, 145, 87, 0.9);
     justify-content: center;
     text-align: center;
   }
@@ -15,8 +17,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
-    height:50px;
+    width: 40px;
+    height: 40px;
     opacity: 0;
   }
   /* Overlay background */
@@ -25,7 +27,12 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #FFF;
+    /*     background-color: rgb(77, 98, 110);
+ */
+    background-image: url("../img/LandingPage.jpg");
+    background-size: cover;
+    background-position: right;
+    background-position-x: 45%;
   }
   /* Hide class for the overlay */
   .hide {
@@ -33,11 +40,23 @@
   }
   #menu > ul {
     margin-top: 40px;
-    text-align: center;
-    font-size: 55px;
+    font-size: 40px;
+    font-weight: 500;
   }
-  #menu > ul > li > a {
+  img {
+    opacity: 0.5;
+  }
+  #menu > ul > li > a,
+  #menu > ul > li {
     text-decoration: none;
-    color: #C1862C;
+    color: #c1862c;
+    margin: 0 90% 0 20%;
+    list-style-type: none;
+  }
+  .menu-wrap span svg {
+    width: 40px;
+    height: 40px;
+    color: #233d4c;
+    padding: 0.5rem 0 0 0;
   }
 }
