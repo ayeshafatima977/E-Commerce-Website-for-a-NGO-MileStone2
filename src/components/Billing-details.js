@@ -1,11 +1,10 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
 import FormValidation from "../functions/Form-validation.js";
 import "../css/Billing-details.css";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
-  const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
 
   /*   Creating Local states */

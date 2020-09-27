@@ -19,7 +19,6 @@ const ProductDetailsOverlayComponent = (props) => {
     productPriceCopy,
     productImgCopy,
     productIdCopy,
-    productInCartQtyCopy,
     productObj;
 
     /* 
@@ -33,7 +32,6 @@ const ProductDetailsOverlayComponent = (props) => {
       productPriceCopy = product.price;
       productImgCopy = product.image;
       productIdCopy = product.id;
-      productInCartQtyCopy = product.inCartQty;
       productObj = product;
     }
   }
