@@ -39,36 +39,40 @@ const DonationFormComponent = () => {
         <h1>Donation Details</h1>
         <div className="donation-form-section-container">
           <h2> Amount </h2>
-          <label htmlFor="donation-freq">Donation Frequency</label>
-          <select
-            id="donation-freq-id"
-            onChange={(e) => setDonationFreq(e.target.value)}
-            value={donationFreq}
-          >
-            <option value="Donate Now">Donate Now </option>
-            <option value="Donate Monthly">Donate Monthly </option>
-          </select>
-          <label htmlFor="donation-amount">
-            Donation Amount<sup className="required-field">*</sup>
-          </label>
-          <span>
-            $
-            <input
-              id="donation-amount-id"
-              className="donation-amount"
-              type="number"
-              onChange={(e) => {
-                if (setDonationAmount(e.target.value));
-                e.target.value > 5 || (e.target.value = "5");
-              }}
-              placeholder="Min $5 for online"
-              value={donationAmount}
-              min="5"
-            ></input>
-            <span>
-              <FaMoneyBill />
-            </span>
-          </span>
+          <div id="donation-amount-container">
+            <div id="donation-freq-container">
+              <label htmlFor="donation-freq">Donation Frequency</label>
+              <select
+                id="donation-freq-id"
+                onChange={(e) => setDonationFreq(e.target.value)}
+                value={donationFreq}
+              >
+                <option value="Donate Now">Donate Now </option>
+                <option value="Donate Monthly">Donate Monthly </option>
+              </select>
+            </div>
+            <div id="donation-amount-input-container">
+              <label id="donation-amount-label" htmlFor="donation-amount">
+                Donation Amount<sup className="required-field">*</sup>
+              </label>
+              <span id="donation-amount-span">
+                $
+                <input
+                  id="donation-amount-id"
+                  className="donation-amount"
+                  type="number"
+                  onChange={(e) => {
+                    if (setDonationAmount(e.target.value));
+                    e.target.value > 5 || (e.target.value = "5");
+                  }}
+                  placeholder="Min $5 for online"
+                  value={donationAmount}
+                  min="5"
+                ></input>
+                  <FaMoneyBill />
+              </span>
+            </div>
+          </div>
           <h2>Fund</h2>
           <label htmlFor="fund-type">Fund Type</label>
           <select
@@ -101,19 +105,19 @@ const DonationFormComponent = () => {
           <CreditCardComponent ref={creditCardRef} />
         </div>
         <div id="donation-submit-button-container">
-        <button
-        id="donation-submit-button"
-          onClick={() => {
-            SetCreditCardValidationStatus(
-              creditCardRef.current.runCreditCardDispatch()
-            );
-            SetBillingDetailsValidationStatus(
-              billingInfoRef.current.runBillingInfoDispatch()
-            );
-          }}
-        >
-          Complete Your Donation
-        </button>
+          <button
+            id="donation-submit-button"
+            onClick={() => {
+              SetCreditCardValidationStatus(
+                creditCardRef.current.runCreditCardDispatch()
+              );
+              SetBillingDetailsValidationStatus(
+                billingInfoRef.current.runBillingInfoDispatch()
+              );
+            }}
+          >
+            Complete Your Donation
+          </button>
         </div>
       </form>
     </>

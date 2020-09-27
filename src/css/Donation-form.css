@@ -15,7 +15,6 @@
   margin: 10px 0;
   text-align: center;
 }
-
 /*=============================================
 =        Sections (Amount / Donor Info)       =
 =============================================*/
@@ -26,13 +25,25 @@
   border-top: 1px solid #FFF;
   margin-left: 15px;
 }
-.donation-form-section-container label {
+#donation-amount-container label {
   width: 100%;
   display: block;
+  padding-bottom: 5px;
 }
-.donation-form-section-container select,
-.donation-form-section-container > input,
-#billing-form > div > input {
+#donation-amount-id {
+  border-radius: 5px;
+  height: 30px;
+  width: 70%;
+  padding-left: 5px;
+}
+#donation-amount-label {
+  padding-left: 10px;
+}
+#donation-amount-span > svg {
+  transform: translateX(-25px) scale(1.5);
+  color: #4D626E;
+}
+.donation-form-section-container select {
   width: 70%;
   height: 30px;
   display: block;
@@ -53,6 +64,7 @@
   height: 50px;
   margin-bottom: 15px;
   border-radius: 10px;
+  padding: 5px 5px;
 }
 #donation-submit-button-container {
   text-align: center;
@@ -66,4 +78,47 @@
   font-size: 20px;
   font-weight: bold;
   margin: 15px 0;
+}
+/*=============================================
+=            Tablet view            =
+=============================================*/
+@media screen and (min-width: 600px) {
+  #donation-amount-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #donation-amount-input-container input,
+  #donation-amount-container select {
+    width: 220px;
+    height: 30px;
+  }
+  #donation-amount-input-container {
+    margin-left: 40px;
+  }
+  #fund-type-id {
+    width: 95%;
+  }
+  #donation-message-id {
+    width: 95%;
+    height: 100px;
+  }
+}
+/*=============================================
+=            Desktop view            =
+=============================================*/
+@media screen and (min-width: 1000px) {
+  #donation-form-container {
+    width: 60%;
+  }
+  .donation-form-section-container {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  #donation-amount-input-container input,
+  #donation-amount-container select {
+    width: 185px;
+    height: 30px;
+  }
 }
