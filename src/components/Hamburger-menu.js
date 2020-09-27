@@ -3,6 +3,7 @@ import "../css/Hamburger-menu.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
+/* Hamburger menu for the sticky mobile view */
 const HamburgerMenuComponent = () => {
   /* Function to add and remove the hide class to the overlay menu.*/
   const ShowOverlayMenu = (e) => {

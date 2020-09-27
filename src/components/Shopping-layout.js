@@ -4,7 +4,7 @@ import ProductCardComponent from "./Product-card";
 import { InitialProductAdd } from "../actions/Shopping-navigation";
 import "../css/Shopping-layout.css";
 
-/* Shopping layout page where we display all products available for shopping */
+/* Shopping layout component on the shopping page where we display all products available for shopping */
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);
   const displayProductList = globalState.ShopNav.displayProducts;

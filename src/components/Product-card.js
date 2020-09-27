@@ -8,6 +8,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import GlobalStore from "./store";
 
+/* Individual card component for each product in the store */
 const ProductCardComponent = (props) => {
   /*  Initialize global states */
   const globalState = useSelector((state) => state);

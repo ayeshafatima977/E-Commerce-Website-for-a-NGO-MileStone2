@@ -98,7 +98,7 @@ const DonationFormComponent = () => {
           ></textarea>
         </div>
         <div className="donation-form-section-container">
-          <h2>Donor & Tax Recipt Information</h2>
+          <h2>Donor & Tax Receipt Information</h2>
           <BillingDetailsComponent ref={billingInfoRef} />
         </div>
         <div className="donation-form-section-container">

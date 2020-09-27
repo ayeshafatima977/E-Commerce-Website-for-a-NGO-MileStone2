@@ -1,3 +1,4 @@
+/* Reducer for the states to track the shopping navigation and product list */
 const ShoppingNavigationReducer = (
     state = {
       Search: "",
@@ -51,7 +52,7 @@ const ShoppingNavigationReducer = (
     switch (action.type) {
       case "SEARCH_PRODUCT": {
         if (action.payload === "") {
-          /* Wild card RegEx to match anything */
+          /* Setting the search term to be a wild card RegEx to match anything */
           stateCopy.Search = "(.*)";
         } else {
           stateCopy.Search = action.payload.trim();
@@ -68,7 +69,7 @@ const ShoppingNavigationReducer = (
       }
       case "BROWSE_PRODUCT": {
         if (stateCopy.Browse !== "" && stateCopy.Browse !== "(.*)") {
-          /* Wild card RegEx to match anything */
+          /* Setting the search term to be a wild card RegEx to match anything */
           stateCopy.Browse = "(.*)";
         } else {
           /* The browse must match the category starting with the same character. */
@@ -117,7 +118,6 @@ const ShoppingNavigationReducer = (
     }
       /* The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed. */
     for (const product of state.products) {
-      console.log(displayCopy);
       if (
         product.title.match(RegExp(stateCopy.Search)) &&
         product.category.match(RegExp(stateCopy.Browse)) &&
