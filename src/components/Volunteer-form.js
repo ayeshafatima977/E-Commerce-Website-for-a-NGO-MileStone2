@@ -96,7 +96,7 @@ const VolunteerFormComponent = () => {
             from year 2000 so as to satisfy the condition volunteer being 18 years or older*/}
 
             <DatePickerDobComponent />
-{/*             <p className="volunteerAddress-error msg-hide">
+            {/*             <p className="volunteerAddress-error msg-hide">
               Enter valid Birthday date
             </p> */}
           </div>
@@ -154,7 +154,8 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-reference">
-              How did you hear about us?{/* <sup className="required-field">*</sup> */}
+              How did you hear about us?
+              {/* <sup className="required-field">*</sup> */}
             </label>
             <select
               onChange={(e) => setVolunteerReference(e.target.value)}
@@ -200,7 +201,8 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="emergency-relationship">
-              Contact Relationship{/* <sup className="required-field">*</sup> */}
+              Contact Relationship
+              {/* <sup className="required-field">*</sup> */}
             </label>
             <select
               id="emergency-relationship"
@@ -231,13 +233,16 @@ const VolunteerFormComponent = () => {
               Please enter a valid phone number
             </p>
           </div>
-          <input type="submit" />
+          <div id="submit-required-note">
+            <input type="submit" />
+            <sup className="required-field note">* Required Field</sup>
+          </div>
         </div>
-      <p className="volunteer-thankyou-msg msg-hide">
-        Thank you for all that you do!!
+
+        <p className="volunteer-thankyou-msg msg-hide">
+          Thank you for all that you do!!
         </p>
       </form>
-      
     </>
   );
 };
