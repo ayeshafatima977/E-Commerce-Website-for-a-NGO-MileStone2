@@ -233,16 +233,10 @@ const VolunteerFormComponent = () => {
           </div>
           <input type="submit" />
         </div>
-<<<<<<< HEAD
         <p className="volunteer-thankyou-msg msg-hide">
-=======
-      </form>
-      <p className="volunteer-thankyou-msg msg-hide">
->>>>>>> 31d28cdf45bcfa01a082eb516d11ed0d382377ce
-        Thank you for all that you do!!
+          Thank you for all that you do!!
         </p>
       </form>
-      
     </>
   );
 };
