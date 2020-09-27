@@ -1,8 +1,6 @@
-/*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
 import "../css/Knowus-page.css";
-
 
 /*=============================================
 =         Know us page React Component        =
@@ -13,7 +11,9 @@ const KnowUsPageComponent = () => {
     <>
       <BannerComponent />
       <article id="know-us-article">
-        <section className="about-us-section">
+        {/*=====================About Us ========================*/}
+
+        <section className="know-us-section">
           <h1> About Us</h1>
 
           <h2>
@@ -32,14 +32,16 @@ const KnowUsPageComponent = () => {
             good.
           </p>
         </section>
-        <section className="about-us-section">
+        {/*=====================Vision ========================*/}
+        <section className="know-us-section">
           <h1>Vision</h1>
           <p>
             Our guiding values of Commitment, Integrity, Service, Innovation,
             Responsiveness, and Fairness govern the manner in which we work
           </p>
         </section>
-        <section className="about-us-section">
+        {/*=====================Mission========================*/}
+        <section className="know-us-section">
           <h1>Mission</h1>
           <p>
             To be stewards in the collection of surplus and donated food for the
@@ -47,7 +49,8 @@ const KnowUsPageComponent = () => {
             community while seeking solutions to the causes of hunger.
           </p>
         </section>
-        <section className="about-us-section">
+        {/*=====================FAQ ========================*/}
+        <section className="know-us-section">
           <h1> FAQ </h1>
           <h3>Is child sponsorship an effective way to help?</h3>
           <p>

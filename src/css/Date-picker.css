@@ -7,7 +7,7 @@
 }
 .react-datepicker__current-month,
 .react-datepicker__day-name {
-  color: white;
+  color: #ffffff;
 }
 .react-datepicker__day--selected{
     background-color:#4d626e;

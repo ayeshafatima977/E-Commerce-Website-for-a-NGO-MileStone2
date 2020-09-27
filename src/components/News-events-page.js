@@ -1,4 +1,4 @@
-/*cspell:disable*/
+
 import React from "react";
 import BannerComponent from "./Banner";
 import NewsImageOne from "../img/NewsImageOne.jpg";
@@ -16,7 +16,7 @@ import "../css/News-event-page.css";
 =      News and Events page React Component   =
 =============================================*/
 
-/* Assuming routing would be in middle section between header/banner and footer */
+
 const NewsEventsPageComponent = () => {
   return (
     <>

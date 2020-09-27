@@ -7,7 +7,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import FormValidation from "../functions/Form-validation.js";
-import { IconContext } from "react-icons/lib";
+
 import "../css/Hero-footer.css";
 
 /*=============================================
@@ -21,6 +21,9 @@ const FooterComponent = () => {
 
   const SubmitForm = (e) => {
     e.preventDefault();
+
+    /* Calling Global FormValidation function to validate First Name, Last Name and Email */
+    /* if FormValidation === True then Display Thank you message */
 
     if (
       FormValidation(
@@ -98,61 +101,60 @@ const FooterComponent = () => {
           <form className="newsletter-form" onSubmit={SubmitForm}>
             <div id="fname-lname">
               <div>
-              <label htmlFor="fname" className=".screen-reader-text">
-                First Name
-              </label>
-              <input
-                type="text"
-                id="fname"
-                className="newsletter-fname"
-                placeholder="First Name"
-                onChange={(event) => {
-                  setFName(event.target.value);
-                }}
-              />
-              <p className="newsletter-fname-error-msg msg-hide">
-                Enter correct First Name
-              </p>
+                <label htmlFor="fname" className=".screen-reader-text">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="fname"
+                  className="newsletter-fname"
+                  placeholder="First Name"
+                  onChange={(event) => {
+                    setFName(event.target.value);
+                  }}
+                />
+                <p className="newsletter-fname-error-msg msg-hide">
+                  Enter correct First Name
+                </p>
               </div>
               <div>
-              <label htmlFor="lname" className=".screen-reader-text">
-                Last Name
-              </label>
-              <input
-                type="text"
-                id="lname"
-                className="newsletter-lname"
-                placeholder="Last Name"
-                onChange={(event) => {
-                  setLName(event.target.value);
-                }}
-              />
-              <p className="newsletter-lname-error-msg msg-hide ">
-                Enter correct Last Name
-              </p>
+                <label htmlFor="lname" className=".screen-reader-text">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lname"
+                  className="newsletter-lname"
+                  placeholder="Last Name"
+                  onChange={(event) => {
+                    setLName(event.target.value);
+                  }}
+                />
+                <p className="newsletter-lname-error-msg msg-hide ">
+                  Enter correct Last Name
+                </p>
               </div>
             </div>
             <div id="emailid-send">
               <div>
-              <label htmlFor="email" className=".screen-reader-text">
-                Email Address
-              </label>
-              <input
-                type="text"
-                id="email"
-                className="newsletter-email"
-                placeholder="example@domain.com"
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                }}
-              />
-              <p className="newsletter-email-error-msg msg-hide ">
-                Enter valid email Id
-              </p>
+                <label htmlFor="email" className=".screen-reader-text">
+                  Email Address
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  className="newsletter-email"
+                  placeholder="example@domain.com"
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                />
+                <p className="newsletter-email-error-msg msg-hide ">
+                  Enter valid email Id
+                </p>
               </div>
               <button type="submit">
-                  <FaEnvelope  />
-  
+                <FaEnvelope />
               </button>
             </div>
             <p className="newsletter-thanks-msg msg-hide">

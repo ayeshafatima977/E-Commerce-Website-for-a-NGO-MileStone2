@@ -95,8 +95,7 @@ const HeaderComponent = () => {
               >
                 VOLUNTEER
               </Link>
-            </li>
-            {/*!Parking lot item */}
+            </li>20 m           
             <li>
               <a
                 className="right-side-buttons"
