@@ -163,8 +163,8 @@ const ShoppingCartComponent = () => {
               <p> $ {subTotal.toFixed(2)} </p>
             </div>
             <div id="pickup">
-              <h1> Local Pickup </h1>
-              <p>
+              <h2> Local Pickup </h2>
+              <p id="pickup-address">
                 #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up
                 items at the head office instead of in-store
               </p>
@@ -176,32 +176,38 @@ const ShoppingCartComponent = () => {
             {/* <p> Subtotal</p>
             <p> $ {subTotal.toFixed(2)} </p> */}
           </section>
-          <h1> Credit Card</h1>
-          <CreditCardComponent ref={creditCardRef} id="cc-section" />
+          <div id="cc-section">
+            <h2> Credit Card</h2>
+            <CreditCardComponent ref={creditCardRef} />
+          </div>
           <div id="bd-section">
             <h2>Billing Details</h2>
-            <BillingDetailsComponent ref={billingInfoRef} id="binfo-section" />
+            <BillingDetailsComponent ref={billingInfoRef} />
           </div>
           {/* 
   Using react useRef hook to access the child component from the parent component to execute validation 
   This method was required as we import multiple form components within on parent form and all forms must
   be submitted from the parent form
   */}
-          <button
-            id="btn-order"
-            form="shopping-cart"
-            type="submit"
-            onClick={() => {
-              SetCreditCardValidationStatus(
-                creditCardRef.current.runCreditCardDispatch()
-              );
-              SetBillingDetailsValidationStatus(
-                billingInfoRef.current.runBillingInfoDispatch()
-              );
-            }}
-          >
-            Place Order
-          </button>
+          <div id="shopping-required-note">
+            <button
+              id="btn-order"
+              form="shopping-cart"
+              type="submit"
+              onClick={() => {
+                SetCreditCardValidationStatus(
+                  creditCardRef.current.runCreditCardDispatch()
+                );
+                SetBillingDetailsValidationStatus(
+                  billingInfoRef.current.runBillingInfoDispatch()
+                );
+              }}
+            >
+              Place Order
+            </button>
+
+            <sup className="required-field note">* Required Field</sup>
+          </div>
         </form>
       </section>
     </>
