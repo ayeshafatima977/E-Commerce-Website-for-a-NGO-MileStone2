@@ -84,7 +84,7 @@ const ShoppingCartComponent = () => {
                   <img
                     id="pdt-img"
                     src={inCartProduct.image}
-                    alt="Image of product in shopping cart"
+                    alt="product in shopping cart"
                   />
                   <section id="text-container">
                     <p id="description">{inCartProduct.description}</p>
