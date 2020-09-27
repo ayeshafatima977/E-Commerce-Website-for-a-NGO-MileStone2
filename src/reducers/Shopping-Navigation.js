@@ -119,7 +119,7 @@ const ShoppingNavigationReducer = (
       /* The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed. */
     for (const product of state.products) {
       if (
-        product.title.toLowerCase().match(RegExp(stateCopy.Search)) &&
+        product.title.toLowerCase().match(RegExp(stateCopy.Search.toLowerCase())) &&
         product.category.match(RegExp(stateCopy.Browse)) &&
         product.price > stateCopy.Filter[0] &&
         product.price < stateCopy.Filter[1]
