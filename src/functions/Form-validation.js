@@ -87,7 +87,7 @@ export default function FormValidation(
 
     case "email":
       if (
-        !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)
+        !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)
       ) {
         manipulateDoMError();
       } else {
