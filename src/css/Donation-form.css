@@ -1,5 +1,7 @@
 @import url("./normalize.css");
-
+/*=============================================
+=            Donation Form           =
+=============================================*/
 #donation-form-container {
   background-color: #4D626E;
   color: #FFF;
@@ -11,22 +13,34 @@
 #donation-form-container > h1 {
   padding-top: 5px;
   margin: 10px 0;
+  text-align: center;
 }
+
+/*=============================================
+=        Sections (Amount / Donor Info)       =
+=============================================*/
 .donation-form-section-container > h2 {
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 .donation-form-section-container {
   border-top: 1px solid #FFF;
+  margin-left: 15px;
 }
-.donation-form-section-container > select,
-.donation-form-section-container > input {
-  width: 50%;
+.donation-form-section-container label {
+  width: 100%;
+  display: block;
+}
+.donation-form-section-container select,
+.donation-form-section-container > input,
+#billing-form > div > input {
+  width: 70%;
+  height: 30px;
   display: block;
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.donation-form-section-container > span {
-  display: block;
+#billing-form > div > input::placeholder {
+  padding-left: 10px;
 }
 .donation-form-section-container > span > input {
   margin-left: 5px;
@@ -34,9 +48,22 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-#donation-message {
-  width: 95%;
-  display: block;
+#donation-message-id {
+  width: 85%;
   height: 50px;
   margin-bottom: 15px;
+  border-radius: 10px;
+}
+#donation-submit-button-container {
+  text-align: center;
+}
+#donation-submit-button {
+  color: #FFF;
+  background-color: rgba(255,255,255,0.01);
+  border: solid #FFF 4px;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
 }

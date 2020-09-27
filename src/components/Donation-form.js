@@ -94,12 +94,15 @@ const DonationFormComponent = () => {
           ></textarea>
         </div>
         <div className="donation-form-section-container">
+          <h2>Donor & Tax Recipt Information</h2>
           <BillingDetailsComponent ref={billingInfoRef} />
         </div>
         <div className="donation-form-section-container">
           <CreditCardComponent ref={creditCardRef} />
         </div>
+        <div id="donation-submit-button-container">
         <button
+        id="donation-submit-button"
           onClick={() => {
             SetCreditCardValidationStatus(
               creditCardRef.current.runCreditCardDispatch()
@@ -111,6 +114,7 @@ const DonationFormComponent = () => {
         >
           Complete Your Donation
         </button>
+        </div>
       </form>
     </>
   );
