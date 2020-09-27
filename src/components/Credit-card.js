@@ -1,6 +1,6 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { useDispatch } from "react-redux";
-import { ChangeCreditInfo } from "../actions/Credit-card";
+import { ChangeCreditInfo } from "../actions/Credit-Card";
 import {
   FaCcMastercard,
   FaCcPaypal,

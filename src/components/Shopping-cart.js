@@ -96,7 +96,7 @@ const ShoppingCartComponent = () => {
                 <div id="qty-status">
                   <span>
                     <button
-                      id="plus"
+                      className="plus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -109,6 +109,7 @@ const ShoppingCartComponent = () => {
                   </span>
                   <span>
                     <input
+
                       type="number"
                       value={inCartProduct.inCartQty}
                       min="0"
@@ -125,7 +126,7 @@ const ShoppingCartComponent = () => {
                   </span>
                   <span>
                     <button
-                      id="minus"
+                      className="minus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -139,7 +140,7 @@ const ShoppingCartComponent = () => {
                   <span>
                     <button
                       type="button"
-                      id="rmv-btn"
+                      className="rmv-btn"
                       onClick={() => {
                         dispatch(RemoveFromCart(inCartProduct.id));
                       }}
