@@ -3,9 +3,12 @@
 #billing-form {
   background-color: #fff;
   color: #4d626e;
-  width: 90%;
-  margin: 1.25rem auto;
-  padding: 0 0.625rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 1.25rem auto;
+  padding: 0 0.625rem; */
   border-radius: 0.625rem;
 }
 
@@ -23,19 +26,55 @@ select {
   border-bottom: 1px solid #4d626e;
   border-top: 1px solid #4d626e;
 }
+.billing-form-section-container input:focus {
+  background-color: #d6e4e9;
+}
 
-@media screen and (min-width: 800px) {
+::placeholder {
+  color: #4d626e;
+  font-size: 0.65rem;
+  font-style: italic;
+}
+
+label {
+  margin: 0 0 0.25rem 0.5rem;
+  color: #4d626e;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.billing-form-section-container .required-field {
+  color: red;
+}
+
+@media screen and (min-width: 600px) {
+  #billing-form {
+    background-color: #fff;
+    color: #4d626e;
+    width: 100%;
+    margin: 0.25rem auto;
+    padding: 0 0.625rem;
+    border-radius: 0.625rem;
+  }
   .billing-form-section-container input,
   select {
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
 }
 @media screen and (min-width: 1000px) {
+  #billing-form {
+    background-color: #fff;
+    color: #4d626e;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2 0.625rem;
+    border-radius: 0.625rem;
+  }
+
   .billing-form-section-container input,
   select {
-    width: 40%;
+    width: 100%;
     display: flex;
   }
 }

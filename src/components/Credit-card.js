@@ -59,27 +59,29 @@ const CreditCardComponent = forwardRef((props, ref) => {
   return (
     <>
       <form id="credit-card-form">
-        <h2>Credit Card</h2>
         <div className="credit-card-form-section-container">
+          <h4>Credit Card</h4>
           <div className="cards-styling">
             <section className="cards">
-              <span className="card">
-                <FaCcMastercard />
+              <span>
+                <FaCcMastercard /> &nbsp;
               </span>
-              <span className="card">
-                <FaCcVisa />
+              <span>
+                <FaCcVisa /> &nbsp;
               </span>
-              <span className="card">
-                <FaCcPaypal />
+              <span>
+                <FaCcPaypal /> &nbsp;
               </span>
-              <span className="card">
-                <FaCcAmazonPay />
+            </section>
+            <section className="cards">
+              <span>
+                <FaCcAmazonPay /> &nbsp;
               </span>
-              <span className="card">
-                <FaCcApplePay />
+              <span>
+                <FaCcApplePay /> &nbsp;
               </span>
-              <span className="card">
-                <SiGooglepay />
+              <span>
+                <SiGooglepay /> &nbsp;
               </span>
             </section>
           </div>
@@ -87,17 +89,19 @@ const CreditCardComponent = forwardRef((props, ref) => {
             <label htmlFor="user-credit-number-id">
               Number on Card<sup className="required-field">*</sup>
             </label>
-            <input
-              type="text"
-              id="user-credit-number-id"
-              placeholder="0123 4567 8910 1112"
-              className="user-credit-number"
-              maxLength="16"
-              onChange={(e) => {
-                setUserCreditNumber(e.target.value);
-              }}
-            />
-            <FaCreditCard />
+            <div class="credit-icon">
+              <input
+                type="text"
+                id="user-credit-number-id"
+                placeholder="0123 4567 8910 1112"
+                className="user-credit-number"
+                maxLength="16"
+                onChange={(e) => {
+                  setUserCreditNumber(e.target.value);
+                }}
+              />
+              <FaCreditCard id="cc" />
+            </div>
             <p className="user-credit-number-error msg-hide">
               Please enter correct Credit Card Number
             </p>
@@ -139,17 +143,21 @@ const CreditCardComponent = forwardRef((props, ref) => {
               Please enter correct CVC
             </p>
           </div>
-          <div id="credit-save-container">
-            <input
-              type="checkbox"
-              id="checkboxes"
-              onChange={(e) => {
-                // If the checkbox is checked it returns true else returns false
-                setUserInfoSave(e.target.checked);
-              }}
-            />
-            <label htmlFor="checkboxes">Save payment information</label>
-          </div>
+          <section className="checkbox">
+            <div id="credit-save-container">
+              <input
+                type="checkbox"
+                id="checkboxes"
+                onChange={(e) => {
+                  // If the checkbox is checked it returns true else returns false
+                  setUserInfoSave(e.target.checked);
+                }}
+              />
+              <label htmlFor="checkboxes" id="checkbox-label">
+                Save payment information
+              </label>
+            </div>
+          </section>
         </div>
       </form>
     </>
