@@ -4,6 +4,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+#shopping-load-message {
+  font-size: 35px;
+  color: #4d626e;
+}
 .shopping-product-layout-container > ul {
   list-style-type: none;
   display: inline;

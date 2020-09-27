@@ -32,7 +32,7 @@ const ShoppingLayoutComponent = () => {
       ) : (
         <div className="screen-reader-text"></div>
       )}
-      {productsList[0].title === "initial" ? <p>Loading...</p> : <div className="screen-reader-text"></div> }
+      {productsList[0].title === "initial" ? <p id="shopping-load-message">Loading...</p> : <div className="screen-reader-text"></div> }
       <ul>
       {displayProductList.map((individProd) => {
         return (
