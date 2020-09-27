@@ -32,9 +32,10 @@ const ShoppingLayoutComponent = () => {
       ) : (
         <p>No search results found. Please ease search restrictions.</p>
       )}
+      <ul>
       {displayProductList.map((individProd) => {
         return (
-          <>
+          <li className="individ-product-card" key={individProd.id}>
           {/* Calling product cards with all product parameters */}
             <ProductCardComponent
               title={individProd.title}
@@ -42,11 +43,11 @@ const ShoppingLayoutComponent = () => {
               price={individProd.price}
               briefDescription={individProd.briefDescription}
               obj={individProd}
-              key={individProd.id}
             />
-          </>
+          </li>
         );
       })}
+      </ul>
     </section>
   );
 };
