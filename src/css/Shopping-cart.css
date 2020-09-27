@@ -1,9 +1,4 @@
 @import url("./normalize.css");
-/* 
-* {
-  outline: 1px solid red;
-} */
-
 #cart-container {
   display: flex;
   flex-direction: column;
@@ -115,7 +110,7 @@ input[type="number"] {
   text-align: center;
   padding: 20px auto;
   margin: 30px auto;
-  border: 2px solid white;
+  border: 2px solid #FFF;
   border-radius: 10px;
   justify-content: flex-end;
 }
@@ -136,12 +131,12 @@ input[type="number"] {
   text-align: center;
   padding: 20px auto;
   margin: 30px auto;
-  border: 2px solid white;
+  border: 2px solid #FFF;
   border-radius: 10px;
   justify-content: flex-end;
 }
 #btn-back a {
-  color: white;
+  color: #FFF;
   text-decoration: none;
 }
 

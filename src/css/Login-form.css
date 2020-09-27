@@ -97,7 +97,7 @@ body {
   font-size: 1rem;
 }
 .required-field {
-  color: red;
+  color: #ff0000;
 }
 .loginform-overlay .note {
   font-size: 0.8rem;

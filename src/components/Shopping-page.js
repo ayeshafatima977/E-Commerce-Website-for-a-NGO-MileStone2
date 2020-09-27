@@ -1,4 +1,3 @@
-
 import React from "react";
 import ShoppingLayoutComponent from "./Shopping-layout";
 import ShoppingNavigationComponent from "./Shopping-navigation";

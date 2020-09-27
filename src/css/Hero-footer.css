@@ -3,7 +3,6 @@
 =            Foot Section            =
 =============================================*/
 footer {
-  font-family: Roboto;
   text-align: center;
 }
 #major-footer {
@@ -65,7 +64,7 @@ footer h2 {
 #socialmedia-icons span a svg {
   width: 35px;
   height: 35px;
-  color: black;
+  color: #000000;
   opacity: 0.5;
 }
 .newsletter-info {
@@ -96,7 +95,7 @@ footer h2 {
 }
 #fname-lname div p,
 #emailid-send div p {
-  color: white;
+  color: #ffffff;
   font-size: 0.8rem;
   font-style: italic;
 }
@@ -107,7 +106,7 @@ footer h2 {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  color: #ffffff;
 }
 .newsletter-info .newsletter-form input::placeholder {
   padding: 0 0 0 0.5rem;

@@ -48,7 +48,7 @@ in my multi-form submission roadblock. I have use React Hooks to give the child 
 Purpose: Perform multi-form submission using one submission button.
 Source:https://stackoverflow.com/questions/37949981/call-child-method-from-parent
 
-(1) File Name: Shopping-navigation.js (Reducer file)
+(2) File Name: Shopping-navigation.js (Reducer file)
 
 Citation: The sorting function was adapted so that it could sort an array based on the product objects title.
 Source: https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
@@ -56,7 +56,7 @@ Reason: A function to sort an array based on the inner object properties (title)
 
 ==============================================================================================
 
-(2) File Name: Shopping-navigation.js (Reducer file)
+(3) File Name: Shopping-navigation.js (Reducer file)
 
 Citation: The sorting function was adapted so that it could sort an array based on the product objects price.
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
@@ -64,22 +64,25 @@ Reason: A function to sort an array based on the inner object properties (price)
 
 ==============================================================================================
 
-(3) File Name:
-Citation:
-Source:
-Reason:
+(4) File Name: Form-validation.js
+Citation: Using online resources (links on files) to grab RegEx expression in the if statement
+Source: Links kept in the above mentioned file
+Reason: We are not so familiar with Regex expression and those many done already are 
+available for use not to reinvent the wheel.
 
 # ==============================================================================================
 
-Images and Icons Credit has been added to the footer as per the license and attributes documentation from the corresponding websites
+(5) Other citations:
 
-Icons Credit goes to:
-
-Images Credit goes to:
+- Images and Icons Credit has been added to the footer using react-icons library
+- Product information has been used from fakestoreAPI.com
+- Date picker was used from react-Date-Picker library
+- Overall inspiration we got from Edmonton Food bank, Good Will Canada
+- Instead of using lorem ipsum, we have copied random articles from charity websites, links above
+- Tammy has given a good reference on how to resolve the API asynchronous issue that we faced ... https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
 
 ==============================================================================================
 
 ! General Notes:
-
-Inline styles were only used on icons from the react-icons package as per the react-icons documentation.
-Documentation: https://github.com/react-icons/react-icons
+We have kept good reference for the websites that we learned from in our NoteJoy, however we
+didn't copy code snippets from there, and if we did, it was explicitly mentioned above.

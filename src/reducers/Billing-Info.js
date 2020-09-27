@@ -1,3 +1,6 @@
+/* Global state reducer to store the user billing details for 
+local use within other components or future backend DB applications */
+
 const BillingInfoReducer = (
   state = {
     fName: "",

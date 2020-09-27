@@ -17,9 +17,6 @@
 .overlayShow {
   display: block;
 }
-.product-details-overlay * {
-  outline: 1px solid red;
-}
 .product-overlay-section {
   display: flex;
   flex-direction: row;

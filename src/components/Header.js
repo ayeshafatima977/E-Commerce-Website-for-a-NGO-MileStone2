@@ -20,6 +20,7 @@ const HeaderComponent = () => {
       <ContactFormComponent />
       <LoginFormComponent />
       <section className="common-header">
+        {/* Top section for logo and slogan header */}
         <div className="logo-container">
           <logo>
             <Link
@@ -35,6 +36,7 @@ const HeaderComponent = () => {
           <h1>MAKE A DIFFERENCE</h1>
         </div>
         <nav>
+          {/* Navigation section with site routs */}
           <ul>
             <li>
               <Link

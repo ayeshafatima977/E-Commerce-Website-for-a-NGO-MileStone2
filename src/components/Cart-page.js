@@ -1,7 +1,11 @@
-
 import React from "react";
 import BannerComponent from "./Banner";
 import ShoppingCartComponent from "./Shopping-cart";
+
+/*=============================================
+=           Cart Page Component Start         =
+=============================================*/
+
 const CartPageComponent = () => {
   return (
     <>
@@ -14,3 +18,8 @@ const CartPageComponent = () => {
 
 
 export default CartPageComponent;
+
+/*=====  End ofCart Page Component End  ======*/
+
+
+

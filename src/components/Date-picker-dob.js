@@ -4,6 +4,11 @@ import { subYears } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import "../css/Date-picker.css";
 
+/* 
+React date picker library used to manage date inputs in the site forms 
+This is customized to handle the user date of birth
+*/
+
 const DatePickerDobComponent = () => {
   const [startDate, setStartDate] = useState(new Date("01/01/2000"));
   return (
@@ -18,7 +23,6 @@ const DatePickerDobComponent = () => {
       dropdownMode="select"
       maxDate={subYears(new Date(), 18)}
       dateFormat="dd/MM/yyyy"
-      // inline
     />
   );
 };

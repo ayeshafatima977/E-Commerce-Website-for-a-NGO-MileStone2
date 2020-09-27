@@ -3,10 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/Cart";
 import { FaWindowClose, FaShoppingCart } from "react-icons/fa";
 import "../css/Product-overlay.css";
-/*=============================================
-=            Product Details Overlay Component           =
-=============================================*/
+
+/* 
+Product overlay component where we show more details about the items in the shopping page 
+this is displayed in a overlay fashion 
+*/
+
 const ProductDetailsOverlayComponent = (props) => {
+  /* Copying the global state for local use */
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const productList = GlobalStateInfo.ShopNav.products;
@@ -18,6 +22,10 @@ const ProductDetailsOverlayComponent = (props) => {
     productInCartQtyCopy,
     productObj;
 
+    /* 
+    Looking up which product card called for the overlay 
+    to display the right product info on the overlay card
+     */
   for (const product of productList) {
     if (Number(props.productId) === product.id) {
       productTitleCopy = product.title;
@@ -29,6 +37,10 @@ const ProductDetailsOverlayComponent = (props) => {
       productObj = product;
     }
   }
+  /* 
+  This function meant for toggling the add to cart & 
+  remove from cart button for better user experience 
+  */
   const inCartCheck = () => {
     for (let item of GlobalStateInfo.Cart) {
       if (productIdCopy === item.id) {
@@ -36,10 +48,17 @@ const ProductDetailsOverlayComponent = (props) => {
       }
     }
   };
-
+  /* 
+  This function meant for toggling the add to cart & 
+  remove from cart button for better user experience (dispatch add action)
+  */
   const AddSingleProductToCart = () => {
     dispatch(AddToCart(productObj));
   };
+    /* 
+  This function meant for toggling the add to cart & 
+  remove from cart button for better user experience (dispatch remove action)
+  */
   const RemoveSingleProductFromCart = () => {
     dispatch(RemoveFromCart(productIdCopy));
   };
@@ -97,7 +116,5 @@ const ProductDetailsOverlayComponent = (props) => {
     </section>
   );
 };
-
-/*=====  End of Product Details Overlay Component ======*/
 
 export default ProductDetailsOverlayComponent;

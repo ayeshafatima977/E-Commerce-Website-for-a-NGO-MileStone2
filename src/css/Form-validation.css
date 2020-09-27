@@ -1,16 +1,16 @@
 @import url("./normalize.css");
 .msg-hide {
-    display: none;
+  display: none;
 }
- 
-.msg-show{
-    display: block;
-    color: red;
+
+.msg-show {
+  display: block;
+  color: rgb(255, 0, 0);
 }
 
 .input-error {
-    outline: 1px dashed rgba(255, 0, 0, 0.5);
+  outline: 1px dashed rgba(255, 0, 0, 0.5);
 }
 .thanks-msg {
-    color: black;
+  color: #000000;
 }

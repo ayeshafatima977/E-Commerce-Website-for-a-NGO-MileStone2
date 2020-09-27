@@ -2,6 +2,10 @@ import React from "react";
 import BannerComponent from "./Banner";
 import DonationFormComponent from "./Donation-form";
 
+/*=============================================
+=            Donation Page Component          =
+=============================================*/
+
 const DonationPageComponent = () => {
   return (
     <>
@@ -12,3 +16,7 @@ const DonationPageComponent = () => {
 };
 
 export default DonationPageComponent;
+
+/*=====  End of Donation Page Component  ======*/
+
+

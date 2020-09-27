@@ -6,9 +6,12 @@ import "../css/Shopping-navigation.css";
 
 /* Shopping navigation side menu where the visitor can filter/search to the 
 desired products. It has search box, filters by category and price and does sorting as well*/
-
 const ShoppingNavigationComponent = () => {
   const dispatch = useDispatch();
+
+  /* Function that will disable checkboxes once one is clicked. Limits the user to have one
+  /* sorting option at a time.
+   */
   const SortOption = (target) => {
     const sortOptions = document.getElementsByClassName("sort-option");
     if (target.checked) {
@@ -22,9 +25,12 @@ const ShoppingNavigationComponent = () => {
         checkbox.disabled = false;
       }
     }
-    dispatch(Sort(target.id)); /* checkbox input id */
+    dispatch(Sort(target.id));
   };
 
+  /* Function that will disable checkboxes once one is clicked. Limits the user to have one
+  /* browse option at a time.
+   */
   const BrowseOption = (target) => {
     const browseOptions = document.getElementsByClassName("browse-option");
     if (target.checked) {
@@ -41,6 +47,9 @@ const ShoppingNavigationComponent = () => {
     dispatch(Browse(target.id)); /* checkbox input id */
   };
 
+  /* Function that will disable checkboxes once one is clicked. Limits the user to have one
+  /* filter option at a time.
+   */
   const FilterOption = (target) => {
     const filterOptions = document.getElementsByClassName("filter-option");
     if (target.checked) {
@@ -72,7 +81,7 @@ const ShoppingNavigationComponent = () => {
           }}
         />
         <span id="search-icon">
-          <BiSearch size="25px" />
+          <BiSearch />
         </span>
       </form>
       <section id="sort-options" className="shopping-nav-container">

@@ -3,12 +3,17 @@ import { TiArrowBack } from "react-icons/ti";
 import "../css/Login-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
+/* Creating Local state for using it in Form validation */
+
 const LoginFormComponent = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
   const SubmitForm = (e) => {
     e.preventDefault();
+
+    /* Calling Global function for Form validation */
+
     if (
       FormValidation(
         loginEmail,
@@ -26,6 +31,9 @@ const LoginFormComponent = () => {
       alert("Login successful");
     }
   };
+
+  /* Here overlay feature is used to show/hide the Login form to pop on user click*/
+
   const addLoginHideOverlay = () => {
     document
       .getElementById("loginform-overlay")
@@ -33,10 +41,10 @@ const LoginFormComponent = () => {
   };
   return (
     <div className="loginform-overlay" id="loginform-overlay">
-       <form onSubmit={SubmitForm} id="loginForm">
-      <span onClick={addLoginHideOverlay}>
-        <TiArrowBack />
-      </span>
+      <form onSubmit={SubmitForm} id="loginForm">
+        <span onClick={addLoginHideOverlay}>
+          <TiArrowBack />
+        </span>
         <h2>LOG IN</h2>
         <label htmlFor="login-email-input">
           Email<sup className="required-field"> *</sup>

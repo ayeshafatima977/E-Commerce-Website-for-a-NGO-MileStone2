@@ -8,7 +8,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  //Creating Local states
+  /*   Creating Local states */
   const [userFirstName, setUserFirstName] = useState("");
   const [userLastName, setUserLastName] = useState("");
   const [userStreetAddress, setUserStreetAddress] = useState("");
@@ -18,7 +18,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const [userPhone, setUserPhone] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
-  // Creating a Copy with parameters assigned in the Billing Information reducer
+  /* Creating a Copy with parameters assigned in the Billing Information reducer*/
   const BillingInfoCopy = {
     fName: userFirstName,
     lName: userLastName,
@@ -30,8 +30,15 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
     emailID: userEmail,
   };
 
+  /* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */
   useImperativeHandle(ref, () => ({
     runBillingInfoDispatch() {
+      /* Calling Global function for Form validation */
+
       if (
         FormValidation(
           userFirstName,
