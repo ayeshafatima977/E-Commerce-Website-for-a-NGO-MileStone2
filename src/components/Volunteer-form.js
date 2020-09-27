@@ -4,6 +4,8 @@ import DatePickerComponent from "./Date-picker";
 import "../css/Volunteer-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
+/* Creating Local state for using it in Form validation */
+
 const VolunteerFormComponent = () => {
   const [volunteerName, setVolunteerName] = useState("");
   const [volunteerAddress, setVolunteerAddress] = useState("");
@@ -18,7 +20,8 @@ const VolunteerFormComponent = () => {
 
   const SubmitForm = (e) => {
     e.preventDefault();
-    /* form validation */
+
+    /* Calling Global function for Form validation */
     if (
       FormValidation(
         volunteerName,
@@ -88,8 +91,14 @@ const VolunteerFormComponent = () => {
             <label htmlFor="volunteer-birthdate">
               Birth Date<sup className="required-field">*</sup>
             </label>
+
+            {/* Date Picker component is used for the user to select the dates.Here we are allowing the dates to be shown up only 
+            from year 2000 so as to satisfy the condition volunteer being 18 years or older*/}
+
             <DatePickerDobComponent />
-            <p className="volunteerAddress-error msg-hide">Enter valid Birthday date</p>
+            <p className="volunteerAddress-error msg-hide">
+              Enter valid Birthday date
+            </p>
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-address">
@@ -161,6 +170,9 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-start-date">Start Date</label>
+            {/* Date Picker component is used for the user to select the dates
+             which is present date/yesr for Start Date whereas disabling the past dates
+             */}
             <DatePickerComponent
               placeholderText="mm/dd/yy"
               className="volunteer-start-date"
@@ -221,7 +233,12 @@ const VolunteerFormComponent = () => {
           </div>
           <input type="submit" />
         </div>
+<<<<<<< HEAD
         <p className="volunteer-thankyou-msg msg-hide">
+=======
+      </form>
+      <p className="volunteer-thankyou-msg msg-hide">
+>>>>>>> 31d28cdf45bcfa01a082eb516d11ed0d382377ce
         Thank you for all that you do!!
         </p>
       </form>

@@ -52,7 +52,10 @@ const NewsEventsPageComponent = () => {
 
           <h2>Received 50K Donation From Various organizations in Last Year</h2>
           <div className="img-para-wrap">
-            <img src={NewsImageThree} alt="Image shows some coins in hand"></img>
+            <img
+              src={NewsImageThree}
+              alt="Image shows some coins in hand"
+            ></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call
@@ -65,7 +68,10 @@ const NewsEventsPageComponent = () => {
 
           <h2>Celebrated Canada Day 2020</h2>
           <div className="img-para-wrap">
-            <img src={NewsImageFour} alt="People gathered to celebrate Canada Day"></img>
+            <img
+              src={NewsImageFour}
+              alt="People gathered to celebrate Canada Day"
+            ></img>
             <p>
               We have created a temporary support program called fresh food for
               kids, which provides nutritious food baskets to local families in
@@ -140,10 +146,7 @@ const NewsEventsPageComponent = () => {
             <FaRegCalendar /> December 26, 2021. From 4PM - 8PM
           </h3>
           <div className="img-para-wrap">
-            <img
-              src={EventImageFour}
-              alt="Mug with some lights around"
-            ></img>
+            <img src={EventImageFour} alt="Mug with some lights around"></img>
             <p>
               The Christmas Event is an annual event that is organized by and
               benefits to our organization. Fundraising is important to how our

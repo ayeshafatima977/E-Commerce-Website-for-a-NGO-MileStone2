@@ -23,7 +23,8 @@ const DonationFormComponent = () => {
   const [donationMsg, setDonationMsg] = useState(""); 
   /* Setup for future use in case the message to be validated for certain criteria  */
 
-  //Global validation function
+  /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
+
   const SubmitForm = (e) => {
     e.preventDefault();
     if (

@@ -18,7 +18,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   const [userPhone, setUserPhone] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
-/* Creating a Copy with parameters assigned in the Billing Information reducer */
+  /* Creating a Copy with parameters assigned in the Billing Information reducer*/
   const BillingInfoCopy = {
     fName: userFirstName,
     lName: userLastName,
@@ -37,6 +37,8 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
   */
   useImperativeHandle(ref, () => ({
     runBillingInfoDispatch() {
+      /* Calling Global function for Form validation */
+
       if (
         FormValidation(
           userFirstName,

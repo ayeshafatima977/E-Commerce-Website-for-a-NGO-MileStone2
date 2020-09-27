@@ -3,13 +3,16 @@ import "../css/Contact-form.css";
 import FormValidation from "../functions/Form-validation.js";
 
 const ContactFormComponent = () => {
-  // Creating Local states only for Validation purpose
+  /* Creating Local states only for Validation purpose*/
+
   const [contactEmail, setContactEmail] = useState("");
   const [contactSubject, setContactSubject] = useState("");
   const [contactMessage, setContactMessage] = useState("");
 
   const SubmitForm = (e) => {
     e.preventDefault();
+
+    /* Calling Global function for Form validation */
 
     if (
       FormValidation(
@@ -31,6 +34,7 @@ const ContactFormComponent = () => {
         "contact-message-error"
       )
     ) {
+      /* Using Mailto function,When user clicks send it pre-populates the field for the user such as receiver's Email address,Subject,Message */
       document
         .getElementsByClassName("contact-thanks-msg")[0]
         .classList.add("msg-show");
@@ -56,7 +60,7 @@ const ContactFormComponent = () => {
       }
     });
   };
-  /*===== END OF MAILTO VIA CONTACT FORM LOGIC  ======*/
+
   return (
     <>
       <div
