@@ -1,0 +1,19 @@
+@import url("./normalize.css");
+
+#thankyou-img {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("../img/thankyou.jpg");
+  width: 100vw;
+  height: 588px;
+  background-position: right;
+  background-position-x: 55%;
+  background-size: cover;
+}
+
+/* #thankyou-img img {
+  margin: 10%;
+  width: 1000px;
+  height: auto;
+} */
