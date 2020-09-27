@@ -43,12 +43,12 @@ label {
   font-size: 0.75rem;
 }
 .billing-form-section-container .required-field {
-  color: #ff0000;
+  color: rgba(255, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 600px) {
   #billing-form {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #4d626e;
     width: 100%;
     margin: 0.25rem auto;

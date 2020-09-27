@@ -128,7 +128,7 @@ label {
   font-size: 0.75rem;
 }
 .credit-card-form-section-container .required-field {
-  color: #ff0000;
+  color: rgba(255, 0, 0, 0.5);
 }
 
 /*=====  End of Input fields Container  ======*/
@@ -264,7 +264,7 @@ label {
     font-size: 0.75rem;
   }
   .credit-card-form-section-container .required-field {
-    color: red;
+    color: rgba(255, 0, 0, 0.5);
   }
 }
 
@@ -399,6 +399,6 @@ label {
     font-size: 0.75rem;
   }
   .credit-card-form-section-container .required-field {
-    color: red;
+    color: rgba(255, 0, 0, 0.5);
   }
 }

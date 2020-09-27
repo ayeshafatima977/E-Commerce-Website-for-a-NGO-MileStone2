@@ -6,61 +6,65 @@
   margin: auto 5px;
 }
 
-.about-us-section h1 {
+.know-us-section h1 {
+  
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #4d626e;
   text-align: center;
   padding: 5px 0;
   border-radius: 5px;
 }
-.about-us-section h2 {
+.know-us-section h2 {
+  
   color: #103245;
-  font-size: 26px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.about-us-section h3 {
-  font-size: 20px;
+.know-us-section h3 {
+  font-size: 15px;
   color: #103245;
   margin-bottom: 15px;
 }
-.about-us-section p {
+.know-us-section p {
+  
   color: #4d626e;
-  font-size: 25px;
+  font-size: 16px;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 /* Tablet layout at min-width 600px */
 @media screen and (min-width: 600px) {
-  .about-us-section h1 {
-    font-size: 40px;
-  }
-  .about-us-section h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
-  .about-us-section h3 {
+  .know-us-section h1 {
     font-size: 25px;
   }
-  .about-us-section p {
-    font-size: 30px;
+  .know-us-section h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .know-us-section h3 {
+    font-size: 22px;
+  }
+  .know-us-section p {
+    font-size: 22px;
     margin-bottom: 25px;
   }
 }
 /* Desktop and Laptop layout at min-width 1000px */
 @media screen and (min-width: 1000px) {
-  .about-us-section h1 {
-    font-size: 50px;
-  }
-  .about-us-section h2 {
-    font-size: 40px;
-  }
-  .about-us-section h3 {
+  .know-us-section h1 {
     font-size: 30px;
   }
-  .about-us-section p {
-    font-size: 40px;
+  .know-us-section h2 {
+    font-size: 30px;
+  }
+  .know-us-section h3 {
+    font-size: 30px;
+  }
+  .know-us-section p {
+    font-size: 30px;
   }
 }
