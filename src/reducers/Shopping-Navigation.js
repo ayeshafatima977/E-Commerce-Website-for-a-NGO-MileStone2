@@ -1,3 +1,4 @@
+/* Reducer for the states to track the shopping navigation and product list */
 const ShoppingNavigationReducer = (
   state = {
     Search: "",
@@ -9,18 +10,19 @@ const ShoppingNavigationReducer = (
   },
   action
 ) => {
-  // Create a copy of the state
-  const stateCopy = { ...state };
+    /* Create a copy of the state */
+    const stateCopy = { ...state };
 
-  // Create a new array for only items with search term
-  let displayCopy = [];
+    /* Create a new array for only items with search term */
+    let displayCopy = [];
 
-  // The two functions below are used for sorting alphabetically.
-  // The Compare function code snippet was found from:
-  // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+    /* The two functions below are used for sorting alphabetically.
+     * The Compare function code snippet was found from: 
+     * https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+     */
   function compareProductAZ(productA, productB) {
-    // This function will sort an array based on the title alphabetically.
-    const productTitleA = productA.title.toUpperCase();
+      /* This function will sort an array based on the title alphabetically. */
+      const productTitleA = productA.title.toUpperCase();
     const productTitleB = productB.title.toUpperCase();
 
     let comparison = 0;
@@ -32,8 +34,8 @@ const ShoppingNavigationReducer = (
     return comparison;
   }
   function compareZA(productA, productB) {
-    // This function will sort an array based on the title alphabetically reversed.
-    const productTitleA = productA.title.toUpperCase();
+      /* This function will sort an array based on the title alphabetically reversed. */
+      const productTitleA = productA.title.toUpperCase();
     const productTitleB = productB.title.toUpperCase();
 
     let comparison = 0;
@@ -65,11 +67,11 @@ const ShoppingNavigationReducer = (
     }
     case "BROWSE_PRODUCT": {
       if (stateCopy.Browse !== "" && stateCopy.Browse !== "(.*)") {
-        // Wild card RegEx to match anything
-        stateCopy.Browse = "(.*)";
+          /* Setting the search term to be a wild card RegEx to match anything */
+          stateCopy.Browse = "(.*)";
       } else {
-        // The browse must match the category starting with the same character.
-        stateCopy.Browse = "^" + action.payload;
+          /* The browse must match the category starting with the same character. */
+          stateCopy.Browse = "^" + action.payload;
       }
       break;
     }
@@ -102,8 +104,8 @@ const ShoppingNavigationReducer = (
       break;
     }
     case "INITIAL_LIST": {
-      // Initial action request to populate the store.
-      stateCopy.products = action.payload;
+        /* Initial action request to populate the store. */
+        stateCopy.products = action.payload;
       stateCopy.displayProducts = action.payload;
       stateCopy.Browse = "(.*)";
       stateCopy.Search = "(.*)";
@@ -115,7 +117,7 @@ const ShoppingNavigationReducer = (
   // The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed.
   for (const product of state.products) {
     if (
-      product.title.match(RegExp(stateCopy.Search)) &&
+      product.title.toLowerCase().match(RegExp(stateCopy.Search.toLowerCase())) &&
       product.category.match(RegExp(stateCopy.Browse)) &&
       product.price > stateCopy.Filter[0] &&
       product.price < stateCopy.Filter[1]

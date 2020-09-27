@@ -4,14 +4,14 @@ import ProductCardComponent from "./Product-card";
 import { InitialProductAdd } from "../actions/Shopping-navigation";
 import "../css/Shopping-layout.css";
 
-/* Shopping layout page where we display all products available for shopping */
+/* Shopping layout component on the shopping page where we display all products available for shopping */
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);
   const displayProductList = globalState.ShopNav.displayProducts;
   const productsList = globalState.ShopNav.products;
   const dispatch = useDispatch();
 
-  // If the store is empty, call the API
+  /* If the store is initialized (expecting a product with ID = 0) then call the API */
   if (productsList[0].id === 0) {
     fetch("https://fakestoreapi.com/products?limit=20")
       .then((response) => response.json())
@@ -24,7 +24,6 @@ const ShoppingLayoutComponent = () => {
         dispatch(InitialProductAdd(APIProductList));
       });
   }
-  // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
     <section className="shopping-product-layout-container">

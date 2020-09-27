@@ -48,14 +48,14 @@ const CartReducer = (
       return cartCopy;
     }
     case "REMOVE_PRODUCT_FROM_CART": {
-      /*        internal cart item counter
-       */ let internalCartCount = -1;
+      /* Internal cart item counter */
+      let internalCartCount = -1;
       for (let item of cartCopy) {
-        /*         increment the internal counter
-         */ internalCartCount++;
+        /* Increment the internal counter */
+        internalCartCount++;
         if (item.id === action.payload) {
-          /*           Once the item is found, remove that item from the array
-           */ cartCopy.splice(internalCartCount, 1);
+          /* Once the item is found, remove that item from the array */
+          cartCopy.splice(internalCartCount, 1);
         }
       }
       return cartCopy;
@@ -71,8 +71,8 @@ const CartReducer = (
     case "DECREASE_CART_QTY": {
       for (let item of cartCopy) {
         if (item.id === action.payload) {
-          /*            Do not let user drop the qty below 0 in the cart
-           */ if (item.inCartQty > 0) {
+          /* Do not let user drop the qty below 0 in the cart */
+          if (item.inCartQty > 0) {
             item.inCartQty--;
           }
         }

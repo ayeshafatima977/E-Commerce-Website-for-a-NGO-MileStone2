@@ -8,17 +8,21 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import GlobalStore from "./store";
 
+/* Individual card component for each product in the store */
 const ProductCardComponent = (props) => {
+  /*  Initialize global states */
   const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
   const cartState = [...globalState.Cart];
 
+  /* Creating variables for referencing individual properties */
   const title = props.title;
   const imageURL = props.image;
   const briefDescription = props.briefDescription;
   const price = props.price;
   const id = props.obj.id;
 
+  /* Function for checking if a item is inside the shopping cart */
   const inCartCheck = () => {
     for (let item of cartState) {
       if (id === item.id) {

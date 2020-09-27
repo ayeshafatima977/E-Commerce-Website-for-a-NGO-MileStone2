@@ -28,6 +28,7 @@
   margin: 0 auto;
   border: solid white 1.5rem;
   background-color: #FFF;
+  opacity: 1;
 }
 .product-image-container {
   width: 100%;

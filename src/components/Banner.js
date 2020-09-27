@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/Banner.css';
-
 /*=============================================
 =     Common Banner for Pages block start     =
 =============================================*/
+
 
 const BannerComponent = () => {
   return (
