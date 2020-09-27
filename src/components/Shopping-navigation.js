@@ -66,7 +66,7 @@ const ShoppingNavigationComponent = () => {
         <input
           id="search-input"
           type="text"
-          placeholder="Lookup merchandise"
+          placeholder="Search"
           onChange={(e) => {
             dispatch(Search(e.target.value));
           }}
@@ -75,7 +75,7 @@ const ShoppingNavigationComponent = () => {
           <BiSearch size="25px" />
         </span>
       </form>
-      <section className="shopping-nav-container">
+      <section id="sort-options" className="shopping-nav-container">
         <h3>Sort By</h3>
         <input
           type="checkbox"
@@ -117,7 +117,7 @@ const ShoppingNavigationComponent = () => {
         />
         <label htmlFor="ALPHA_Z_A">Alphabetical Z-A</label>
       </section>
-      <section className="shopping-nav-container">
+      <section id="category-options" className="shopping-nav-container">
         <h3>Browse Categories</h3>
         <input
           type="checkbox"
@@ -159,7 +159,7 @@ const ShoppingNavigationComponent = () => {
         />
         <label htmlFor="women clothing">Women Clothing</label>
       </section>
-      <section className="shopping-nav-container">
+      <section id="filter-options" className="shopping-nav-container">
         <h3>Filter By Price</h3>
         <input
           type="checkbox"

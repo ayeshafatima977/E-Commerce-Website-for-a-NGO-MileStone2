@@ -37,43 +37,50 @@ const ProductCardComponent = (props) => {
   return (
     <div className="product-card-container">
       <h2 className="product-title">{title}</h2>
-      <img className="product-image" src={imageURL} alt={briefDescription} />
+      <div className="product-image-container">
+        <img className="product-image" src={imageURL} alt={briefDescription} />
+      </div>
       <p className="product-brief-description">{briefDescription}</p>
-      <div className="divider"></div>
-      <p className="product-price">${price}</p>
-      {inCartCheck(title) ? (
-        <button className="cart-option" onClick={RemoveSingleProductToCart}>
-          <span className="shopping-cart">
-            <FaShoppingCart />
-            &nbsp;Remove From Cart
+      <div className="product-card-options">
+        <p className="product-price">${price}</p>
+        {inCartCheck(title) ? (
+          <button className="cart-option" onClick={RemoveSingleProductToCart}>
+            <span className="shopping-cart">
+              <FaShoppingCart />
+              &nbsp;Remove From Cart
+            </span>
+          </button>
+        ) : (
+          <button className="cart-option" onClick={AddSingleProductToCart}>
+            <span className="shopping-cart">
+              <FaShoppingCart />
+              &nbsp;Add to Cart
+            </span>
+          </button>
+        )}
+
+        <button
+          className="product-view-button"
+          onClick={() => {
+            ReactDOM.render(
+              <>
+                <Provider store={GlobalStore}>
+                  <ProductDetailsOverlayComponent productId={props.obj.id} />
+                </Provider>
+              </>,
+              document.getElementById("product-details-overlay-div")
+            );
+            document
+              .getElementsByClassName("product-details-overlay")[0]
+              .classList.add("overlayShow");
+          }}
+        >
+          <span id="product-q-view">
+            <FaEye />
+            &nbsp; Quick View
           </span>
         </button>
-      ) : (
-        <button className="cart-option" onClick={AddSingleProductToCart}>
-          <span className="shopping-cart">
-            <FaShoppingCart />
-            &nbsp;Add to Cart
-          </span>
-     </button>
-      )}
-
-      <button
-        onClick={() => {
-          ReactDOM.render(
-            <>
-              <Provider store={GlobalStore}>
-                <ProductDetailsOverlayComponent productId={props.obj.id} />
-              </Provider>
-            </>,
-            document.getElementById("product-details-overlay-div")
-          );
-          document
-            .getElementsByClassName("product-details-overlay")[0]
-            .classList.add("overlayShow");
-        }}
-      >
-        <span>Quick View <FaEye /></span>
-      </button>
+      </div>
     </div>
   );
 };

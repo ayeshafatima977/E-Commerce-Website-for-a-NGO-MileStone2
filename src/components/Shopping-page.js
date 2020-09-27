@@ -4,6 +4,7 @@ import ShoppingLayoutComponent from "./Shopping-layout";
 import ShoppingNavigationComponent from "./Shopping-navigation";
 import BannerComponent from "./Banner";
 import "../css/Product-overlay.css";
+import "../css/Shopping-page.css";
 
 /*=============================================
 =        Products page React Component        =
@@ -14,8 +15,10 @@ const ShoppingPageComponent = () => {
   return (
     <>
       <BannerComponent />
-      <ShoppingNavigationComponent />
-      <ShoppingLayoutComponent />
+      <div id="shopping-page-layout">
+        <ShoppingNavigationComponent />
+        <ShoppingLayoutComponent />
+      </div>
       <div
         className="product-details-overlay"
         id="product-details-overlay-div"

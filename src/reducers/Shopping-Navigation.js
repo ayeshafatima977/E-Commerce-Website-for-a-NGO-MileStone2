@@ -112,8 +112,7 @@ const ShoppingNavigationReducer = (
       default: {
       }
     }
-  
-    // The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed.
+      // The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed.
     for (const product of state.products) {
       console.log(displayCopy);
       if (
