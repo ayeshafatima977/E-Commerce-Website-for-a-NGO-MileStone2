@@ -6,6 +6,7 @@
     "ShopNav"
     "ShopLayout";
     margin: 0;
+    text-align: center;
   }
 
   .shopping-navigation-component {
@@ -17,5 +18,17 @@
   }
   .product-details-overlay {
     grid-area: productDetail;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #shopping-page-layout {
+    box-sizing: content-box;
+    width: 100vw;
+    grid-template-columns: 
+      80% 20%;
+    grid-template-areas: 
+    "ShopLayout ShopNav"
+    "ShopLayout productDetail";
   }
 }

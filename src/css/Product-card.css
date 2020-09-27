@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
-  height: 500px;
+  height: 400px;
   background: #4D626E;
   border-radius: 15px;
   margin: 10px auto;
@@ -102,5 +102,11 @@
   .product-view-button {
     font-size: 17px;
     height: 20px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .product-card-container {
+    width: 250px;
+    margin: 15px 1%;
   }
 }
