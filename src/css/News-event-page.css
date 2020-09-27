@@ -6,14 +6,30 @@
   margin: auto 5px;
 }
 #news-event-article h1 {
+/*   position: absolute;
+  top:50%;
+  left:50%; */
+
   color: #fff;
   font-size: 30px;
   font-weight: bold;
   background-color: #4d626e;
   text-align: center;
   padding: 5px 0;
-  border-radius: 5px;
-}
+  border-radius: 5px;}
+ 
+/* #newsheader{
+  position: relative;
+  margin:50px;
+  width: 100vw;
+  height: 50px;
+  background-position: right;
+  background-position-x: 55%;
+  background-size: cover;
+  background-image: url("../img/LandingPage.jpg");
+  opacity: .5;
+
+} */
 #news-event-article h2 {
   color: #103245;
   font-size: 30px;
