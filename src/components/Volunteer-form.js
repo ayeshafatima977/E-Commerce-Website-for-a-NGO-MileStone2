@@ -221,11 +221,11 @@ const VolunteerFormComponent = () => {
           </div>
           <input type="submit" />
         </div>
-       
-      </form>
-      <p className="volunteer-thankyou-msg msg-hide">
+        <p className="volunteer-thankyou-msg msg-hide">
         Thank you for all that you do!!
-      </p>
+        </p>
+      </form>
+      
     </>
   );
 };
