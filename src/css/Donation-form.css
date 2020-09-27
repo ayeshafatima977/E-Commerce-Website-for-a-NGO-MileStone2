@@ -3,8 +3,8 @@
 =            Donation Form           =
 =============================================*/
 #donation-form-container {
-  background-color: #FFF;
-  color: #4D626E;
+  background-color: #fff;
+  color: #4d626e;
   width: 90%;
   margin: 20px auto;
   padding: 0 10px;
@@ -23,7 +23,7 @@
   margin: 5px 0;
 }
 .donation-form-section-container {
-  border-top: 1px solid #4D626E;
+  border-top: 1px solid #4d626e;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -47,7 +47,7 @@
 }
 #donation-amount-span > svg {
   transform: translateX(-25px) scale(1.5);
-  color: #4D626E;
+  color: #4d626e;
 }
 .donation-form-section-container select {
   width: 70%;
@@ -56,7 +56,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-#billing-form > div > input::placeholder {
+#donation-message-id::placeholder {
   padding-left: 10px;
 }
 .donation-form-section-container > span > input {
@@ -76,9 +76,9 @@
   text-align: center;
 }
 #donation-submit-button {
-  color: #4D626E;
-  background-color: rgba(255,255,255,0.01);
-  border: solid #4D626E 4px;
+  color: #4d626e;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: solid #4d626e 4px;
   border-radius: 15px;
   padding: 10px;
   font-size: 20px;
@@ -89,6 +89,9 @@
 =            Tablet view            =
 =============================================*/
 @media screen and (min-width: 600px) {
+  #donation-form-container {
+    width: 550px;
+  }
   #donation-amount-container {
     display: flex;
     flex-direction: row;
@@ -109,6 +112,10 @@
   #donation-message-id {
     width: 95%;
     height: 100px;
+  }
+  #donation-message-id::placeholder {
+    padding-left: 0px;
+    font-size: 13px;
   }
 }
 /*=============================================
