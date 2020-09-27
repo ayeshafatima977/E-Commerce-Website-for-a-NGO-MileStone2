@@ -30,7 +30,7 @@ const HeaderComponent = () => {
                 dispatch(UpdateBrowsingHistory("/"));
               }}
             >
-              <img src={Logo} alt="Logo Image with Some Text" />
+              <img src={Logo} alt="Logo" />
             </Link>
           </span>
           <h1>MAKE A DIFFERENCE</h1>
