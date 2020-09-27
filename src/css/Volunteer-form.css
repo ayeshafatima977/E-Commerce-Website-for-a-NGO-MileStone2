@@ -76,15 +76,12 @@ cursor: pointer;
   .label-input-container {       
     margin: 15px 0;
   }
-   
- 
 }
 /* Desktop and Laptop layout at min-width 1000px */
 @media screen and (min-width: 1000px) {
   #volunteer-form {
     width: 50%;
-    margin: 0 auto;  
-    
+    margin: 0 auto;
   }  
 }
 

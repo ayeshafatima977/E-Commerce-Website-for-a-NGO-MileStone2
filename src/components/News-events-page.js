@@ -1,4 +1,3 @@
-/*cspell:disable*/
 import React from "react";
 import BannerComponent from "./Banner";
 import NewsImageOne from "../img/NewsImageOne.jpg";

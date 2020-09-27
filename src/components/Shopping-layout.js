@@ -11,7 +11,7 @@ const ShoppingLayoutComponent = () => {
   const productsList = globalState.ShopNav.products;
   const dispatch = useDispatch();
 
-  // If the store is empty, call the API
+  /* If the store is initialized (expecting a product with ID = 0) then call the API */
   if (productsList[0].id === 0) {
     fetch("https://fakestoreapi.com/products?limit=20")
       .then((response) => response.json())
@@ -24,7 +24,6 @@ const ShoppingLayoutComponent = () => {
         dispatch(InitialProductAdd(APIProductList));
       });
   }
-  // Pass Product ProductId={individProd.id} into OverlayCard
 
   return (
     <section className="shopping-product-layout-container">

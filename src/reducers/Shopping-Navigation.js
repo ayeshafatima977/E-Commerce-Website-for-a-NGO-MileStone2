@@ -9,17 +9,18 @@ const ShoppingNavigationReducer = (
     },
     action
   ) => {
-    // Create a copy of the state
+    /* Create a copy of the state */
     const stateCopy = { ...state };
   
-    // Create a new array for only items with search term
+    /* Create a new array for only items with search term */
     let displayCopy = [];
   
-    // The two functions below are used for sorting alphabetically.
-    // The Compare function code snippet was found from:
-    // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+    /* The two functions below are used for sorting alphabetically.
+     * The Compare function code snippet was found from: 
+     * https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+     */
     function compareProductAZ(productA, productB) {
-      // This function will sort an array based on the title alphabetically.
+      /* This function will sort an array based on the title alphabetically. */
       const productTitleA = productA.title.toUpperCase();
       const productTitleB = productB.title.toUpperCase();
   
@@ -32,7 +33,7 @@ const ShoppingNavigationReducer = (
       return comparison;
     }
     function compareZA(productA, productB) {
-      // This function will sort an array based on the title alphabetically reversed.
+      /* This function will sort an array based on the title alphabetically reversed. */
       const productTitleA = productA.title.toUpperCase();
       const productTitleB = productB.title.toUpperCase();
   
@@ -44,11 +45,13 @@ const ShoppingNavigationReducer = (
       }
       return comparison;
     }
-    // Reducer Actions
+    /*=============================================
+    =            Reducer Actions           =
+    =============================================*/
     switch (action.type) {
       case "SEARCH_PRODUCT": {
         if (action.payload === "") {
-          // Wild card RegEx to match anything
+          /* Wild card RegEx to match anything */
           stateCopy.Search = "(.*)";
         } else {
           stateCopy.Search = action.payload.trim();
@@ -65,10 +68,10 @@ const ShoppingNavigationReducer = (
       }
       case "BROWSE_PRODUCT": {
         if (stateCopy.Browse !== "" && stateCopy.Browse !== "(.*)") {
-          // Wild card RegEx to match anything
+          /* Wild card RegEx to match anything */
           stateCopy.Browse = "(.*)";
         } else {
-          // The browse must match the category starting with the same character.
+          /* The browse must match the category starting with the same character. */
           stateCopy.Browse = "^" + action.payload;
         }
         break;
@@ -102,7 +105,7 @@ const ShoppingNavigationReducer = (
         break;
       }
       case "INITIAL_LIST": {
-        // Initial action request to populate the store.
+        /* Initial action request to populate the store. */
         stateCopy.products = action.payload;
         stateCopy.displayProducts = action.payload;
         stateCopy.Browse = "(.*)";
@@ -112,7 +115,7 @@ const ShoppingNavigationReducer = (
       default: {
       }
     }
-      // The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed.
+      /* The reducer will rerun its filter on the original product list (state) everytime a tracked state is changed. */
     for (const product of state.products) {
       console.log(displayCopy);
       if (

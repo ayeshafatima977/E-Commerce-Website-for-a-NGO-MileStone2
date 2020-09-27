@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 const HamburgerMenuComponent = () => {
+  /* Function to add and remove the hide class to the overlay menu.*/
   const ShowOverlayMenu = (e) => {
     const overlayMenu = document.getElementById("menu");
     if (e.checked) {
