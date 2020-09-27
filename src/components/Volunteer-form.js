@@ -64,10 +64,10 @@ const VolunteerFormComponent = () => {
   };
   return (
     <>
-      <form onSubmit={SubmitForm} id="VolunteerForm">
+      <form onSubmit={SubmitForm} id="volunteer-form">
         <h2>Volunteer Application</h2>
         <div id="volunteer-info">
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-name">
               Name<sup className="required-field">*</sup>
             </label>
@@ -84,14 +84,14 @@ const VolunteerFormComponent = () => {
               Please enter correct name
             </p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-birthdate">
               Birth Date<sup className="required-field">*</sup>
             </label>
             <DatePickerDobComponent />
-            <p className="volunteerAddress-error">Enter valid Birthday date</p>
+            <p className="volunteerAddress-error msg-hide">Enter valid Birthday date</p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-address">
               Mailing Address<sup className="required-field">*</sup>
             </label>
@@ -108,7 +108,7 @@ const VolunteerFormComponent = () => {
               Please enter a valid address
             </p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-phone">
               Phone<sup className="required-field">*</sup>
             </label>
@@ -126,7 +126,7 @@ const VolunteerFormComponent = () => {
               Please enter a valid phone number
             </p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-email">
               Email<sup className="required-field">*</sup>
             </label>
@@ -143,7 +143,7 @@ const VolunteerFormComponent = () => {
               Please enter valid email Id
             </p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-reference">
               How did you hear about us?<sup className="required-field">*</sup>
             </label>
@@ -159,7 +159,7 @@ const VolunteerFormComponent = () => {
               <option value="Previous Volunteer">Previous Volunteer</option>
             </select>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="volunteer-start-date">Start Date</label>
             <DatePickerComponent
               placeholderText="mm/dd/yy"
@@ -169,7 +169,7 @@ const VolunteerFormComponent = () => {
           </div>
         </div>
         <div id="emergency-info">
-          <div>
+          <div className="label-input-container">
             <label htmlFor="emergency-contact">
               Emergency Contact<sup className="required-field">*</sup>
             </label>
@@ -186,7 +186,7 @@ const VolunteerFormComponent = () => {
               Please enter your Emergency Contact name
             </p>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="emergency-relationship">
               Contact Relationship<sup className="required-field">*</sup>
             </label>
@@ -201,7 +201,7 @@ const VolunteerFormComponent = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          <div>
+          <div className="label-input-container">
             <label htmlFor="emergency-phone">
               Emergency Phone Number<sup className="required-field">*</sup>
             </label>
@@ -219,8 +219,9 @@ const VolunteerFormComponent = () => {
               Please enter a valid phone number
             </p>
           </div>
+          <input type="submit" />
         </div>
-        <input type="submit" />
+       
       </form>
       <p className="volunteer-thankyou-msg msg-hide">
         Thank you for all that you do!!

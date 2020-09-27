@@ -18,7 +18,7 @@ const DatePickerDobComponent = () => {
       dropdownMode="select"
       maxDate={subYears(new Date(), 18)}
       dateFormat="dd/MM/yyyy"
-      inline
+      // inline
     />
   );
 };

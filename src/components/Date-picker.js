@@ -11,7 +11,7 @@ const DatePickerComponent = () => {
       onChange={(date) => setStartDate(date)}
       minDate={new Date()}
       dateFormat="dd/MM/yyyy"  
-      inline
+      // inline
     
     />
   );
