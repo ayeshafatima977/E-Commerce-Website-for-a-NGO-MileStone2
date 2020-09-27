@@ -22,7 +22,8 @@ const DonationFormComponent = () => {
   const [donationFreq, setDonationFreq] = useState("Donate Now");
   const [donationMsg, setdonationmsg] = useState("");
 
-  //Global validation function
+  /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
+
   const SubmitForm = (e) => {
     e.preventDefault();
     if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
@@ -69,7 +70,7 @@ const DonationFormComponent = () => {
                   value={donationAmount}
                   min="5"
                 ></input>
-                  <FaMoneyBill />
+                <FaMoneyBill />
               </span>
             </div>
           </div>

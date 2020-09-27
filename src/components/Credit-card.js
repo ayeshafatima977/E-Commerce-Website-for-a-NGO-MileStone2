@@ -14,13 +14,15 @@ import FormValidation from "../functions/Form-validation.js";
 import DatePickerCCExpComponent from "./Date-picker-ccexp";
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  //Creating Local states
+
+  /*Creating Local states  */
   const [userCreditNumber, setUserCreditNumber] = useState("");
   const [userExpiry, setUserExpiry] = useState("");
   const [userCVC, setUserCVC] = useState("");
   const [userInfoSave, setUserInfoSave] = useState("");
 
-  // Creating a Copy with parameters assigned in the Creditcard reducer
+  /* 
+   Creating a Copy with parameters assigned in the Creditcard reducer*/
 
   const CreditCardStateInfoCopy = {
     No: userCreditNumber,
@@ -30,7 +32,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
   };
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
-      //This function will run onsubmit from parent-Shopping Cart or the Donation form
+      /* This function will run onsubmit from parent-Shopping Cart
+       */
+
       if (
         FormValidation(
           userCreditNumber,
@@ -110,6 +114,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
             <label htmlFor="user-credit-expiry-id">
               Expires<sup className="required-field">*</sup>
             </label>
+            {/* Date Picker component is used here for the user to select the expiry date  */}
             <DatePickerCCExpComponent />
             <input
               id="user-credit-expiry-id"
@@ -149,7 +154,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
                 type="checkbox"
                 id="checkboxes"
                 onChange={(e) => {
-                  // If the checkbox is checked it returns true else returns false
+                  /* If the checkbox is checked it returns true else returns false*/
                   setUserInfoSave(e.target.checked);
                 }}
               />

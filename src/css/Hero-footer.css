@@ -96,7 +96,7 @@ footer h2 {
 }
 #fname-lname div p,
 #emailid-send div p {
-  color: white;
+  color: #ffffff;
   font-size: 0.8rem;
   font-style: italic;
 }
@@ -107,7 +107,7 @@ footer h2 {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  color: #ffffff;
 }
 .newsletter-info .newsletter-form input::placeholder {
   padding: 0 0 0 0.5rem;

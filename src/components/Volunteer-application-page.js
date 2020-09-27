@@ -1,4 +1,3 @@
-/*cspell:disable*/
 import React from "react";
 import VolunteerFormComponent from "./Volunteer-form";
 import BannerComponent from "./Banner";

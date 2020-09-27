@@ -33,7 +33,8 @@ const ShoppingCartComponent = () => {
 
   const SubmitForm = (e) => {
     e.preventDefault();
-    //Display the Message only when Credit Card and Billing Details are Validated
+    /* Display the Message only when Credit Card and Billing Details are Validated     */
+
     if (
       /* CreditCardValidationStatus && BillingDetailsValidationStatus */ true
     ) {
@@ -46,7 +47,7 @@ const ShoppingCartComponent = () => {
               " from your cart"
             )
           ) {
-            // If customer pressed No allow the customer donot display prompt Thankyou for order
+            /*If customer pressed 'No' allow the customer don't display prompt Thankyou for order*/
 
             dispatch(RemoveFromCart(inCartProduct.id));
           } else {
@@ -57,8 +58,8 @@ const ShoppingCartComponent = () => {
       alert("Thanks for your order, it will be shipped to you soon");
     }
     alert("Thanks for your order, it will be shipped to you soon");
-  }
-//};
+  };
+  //};
 
   /* Using useRef hook to access the credit card and billing info components */
   const creditCardRef = useRef();

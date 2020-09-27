@@ -1,4 +1,3 @@
-/*cspell:disable*/
 import React from "react";
 import HeroSectionComponent from "./Hero-section";
 
