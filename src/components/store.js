@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { createStore } from "redux";
 import combinedReducer from "../reducers/Root-reducer";
 
 /* Global state store using combined reducer from the root reducer file */
