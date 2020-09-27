@@ -95,7 +95,7 @@ const HeaderComponent = () => {
               >
                 VOLUNTEER
               </Link>
-            </li>20 m           
+            </li>           
             <li>
               <a
                 className="right-side-buttons"
