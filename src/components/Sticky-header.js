@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ContactFormComponent from "./Contact-form";
 import LoginFormComponent from "./Login-form";
 import "../css/Sticky-header.css";
-import logo from "../img/logo.png";
+import logo from "../img/logo-final.png";
 
 /* Sticky header for mobile layout main site navigation menu */
 const StickyHeaderComponent = () => {

@@ -6,7 +6,7 @@ import LoginFormComponent from "./Login-form";
 import UpdateBrowsingHistory from "../actions/Browsing-history";
 import { useDispatch } from "react-redux";
 import "../css/Header.css";
-import Logo from "../img/logo.png";
+import Logo from "../img/logo-final.png";
 
 /*=============================================
 =            HeaderComponent            =

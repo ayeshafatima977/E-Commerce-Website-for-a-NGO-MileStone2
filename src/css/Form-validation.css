@@ -9,7 +9,7 @@
 }
 
 .input-error {
-    outline: 1px solid red;
+    outline: 1px dashed rgba(255, 0, 0, 0.5);
 }
 .thanks-msg {
     color: black;

@@ -1,122 +1,122 @@
 @import "./normalize.css";
 
 .hero-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-image: url("../img/LandingPage.jpg");
   width: 100vw;
   height: 588px;
   background-position: right;
-  background-position-x: 75%;
+  background-position-x: 55%;
   background-size: cover;
 }
 .hero-section p {
   display: none;
 }
 .hero-section > #mobile-landing-text {
-  position: absolute;
-  display: block;
-  width: 251px;
-  height: 101px;
-  right: 50px;
-  top: 75px;
-  font-size: 38px;
-  font-weight: bold;
-  line-height: 45px;
+  max-width: 75%;
+  margin-top: 4.5rem;
+  margin-right: auto;
+  margin-bottom: auto;
+  padding-left: 0;
+  font-weight: 500;
+  font-size: 2.75rem;
   text-transform: uppercase;
   color: #ffffff;
+  text-align: left;
 }
-.hero-section > a {
-  font-style: normal;
+.hero-section #shop-donate-btns a {
   font-weight: 900;
-  font-size: 25px;
-  line-height: 29px;
+  font-size: 1.5rem;
   text-decoration: none;
-  right: 50px;
-
   border: solid #fff 5px;
   border-radius: 20px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #4d626ec9;
 }
-.hero-section > #hero-shop-link {
-  position: absolute;
-  width: 125px;
-  top: 400px;
-
-  padding: 10px 20px 10px 22px;
+.hero-section p:nth-of-type(2) {
+  display: none;
 }
-.hero-section > #hero-donate-link {
-  position: absolute;
-  top: 470px;
+.hero-section p {
+  display: block;
+  text-align: left;
+  padding-left: 2rem;
+  color: white;
+  margin-left: 2rem;
+  text-shadow: 2px 2px rgba(77, 99, 111, 0.5);
+}
+.hero-section p:nth-of-type(3) {
+  display: none;
+}
+.hero-section #shop-donate-btns {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+#hero-donate-link,
+#hero-shop-link {
   padding: 10px 5px 10px 5px;
+  width: 150px;
+  margin-right: 1rem;
+}
+/* =================DESKTOP BREAKPOINT================= */
+@media screen and (min-width: 600px) {
+  .hero-section #shop-donate-btns {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    /*   margin-left: auto;
+ */
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .hero-section p:nth-of-type(2) {
+    display: block;
+    max-width: 40%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 2.5%;
+    padding-left: 0;
+    font-weight: 300;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: left;
+  }
+  .hero-section p:nth-of-type(3) {
+    display: block;
+    max-width: 50%;
+    font-size: 1.25rem;
+    padding: 0 !important;
+    margin-top: 5%;
+  }
 }
 
-@media screen and (min-width: 700px) {
-
-
+/* =================DESKTOP BREAKPOINT================= */
+@media screen and (min-width: 1000px) {
   .hero-section {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-    opacity: 1;
     width: 100%;
     height: 720px;
     background-image: url("../img/LandingPage.jpg");
-    background-size: cover;
   }
   .hero-section #mobile-landing-text {
     display: none;
   }
   .hero-section p:nth-of-type(2) {
-    max-width: 40%;
-    margin-top: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
     line-height: 3.5rem;
-
-    text-transform: uppercase;
-    color: #ffffffcc;
-    text-align: left;
   }
-  .hero-section p {
-    display: block;
-    text-align: left;
-    padding-left: 2rem;
-    color: white;
-    margin-left: 2rem;
+  .hero-section #shop-donate-btns {
+    justify-content: flex-end;
+    margin: 0 3rem 3rem 0;
   }
-
   .hero-section p:nth-of-type(3) {
-    display: none;
-  }
-  .hero-section p:nth-of-type(4) {
-    margin-top: auto;
-    max-width: 50%;
-    margin-bottom: 2.5%;
-  }
-  /* .hero-section > a {
-  font-weight: 900;
-  font-size: 25px;
-  line-height: 29px;
-  text-decoration: none;
-  right: 50px;
-  border: solid #fff 5px;
-  border-radius: 20px;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-} */
-
-  .hero-section > #hero-shop-link {
-    position: absolute;
-    width: 125px;
-    top: 75%;
-    padding: 10px 20px 10px 22px;
-  }
-  .hero-section > #hero-donate-link {
-    position: absolute;
-    top: 85%;
-    padding: 10px 5px 10px 5px;
+    font-size: 2rem;
   }
 }

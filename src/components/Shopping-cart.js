@@ -109,6 +109,7 @@ const ShoppingCartComponent = () => {
             </section>
           );
         })}
+        <section>
         <Link to="/shop">Back To Shopping</Link>
         <div>
         <p> Subtotal</p>
@@ -126,6 +127,7 @@ const ShoppingCartComponent = () => {
         </div>
         <p> Subtotal</p>
         <p> $ {subTotal.toFixed(2)} </p>
+        </section>
         <CreditCardComponent ref={creditCardRef} />
         <BillingDetailsComponent ref={billingInfoRef} />
         <button

@@ -15,9 +15,9 @@ const HeroSectionComponent = () => {
           people to rise out of poverty.
         </p>
         <p>
-          We bring real and lasting change to the lives of the world’s most
-          vulnerable children. For good.
+          Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.
         </p>
+        <div id="shop-donate-btns">
         <Link
           to="/donation"
           id="hero-donate-link"
@@ -36,9 +36,8 @@ const HeroSectionComponent = () => {
         >
           SHOP
         </Link>
-        <p>
-          Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.
-        </p>
+        </div>
+
       </div>
     </section>
   );

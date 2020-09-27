@@ -56,109 +56,110 @@ const FooterComponent = () => {
     <footer>
       {/* Contact Us start */}
       <div id="major-footer">
-      <section className="contact-us-info">
-        <h2>Contact Us</h2>
-        <p>12332 123 St Nw, Edmonton</p>
-        <p>Alberta, T0A 0W0, 780-000-8888</p>
-      </section>
-      {/* Contact Us end */}
+        <section className="contact-us-info">
+          <h2>Contact Us</h2>
+          <p>12332 123 St Nw, Edmonton</p>
+          <p>Alberta, T0A 0W0, 780-000-8888</p>
+        </section>
+        {/* Contact Us end */}
 
-      {/* Get Social start */}
-      <section className="social-info">
-        <IconContext.Provider
-          value={{ color: "#FFF", style: { opacity: 0.5 } }}
-        >
+        {/* Get Social start */}
+        <section className="social-info">
           <h2>Get Social</h2>
-          <span>
-            <a href="https://www.facebook.com" target="_blanc">
-              <FaFacebookF size="40px" />
-            </a>
-          </span>
-          <span>
-            <a href="https://www.instagram.com" target="_blanc">
-              <FaInstagram size="40px" />
-            </a>
-          </span>
-          <span>
-            <a href="https://www.twitter.com" target="_blanc">
-              <FaTwitter size="40px" />
-            </a>
-          </span>
-          <span>
-            <a href="https://www.youtube.com" target="_blanc">
-              <FaYoutube size="40px" />
-            </a>
-          </span>
-        </IconContext.Provider>
-      </section>
-      {/* Get Social end */}
+          <div id="socialmedia-icons">
+            <span>
+              <a href="https://www.facebook.com" target="_blanc">
+                <FaFacebookF />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.instagram.com" target="_blanc">
+                <FaInstagram />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.twitter.com" target="_blanc">
+                <FaTwitter />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.youtube.com" target="_blanc">
+                <FaYoutube />
+              </a>
+            </span>
+          </div>
+        </section>
+        {/* Get Social end */}
 
-      {/* Newsletter start */}
-      <section className="newsletter-info">
-        <h2>Newsletter</h2>
-        <p>Stay up to date with our work and how you can help - learn more.</p>
-        <form className="newsletter-form" onSubmit={SubmitForm}>
-          <div id="fname-lname">
-            <label htmlFor="fname" className=".screen-reader-text">
-              First Name 
-            </label>
-            <input
-              type="text"
-              id="fname"
-              className="newsletter-fname"
-              placeholder="Johnny"
-              onChange={(event) => {
-                setFName(event.target.value);
-              }}
-            />
-            <p className="newsletter-fname-error-msg msg-hide">
-              Please enter correct First Name
+        {/* Newsletter start */}
+        <section className="newsletter-info">
+          <h2>Newsletter</h2>
+          <p>Stay up to date with our work and how you can help</p>
+          <form className="newsletter-form" onSubmit={SubmitForm}>
+            <div id="fname-lname">
+              <div>
+              <label htmlFor="fname" className=".screen-reader-text">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="fname"
+                className="newsletter-fname"
+                placeholder="First Name"
+                onChange={(event) => {
+                  setFName(event.target.value);
+                }}
+              />
+              <p className="newsletter-fname-error-msg msg-hide">
+                Enter correct First Name
+              </p>
+              </div>
+              <div>
+              <label htmlFor="lname" className=".screen-reader-text">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lname"
+                className="newsletter-lname"
+                placeholder="Last Name"
+                onChange={(event) => {
+                  setLName(event.target.value);
+                }}
+              />
+              <p className="newsletter-lname-error-msg msg-hide ">
+                Enter correct Last Name
+              </p>
+              </div>
+            </div>
+            <div id="emailid-send">
+              <div>
+              <label htmlFor="email" className=".screen-reader-text">
+                Email Address
+              </label>
+              <input
+                type="text"
+                id="email"
+                className="newsletter-email"
+                placeholder="example@domain.com"
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <p className="newsletter-email-error-msg msg-hide ">
+                Enter valid email Id
+              </p>
+              </div>
+              <button type="submit">
+                  <FaEnvelope  />
+  
+              </button>
+            </div>
+            <p className="newsletter-thanks-msg msg-hide">
+              Thank you for Subscribing to our newsletter...!
             </p>
-            <label htmlFor="lname" className=".screen-reader-text">
-              Last Name 
-            </label>
-            <input
-              type="text"
-              id="lname"
-              className="newsletter-lname"
-              placeholder="Bravo"
-              onChange={(event) => {
-                setLName(event.target.value);
-              }}
-            />
-            <p className="newsletter-lname-error-msg msg-hide ">
-              Please enter correct Last Name
-            </p>
-          </div>
-          <div id="emailid-send">
-            <label htmlFor="email" className=".screen-reader-text">
-              Email Address
-            </label>
-            <input
-              type="text"
-              id="email"
-              className="newsletter-email"
-              placeholder="example@domain.com"
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-            <p className="newsletter-email-error-msg msg-hide ">
-              Please enter valid email Id
-            </p>
-            <button type="submit">
-              <IconContext.Provider
-                value={{ color: "#FFF", style: { opacity: 0.5 } }}
-              >
-                <FaEnvelope size="30px" />
-              </IconContext.Provider>
-            </button>
-          </div>
-          <p className="newsletter-thanks-msg msg-hide">
-            Thank you for Subscribing to our newsletter...!
-          </p>
-        </form>
-      </section>
+          </form>
+        </section>
       </div>
       {/* Newsletter end */}
       <div id="minor-footer">
