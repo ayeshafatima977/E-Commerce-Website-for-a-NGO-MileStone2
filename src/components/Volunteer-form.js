@@ -237,7 +237,6 @@ const VolunteerFormComponent = () => {
         Thank you for all that you do!!
         </p>
       </form>
-      
     </>
   );
 };

@@ -9,11 +9,12 @@ import {
   SetCartQty,
   RemoveFromCart,
 } from "../actions/Cart";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
 import "../css/Shopping-cart.css";
 import "../css/Credit-card.css";
 import "../css/Billing-details.css";
+import { useHistory } from "react-router-dom";
 
 /* Shopping cart component where we display the final cart items, asking for
 billing details, and credit card information before order confirmation and checkout */
@@ -32,6 +33,7 @@ const ShoppingCartComponent = () => {
   const dispatch = useDispatch();
   const inCartProducts = Array.from(globalStateInfo.Cart);
   let subTotal = 0;
+  const history = useHistory();
 
   /* Shopping card form submission routine */
   const SubmitForm = (e) => {
@@ -57,10 +59,11 @@ const ShoppingCartComponent = () => {
           }
         }
       }
-      alert("Thanks for your order, it will be shipped to you soon");
+      /* The useHistory hook gives you access to the history instance that you may use to navigate. */
+
+      history.push("/thankyou");
     }
   };
-  //};
 
   /* 
   Using react useRef hook to access the child component from the parent component to execute validation 
@@ -200,4 +203,5 @@ const ShoppingCartComponent = () => {
     </>
   );
 };
+
 export default ShoppingCartComponent;
