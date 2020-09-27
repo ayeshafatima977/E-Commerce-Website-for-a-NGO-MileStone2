@@ -24,6 +24,7 @@
 .donation-form-section-container {
   border-top: 1px solid #FFF;
   margin-left: 15px;
+  margin-right: 15px;
 }
 #donation-amount-container label {
   width: 100%;
@@ -91,7 +92,7 @@
   }
   #donation-amount-input-container input,
   #donation-amount-container select {
-    width: 220px;
+    width: 210px;
     height: 30px;
   }
   #donation-amount-input-container {
