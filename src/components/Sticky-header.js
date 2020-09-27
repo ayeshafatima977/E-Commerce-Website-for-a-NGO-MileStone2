@@ -23,8 +23,6 @@ const StickyHeaderComponent = () => {
       <span>
         <HamburgerMenuComponent />
       </span>
-      <ContactFormComponent />
-      <LoginFormComponent />
     </div>
   );
 };
