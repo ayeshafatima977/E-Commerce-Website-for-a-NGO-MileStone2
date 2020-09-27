@@ -37,7 +37,9 @@ const ProductCardComponent = (props) => {
   return (
     <div className="product-card-container">
       <h2 className="product-title">{title}</h2>
-      <img className="product-image" src={imageURL} alt={briefDescription} />
+      <div className="product-image-container">
+        <img className="product-image" src={imageURL} alt={briefDescription} />
+      </div>
       <p className="product-brief-description">{briefDescription}</p>
       <div className="product-card-options">
         <p className="product-price">${price}</p>
@@ -74,8 +76,8 @@ const ProductCardComponent = (props) => {
           }}
         >
           <span id="product-q-view">
-            <FaEye />&nbsp;
-            Quick View
+            <FaEye />
+            &nbsp; Quick View
           </span>
         </button>
       </div>
