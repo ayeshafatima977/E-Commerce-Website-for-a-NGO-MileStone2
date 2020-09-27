@@ -78,7 +78,7 @@ export default function FormValidation(
 
   switch (inputFieldType) {
     case "name": //first name , second name, full name and city
-      if (!/^[A-Za-z/s]+$/.test(inputFieldContent)) {
+      if (!/^[A-Za-z\s]+$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
         manipulateDoMClearError();

@@ -59,7 +59,6 @@ const ShoppingCartComponent = () => {
       }
       alert("Thanks for your order, it will be shipped to you soon");
     }
-    alert("Thanks for your order, it will be shipped to you soon");
   };
   //};
 

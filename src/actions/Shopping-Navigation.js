@@ -1,6 +1,5 @@
 /* Shopping Browsing Actions - Add/Delete/Increase Qty/Decrease Qty/Set Qty*/
 
-/* Action to update search term */
 const Search = (userInput) => {
   return {
     type: "SEARCH_PRODUCT",
