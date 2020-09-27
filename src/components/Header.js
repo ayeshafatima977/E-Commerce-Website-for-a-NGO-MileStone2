@@ -100,6 +100,7 @@ const HeaderComponent = () => {
             </li>
             <li>
               <a
+                href="#top"
                 className="right-side-buttons"
                 onClick={() => {
                   document
@@ -117,6 +118,7 @@ const HeaderComponent = () => {
             overlay on the Header page which is the parent component-We use CSS
             to Show/Hide the overlay */}
               <a
+                href="#top"
                 className="right-side-buttons"
                 onClick={() => {
                   document
