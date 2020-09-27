@@ -8,7 +8,7 @@ const HeroSectionComponent = () => {
   const dispatch = useDispatch();
   return (
     <section>
-      <div className="hero-section">        
+      <div className="hero-section">
         <p id="mobile-landing-text">Make a difference. Donate today.</p>
         <p>
           We Strive To Make A Difference for Those Kids In Need.Empowering
@@ -18,26 +18,25 @@ const HeroSectionComponent = () => {
           Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.
         </p>
         <div id="shop-donate-btns">
-        <Link
-          to="/donation"
-          id="hero-donate-link"
-          onClick={() => {
-            dispatch(UpdateBrowsingHistory("/donation"));
-          }}
-        >
-          DONATE
-        </Link>
-        <Link
-          to="/shop"
-          id="hero-shop-link"
-          onClick={() => {
-            dispatch(UpdateBrowsingHistory("/shop"));
-          }}
-        >
-          SHOP
-        </Link>
+          <Link
+            to="/donation"
+            id="hero-donate-link"
+            onClick={() => {
+              dispatch(UpdateBrowsingHistory("/donation"));
+            }}
+          >
+            DONATE
+          </Link>
+          <Link
+            to="/shop"
+            id="hero-shop-link"
+            onClick={() => {
+              dispatch(UpdateBrowsingHistory("/shop"));
+            }}
+          >
+            SHOP
+          </Link>
         </div>
-
       </div>
     </section>
   );
