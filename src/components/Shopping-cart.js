@@ -38,7 +38,7 @@ const ShoppingCartComponent = () => {
     e.preventDefault();
     /* Display the Message only when Credit Card and Billing Details are Validated */
     if (
-      /* CreditCardValidationStatus && BillingDetailsValidationStatus */ true
+      CreditCardValidationStatus && BillingDetailsValidationStatus // true
     ) {
       for (let inCartProduct of globalStateInfo.Cart) {
         if (inCartProduct.inCartQty < 1) {
@@ -78,8 +78,8 @@ const ShoppingCartComponent = () => {
           {inCartProducts.map((inCartProduct) => {
             subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
             return (
-              <section id="cart-items">
-                <div class="container">
+              <section id="cart-items" key={inCartProduct.id}>
+                <div className="container">
                   <h2>{inCartProduct.title}</h2>
                   <img
                     id="pdt-img"
@@ -94,7 +94,7 @@ const ShoppingCartComponent = () => {
                 <div id="qty-status">
                   <span>
                     <button
-                      id="plus"
+                      className="plus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -123,7 +123,7 @@ const ShoppingCartComponent = () => {
                   </span>
                   <span>
                     <button
-                      id="minus"
+                      className="minus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -137,7 +137,7 @@ const ShoppingCartComponent = () => {
                   <span>
                     <button
                       type="button"
-                      id="rmv-btn"
+                      className="rmv-btn"
                       onClick={() => {
                         dispatch(RemoveFromCart(inCartProduct.id));
                       }}
