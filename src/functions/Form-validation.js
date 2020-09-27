@@ -7,12 +7,15 @@ import "../css/Form-validation.css";
 *@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
 *@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
 */
+/* Global form validation function for generic use within website forms */
+
 export default function FormValidation(
   inputFieldContent,
   inputFieldType,
   inputFieldClassName,
   errorMessageClassName
 ) {
+  /* Canadian phone number prefixes for use in the phone validation case */
   const canadianMobilePrefix = [
     226,
     249,
@@ -48,7 +51,11 @@ export default function FormValidation(
     639,
   ];
   let PassIndicator = true;
+
+  /* Trimming user input */
   inputFieldContent = inputFieldContent.trim();
+
+  /* Function to show the error messages in case of invalid input */
   const manipulateDoMError = () => {
     document
       .getElementsByClassName(errorMessageClassName)[0]
@@ -59,6 +66,7 @@ export default function FormValidation(
     PassIndicator = false;
   };
 
+  /* Function to remove the error messages in case of valid input */
   const manipulateDoMClearError = () => {
     document
       .getElementsByClassName(errorMessageClassName)[0]
@@ -132,7 +140,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "cc-number-input":
+    case "cc-number-input": // Credit card numbers
       if (
         !/^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$/.test(
           inputFieldContent
@@ -144,7 +152,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "cc-exp":
+    case "cc-exp": // Credit card expiry date
       if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
@@ -152,7 +160,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "cc-cvc":
+    case "cc-cvc": //Credit card CVC
       if (!/^[0-9]{3,4}$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
@@ -160,7 +168,7 @@ export default function FormValidation(
       }
       return PassIndicator;
 
-    case "password":
+    case "password": // Password
       if (
         !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,},$/.test(
           inputFieldContent

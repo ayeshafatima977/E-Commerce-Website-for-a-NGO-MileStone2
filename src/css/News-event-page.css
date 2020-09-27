@@ -6,7 +6,6 @@
   margin: auto 5px;
 }
 #news-event-article h1 {
-  font-family: Roboto;
   color: #fff;
   font-size: 30px;
   font-weight: bold;
@@ -16,13 +15,11 @@
   border-radius: 5px;
 }
 #news-event-article h2 {
-  font-family: Roboto;
   color: #103245;
   font-size: 30px;
   font-weight: bolder;
 }
 #news-event-article h3 {
-  font-family: Roboto;
   color: #4d626e;
   font-size: 12px;
   font-weight: bold;
@@ -37,7 +34,6 @@
 }
 
 #news-event-article p {
-  font-family: Roboto;
   color: #4d626e;
   font-size: 25px;
   margin-bottom: 25px;

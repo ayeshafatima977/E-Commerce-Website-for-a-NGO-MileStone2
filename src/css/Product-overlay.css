@@ -18,7 +18,7 @@
   display: block;
 }
 .product-details-overlay * {
-  outline: 1px solid red;
+  outline: 1px solid #ff0000;
 }
 .product-overlay-section {
   display: flex;

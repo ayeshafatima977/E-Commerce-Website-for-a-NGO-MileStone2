@@ -72,7 +72,7 @@ const ShoppingNavigationComponent = () => {
           }}
         />
         <span id="search-icon">
-          <BiSearch size="25px" />
+          <BiSearch />
         </span>
       </form>
       <section id="sort-options" className="shopping-nav-container">

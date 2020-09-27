@@ -7,7 +7,6 @@
 }
 
 .about-us-section h1 {
-  font-family: Roboto;
   color: #fff;
   font-size: 30px;
   font-weight: bold;
@@ -17,7 +16,6 @@
   border-radius: 5px;
 }
 .about-us-section h2 {
-  font-family: Roboto;
   color: #103245;
   font-size: 26px;
   font-weight: bold;
@@ -29,7 +27,6 @@
   margin-bottom: 15px;
 }
 .about-us-section p {
-  font-family: Roboto;
   color: #4d626e;
   font-size: 25px;
   margin-bottom: 15px;

@@ -1,3 +1,5 @@
+/* Shopping Cart Management Actions - Add/Delete/Increase Qty/Decrease Qty/Set Qty*/
+
 const AddToCart = (productObj) => {
   return {
     type: "ADD_PRODUCT_TO_CART",

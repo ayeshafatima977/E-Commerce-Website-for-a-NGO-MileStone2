@@ -33,10 +33,10 @@ const LoginFormComponent = () => {
   };
   return (
     <div className="loginform-overlay" id="loginform-overlay">
-       <form onSubmit={SubmitForm} id="loginForm">
-      <span onClick={addLoginHideOverlay}>
-        <TiArrowBack />
-      </span>
+      <form onSubmit={SubmitForm} id="loginForm">
+        <span onClick={addLoginHideOverlay}>
+          <TiArrowBack />
+        </span>
         <h2>LOG IN</h2>
         <label htmlFor="login-email-input">
           Email<sup className="required-field"> *</sup>

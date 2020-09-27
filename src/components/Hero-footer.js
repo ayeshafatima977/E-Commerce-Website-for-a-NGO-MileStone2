@@ -7,7 +7,6 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import FormValidation from "../functions/Form-validation.js";
-import { IconContext } from "react-icons/lib";
 import "../css/Hero-footer.css";
 
 /*=============================================

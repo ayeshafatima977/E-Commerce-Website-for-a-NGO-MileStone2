@@ -3,7 +3,6 @@ import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
 import { useSelector, useDispatch } from "react-redux";
 import "../css/Donation-form.css";
-import FormValidation from "../functions/Form-validation.js";
 import { FaMoneyBill } from "react-icons/fa";
 
 const DonationFormComponent = () => {
@@ -17,19 +16,29 @@ const DonationFormComponent = () => {
   ] = useState(false);
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
+  /* Dispatch and useSelector setup for future use in case the form to be submitted into DB  */
   const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const [donationMsg, setdonationmsg] = useState("");
+  const [donationMsg, setDonationMsg] = useState(""); 
+  /* Setup for future use in case the message to be validated for certain criteria  */
 
   //Global validation function
   const SubmitForm = (e) => {
     e.preventDefault();
-    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
+    if (
+      CreditCardValidationStatus &&
+      BillingDetailsValidationStatus &&
+      donationAmount >= 5
+    ) {
       alert("Thankyou! Your Donation has been received");
     }
   };
-
+  /* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
@@ -69,7 +78,7 @@ const DonationFormComponent = () => {
                   value={donationAmount}
                   min="5"
                 ></input>
-                  <FaMoneyBill />
+                <FaMoneyBill />
               </span>
             </div>
           </div>
@@ -97,14 +106,20 @@ const DonationFormComponent = () => {
             maxLength="500"
           ></textarea>
         </div>
+        {/* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */}
         <div className="donation-form-section-container">
-          <h2>Donor & Tax Recipt Information</h2>
+          <h2>Donor &amp; Tax Receipt Information</h2>
           <BillingDetailsComponent ref={billingInfoRef} />
         </div>
         <div className="donation-form-section-container">
           <CreditCardComponent ref={creditCardRef} />
         </div>
         <div id="donation-submit-button-container">
+          {/* using useRef and  useImperativeHandle to submit the credit card and billing details */}
           <button
             id="donation-submit-button"
             onClick={() => {

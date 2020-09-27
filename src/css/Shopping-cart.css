@@ -1,9 +1,4 @@
 @import url("./normalize.css");
-/* 
-* {
-  outline: 1px solid red;
-} */
-
 #cart-container {
   display: flex;
   flex-direction: column;

@@ -12,6 +12,7 @@ import {
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
 import DatePickerCCExpComponent from "./Date-picker-ccexp";
+
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   //Creating Local states
@@ -28,6 +29,11 @@ const CreditCardComponent = forwardRef((props, ref) => {
     CVC: userCVC,
     SaveCCInfo: userInfoSave,
   };
+    /* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */
   useImperativeHandle(ref, () => ({
     runCreditCardDispatch() {
       //This function will run onsubmit from parent-Shopping Cart or the Donation form

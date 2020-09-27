@@ -26,14 +26,17 @@ const ShoppingCartComponent = () => {
     BillingDetailsValidationStatus,
     SetBillingDetailsValidationStatus,
   ] = useState(false);
+
+  /* Copying the global state for local use */
   const globalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
   const inCartProducts = Array.from(globalStateInfo.Cart);
   let subTotal = 0;
 
+  /* Shopping card form submission routine */
   const SubmitForm = (e) => {
     e.preventDefault();
-    //Display the Message only when Credit Card and Billing Details are Validated
+    /* Display the Message only when Credit Card and Billing Details are Validated */
     if (
       /* CreditCardValidationStatus && BillingDetailsValidationStatus */ true
     ) {
@@ -46,7 +49,7 @@ const ShoppingCartComponent = () => {
               " from your cart"
             )
           ) {
-            // If customer pressed No allow the customer donot display prompt Thankyou for order
+            /* If customer pressed "No" allow the customer to keep the item otherwise display prompt Thankyou for order */
 
             dispatch(RemoveFromCart(inCartProduct.id));
           } else {
@@ -57,10 +60,14 @@ const ShoppingCartComponent = () => {
       alert("Thanks for your order, it will be shipped to you soon");
     }
     alert("Thanks for your order, it will be shipped to you soon");
-  }
-//};
+  };
+  //};
 
-  /* Using useRef hook to access the credit card and billing info components */
+  /* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */
   const creditCardRef = useRef();
   const billingInfoRef = useRef();
 
@@ -81,7 +88,6 @@ const ShoppingCartComponent = () => {
                   />
                   <section id="text-container">
                     <p id="description">{inCartProduct.description}</p>
-
                     <p id="price">$ {inCartProduct.price}</p>
                   </section>
                 </div>
@@ -166,12 +172,15 @@ const ShoppingCartComponent = () => {
             <p> Subtotal</p>
             <p> $ {subTotal.toFixed(2)} </p>
           </section>
-
           <CreditCardComponent ref={creditCardRef} id="cc-section" />
-
           <div id="bd-section">
             <BillingDetailsComponent ref={billingInfoRef} />
           </div>
+          {/* 
+  Using react useRef hook to access the child component from the parent component to execute validation 
+  This method was required as we import multiple form components within on parent form and all forms must
+  be submitted from the parent form
+  */}
           <button
             className="btn-order"
             form="shopping-cart"

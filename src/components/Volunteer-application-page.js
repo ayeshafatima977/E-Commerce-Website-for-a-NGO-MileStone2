@@ -1,10 +1,9 @@
-/*cspell:disable*/
 import React from "react";
 import VolunteerFormComponent from "./Volunteer-form";
 import BannerComponent from "./Banner";
 
 /*=============================================
-=         Landing page React Component        =
+=         Volunteer Application Component        =
 =============================================*/
 
 const VolunteerApplicationPageComponent = () => {
@@ -16,6 +15,6 @@ const VolunteerApplicationPageComponent = () => {
   );
 };
 
-/*=====  End of Landing page React Component  ======*/
+/*=====  End of Volunteer Application Component  ======*/
 
 export default VolunteerApplicationPageComponent;

@@ -74,7 +74,7 @@ body {
 .contactform-overlay #send {
   width: 75px;
   height: 50px;
-  color: white;
+  color: #ffffff;
   background: #4d626e;
   font-size: 1.25rem;
   font-weight: 500;
@@ -91,10 +91,10 @@ body {
   font-size: 1rem;
 }
 .contactform-overlay .required-field {
-  color: red;
+  color: #ff0000;
 }
 .contactform-overlay .note {
-  color: red;
+  color: #ff0000;
   font-size: 0.55rem;
   font-style: italic;
 }

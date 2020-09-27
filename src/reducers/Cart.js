@@ -1,4 +1,8 @@
-const CartReducer = (state = [
+/* Global state reducer to store the shopping cart items details for 
+local use within other components like shopping cart component */
+
+const CartReducer = (
+  state = [
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -32,24 +36,26 @@ const CartReducer = (state = [
       category: "men clothing",
       inCartQty: 1,
       image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-    }], action) => {
+    },
+  ],
+  action
+) => {
   const cartCopy = [...state];
   switch (action.type) {
-
     case "ADD_PRODUCT_TO_CART": {
       action.payload.inCartQty++;
       cartCopy.push(action.payload);
       return cartCopy;
     }
     case "REMOVE_PRODUCT_FROM_CART": {
-      // internal cart item counter
-      let internalCartCount = -1;
+      /*        internal cart item counter
+       */ let internalCartCount = -1;
       for (let item of cartCopy) {
-        // increment the internal counter
-        internalCartCount++;
+        /*         increment the internal counter
+         */ internalCartCount++;
         if (item.id === action.payload) {
-          // Once the item is found, remove that item from the array
-          cartCopy.splice(internalCartCount, 1);
+          /*           Once the item is found, remove that item from the array
+           */ cartCopy.splice(internalCartCount, 1);
         }
       }
       return cartCopy;
@@ -65,8 +71,8 @@ const CartReducer = (state = [
     case "DECREASE_CART_QTY": {
       for (let item of cartCopy) {
         if (item.id === action.payload) {
-          // Do not let user drop the qty below 0 in the cart
-          if (item.inCartQty > 0) {
+          /*            Do not let user drop the qty below 0 in the cart
+           */ if (item.inCartQty > 0) {
             item.inCartQty--;
           }
         }
@@ -81,7 +87,7 @@ const CartReducer = (state = [
       }
       return cartCopy;
     }
-    
+
     default:
       return state;
   }
