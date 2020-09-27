@@ -110,6 +110,9 @@
     font-size: 17px;
     height: 20px;
   }
+  #product-q-view svg {
+    font-size: 25px;
+  }
 }
 @media screen and (min-width: 1000px) {
   .product-card-container {
