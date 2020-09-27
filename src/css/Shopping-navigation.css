@@ -60,6 +60,22 @@
 }
 
 @media screen and (min-width: 600px) {
+  .shopping-navigation-component {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .shopping-nav-container {
+    width: calc(100% / 3);
+    text-align: center;
+    margin-top: 10px;
+  }
+  .shopping-nav-container label {
+    width: 60%;
+  }
+
   #search-input::placeholder {
     font-size: 20px;
   }
@@ -71,5 +87,18 @@
   }
   .shopping-nav-container label {
     padding-left: 5px;
+    margin-bottom: 5px;
+  }
+  #search-icon {
+    display: none;
+  }
+  .shopping-nav-container input {
+    width: 5%;
+    margin-left: 25%;
+    margin-right: 5px;
+  }
+  .shopping-navigation-component h3 {
+    margin: 5px 30px;
+    text-align: left;
   }
 }

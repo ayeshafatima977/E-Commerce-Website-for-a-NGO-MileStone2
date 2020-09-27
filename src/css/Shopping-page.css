@@ -1,10 +1,11 @@
 @media screen and (min-width: 600px) {
   #shopping-page-layout {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 100%;
     grid-template-areas: 
-    "ShopLayout ShopNav"
-    "ShopLayout productDetail";
+    "ShopNav"
+    "ShopLayout";
+    margin: 0;
   }
 
   .shopping-navigation-component {

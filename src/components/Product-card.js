@@ -73,7 +73,7 @@ const ProductCardComponent = (props) => {
               .classList.add("overlayShow");
           }}
         >
-          <span>
+          <span id="product-q-view">
             <FaEye />&nbsp;
             Quick View
           </span>

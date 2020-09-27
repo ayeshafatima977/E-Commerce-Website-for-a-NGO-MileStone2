@@ -4,77 +4,103 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
+  height: 500px;
   background: #4D626E;
   border-radius: 15px;
   margin: 10px auto;
+  border: solid 1px #4D626E;
 }
 .product-title {
   width: 100%;
   color: #FFF;
   text-align: center;
-  padding: 5px 15px;
+  padding: 5px 15px 0 15px;
+  max-height: 65px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .product-image {
-  width: 80%;
-  height: auto;
+  width: 70%;
+  height: 60%;
   border-radius: 15px;
   margin: 0 auto;
+  border: solid white 1.5rem;
+  background-color: #FFF;
 }
 .product-card-options {
   display: grid;
   grid-template-columns: 
-  65% 20%;
+  60% 40%;
   grid-template-areas: 
-  "cartOption price"
+  "cartOption cartOption"
   "view       price";
   border-top: solid #fff 3px;
   margin: 10px auto;
   width: 90%;
 }
 .cart-option {
-  width: 100%;
   text-align: left;
   grid-area: cartOption;
   color: #FFF;
   background-color: rgba(255,255,255,0);
-  padding: 10px 0;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .product-price {
   grid-area: price;
   color: #FFF;
   font-size: 30px;
-  padding-top: 50%;
 }
 .product-view-button {
   grid-area: view;
-  width: 80%;
   color: #FFF;
   text-align: left;
   background-color: rgba(255,255,255,0);
-  padding: 10px 0;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.shopping-cart {
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 600px) {
   .product-card-container {
-    width: 190px;
+    width: 250px;
     display: inline-flex;
-    margin: 15px 10px;
+    margin: 15px 4%;
   }
   .product-title {
     font-size: 20px;
+    max-height: 50px;
   }
   .product-image {
     width: 80%;
+    height: auto;
+    max-width: 180px;
+    max-height: 220px;
   }
   .product-card-options {
     grid-template-columns: 
     60% 40%;
     grid-template-areas: 
-    "cartOption price"
-    "view       view";
+    "cartOption cartOption"
+    "view       price";
   }
   .product-price {
-    padding: 20px 0px;
+    font-size: 25px;
+  }
+  .cart-option {
+    font-size: 18px;
+  }
+  svg {
+    font-size: 30px;
+  }
+  #product-q-view {
+    display: flex;
+    align-items: center;
+  }
+  .product-view-button {
+    font-size: 17px;
+    height: 20px;
   }
 }
