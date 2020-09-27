@@ -31,7 +31,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
     CVC: userCVC,
     SaveCCInfo: userInfoSave,
   };
-    /* 
+  /* 
   Using react useRef hook to access the child component from the parent component to execute validation 
   This method was required as we import multiple form components within on parent form and all forms must
   be submitted from the parent form
@@ -69,8 +69,8 @@ const CreditCardComponent = forwardRef((props, ref) => {
   return (
     <>
       <form id="credit-card-form">
+        {/* <h4>Credit Card</h4> */}
         <div className="credit-card-form-section-container">
-          <h4>Credit Card</h4>
           <div className="cards-styling">
             <section className="cards">
               <span>

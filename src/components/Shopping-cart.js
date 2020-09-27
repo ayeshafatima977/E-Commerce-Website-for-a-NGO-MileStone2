@@ -77,12 +77,14 @@ const ShoppingCartComponent = () => {
     <>
       <section id="cart-container">
         <form id="shopping-cart" onSubmit={SubmitForm}>
+          <h1>Your Order</h1>
           {inCartProducts.map((inCartProduct) => {
             subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
             return (
               <section id="cart-items">
                 <div class="container">
-                  <h2>{inCartProduct.title}</h2>
+                  {/* <h2>Product</h2> */}
+                  <h3>{inCartProduct.title}</h3>
                   <img
                     id="pdt-img"
                     src={inCartProduct.image}
@@ -96,7 +98,7 @@ const ShoppingCartComponent = () => {
                 <div id="qty-status">
                   <span>
                     <button
-                      id="plus"
+                      className="plus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -107,7 +109,7 @@ const ShoppingCartComponent = () => {
                     </button>
                     &nbsp;
                   </span>
-                  <span>
+                  <span id="qty">
                     <input
                       type="number"
                       value={inCartProduct.inCartQty}
@@ -125,7 +127,7 @@ const ShoppingCartComponent = () => {
                   </span>
                   <span>
                     <button
-                      id="minus"
+                      className="minus"
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
@@ -139,7 +141,7 @@ const ShoppingCartComponent = () => {
                   <span>
                     <button
                       type="button"
-                      id="rmv-btn"
+                      className="rmv-btn"
                       onClick={() => {
                         dispatch(RemoveFromCart(inCartProduct.id));
                       }}
@@ -161,22 +163,24 @@ const ShoppingCartComponent = () => {
               <p> $ {subTotal.toFixed(2)} </p>
             </div>
             <div id="pickup">
-              <h2> Local Pickup </h2>
+              <h1> Local Pickup </h1>
               <p>
                 #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up
                 items at the head office instead of in-store
               </p>
               <DatePickerComponent />
               <FaCalendarAlt />
-              <p>Schedule a Pickup Appointment</p>
+              <p id="schedule">Schedule a Pickup Appointment&nbsp;</p>
               <sup className="required-field">*</sup>
             </div>
-            <p> Subtotal</p>
-            <p> $ {subTotal.toFixed(2)} </p>
+            {/* <p> Subtotal</p>
+            <p> $ {subTotal.toFixed(2)} </p> */}
           </section>
+          <h1> Credit Card</h1>
           <CreditCardComponent ref={creditCardRef} id="cc-section" />
           <div id="bd-section">
-            <BillingDetailsComponent ref={billingInfoRef} />
+            <h2>Billing Details</h2>
+            <BillingDetailsComponent ref={billingInfoRef} id="binfo-section" />
           </div>
           {/* 
   Using react useRef hook to access the child component from the parent component to execute validation 
@@ -184,7 +188,7 @@ const ShoppingCartComponent = () => {
   be submitted from the parent form
   */}
           <button
-            className="btn-order"
+            id="btn-order"
             form="shopping-cart"
             type="submit"
             onClick={() => {

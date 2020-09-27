@@ -43,9 +43,7 @@
     font-size: 40px;
     font-weight: 500;
   }
-  img {
-    opacity: 0.5;
-  }
+
   #menu > ul > li > a,
   #menu > ul > li {
     text-decoration: none;
