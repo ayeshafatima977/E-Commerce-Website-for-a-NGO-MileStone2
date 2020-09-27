@@ -90,7 +90,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
 
   return (
     <>
-      <form id="billing-form">
+      <section id="billing-form">
         <div className="billing-form-section-container">
           <div id="billing-form-first-name-container">
             <label htmlFor="billing-firstname-id">
@@ -232,7 +232,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             </p>
           </div>
         </div>
-      </form>
+      </section>
     </>
   );
 });

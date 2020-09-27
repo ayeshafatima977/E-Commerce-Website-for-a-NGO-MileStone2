@@ -68,7 +68,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
 
   return (
     <>
-      <form id="credit-card-form">
+      <section id="credit-card-form">
         <div className="credit-card-form-section-container">
           <h4>Credit Card</h4>
           <div className="cards-styling">
@@ -99,7 +99,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
             <label htmlFor="user-credit-number-id">
               Number on Card<sup className="required-field">*</sup>
             </label>
-            <div class="credit-icon">
+            <div className="credit-icon">
               <input
                 type="text"
                 id="user-credit-number-id"
@@ -170,7 +170,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
             </div>
           </section>
         </div>
-      </form>
+      </section>
     </>
   );
 });
