@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-/* Shopping Browsing Actions - Add/Delete/Increase Qty/Decrease Qty/Set Qty*/
-
-=======
-/* Action to update search term */
->>>>>>> 8b9b2c4e390ff79250ce1d61835d2ed405d78f2b
+/* Shopping Browsing Actions - Add/Delete/Increase Qty/Decrease Qty/Set Qty */
 const Search = (userInput) => {
   return {
     type: "SEARCH_PRODUCT",
