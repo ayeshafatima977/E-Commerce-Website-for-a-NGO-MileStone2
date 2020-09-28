@@ -140,7 +140,7 @@ const ShoppingNavigationComponent = () => {
 
         <input
           type="checkbox"
-          id="jewelry"
+          id="jewelery"
           className="browse-option"
           onChange={(e) => {
             BrowseOption(e.target);
