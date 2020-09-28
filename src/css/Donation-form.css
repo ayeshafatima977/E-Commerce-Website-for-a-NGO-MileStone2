@@ -40,6 +40,8 @@
   border-left: 0;
   border-bottom: 1px solid #4d626e;
   border-top: 1px solid #4d626e;
+  color:#4d626e;
+  font-weight: 500;;
 }
 #donation-amount-label {
   padding-left: 10px;
