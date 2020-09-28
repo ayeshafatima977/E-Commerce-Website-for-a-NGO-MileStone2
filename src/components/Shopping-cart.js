@@ -80,13 +80,13 @@ const ShoppingCartComponent = () => {
           {inCartProducts.map((inCartProduct) => {
             subTotal = subTotal + inCartProduct.price * inCartProduct.inCartQty;
             return (
-              <section id="cart-items">
-                <div class="container">
+              <section id="cart-items" key={inCartProduct.id}>
+                <div className="container">
                   <h2>{inCartProduct.title}</h2>
                   <img
                     id="pdt-img"
                     src={inCartProduct.image}
-                    alt="Image of product in shopping cart"
+                    alt="product in shopping cart"
                   />
                   <section id="text-container">
                     <p id="description">{inCartProduct.description}</p>

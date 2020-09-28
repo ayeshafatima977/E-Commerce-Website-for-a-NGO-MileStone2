@@ -1,12 +1,10 @@
 import React, { useState, useRef } from "react";
 import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
-import { useSelector, useDispatch } from "react-redux";
 import "../css/Donation-form.css";
 import { FaMoneyBill } from "react-icons/fa";
 
 const DonationFormComponent = () => {
-  let x = false;
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
     false
   );
@@ -14,14 +12,10 @@ const DonationFormComponent = () => {
     BillingDetailsValidationStatus,
     SetBillingDetailsValidationStatus,
   ] = useState(false);
-  const globalStateInfo = useSelector((state) => state);
-  const dispatch = useDispatch();
   /* Dispatch and useSelector setup for future use in case the form to be submitted into DB  */
   const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const [donationMsg, setDonationMsg] = useState(""); 
-  /* Setup for future use in case the message to be validated for certain criteria  */
 
   /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
 

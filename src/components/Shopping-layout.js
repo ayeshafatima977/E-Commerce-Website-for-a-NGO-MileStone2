@@ -28,14 +28,16 @@ const ShoppingLayoutComponent = () => {
 
   return (
     <section className="shopping-product-layout-container">
-      {displayProductList.length > 0 ? (
-        <div className="screen-reader-text"></div>
-      ) : (
+      {((displayProductList.length < 1) && productsList[0].id !== 0 ) ? (
         <p>No search results found. Please ease search restrictions.</p>
+      ) : (
+        <div className="screen-reader-text"></div>
       )}
+      {productsList[0].title === "initial" ? <p id="shopping-load-message">Loading...</p> : <div className="screen-reader-text"></div> }
+      <ul>
       {displayProductList.map((individProd) => {
         return (
-          <>
+          <li className="individ-product-card" key={individProd.id}>
           {/* Calling product cards with all product parameters */}
             <ProductCardComponent
               title={individProd.title}
@@ -43,11 +45,11 @@ const ShoppingLayoutComponent = () => {
               price={individProd.price}
               briefDescription={individProd.briefDescription}
               obj={individProd}
-              key={individProd.id}
             />
-          </>
+          </li>
         );
       })}
+      </ul>
     </section>
   );
 };

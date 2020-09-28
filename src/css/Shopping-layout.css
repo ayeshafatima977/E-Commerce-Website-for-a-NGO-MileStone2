@@ -1,11 +1,20 @@
 @import url("../css/normalize.css");
-
 .shopping-product-layout-container {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-
+#shopping-load-message {
+  font-size: 35px;
+  color: #4d626e;
+}
+.shopping-product-layout-container > ul {
+  list-style-type: none;
+  display: inline;
+}
+.individ-product-card {
+  display: inline;
+}
 @media screen and (min-width: 600px) {
   .shopping-product-layout-container {
     width: 100%;

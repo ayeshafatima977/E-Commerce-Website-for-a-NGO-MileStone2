@@ -54,7 +54,7 @@ const NewsEventsPageComponent = () => {
           <div className="img-news-para-three">
             <img
               src={NewsImageThree}
-              alt="Image shows some coins in hand"
+              alt="Child with some coins in hand"
             ></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
@@ -111,7 +111,7 @@ const NewsEventsPageComponent = () => {
           <div className="img-event-para-two">
             <img
               src={EventImageTwo}
-              alt="Christmas image with different lights"
+              alt="Christmas event with different lights"
             ></img>
             <p>
               The Christmas Event is an annual event that is organized by and
