@@ -21,7 +21,7 @@ select {
   display: block;
   width: 100%;
   height: 35px;
-  margin: 0.5 0 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   padding: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 15px;
   font-size: 0.85rem;
@@ -39,7 +39,7 @@ select {
 .billing-form-section-container input::placeholder {
   color: #4D626E;
   font-style: italic;
-  font: size 1.5rem;
+  font-size: 1.5rem;
 }
 .billing-form-section-container label {
   font-size: 1rem;
