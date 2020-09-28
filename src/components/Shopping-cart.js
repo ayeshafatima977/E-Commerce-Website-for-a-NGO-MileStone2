@@ -61,7 +61,7 @@ const ShoppingCartComponent = () => {
       }
       /* The useHistory hook gives you access to the history instance that you may use to navigate. */
 
-      history.push("/volnterconf");
+      history.push("/thankyou");
     }
   };
 
