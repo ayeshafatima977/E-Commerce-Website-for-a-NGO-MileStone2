@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardComponent from "./Product-card";
-import { InitialProductAdd } from "../actions/Shopping-navigation";
 import "../css/Shopping-layout.css";
+import { InitialProductAdd } from "../actions/Shopping-navigation";
+
 
 /* Shopping layout component on the shopping page where we display all products available for shopping */
 const ShoppingLayoutComponent = () => {

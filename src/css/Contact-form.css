@@ -72,18 +72,17 @@ body {
   background-color: #d6e4e9;
 }
 .contactform-overlay #send { /* Send / submit button */
-  width: 75px;
+  width: 150px;
   height: 50px;
   color: #ffffff;
   background: #4d626e;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   align-self: flex-end;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+  text-align: center; 
   border: none;
-  cursor: pointer;
+  cursor: pointer; 
+  padding: 0;
 
 }
 .contactform-overlay label { /* Input box label */

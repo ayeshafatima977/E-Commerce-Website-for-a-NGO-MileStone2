@@ -80,6 +80,7 @@ available for use not to reinvent the wheel.
 - Overall inspiration we got from Edmonton Food bank, Good Will Canada
 - Instead of using lorem ipsum, we have copied random articles from charity websites, links above
 - Tammy has given a good reference on how to resolve the API asynchronous issue that we faced ... https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
+- Thank you image from Pixabay.com
 
 ==============================================================================================
 

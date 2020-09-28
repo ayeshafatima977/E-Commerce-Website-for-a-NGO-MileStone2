@@ -8,6 +8,10 @@
   margin: 2.5% 10% 0 10%;
 }
 #news-event-article h1 {
+/*   position: absolute;
+  top:50%;
+  left:50%; */
+
   color: #fff;
   font-size: 50px;
   font-weight: bold;
