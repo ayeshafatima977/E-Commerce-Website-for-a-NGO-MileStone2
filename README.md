@@ -17,6 +17,10 @@ Date of last edit: september 28, 2020 9:00 am
 ==============================================================================================
 # Installation Instruction:
 
+NOTE***: The reducer and action files have a naming issue. Please uncapitalize the second word in the files before running npm start.
+The files keep reverting to both being uppercase while the team renames the files and the team currently does not know how to fix this
+issue.
+
 Hello there!
 
 WELCOME to our REACT/ REDUX APP...
