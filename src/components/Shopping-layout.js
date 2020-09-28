@@ -4,7 +4,6 @@ import ProductCardComponent from "./Product-card";
 import "../css/Shopping-layout.css";
 import { InitialProductAdd } from "../actions/Shopping-navigation";
 
-
 /* Shopping layout component on the shopping page where we display all products available for shopping */
 const ShoppingLayoutComponent = () => {
   const globalState = useSelector((state) => state);
@@ -36,7 +35,7 @@ const ShoppingLayoutComponent = () => {
       {displayProductList.map((individProd) => {
         return (
           <>
-          {/* Calling product cards with all product parameters */}
+            {/* Calling product cards with all product parameters */}
             <ProductCardComponent
               title={individProd.title}
               image={individProd.image}

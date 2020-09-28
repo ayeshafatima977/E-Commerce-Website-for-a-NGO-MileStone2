@@ -18,7 +18,7 @@ const VolunteerFormComponent = () => {
   const [emergencyRelationship, setEmergencyRelationship] = useState(
     "Family Member"
   );
-    const history = useHistory();
+  const history = useHistory();
   const SubmitForm = (e) => {
     e.preventDefault();
 

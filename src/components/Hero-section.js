@@ -21,10 +21,9 @@ const HeroSectionComponent = () => {
         <p>
           Each Item You Purchase Feeds a Hungry Kid.Shop For a Purpose Today.
         </p>
-        
+
         {/* Donate and Shop Buttons Directly linked to Donation and Shop components */}
-        
-        
+
         <div id="shop-donate-btns">
           <Link
             to="/donation"

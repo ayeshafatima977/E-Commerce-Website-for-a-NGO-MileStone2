@@ -3,14 +3,11 @@
 #news-event-article {
   display: flex;
   flex-direction: column;
-  /* margin: auto 5px; */
+
   padding: 0 1rem;
   margin: 2.5% 2.5% 0 2.5%;
 }
 #news-event-article h1 {
-/*   position: absolute;
-  top:50%;
-  left:50%; */
   margin: 1.5rem 0 2rem 0;
   color: #fff;
   font-size: 50px;
@@ -58,7 +55,6 @@
 /* Tablet layout at min-width 600px */
 @media screen and (min-width: 600px) {
   #news-event-article {
-   
     margin: 2.5% 10% 0 10%;
   }
   #news-event-article h1 {
@@ -102,7 +98,7 @@
 @media screen and (min-width: 1000px) {
   #news-event-article h1 {
     font-size: 90px;
-    
+
     height: 160px;
   }
   #news-event-article h2 {

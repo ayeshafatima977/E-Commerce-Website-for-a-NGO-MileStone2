@@ -4,9 +4,9 @@
   #shopping-page-layout {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-areas: 
-    "ShopNav"
-    "ShopLayout";
+    grid-template-areas:
+      "ShopNav"
+      "ShopLayout";
     margin: 0;
     text-align: center;
   }
@@ -27,10 +27,9 @@
   #shopping-page-layout {
     box-sizing: content-box;
     width: 100vw;
-    grid-template-columns: 
-      80% 20%;
-    grid-template-areas: 
-    "ShopLayout ShopNav"
-    "ShopLayout productDetail";
+    grid-template-columns: 80% 20%;
+    grid-template-areas:
+      "ShopLayout ShopNav"
+      "ShopLayout productDetail";
   }
 }

@@ -9,19 +9,17 @@ This is customized to handle the credit card expiration date
 */
 
 const DatePickerCCExpComponent = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    return (
-      <DatePicker
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        dateFormat="MM/yyyy"
-        showMonthYearPicker
-        minDate={new Date()}
-        inline
-      />
-    );
-  };
-  
-  export default DatePickerCCExpComponent;
-  
+  const [startDate, setStartDate] = useState(new Date());
+  return (
+    <DatePicker
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      dateFormat="MM/yyyy"
+      showMonthYearPicker
+      minDate={new Date()}
+      inline
+    />
+  );
+};
 
+export default DatePickerCCExpComponent;

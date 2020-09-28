@@ -29,7 +29,7 @@ import GlobalStore from "./components/store";
 import StickyHeaderComponent from "./components/Sticky-header";
 import VolunteerApplicationPageComponent from "./components/Volunteer-application-page";
 import ThankYouPage from "./components/Thankyou-page.js";
-import VolunteerConfPage from "./components/Volunteer-confirmation-page"
+import VolunteerConfPage from "./components/Volunteer-confirmation-page";
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
@@ -54,7 +54,6 @@ ReactDOM.render(
         exact
         component={ProductDetailsOverlayComponent}
       />
-      
 
       <FooterComponent />
     </Router>

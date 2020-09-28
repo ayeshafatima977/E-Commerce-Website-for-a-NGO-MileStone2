@@ -43,11 +43,16 @@ const KnowUsPageComponent = () => {
           </div>
           <p>
             Our guiding values of Commitment, Integrity, Service, Innovation,
-            Responsiveness, and Fairness govern the manner in which we work. Our guiding values of Commitment, Integrity, Service, Innovation,
-            Responsiveness, and Fairness govern the manner in which we work. Our guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work. Our
+            guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work. Our
+            guiding values of Commitment, Integrity, Service, Innovation,
             Responsiveness, and Fairness govern the manner in which we work.
-            <p> Our guiding values of Commitment, Integrity, Service, Innovation,
-            Responsiveness, and Fairness govern the manner in which we work.</p> 
+            <p>
+              {" "}
+              Our guiding values of Commitment, Integrity, Service, Innovation,
+              Responsiveness, and Fairness govern the manner in which we work.
+            </p>
           </p>
         </section>
         {/*=====================Mission========================*/}
@@ -60,20 +65,23 @@ const KnowUsPageComponent = () => {
           <p>
             To be stewards in the collection of surplus and donated food for the
             effective distribution, free of charge, to people in need in our
-            community while seeking solutions to the causes of hunger. To be stewards in the collection of surplus and donated food for the
+            community while seeking solutions to the causes of hunger. To be
+            stewards in the collection of surplus and donated food for the
             effective distribution, free of charge, to people in need in our
-            community while seeking solutions to the causes of hunger. 
-            <p>To be stewards in the collection of surplus and donated food for the
-            effective distribution, free of charge, to people in need in our
-            community while seeking solutions to the causes of hunger.</p>
+            community while seeking solutions to the causes of hunger.
+            <p>
+              To be stewards in the collection of surplus and donated food for
+              the effective distribution, free of charge, to people in need in
+              our community while seeking solutions to the causes of hunger.
+            </p>
           </p>
         </section>
         {/*=====================FAQ ========================*/}
         <section className="know-us-section">
-        <div id="faq-heading-container">
+          <div id="faq-heading-container">
             <div></div>
             <h1 id="faq-heading">FAQ</h1>
-          </div>          
+          </div>
           <h3>Is child sponsorship an effective way to help?</h3>
           <p>
             Yes. When you sponsor a child, you help bring long-term changes to

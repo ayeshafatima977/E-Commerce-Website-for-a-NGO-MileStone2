@@ -3,8 +3,8 @@
 =            Donation Form           =
 =============================================*/
 #donation-form-container {
-  background-color: #4D626E;
-  color: #FFF;
+  background-color: #4d626e;
+  color: #fff;
   width: 90%;
   margin: 10px auto;
   padding: 0 10px;
@@ -22,7 +22,7 @@
   margin: 5px 0;
 }
 .donation-form-section-container {
-  border-top: 1px solid #FFF;
+  border-top: 1px solid #fff;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -42,7 +42,7 @@
 }
 #donation-amount-span > svg {
   transform: translateX(-25px) scale(1.5);
-  color: #4D626E;
+  color: #4d626e;
 }
 .donation-form-section-container select {
   width: 70%;
@@ -71,9 +71,9 @@
   text-align: center;
 }
 #donation-submit-button {
-  color: #FFF;
-  background-color: rgba(255,255,255,0.01);
-  border: solid #FFF 4px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: solid #fff 4px;
   border-radius: 15px;
   padding: 10px;
   font-size: 20px;

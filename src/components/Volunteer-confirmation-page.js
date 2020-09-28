@@ -8,7 +8,7 @@ import "../css/Thankyou-page.css";
 const VolunteerConfPage = () => {
   return (
     <>
-      <ThankYoImg message="Thank you for your application "/>
+      <ThankYoImg message="Thank you for your application " />
     </>
   );
 };

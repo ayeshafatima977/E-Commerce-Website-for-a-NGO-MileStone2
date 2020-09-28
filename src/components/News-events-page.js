@@ -15,7 +15,6 @@ import "../css/News-event-page.css";
 =      News and Events page React Component   =
 =============================================*/
 
-
 const NewsEventsPageComponent = () => {
   return (
     <>
