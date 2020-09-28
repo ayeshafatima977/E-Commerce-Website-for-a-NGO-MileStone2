@@ -71,9 +71,7 @@
   font-weight: 500;
   cursor: pointer;
 }
-/* .product-details-overlay .shpingbtn :hover {
-  background-color: #90aab9;
-} */
+
 .product-details-overlay #img-desc {
   display: flex;
   flex-direction: column;
@@ -116,8 +114,6 @@
   .product-overlay-section #h2-close {
     margin: 0 0 1rem 0;
     align-content: center;
-    /*     padding-top: 1rem;
- */
   }
   .product-overlay-section h2 {
     font-size: 20px;

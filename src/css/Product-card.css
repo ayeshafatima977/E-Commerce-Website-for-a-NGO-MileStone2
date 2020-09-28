@@ -20,8 +20,6 @@
   overflow: hidden;
 }
 .product-image {
-  /* width: 70%;
-  height: 60%; */
   max-width: 270px;
   max-height: 270px;
   border-radius: 15px;

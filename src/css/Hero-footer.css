@@ -1,7 +1,4 @@
 @import url("./normalize.css");
-/*=============================================
-=            Foot Section            =
-=============================================*/
 footer {
   text-align: center;
 }
@@ -39,9 +36,6 @@ footer h2 {
   text-align: center;
   font-weight: 700;
 }
-/*=============================================
-=            Contact Us Section            =
-=============================================*/
 .contact-us-info {
   background-color: #c1862c;
   height: calc(100% / 3);
