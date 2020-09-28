@@ -81,8 +81,8 @@
   text-align: center;
 }
 #donation-submit-button {
-  color: #4d626e;
-  background-color: rgba(255, 255, 255, 0.01);
+  color: #FFF;
+  background-color: #4d626e;
   border: solid #4d626e 4px;
   border-radius: 15px;
   padding: 10px;
