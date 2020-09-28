@@ -1,12 +1,12 @@
 import "../css/Form-validation.css";
 
 /* Citation:
-*@Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-*@Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
-*Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
-*@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
-*@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-*/
+ *@Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+ *@Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
+ *Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
+ *@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
+ *@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+ */
 /* Global form validation function for generic use within website forms */
 
 export default function FormValidation(
@@ -78,7 +78,7 @@ export default function FormValidation(
 
   switch (inputFieldType) {
     case "name": //first name , second name, full name and city
-      if (!/^[A-Za-z/s]+$/.test(inputFieldContent)) {
+      if (!/^[A-Za-z\s]+$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
         manipulateDoMClearError();
@@ -87,7 +87,7 @@ export default function FormValidation(
 
     case "email":
       if (
-        !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)
+        !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputFieldContent)
       ) {
         manipulateDoMError();
       } else {
@@ -153,7 +153,7 @@ export default function FormValidation(
       return PassIndicator;
 
     case "cc-exp": // Credit card expiry date
-      if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(inputFieldContent)) {
+      if (!/^([1-9]|1[0-2])\/?([0-9]{4})$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
         manipulateDoMClearError();
@@ -170,7 +170,7 @@ export default function FormValidation(
 
     case "password": // Password
       if (
-        !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,},$/.test(
+        !/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/.test(
           inputFieldContent
         )
       ) {
@@ -179,7 +179,7 @@ export default function FormValidation(
         manipulateDoMClearError();
       }
       return PassIndicator;
-      
+
     default:
       return;
   }

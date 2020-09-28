@@ -2,8 +2,7 @@
 .sticky-header {
   display: none;
 }
-
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   .sticky-header {
     display: block;
     position: fixed;
@@ -13,16 +12,15 @@
     background-color: rgba(183, 145, 87, 0.9);
     width: 100vw;
   }
-
   .sticky-header > #cart-button {
     position: fixed;
     right: 75px;
     top: 10px;
     text-decoration: none;
-    color: #233D4C;
+    color: #233d4c;
     padding: 5px;
     font-weight: 700;
-    border: 1px solid #233D4C;
+    border: 1px solid #233d4c;
     border-radius: 10px;
   }
   .sticky-header > a > #sticky-icon {
@@ -31,9 +29,8 @@
   }
   .sticky-header .logo img {
     width: 120px;
-    height: 25px;    
-    margin: .75rem 1rem 0 .5rem;
-
+    height: 25px;
+    margin: 0.75rem 1rem 0 0.5rem;
   }
   .sticky-header .shopping-cart {
     display: flex;

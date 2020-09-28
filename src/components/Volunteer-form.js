@@ -3,6 +3,7 @@ import DatePickerDobComponent from "./Date-picker-dob";
 import DatePickerComponent from "./Date-picker";
 import "../css/Volunteer-form.css";
 import FormValidation from "../functions/Form-validation.js";
+import { useHistory } from "react-router-dom";
 
 /* Creating Local state for using it in Form validation */
 
@@ -17,7 +18,7 @@ const VolunteerFormComponent = () => {
   const [emergencyRelationship, setEmergencyRelationship] = useState(
     "Family Member"
   );
-
+  const history = useHistory();
   const SubmitForm = (e) => {
     e.preventDefault();
 
@@ -60,9 +61,10 @@ const VolunteerFormComponent = () => {
         "volunteerEmergencyPhone-error"
       )
     ) {
-      document
-        .getElementsByClassName("volunteer-thankyou-msg")[0]
-        .classList.remove("msg-hide");
+      // document
+      //   .getElementsByClassName("volunteer-thankyou-msg")[0]
+      //   .classList.remove("msg-hide");
+      history.push("/volnterconf");
     }
   };
   return (
@@ -78,7 +80,7 @@ const VolunteerFormComponent = () => {
               type="text"
               id="volunteer-name"
               className="volunteerName"
-              placeholder="Johnny Bravo"
+              placeholder="Full Name"
               onChange={(e) => {
                 setVolunteerName(e.target.value);
               }}
@@ -89,16 +91,16 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-birthdate">
-              Birth Date<sup className="required-field">*</sup>
+              Birth Date{/* <sup className="required-field">*</sup> */}
             </label>
 
             {/* Date Picker component is used for the user to select the dates.Here we are allowing the dates to be shown up only 
             from year 2000 so as to satisfy the condition volunteer being 18 years or older*/}
 
             <DatePickerDobComponent />
-            <p className="volunteerAddress-error msg-hide">
+            {/*             <p className="volunteerAddress-error msg-hide">
               Enter valid Birthday date
-            </p>
+            </p> */}
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-address">
@@ -154,7 +156,8 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="volunteer-reference">
-              How did you hear about us?<sup className="required-field">*</sup>
+              How did you hear about us?
+              {/* <sup className="required-field">*</sup> */}
             </label>
             <select
               onChange={(e) => setVolunteerReference(e.target.value)}
@@ -188,7 +191,7 @@ const VolunteerFormComponent = () => {
             <input
               type="text"
               id="emergency-contact"
-              placeholder="Johnny Bravo"
+              placeholder="Full Name"
               className="emergencyContact"
               onChange={(e) => {
                 setEmergencyContact(e.target.value);
@@ -200,7 +203,8 @@ const VolunteerFormComponent = () => {
           </div>
           <div className="label-input-container">
             <label htmlFor="emergency-relationship">
-              Contact Relationship<sup className="required-field">*</sup>
+              Contact Relationship
+              {/* <sup className="required-field">*</sup> */}
             </label>
             <select
               id="emergency-relationship"
@@ -231,13 +235,16 @@ const VolunteerFormComponent = () => {
               Please enter a valid phone number
             </p>
           </div>
-          <input type="submit" />
+          <div id="submit-required-note">
+            <input type="submit" />
+            <sup className="required-field note">* Required Field</sup>
+          </div>
         </div>
-      <p className="volunteer-thankyou-msg msg-hide">
-        Thank you for all that you do!!
+
+        <p className="volunteer-thankyou-msg msg-hide">
+          Thank you for all that you do!!
         </p>
       </form>
-      
     </>
   );
 };

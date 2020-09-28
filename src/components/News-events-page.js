@@ -15,7 +15,6 @@ import "../css/News-event-page.css";
 =      News and Events page React Component   =
 =============================================*/
 
-
 const NewsEventsPageComponent = () => {
   return (
     <>
@@ -25,8 +24,8 @@ const NewsEventsPageComponent = () => {
         <h1> News </h1>
         <section className="news-event-section">
           <h2>COVID 19 update</h2>
-          <div className="img-para-wrap">
-            <img src={NewsImageOne} alt="covid 19 text image"></img>
+          <div className="img-news-para-one">
+            <img src={NewsImageOne} alt="covid 19 logo"></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call
@@ -38,7 +37,7 @@ const NewsEventsPageComponent = () => {
           </div>
 
           <h2>Provided food to support for families in need</h2>
-          <div className="img-para-wrap">
+          <div className="img-news-para-two">
             <img src={NewsImageTwo} alt="People providing food to needy"></img>
             <p>
               We have created a temporary support program called fresh food for
@@ -51,11 +50,8 @@ const NewsEventsPageComponent = () => {
           </div>
 
           <h2>Received 50K Donation From Various organizations in Last Year</h2>
-          <div className="img-para-wrap">
-            <img
-              src={NewsImageThree}
-              alt="Image shows some coins in hand"
-            ></img>
+          <div className="img-news-para-three">
+            <img src={NewsImageThree} alt="Child with some coins in hand"></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call
@@ -67,7 +63,7 @@ const NewsEventsPageComponent = () => {
           </div>
 
           <h2>Celebrated Canada Day 2020</h2>
-          <div className="img-para-wrap">
+          <div className="img-news-para-four">
             <img
               src={NewsImageFour}
               alt="People gathered to celebrate Canada Day"
@@ -90,7 +86,7 @@ const NewsEventsPageComponent = () => {
           <h3>
             <FaRegCalendar /> November 20,2020. From 4PM - 8PM
           </h3>
-          <div className="img-para-wrap">
+          <div className="img-event-para-one">
             <img
               src={EventImageOne}
               alt="All children standing and doing activities together in room"
@@ -108,10 +104,10 @@ const NewsEventsPageComponent = () => {
           <h3>
             <FaRegCalendar /> December 26, 2020. From 4PM - 8PM
           </h3>
-          <div className="img-para-wrap">
+          <div className="img-event-para-two">
             <img
               src={EventImageTwo}
-              alt="Christmas image with different lights"
+              alt="Christmas event with different lights"
             ></img>
             <p>
               The Christmas Event is an annual event that is organized by and
@@ -127,7 +123,7 @@ const NewsEventsPageComponent = () => {
           <h3>
             <FaRegCalendar /> November 23,2021. From 4PM - 8PM
           </h3>
-          <div className="img-para-wrap">
+          <div className="img-event-para-three">
             <img
               src={EventImageThree}
               alt="children playing in the field"
@@ -145,7 +141,7 @@ const NewsEventsPageComponent = () => {
           <h3>
             <FaRegCalendar /> December 26, 2021. From 4PM - 8PM
           </h3>
-          <div className="img-para-wrap">
+          <div className="img-event-para-four">
             <img src={EventImageFour} alt="Mug with some lights around"></img>
             <p>
               The Christmas Event is an annual event that is organized by and

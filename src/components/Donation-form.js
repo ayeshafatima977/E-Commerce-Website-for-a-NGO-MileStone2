@@ -1,12 +1,10 @@
 import React, { useState, useRef } from "react";
 import CreditCardComponent from "./Credit-card";
 import BillingDetailsComponent from "./Billing-details";
-import { useSelector, useDispatch } from "react-redux";
 import "../css/Donation-form.css";
 import { FaMoneyBill } from "react-icons/fa";
 
 const DonationFormComponent = () => {
-  let x = false;
   const [CreditCardValidationStatus, SetCreditCardValidationStatus] = useState(
     false
   );
@@ -14,14 +12,10 @@ const DonationFormComponent = () => {
     BillingDetailsValidationStatus,
     SetBillingDetailsValidationStatus,
   ] = useState(false);
-  const globalStateInfo = useSelector((state) => state);
-  const dispatch = useDispatch();
   /* Dispatch and useSelector setup for future use in case the form to be submitted into DB  */
   const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const [donationMsg, setDonationMsg] = useState(""); 
-  /* Setup for future use in case the message to be validated for certain criteria  */
 
   /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
 
@@ -66,7 +60,7 @@ const DonationFormComponent = () => {
                 Donation Amount<sup className="required-field">*</sup>
               </label>
               <span id="donation-amount-span">
-                $
+                $&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   id="donation-amount-id"
                   className="donation-amount"
@@ -84,7 +78,7 @@ const DonationFormComponent = () => {
             </div>
           </div>
           <h2>Fund</h2>
-          <label htmlFor="fund-type">Fund Type</label>
+          <label id="fund-label" htmlFor="fund-type">Fund Type</label>
           <select
             id="fund-type-id"
             onChange={(e) => setFundType(e.target.value)}

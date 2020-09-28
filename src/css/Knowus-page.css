@@ -3,21 +3,77 @@
 #know-us-article {
   display: flex;
   flex-direction: column;
-  margin: auto 5px;
+  margin: 2.5% 10% 0 10%;
 }
-
-.know-us-section h1 {
-  
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #4d626e;
+#about-us-heading-container {
+  background-image: url("../img/about-us.jpg");
+  width: auto;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 0 1rem 0;
+}
+#about-us-heading {
+  background-color: #4d626ea8;
+  margin: 0;
+  color: #ffffff;
   text-align: center;
-  padding: 5px 0;
-  border-radius: 5px;
+}
+#vision-heading-container {
+  background-image: url("../img/vision.jpg");
+  width: auto;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 0 1rem 0;
+}
+#vision-heading {
+  background-color: #4d626ea8;
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+}
+#mission-heading-container {
+  background-image: url("../img/mission.jpg");
+  width: auto;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 0 1rem 0;
+}
+#mission-heading {
+  background-color: #4d626ea8;
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+}
+#faq-heading-container {
+  background-image: url("../img/faq.jpg");
+  width: auto;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 0 1rem 0;
+}
+#faq-heading {
+  background-color: #4d626ea8;
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
 }
 .know-us-section h2 {
-  
   color: #103245;
   font-size: 15px;
   font-weight: bold;
@@ -29,42 +85,44 @@
   margin-bottom: 15px;
 }
 .know-us-section p {
-  
-  color: #4d626e;
   font-size: 16px;
   margin-bottom: 15px;
   text-align: left;
 }
-
-/* Tablet layout at min-width 600px */
 @media screen and (min-width: 600px) {
-  .know-us-section h1 {
-    font-size: 25px;
+  #about-us-heading-container,
+  #vision-heading-container,
+  #mission-heading-container,
+  #faq-heading-container {
+    height: 120px;
+  }
+  #about-us-heading,
+  #vision-heading,
+  #mission-heading,
+  #faq-heading {
+    font-size: 55px;
+  }
+  #know-us-article {
+    margin: 2.5% 10% 0 10%;
   }
   .know-us-section h2 {
-    font-size: 25px;
+    font-size: 40px;
+
     margin-bottom: 15px;
   }
   .know-us-section h3 {
-    font-size: 22px;
+    font-size: 20px;
+
+    margin-bottom: 15px;
   }
   .know-us-section p {
-    font-size: 22px;
-    margin-bottom: 25px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    line-height: 150%;
   }
 }
-/* Desktop and Laptop layout at min-width 1000px */
 @media screen and (min-width: 1000px) {
-  .know-us-section h1 {
-    font-size: 30px;
-  }
-  .know-us-section h2 {
-    font-size: 30px;
-  }
-  .know-us-section h3 {
-    font-size: 30px;
-  }
-  .know-us-section p {
-    font-size: 30px;
+  #know-us-article {
+    margin: 2.5% 20% 0 20%;
   }
 }

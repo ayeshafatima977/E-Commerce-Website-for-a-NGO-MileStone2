@@ -2,8 +2,6 @@ import React from "react";
 import HamburgerMenuComponent from "./Hamburger-menu";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import ContactFormComponent from "./Contact-form";
-import LoginFormComponent from "./Login-form";
 import "../css/Sticky-header.css";
 import logo from "../img/logo-final.png";
 
@@ -12,7 +10,7 @@ const StickyHeaderComponent = () => {
   return (
     <div className="sticky-header">
       <Link className="logo" to="/">
-        <img src={logo} alt="Image of charity organization logo" />
+        <img src={logo} alt="Charity organization logo" />
       </Link>
       <Link to="/cart" id="cart-button">
         <span id="sticky-icon">
@@ -23,8 +21,6 @@ const StickyHeaderComponent = () => {
       <span>
         <HamburgerMenuComponent />
       </span>
-      <ContactFormComponent />
-      <LoginFormComponent />
     </div>
   );
 };

@@ -6,6 +6,7 @@ body {
   position: relative;
 }
 .contactform-overlay {
+  /* This is the overlay background */
   position: fixed;
   display: none;
   width: 100%;
@@ -19,6 +20,7 @@ body {
   cursor: pointer;
 }
 .contactform-overlay #contact-form {
+  /* The form container */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,18 +36,19 @@ body {
   box-shadow: 5px 5px 8px #888888;
 }
 .contactform-overlay h2 {
+  /* Form Header */
   margin: 0 0 1rem 0;
   color: #4d626e;
   text-align: center;
   font-size: 2rem;
 }
-
 .contactform-overlay input,
 .contactform-overlay textarea {
+  /* Input field & common props with text area */
   display: block;
   width: 100%;
   height: 50px;
-  margin: .5rem 0 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   padding: 0 0 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.85rem;
@@ -55,57 +58,72 @@ body {
   border-top: 1px solid #4d626e;
 }
 .contactform-overlay textarea {
+  /* Text area */
   padding-top: 0.5rem;
   height: 100px;
   resize: vertical;
   overflow: auto;
 }
 .contactform-overlay ::placeholder {
+  /* Place holder */
   color: #4d626e;
   font-size: 0.8rem;
   font-style: italic;
 }
 .contactform-overlay input[type="text"]:focus {
+  /* When clicked inside the input */
   background-color: #d6e4e9;
 }
 .contactform-overlay textarea:focus {
+  /* When clicked inside the text area */
   background-color: #d6e4e9;
 }
 .contactform-overlay #send {
-  width: 75px;
+  /* Send / submit button */
+  width: 150px;
   height: 50px;
   color: #ffffff;
   background: #4d626e;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   align-self: flex-end;
   text-align: center;
-  padding: 0;
-  margin: 0;
   border: none;
+  cursor: pointer;
+  padding: 0;
 }
 .contactform-overlay label {
+  /* Input box label */
   margin: 0 0 0.25rem 0.5rem;
   color: #4d626e;
   font-weight: 500;
   font-size: 1rem;
 }
 .contactform-overlay .required-field {
-  color: rgba(255, 0, 0, 0.5);
+  /* Sup text color */
+  color: rgba(255, 0, 0);
 }
 .contactform-overlay .note {
+  /* Required field note at the bottom */
   color: #ff0000;
   font-size: 0.55rem;
   font-style: italic;
 }
 .contactform-overlay #send:hover {
+  /* when you hover */
   background-color: #90aab9;
-  cursor: pointer;
+}
+.contactform-overlay #send:active {
+  /* when you hover */
+  /*   text-shadow: 5px 5px 8px #888888;
+ */
 }
 .contact-thanks-msg {
+  /* Message at the end */
   color: #4d626e;
 }
 @media screen and (max-width: 400px) {
+  /* Changes per screen size */
   .contactform-overlay #contact-form {
     width: 80%;
     height: auto;

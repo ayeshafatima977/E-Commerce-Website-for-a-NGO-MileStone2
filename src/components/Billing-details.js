@@ -1,11 +1,10 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ChangeBillingInfo } from "../actions/Billing-info";
 import FormValidation from "../functions/Form-validation.js";
 import "../css/Billing-details.css";
 
 const BillingDetailsComponent = forwardRef((props, ref) => {
-  const GlobalStateInfo = useSelector((state) => state);
   const dispatch = useDispatch();
 
   /*   Creating Local states */
@@ -91,7 +90,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
 
   return (
     <>
-      <form id="billing-form">
+      <section id="billing-form">
         <div className="billing-form-section-container">
           <div id="billing-form-first-name-container">
             <label htmlFor="billing-firstname-id">
@@ -100,7 +99,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             <input
               id="billing-firstname-id"
               type="text"
-              placeholder="Johnny"
+              placeholder="First Name"
               className="billing-firstname"
               onChange={(e) => {
                 setUserFirstName(e.target.value);
@@ -117,7 +116,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             <input
               id="billing-lastname-id"
               type="text"
-              placeholder="Bravo"
+              placeholder="Last Name"
               className="billing-lastname"
               onChange={(e) => {
                 setUserLastName(e.target.value);
@@ -233,7 +232,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             </p>
           </div>
         </div>
-      </form>
+      </section>
     </>
   );
 });

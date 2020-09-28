@@ -3,25 +3,25 @@
 const AddToCart = (productObj) => {
   return {
     type: "ADD_PRODUCT_TO_CART",
-    payload: productObj
+    payload: productObj,
   };
 };
 const RemoveFromCart = (productID) => {
   return {
     type: "REMOVE_PRODUCT_FROM_CART",
-    payload: productID
+    payload: productID,
   };
 };
 const IncreaseCartQty = (productID) => {
   return {
     type: "INCREASE_CART_QTY",
-    payload: productID
+    payload: productID,
   };
 };
 const DecreaseCartQty = (productID) => {
   return {
     type: "DECREASE_CART_QTY",
-    payload: productID
+    payload: productID,
   };
 };
 const SetCartQty = (productID, qty) => {
@@ -29,8 +29,14 @@ const SetCartQty = (productID, qty) => {
     type: "SET_CART_QTY",
     payloadOne: productID,
     /* PayloadTwo is the amount the user wishes to set the qty to. */
-    payloadTwo: qty
+    payloadTwo: qty,
   };
 };
 
-export { AddToCart, RemoveFromCart, IncreaseCartQty, DecreaseCartQty, SetCartQty};
+export {
+  AddToCart,
+  RemoveFromCart,
+  IncreaseCartQty,
+  DecreaseCartQty,
+  SetCartQty,
+};

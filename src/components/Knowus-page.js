@@ -14,7 +14,10 @@ const KnowUsPageComponent = () => {
         {/*=====================About Us ========================*/}
 
         <section className="know-us-section">
-          <h1> About Us</h1>
+          <div id="about-us-heading-container">
+            <div></div>
+            <h1 id="about-us-heading"> About Us</h1>
+          </div>
 
           <h2>
             Love is what drives us. And there’s no limit to what love can do.
@@ -34,15 +37,38 @@ const KnowUsPageComponent = () => {
         </section>
         {/*=====================Vision ========================*/}
         <section className="know-us-section">
-          <h1>Vision</h1>
+          <div id="vision-heading-container">
+            <div></div>
+            <h1 id="vision-heading">Vision</h1>
+          </div>
           <p>
             Our guiding values of Commitment, Integrity, Service, Innovation,
-            Responsiveness, and Fairness govern the manner in which we work
+            Responsiveness, and Fairness govern the manner in which we work. Our
+            guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work. Our
+            guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work.
+          </p>
+          <p>
+            Our guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work.
           </p>
         </section>
         {/*=====================Mission========================*/}
         <section className="know-us-section">
-          <h1>Mission</h1>
+          <div id="mission-heading-container">
+            <div></div>
+            <h1 id="mission-heading">Mission</h1>
+          </div>
+
+          <p>
+            To be stewards in the collection of surplus and donated food for the
+            effective distribution, free of charge, to people in need in our
+            community while seeking solutions to the causes of hunger. To be
+            stewards in the collection of surplus and donated food for the
+            effective distribution, free of charge, to people in need in our
+            community while seeking solutions to the causes of hunger.
+          </p>
           <p>
             To be stewards in the collection of surplus and donated food for the
             effective distribution, free of charge, to people in need in our
@@ -51,7 +77,10 @@ const KnowUsPageComponent = () => {
         </section>
         {/*=====================FAQ ========================*/}
         <section className="know-us-section">
-          <h1> FAQ </h1>
+          <div id="faq-heading-container">
+            <div></div>
+            <h1 id="faq-heading">FAQ</h1>
+          </div>
           <h3>Is child sponsorship an effective way to help?</h3>
           <p>
             Yes. When you sponsor a child, you help bring long-term changes to

@@ -46,11 +46,11 @@ const FooterComponent = () => {
     ) {
       document
         .getElementsByClassName("newsletter-thanks-msg")[0]
-        .classList.add("msg-show");
+        .classList.remove("msg-hide");
     } else {
       document
         .getElementsByClassName("newsletter-thanks-msg")[0]
-        .classList.remove("msg-show");
+        .classList.add("msg-hide");
     }
   };
 

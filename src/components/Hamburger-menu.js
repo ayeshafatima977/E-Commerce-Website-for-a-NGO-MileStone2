@@ -19,14 +19,15 @@ const HamburgerMenuComponent = () => {
     <>
       <div className="menu-wrap">
         <span>
-        <input
-          type="checkbox"
-          className="toggler"
-          onChange={(e) => {
-            ShowOverlayMenu(e.target);
-          }}
-        />
-        <GiHamburgerMenu /></span>
+          <input
+            type="checkbox"
+            className="toggler"
+            onChange={(e) => {
+              ShowOverlayMenu(e.target);
+            }}
+          />
+          <GiHamburgerMenu />
+        </span>
       </div>
       <div id="menu" className="hide">
         <ul>

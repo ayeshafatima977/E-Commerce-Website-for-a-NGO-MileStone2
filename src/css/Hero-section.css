@@ -1,5 +1,4 @@
 @import "./normalize.css";
-
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -64,14 +63,11 @@
   width: 150px;
   margin-right: 1rem;
 }
-/* =================DESKTOP BREAKPOINT================= */
 @media screen and (min-width: 600px) {
   .hero-section #shop-donate-btns {
     display: flex;
     flex-direction: row;
     margin-top: auto;
-    /*   margin-left: auto;
- */
     margin-bottom: 1rem;
     margin-right: 1rem;
   }
@@ -96,8 +92,6 @@
     margin-top: 5%;
   }
 }
-
-/* =================DESKTOP BREAKPOINT================= */
 @media screen and (min-width: 1000px) {
   .hero-section {
     width: 100%;

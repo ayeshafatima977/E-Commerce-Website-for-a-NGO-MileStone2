@@ -1,16 +1,14 @@
 @import url("./normalize.css");
-/* Shopping navigation component / container */
 .shopping-navigation-component {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-/* Search bar */
 #search-form {
   width: 100%;
 }
 #search-input {
-  color: #FFF;
+  color: #fff;
   padding-left: 25px;
   width: 70%;
   height: 46px;
@@ -31,7 +29,6 @@
   font-style: italic;
   font-size: 20px;
 }
-/* The navigation option blocks (Sort by, Browse, Filter) */
 .shopping-nav-container {
   width: 100%;
   display: flex;
@@ -50,6 +47,7 @@
   font-style: italic;
   font-weight: normal;
   font-size: 20px;
+  text-align: left;
 }
 .shopping-navigation-component h3 {
   color: #1c3656;
@@ -58,7 +56,6 @@
   width: 100%;
   padding-left: 5%;
 }
-
 @media screen and (min-width: 600px) {
   .shopping-navigation-component {
     width: 100%;
@@ -75,7 +72,6 @@
   .shopping-nav-container label {
     width: 60%;
   }
-
   #search-input::placeholder {
     font-size: 20px;
   }

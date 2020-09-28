@@ -22,7 +22,7 @@ const HeaderComponent = () => {
       <section className="common-header">
         {/* Top section for logo and slogan header */}
         <div className="logo-container">
-          <logo>
+          <div>
             <Link
               id="logo"
               to="/"
@@ -30,9 +30,9 @@ const HeaderComponent = () => {
                 dispatch(UpdateBrowsingHistory("/"));
               }}
             >
-              <img src={Logo} alt="Logo Image with Some Text" />
+              <img src={Logo} alt="logo with Shopkidos Text on it" />
             </Link>
-          </logo>
+          </div>
           <h1>MAKE A DIFFERENCE</h1>
         </div>
         <nav>
@@ -100,12 +100,13 @@ const HeaderComponent = () => {
             </li>
             <li>
               <a
+                href="#top"
                 className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("loginform-overlay")[0]
                     .classList.add("overlayShow");
-                    dispatch(UpdateBrowsingHistory("/loginform"));
+                  dispatch(UpdateBrowsingHistory("/loginform"));
                 }}
               >
                 LOGIN
@@ -117,13 +118,13 @@ const HeaderComponent = () => {
             overlay on the Header page which is the parent component-We use CSS
             to Show/Hide the overlay */}
               <a
+                href="#top"
                 className="right-side-buttons"
                 onClick={() => {
                   document
                     .getElementsByClassName("contactform-overlay")[0]
                     .classList.add("overlayShow");
-                    dispatch(UpdateBrowsingHistory("/contactform"));
-                    
+                  dispatch(UpdateBrowsingHistory("/contactform"));
                 }}
               >
                 CONTACT

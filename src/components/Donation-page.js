@@ -18,5 +18,3 @@ const DonationPageComponent = () => {
 export default DonationPageComponent;
 
 /*=====  End of Donation Page Component  ======*/
-
-
