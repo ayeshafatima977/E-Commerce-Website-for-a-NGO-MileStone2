@@ -190,6 +190,7 @@ const ShoppingCartComponent = () => {
   be submitted from the parent form
   */}
           <div id="shopping-required-note">
+            <sup className="required-field note">* Required Field</sup>
             <button
               id="btn-order"
               form="shopping-cart"
@@ -205,8 +206,6 @@ const ShoppingCartComponent = () => {
             >
               Place Order
             </button>
-
-            <sup className="required-field note">* Required Field</sup>
           </div>
         </form>
       </section>

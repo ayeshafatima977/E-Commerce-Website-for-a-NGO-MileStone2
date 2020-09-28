@@ -1,8 +1,31 @@
 @import url("./normalize.css");
 
+#creditcard-input-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+#credit-number-container,
+#credit-exp-date-container,
+#credit-save-container,
+#credit-CVC-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#checkboxes,
+#checkbox-label {
+  display: inline-block;
+}
+
+#checkboxes {
+  margin-right: 5px;
+}
 #credit-card-form {
   background-color: #ffffff;
-  margin: 2rem 0.5rem;
+  margin: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,78 +57,50 @@
   justify-content: flex-start;
 }
 
-/* To ensure credit card icon is inside input  */
-/* #donation-amount-span > svg {
-  transform: translateX(-25px) scale(1.5);
-  color: #4d626e;
-} */
-
 /* start of tried icon */
-.credit-icon {
+/* .credit-icon {
   position: relative;
   padding: 0px;
   margin: 0 20px;
-background: #ddd;
-Direction Right to Left
-direction: rtl;
-width: 100px;
+  background: #ddd;
+  Direction Right to Left */
+/* direction: rtl;
+  width: auto;
+} */
+
+.credit-icon svg {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 0;
+  transform: translateX(115px) translateY(-20px);
 }
- #user-credit-number-id {
+
+#user-credit-number-id {
   height: 25px;
   margin: 0;
   padding: 25;
-  padding-right: 0 px; 
- width: 100%;
-} 
+  padding-right: 0 px;
+  width: 180px;
+  display: block;
+}
 
-
+#user-credit-expiry-id {
+  width: 50%;
+  height: 25px;
+}
+#user-credit-cvc-id {
+  width: 50%;
+  height: 25px;
+}
 #cc {
-  position: absolute;
-  bottom: 2px;
-  right: 5px;
-  width: 15px;
+  width: 100px;
   height: 15px;
-} 
-/* Finish of tried icon */
-/* .credit-icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 15px;
-} */
-
-/* .user-credit-number {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-} */
-
-/*=====  End of Card Icons Styling  ======*/
+}
 
 /*=============================================
 =            CheckBox Credit-Save            =
 =============================================*/
-
-#credit-save-container {
-  width: 100%;
-  flex-direction: row;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-#credit-save-container input {
-  width: 5%;
-  margin: 0 0 1rem 0;
-  padding: 0.75rem 0 0.25rem 0.75rem;
-}
-
-#credit-save-container label {
-  width: 70%;
-  justify-content: flex-start;
-}
 
 /*=====  End of CheckBox Credit-Save  ======*/
 
@@ -113,23 +108,31 @@ width: 100px;
 =            Input fields Container            =
 =============================================*/
 
-.credit-card-form-section-container input,
-select {
+/* .credit-card-form-section-container input {
   display: block;
-  width: 100%;
-  height: 35px;
+  /* width: 100%; */
+/* height: 25px;
   margin: 0.5 0 1rem 0;
-  padding: 0 0 0.75rem 0.75rem;
+  padding: 0 0 0.75rem 0;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #4d626e;
+  border: none;
+  border-bottom: 1px solid #4d626e;
+  border-top: 1px solid #4d626e; */
+/* } */
+
+.credit-card-form-section-container select {
+  height: 35px;
+  width: min-content;
+  /* margin: 0.5 0 1rem 0;
+  padding: 0 0 0.75rem 0; */
   border-radius: 15px;
   font-size: 0.85rem;
   color: #4d626e;
   border: none;
   border-bottom: 1px solid #4d626e;
   border-top: 1px solid #4d626e;
-}
-
-.credit-card-form-section-container select {
-  padding-top: 6px;
 }
 
 .credit-card-form-section-container input:focus {
@@ -151,6 +154,14 @@ select {
   font-size: 1rem;
   font-weight: 500;
   color: #4d626e;
+}
+
+#cc-exp-date-label,
+#cc-cvc-label {
+  display: block;
+}
+#cc-cvc-label {
+  margin-top: 20px;
 }
 
 /*=====  End of Input fields Container  ======*/

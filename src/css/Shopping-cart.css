@@ -164,12 +164,11 @@
   /* box-shadow: 1px 5px 5px 3px #888888; */
 }
 
-/* HELP required */
-/* #btn-order .required-field note {
+#btn-order .required-field note {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-} */
+}
 
 #btn-order:hover {
   background-color: #90aab9;

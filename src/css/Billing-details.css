@@ -2,13 +2,11 @@
 
 #billing-form {
   background-color: #ffffff;
-  margin: 2rem 0.5rem;
+  margin: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: #4d626e;
   border-radius: 15px;
-  padding-bottom: 10px;
   border-right: 1px solid #4d626e;
   padding: 1.5rem 1.5rem;
   border-left: 1px solid #4d626e;
@@ -18,6 +16,7 @@
 .billing-form-section-container {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .billing-form-section-container input,
@@ -26,7 +25,7 @@ select {
   width: 100%;
   height: 35px;
   margin: 0.5 0 1rem 0;
-  padding: 0 0 0.75rem 0.75rem;
+  padding: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 15px;
   font-size: 0.85rem;
   color: #4d626e;
@@ -41,19 +40,29 @@ select {
   background-color: #d6e4e9;
 }
 
-#billing-form input ::placeholder {
+.billing-form-section-container input::placeholder {
   color: #4d626e;
   font-style: italic;
   font: size 1.5rem;
 }
 
-#billing-form label {
+.billing-form-section-container input label {
   font-size: 1rem;
   font-weight: 500;
   color: #4d626e;
 }
 .billing-form-section-container .required-field {
   color: rgba(255, 0, 0, 0.5);
+}
+#billing-form-first-name-container,
+#billing-form-last-name-container,
+#billing-form-street-address-container,
+#billing-form-city-container,
+#billing-form-province-container,
+#billing-form-postal-code-container,
+#billing-form-phone-container,
+#billing-form-email-container {
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 600px) {
