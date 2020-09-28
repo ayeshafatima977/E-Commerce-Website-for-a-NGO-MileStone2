@@ -48,11 +48,10 @@ const KnowUsPageComponent = () => {
             Responsiveness, and Fairness govern the manner in which we work. Our
             guiding values of Commitment, Integrity, Service, Innovation,
             Responsiveness, and Fairness govern the manner in which we work.
-            <p>
-              {" "}
-              Our guiding values of Commitment, Integrity, Service, Innovation,
-              Responsiveness, and Fairness govern the manner in which we work.
-            </p>
+          </p>
+          <p>
+            Our guiding values of Commitment, Integrity, Service, Innovation,
+            Responsiveness, and Fairness govern the manner in which we work.
           </p>
         </section>
         {/*=====================Mission========================*/}
@@ -69,11 +68,11 @@ const KnowUsPageComponent = () => {
             stewards in the collection of surplus and donated food for the
             effective distribution, free of charge, to people in need in our
             community while seeking solutions to the causes of hunger.
-            <p>
-              To be stewards in the collection of surplus and donated food for
-              the effective distribution, free of charge, to people in need in
-              our community while seeking solutions to the causes of hunger.
-            </p>
+          </p>
+          <p>
+            To be stewards in the collection of surplus and donated food for the
+            effective distribution, free of charge, to people in need in our
+            community while seeking solutions to the causes of hunger.
           </p>
         </section>
         {/*=====================FAQ ========================*/}

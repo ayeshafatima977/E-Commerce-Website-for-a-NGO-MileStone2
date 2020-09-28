@@ -22,7 +22,7 @@ const HeaderComponent = () => {
       <section className="common-header">
         {/* Top section for logo and slogan header */}
         <div className="logo-container">
-          <span>
+          <div>
             <Link
               id="logo"
               to="/"
@@ -30,9 +30,9 @@ const HeaderComponent = () => {
                 dispatch(UpdateBrowsingHistory("/"));
               }}
             >
-              <img src={Logo} alt="Logo" />
+              <img src={Logo} alt="logo with Shopkidos Text on it" />
             </Link>
-          </span>
+          </div>
           <h1>MAKE A DIFFERENCE</h1>
         </div>
         <nav>
