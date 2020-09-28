@@ -50,6 +50,7 @@ select {
   font-size: 1rem;
   font-weight: 500;
   color: #4d626e;
+  padding-bottom: 5px;
 }
 .billing-form-section-container .required-field {
   color: rgba(255, 0, 0, 0.5);
@@ -74,6 +75,30 @@ select {
     padding: 0 0.625rem;
     border-radius: 0.625rem;
   }
+
+  .billing-form-section-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  #billing-form-first-name-container {
+    width: 40%;
+  }
+
+  #billing-form-last-name-container {
+    width: 40%;
+    margin-left: 80px;
+  }
+  #billing-form-street-address-container,
+  #billing-form-city-container,
+  #billing-form-province-container,
+  #billing-form-postal-code-container,
+  #billing-form-phone-container,
+  #billing-form-email-container {
+    width: 100%;
+  }
+
   .billing-form-section-container input,
   select {
     width: 100%;

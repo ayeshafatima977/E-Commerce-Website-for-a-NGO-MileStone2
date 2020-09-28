@@ -57,17 +57,6 @@
   justify-content: flex-start;
 }
 
-/* start of tried icon */
-/* .credit-icon {
-  position: relative;
-  padding: 0px;
-  margin: 0 20px;
-  background: #ddd;
-  Direction Right to Left */
-/* direction: rtl;
-  width: auto;
-} */
-
 .credit-icon svg {
   width: 30px;
   height: 30px;
@@ -75,23 +64,39 @@
   margin: 0;
   transform: translateX(115px) translateY(-20px);
 }
+/*=============================================
+=            Card Icons Styling  Ends           =
+=============================================*/
 
 #user-credit-number-id {
-  height: 25px;
+  height: 35px;
   margin: 0;
+  margin-top: 10px;
   padding: 25;
-  padding-right: 0 px;
+  padding-right: 0px;
+  padding-left: 15px;
   width: 180px;
   display: block;
+  border-radius: 15px;
+  border-right: none;
+  border-left: none;
 }
 
 #user-credit-expiry-id {
   width: 50%;
-  height: 25px;
+  height: 35px;
+  padding-left: 15px;
+  border-right: none;
+  border-left: none;
+  border-radius: 15px;
 }
 #user-credit-cvc-id {
   width: 50%;
-  height: 25px;
+  height: 35px;
+  border-radius: 15px;
+  border-right: none;
+  border-left: none;
+  padding-left: 15px;
 }
 #cc {
   width: 100px;
@@ -99,28 +104,8 @@
 }
 
 /*=============================================
-=            CheckBox Credit-Save            =
-=============================================*/
-
-/*=====  End of CheckBox Credit-Save  ======*/
-
-/*=============================================
 =            Input fields Container            =
 =============================================*/
-
-/* .credit-card-form-section-container input {
-  display: block;
-  /* width: 100%; */
-/* height: 25px;
-  margin: 0.5 0 1rem 0;
-  padding: 0 0 0.75rem 0;
-  border-radius: 15px;
-  font-size: 0.85rem;
-  color: #4d626e;
-  border: none;
-  border-bottom: 1px solid #4d626e;
-  border-top: 1px solid #4d626e; */
-/* } */
 
 .credit-card-form-section-container select {
   height: 35px;
@@ -163,5 +148,47 @@
 #cc-cvc-label {
   margin-top: 20px;
 }
-
+.credit-label {
+  margin-bottom: 10px;
+}
 /*=====  End of Input fields Container  ======*/
+
+@media screen and (min-width: 600px) {
+  /* .credit-card-form-section-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "cc-input c1"
+      "cc-input c2";
+  }
+
+  #cards-row-1 {
+    grid-area: c1;
+    padding-top: 15px;
+  }
+  #cards-row-2 {
+    grid-area: c2;
+  }
+  .cards {
+    margin-left: 80px;
+  }
+  #creditcard-input-container {
+    grid-area: cc-input;
+  } */
+  .cards {
+    justify-content: flex-end;
+  }
+  #user-credit-number-id {
+    width: 100%;
+  }
+  #user-credit-expiry-id {
+    width: 100%;
+  }
+  #user-credit-cvc-id {
+    width: 100%;
+  }
+
+  .credit-icon svg {
+    transform: translateX(325px) translateY(-25px) scale(1.3);
+  }
+}

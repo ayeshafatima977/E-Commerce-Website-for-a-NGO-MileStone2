@@ -72,7 +72,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
         {/* <h4>Credit Card</h4> */}
         <div className="credit-card-form-section-container">
           <div className="cards-styling">
-            <section className="cards">
+            <section id="cards-row-1" className="cards">
               <span>
                 <FaCcMastercard /> &nbsp;
               </span>
@@ -83,7 +83,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
                 <FaCcPaypal /> &nbsp;
               </span>
             </section>
-            <section className="cards">
+            <section id="cards-row-2" className="cards">
               <span>
                 <FaCcAmazonPay /> &nbsp;
               </span>
@@ -97,7 +97,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
           </div>
           <div id="creditcard-input-container">
             <div id="credit-number-container">
-              <label htmlFor="user-credit-number-id">
+              <label className="credit-label" htmlFor="user-credit-number-id">
                 Number on Card<sup className="required-field">*</sup>
               </label>
               <div class="credit-icon">
@@ -118,7 +118,11 @@ const CreditCardComponent = forwardRef((props, ref) => {
               </p>
             </div>
             <div id="credit-exp-date-container">
-              <label id="cc-exp-date-label" htmlFor="user-credit-expiry-id">
+              <label
+                className="credit-label"
+                id="cc-exp-date-label"
+                htmlFor="user-credit-expiry-id"
+              >
                 Expires<sup className="required-field">*</sup>
               </label>
               {/* Date Picker component is used here for the user to select the expiry date  */}
@@ -138,7 +142,11 @@ const CreditCardComponent = forwardRef((props, ref) => {
               </p>
             </div>
             <div id="credit-CVC-container">
-              <label id="cc-cvc-label" htmlFor="user-credit-cvc-id">
+              <label
+                className="credit-label"
+                id="cc-cvc-label"
+                htmlFor="user-credit-cvc-id"
+              >
                 Security Code <sup className="required-field">*</sup>
               </label>
               <input

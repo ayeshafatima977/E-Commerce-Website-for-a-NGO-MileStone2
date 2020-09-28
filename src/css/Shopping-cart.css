@@ -40,6 +40,7 @@
   margin-right: 10px;
   text-align: left;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 #bd-section,
@@ -87,7 +88,8 @@
   font-style: italic;
 }
 #schedule {
-  font-size: 14px;
+  font-size: 10px;
+  display: inline-block;
 }
 
 #pickup,
@@ -206,4 +208,33 @@
 #btn-back:hover {
   background-color: #4d626e;
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  #cart-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+  }
+  #items-pickup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 1px solid #4d626e;
+  }
+  #btn-back {
+    width: 40%;
+  }
+  #subtotal {
+    width: 50%;
+    padding-top: 22px;
+    border-top: none;
+  }
+  #schedule {
+    display: inline;
+    /* padding-bottom: 50px; */
+  }
+  #items-pickup {
+    padding-bottom: 10px;
+  }
 }
