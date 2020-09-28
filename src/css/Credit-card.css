@@ -43,9 +43,6 @@
   flex-direction: column;
 }
 
-/*=============================================
-=            Card Icons Styling            =
-=============================================*/
 .cards-styling {
   display: flex;
   flex-direction: column;
@@ -64,9 +61,6 @@
   margin: 0;
   transform: translateX(110px) translateY(-25px);
 }
-/*=============================================
-=            Card Icons Styling  Ends           =
-=============================================*/
 
 #user-credit-number-id {
   height: 35px;
@@ -103,15 +97,9 @@
   height: 15px;
 }
 
-/*=============================================
-=            Input fields Container            =
-=============================================*/
-
 .credit-card-form-section-container select {
   height: 35px;
   width: min-content;
-  /* margin: 0.5 0 1rem 0;
-  padding: 0 0 0.75rem 0; */
   border-radius: 15px;
   font-size: 0.85rem;
   color: #4d626e;
@@ -151,30 +139,8 @@
 .credit-label {
   margin-bottom: 10px;
 }
-/*=====  End of Input fields Container  ======*/
 
 @media screen and (min-width: 600px) {
-  /* .credit-card-form-section-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-areas:
-      "cc-input c1"
-      "cc-input c2";
-  }
-
-  #cards-row-1 {
-    grid-area: c1;
-    padding-top: 15px;
-  }
-  #cards-row-2 {
-    grid-area: c2;
-  }
-  .cards {
-    margin-left: 80px;
-  }
-  #creditcard-input-container {
-    grid-area: cc-input;
-  } */
   .cards {
     justify-content: flex-end;
   }
@@ -187,7 +153,6 @@
   #user-credit-cvc-id {
     width: 100%;
   }
-
   .credit-icon svg {
     transform: translateX(380px) translateY(-25px) scale(1.3);
   }

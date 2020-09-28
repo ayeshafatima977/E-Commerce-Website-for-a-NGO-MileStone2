@@ -1,7 +1,5 @@
 @import url("./normalize.css");
-/*=============================================
-=            Donation Form           =
-=============================================*/
+
 #donation-form-container {
   background-color: #4d626e;
   color: #fff;
@@ -15,9 +13,7 @@
   margin: 10px 0;
   text-align: center;
 }
-/*=============================================
-=        Sections (Amount / Donor Info)       =
-=============================================*/
+
 .donation-form-section-container > h2 {
   margin: 5px 0;
 }
@@ -80,9 +76,7 @@
   font-weight: bold;
   margin: 15px 0;
 }
-/*=============================================
-=            Tablet view            =
-=============================================*/
+
 @media screen and (min-width: 600px) {
   #donation-amount-container {
     display: flex;
@@ -106,9 +100,7 @@
     height: 100px;
   }
 }
-/*=============================================
-=            Desktop view            =
-=============================================*/
+
 @media screen and (min-width: 1000px) {
   #donation-form-container {
     width: 60%;

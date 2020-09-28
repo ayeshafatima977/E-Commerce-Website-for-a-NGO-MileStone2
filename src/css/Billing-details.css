@@ -118,6 +118,7 @@ select {
     flex-direction: column;
   }
 }
+
 @media screen and (min-width: 1000px) {
   #billing-form {
     background-color: #fff;

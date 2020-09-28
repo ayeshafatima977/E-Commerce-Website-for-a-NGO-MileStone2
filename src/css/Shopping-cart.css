@@ -15,7 +15,6 @@
 #cart-items {
   display: flex;
   flex-direction: column;
-  /* height: 20px;*/
   padding: 10px 0;
   justify-content: center;
 }
@@ -57,7 +56,7 @@
 #bd-section h2 {
   font-weight: 1000;
 }
-/* For Borders */
+
 #cart-items,
 #pickup,
 #subtotal,
@@ -71,9 +70,6 @@
 #bd-section {
   margin-top: 30px;
 }
-/* #cart-container * {
-  outline: 1px solid red;
-} */
 
 #cart-container img {
   width: 200px;
@@ -84,7 +80,6 @@
   border-radius: 15px;
   background-color: #fff;
   padding: 10px;
-  /* align-self: flex-start; */
 }
 #cart-container {
   text-align: center;
@@ -95,7 +90,6 @@
 }
 
 #shopping-required-note .required-field-note {
-  /* Required field note at the bottom */
   color: #ff0000;
   font-size: 0.55rem;
   font-style: italic;
@@ -110,8 +104,6 @@
 #description p {
   flex-direction: row;
   flex-wrap: wrap;
-  /* width: 100px;
-  height: 145px; */
   padding: 10px 0;
   justify-content: center;
   font-size: 14px;
@@ -216,7 +208,6 @@
   border: 2px solid #fff;
   border-radius: 15px;
   justify-content: flex-end;
-  /* box-shadow: 1px 5px 5px 3px #888888; */
 }
 
 #btn-order {
@@ -271,7 +262,6 @@
   }
   #schedule {
     display: inline;
-    /* padding-bottom: 50px; */
   }
   #items-pickup {
     padding-bottom: 10px;
