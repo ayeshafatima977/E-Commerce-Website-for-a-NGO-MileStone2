@@ -3,6 +3,7 @@ import DatePickerDobComponent from "./Date-picker-dob";
 import DatePickerComponent from "./Date-picker";
 import "../css/Volunteer-form.css";
 import FormValidation from "../functions/Form-validation.js";
+import { useHistory } from "react-router-dom";
 
 /* Creating Local state for using it in Form validation */
 
@@ -60,9 +61,10 @@ const VolunteerFormComponent = () => {
         "volunteerEmergencyPhone-error"
       )
     ) {
-      document
-        .getElementsByClassName("volunteer-thankyou-msg")[0]
-        .classList.remove("msg-hide");
+      // document
+      //   .getElementsByClassName("volunteer-thankyou-msg")[0]
+      //   .classList.remove("msg-hide");
+      history.push("/volnterconf");
     }
   };
   return (
@@ -78,7 +80,7 @@ const VolunteerFormComponent = () => {
               type="text"
               id="volunteer-name"
               className="volunteerName"
-              placeholder="Johnny Bravo"
+              placeholder="Full Name"
               onChange={(e) => {
                 setVolunteerName(e.target.value);
               }}
@@ -189,7 +191,7 @@ const VolunteerFormComponent = () => {
             <input
               type="text"
               id="emergency-contact"
-              placeholder="Johnny Bravo"
+              placeholder="Full Name"
               className="emergencyContact"
               onChange={(e) => {
                 setEmergencyContact(e.target.value);
