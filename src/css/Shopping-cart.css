@@ -7,15 +7,9 @@
   flex-wrap: wrap;
   width: 100%;
 }
-
-/* #cart-container * {
-  outline: 1px solid red;
-} */
-
 #cart-items {
   display: flex;
   flex-direction: column;
-  /* height: 20px;*/
   padding: 10px 0;
   justify-content: center;
 }
@@ -26,15 +20,10 @@
   align-items: center;
   text-align: center;
   border-radius: 15px;
-
-  /* align-self: flex-start; */
 }
-
 p {
   flex-direction: row;
   flex-wrap: wrap;
-  /* width: 100px;
-  height: 145px; */
   padding: 10px 0;
   justify-content: center;
   font-size: 14px;
@@ -49,7 +38,6 @@ p {
   text-align: center;
   color: #ffffff;
 }
-
 #text-container {
   flex-direction: row;
 }
@@ -58,7 +46,6 @@ input[type="number"] {
   align-items: center;
   text-align: center;
 }
-
 #plus,
 #minus,
 #rmv-btn {
@@ -69,13 +56,6 @@ input[type="number"] {
   justify-content: space-between;
   border-radius: 5px;
 }
-/* #shopping-cart {
-  border: solid black 1px;
-  border-radius: 10px;
-  background-color: #4d626e;
-  color: #fff;
-} */
-
 #subtotal p {
   align-items: center;
   text-align: center;
@@ -83,7 +63,6 @@ input[type="number"] {
   font-size: 20px;
   color: #fff;
 }
-
 #pickup {
   align-items: center;
   text-align: center;
@@ -91,7 +70,6 @@ input[type="number"] {
   font-size: 20px;
   color: #fff;
 }
-
 #qty-status {
   align-items: center;
   text-align: center;
@@ -114,12 +92,10 @@ input[type="number"] {
   border-radius: 10px;
   justify-content: flex-end;
 }
-
 .btn-order:hover {
   background-color: #90aab9;
   cursor: pointer;
 }
-
 #btn-back {
   width: 100px;
   height: 40px;
@@ -139,7 +115,6 @@ input[type="number"] {
   color: #fff;
   text-decoration: none;
 }
-
 #btn-back:hover {
   background-color: #90aab9;
   cursor: pointer;

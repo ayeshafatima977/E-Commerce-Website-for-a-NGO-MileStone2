@@ -21,7 +21,7 @@ const ProductDetailsOverlayComponent = (props) => {
     productIdCopy,
     productObj;
 
-    /* 
+  /* 
     Looking up which product card called for the overlay 
     to display the right product info on the overlay card
      */
@@ -53,7 +53,7 @@ const ProductDetailsOverlayComponent = (props) => {
   const AddSingleProductToCart = () => {
     dispatch(AddToCart(productObj));
   };
-    /* 
+  /* 
   This function meant for toggling the add to cart & 
   remove from cart button for better user experience (dispatch remove action)
   */

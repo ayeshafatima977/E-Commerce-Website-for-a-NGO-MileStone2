@@ -8,7 +8,6 @@ Date of last edit: september 28, 2020 9:00 am
 Assignment: https://drive.google.com/file/d/1TkQkSrqbAsLseSicMVCrTzICGsslFF_G/view?usp=sharing
 Trello board: https://trello.com/b/QuSHXICc
 GitHub Repo: https://github.com/TECHCareers-by-Manpower/milestone-2-react-redux-router-project-scriptorce
- 
 */
 
 import React from "react";
@@ -29,33 +28,23 @@ import GlobalStore from "./components/store";
 import StickyHeaderComponent from "./components/Sticky-header";
 import VolunteerApplicationPageComponent from "./components/Volunteer-application-page";
 import ThankYouPage from "./components/Thankyou-page.js";
-import VolunteerConfPage from "./components/Volunteer-confirmation-page"
+import VolunteerConfPage from "./components/Volunteer-confirmation-page";
 ReactDOM.render(
   <Provider store={GlobalStore}>
     <Router>
       <HeaderComponent />
       <StickyHeaderComponent />
-      <Route path="/thankyou" exact component={ThankYouPage} />
-      <Route path="/volnterconf" exact component={VolunteerConfPage} />
-      <Route path="/" exact component={LandingPageComponent} />
-      <Route path="/about" exact component={KnowUsPageComponent} />
-      <Route path="/events" exact component={NewsEventsPageComponent} />
-      <Route path="/news" exact component={NewsEventsPageComponent} />
-      <Route path="/donation" exact component={DonationPageComponent} />
-      <Route path="/shop" exact component={ShoppingPageComponent} />
-      <Route path="/cart" exact component={CartPageComponent} />
-      <Route
-        path="/volunteer"
-        exact
-        component={VolunteerApplicationPageComponent}
-      />
-      <Route
-        path="/product-quick-view"
-        exact
-        component={ProductDetailsOverlayComponent}
-      />
-      
-
+      <Route path="/thankyou" exact component={ThankYouPage} />{/* Order confirmation thank you page */}
+      <Route path="/volnterconf" exact component={VolunteerConfPage} />{/* Volunteer application thank you page */}
+      <Route path="/" exact component={LandingPageComponent} />{/* Landing page */}
+      <Route path="/about" exact component={KnowUsPageComponent} /> {/* Know us page */}
+      <Route path="/events" exact component={NewsEventsPageComponent} /> {/* Events and news page */}
+      <Route path="/news" exact component={NewsEventsPageComponent} /> {/* Events and news page */}
+      <Route path="/donation" exact component={DonationPageComponent} /> {/* Donation page */}
+      <Route path="/shop" exact component={ShoppingPageComponent} />{/* Shopping page */}
+      <Route path="/cart" exact component={CartPageComponent} /> {/* Shopping Cart page */}
+      <Route path="/volunteer" exact component={VolunteerApplicationPageComponent}/> {/* Volunteer Application page */}
+      <Route path="/product-quick-view" exact component={ProductDetailsOverlayComponent}/> {/* Products Page page */}
       <FooterComponent />
     </Router>
   </Provider>,

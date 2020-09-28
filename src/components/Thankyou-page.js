@@ -8,7 +8,7 @@ import "../css/Thankyou-page.css";
 const ThankYouPage = () => {
   return (
     <>
-      <ThankYoImg message="Thank you, your order is in process "/>
+      <ThankYoImg message="Thank you, your order is in process " />
     </>
   );
 };

@@ -12,7 +12,6 @@
     justify-content: center;
     text-align: center;
   }
-  /* checkbox for the hamburger */
   .menu-wrap .toggler {
     position: absolute;
     top: 0;
@@ -21,20 +20,16 @@
     height: 40px;
     opacity: 0;
   }
-  /* Overlay background */
   #menu {
     top: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    /*     background-color: rgb(77, 98, 110);
- */
     background-image: url("../img/LandingPage.jpg");
     background-size: cover;
     background-position: right;
     background-position-x: 45%;
   }
-  /* Hide class for the overlay */
   .hide {
     display: none;
   }

@@ -53,7 +53,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
           "cc-exp",
           "user-credit-expiry",
           "user-credit-expiry-error"
-        )  &&
+        ) &&
         FormValidation(
           userCVC,
           "cc-cvc",

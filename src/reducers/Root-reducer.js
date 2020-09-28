@@ -3,7 +3,7 @@ import CartReducer from "./Cart";
 import BillingInfoReducer from "./Billing-info";
 import CreditCardReducer from "./Credit-card";
 import BrowsingHistoryReducer from "./Browsing-history";
-import ShoppingNavigationReducer from "./Shopping-navigation"
+import ShoppingNavigationReducer from "./Shopping-navigation";
 
 const UserDataReducer = combineReducers({
   BillingInfo: BillingInfoReducer,

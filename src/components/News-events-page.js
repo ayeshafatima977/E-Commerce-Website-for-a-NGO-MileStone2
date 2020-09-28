@@ -15,7 +15,6 @@ import "../css/News-event-page.css";
 =      News and Events page React Component   =
 =============================================*/
 
-
 const NewsEventsPageComponent = () => {
   return (
     <>
@@ -52,10 +51,7 @@ const NewsEventsPageComponent = () => {
 
           <h2>Received 50K Donation From Various organizations in Last Year</h2>
           <div className="img-news-para-three">
-            <img
-              src={NewsImageThree}
-              alt="Child with some coins in hand"
-            ></img>
+            <img src={NewsImageThree} alt="Child with some coins in hand"></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call

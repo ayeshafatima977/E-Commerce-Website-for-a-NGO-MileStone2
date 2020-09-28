@@ -64,7 +64,6 @@
   width: 150px;
   margin-right: 1rem;
 }
-/* =================Tablet BREAKPOINT================= */
 @media screen and (min-width: 600px) {
   .hero-section #shop-donate-btns {
     display: flex;
@@ -94,8 +93,6 @@
     margin-top: 5%;
   }
 }
-
-/* =================DESKTOP BREAKPOINT================= */
 @media screen and (min-width: 1000px) {
   .hero-section {
     width: 100%;

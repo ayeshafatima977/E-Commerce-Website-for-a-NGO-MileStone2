@@ -1,46 +1,38 @@
 @import url("./normalize.css");
-/* #volunteer-form * {
-  outline: 1px  solid red;
-} */
 #volunteer-form {
-  background-color:#ffffff;   
-  margin: 2rem .5rem;
+  background-color: #ffffff;
+  margin: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #4D626E;;  
+  color: #4d626e;
   border-radius: 15px;
   padding-bottom: 10px;
-  border-right: 1px solid #4D626E;
+  border-right: 1px solid #4d626e;
   padding: 1.5rem 1.5rem;
-  border-left: 1px solid #4D626E;
+  border-left: 1px solid #4d626e;
   box-shadow: 1px 5px 5px 3px #888888;
-  
 }
 #volunteer-form input::placeholder {
-  color: #4D626E;
+  color: #4d626e;
   font-style: italic;
-  font-size: .8rem;  
+  font-size: 0.8rem;
 }
 #volunteer-form h2 {
   font-size: 30px;
-  color:#4D626E;
+  color: #4d626e;
   margin: 0 0 1rem 0;
- font-weight: bold;
+  font-weight: bold;
   text-align: center;
-  
 }
 .label-input-container {
   display: flex;
   flex-direction: column;
-  
 }
-
 #volunteer-form label {
   font-size: 1rem;
   font-weight: 500;
-  color: #4D626E;
-  
+  color: #4d626e;
 }
 #volunteer-form input {
   width: 100%;
@@ -57,18 +49,17 @@
 #volunteer-form select {
   padding-top: 6px;
 }
-
-#emergency-info ,#volunteer-info {
+#emergency-info,
+#volunteer-info {
   padding: 0 15px;
   width: 100%;
 }
-#emergency-info{
-  border-top: 1px solid #4D626E;
+#emergency-info {
+  border-top: 1px solid #4d626e;
   border-radius: 10px;
   padding-top: 10px;
-  
 }
-#volunteer-form input[type=submit] {
+#volunteer-form input[type="submit"] {
   width: 150px;
   height: 50px;
   color: #ffffff;
@@ -76,26 +67,21 @@
   font-size: 1.5rem;
   font-weight: 500;
   align-self: flex-end;
-  text-align: center; 
+  text-align: center;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
   padding: 0;
-  
-
 }
-#volunteer-form input[type=submit]:hover {
+#volunteer-form input[type="submit"]:hover {
   background-color: #90aab9;
-  
 }
 .required-field {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgba(255, 0, 0);
 }
-#volunteer-form .note { /* Required field note at the bottom */
+#volunteer-form .note {
   color: #ff0000;
   font-size: 0.55rem;
   font-style: italic;
-
-  
 }
 #submit-required-note {
   display: flex;
@@ -106,15 +92,9 @@
   margin: 0;
   padding: 0;
 }
-/* Tablet layout at min-width 600px */
 @media screen and (min-width: 600px) {
   #volunteer-form {
     max-width: 600px;
     margin: 2rem auto 2rem auto;
-  }  
-  
-  
+  }
 }
-
-
-

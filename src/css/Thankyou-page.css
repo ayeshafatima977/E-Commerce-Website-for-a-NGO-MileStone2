@@ -23,7 +23,6 @@
   text-align: center;
   text-shadow: 1px 5px 5px #ffbc04;
 }
-
 #thankyou-img span a,
 #thankyou-img span p {
   text-align: center;
@@ -36,6 +35,5 @@
   #thankyou-img p {
     margin: 0 auto 0 auto;
     font-size: 5rem;
-
   }
 }

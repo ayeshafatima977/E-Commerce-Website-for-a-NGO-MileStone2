@@ -15,11 +15,6 @@ const CartPageComponent = () => {
   );
 };
 
-
-
 export default CartPageComponent;
 
 /*=====  End ofCart Page Component End  ======*/
-
-
-

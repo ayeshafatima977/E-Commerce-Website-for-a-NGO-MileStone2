@@ -97,7 +97,7 @@ const HeaderComponent = () => {
               >
                 VOLUNTEER
               </Link>
-            </li>           
+            </li>
             <li>
               <a
                 href="#top"
@@ -106,7 +106,7 @@ const HeaderComponent = () => {
                   document
                     .getElementsByClassName("loginform-overlay")[0]
                     .classList.add("overlayShow");
-                    dispatch(UpdateBrowsingHistory("/loginform"));
+                  dispatch(UpdateBrowsingHistory("/loginform"));
                 }}
               >
                 LOGIN
@@ -124,8 +124,7 @@ const HeaderComponent = () => {
                   document
                     .getElementsByClassName("contactform-overlay")[0]
                     .classList.add("overlayShow");
-                    dispatch(UpdateBrowsingHistory("/contactform"));
-                    
+                  dispatch(UpdateBrowsingHistory("/contactform"));
                 }}
               >
                 CONTACT

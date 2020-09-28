@@ -1,5 +1,4 @@
 @import url("./normalize.css");
-
 .product-details-overlay {
   position: fixed;
   display: none;
@@ -71,9 +70,6 @@
   font-weight: 500;
   cursor: pointer;
 }
-/* .product-details-overlay .shpingbtn :hover {
-  background-color: #90aab9;
-} */
 .product-details-overlay #img-desc {
   display: flex;
   flex-direction: column;
@@ -86,7 +82,6 @@
   padding: 1rem;
   border-radius: 10px;
 }
-
 .product-details-overlay #price-tag {
   font-size: 28px;
   font-weight: 700;
@@ -95,7 +90,6 @@
   text-align: center;
   margin-bottom: 0.75rem;
 }
-
 .product-overlay-section .shopping-cart {
   display: flex;
   align-items: center;
@@ -116,8 +110,6 @@
   .product-overlay-section #h2-close {
     margin: 0 0 1rem 0;
     align-content: center;
-    /*     padding-top: 1rem;
- */
   }
   .product-overlay-section h2 {
     font-size: 20px;
@@ -131,7 +123,7 @@
     text-align: left;
   }
   .product-details-overlay #cartbtn-price {
-    flex-direction: row; /* here */
+    flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
     margin-top: 1rem;
@@ -141,7 +133,7 @@
     margin-top: 0 !important;
   }
   .product-details-overlay #img-desc {
-    flex-direction: row; /* here */
+    flex-direction: row;
   }
   .product-details-overlay img {
     border-radius: 15px;

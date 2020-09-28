@@ -1,12 +1,12 @@
 import "../css/Form-validation.css";
 
 /* Citation:
-*@Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-*@Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
-*Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
-*@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
-*@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-*/
+ *@Link:https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+ *@Link: https://stackoverflow.com/questions/3763820/javascript-regular-expression-to-validate-an-address
+ *Link : https://www.w3resource.com/javascript/form/phone-no-validation.php
+ *@Link:https://stackoverflow.com/questions/15774555/efficient-regex-for-canadian-postal-code-function
+ *@Link:https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+ */
 /* Global form validation function for generic use within website forms */
 
 export default function FormValidation(
@@ -179,7 +179,7 @@ export default function FormValidation(
         manipulateDoMClearError();
       }
       return PassIndicator;
-      
+
     default:
       return;
   }

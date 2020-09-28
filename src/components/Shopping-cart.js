@@ -39,7 +39,8 @@ const ShoppingCartComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
     /* Display the Message only when Credit Card and Billing Details are Validated */
-    if (true
+    if (
+      true
       /*  CreditCardValidationStatus && BillingDetailsValidationStatus  */
     ) {
       for (let inCartProduct of globalStateInfo.Cart) {
@@ -109,7 +110,6 @@ const ShoppingCartComponent = () => {
                   </span>
                   <span>
                     <input
-
                       type="number"
                       value={inCartProduct.inCartQty}
                       min="0"
@@ -167,7 +167,11 @@ const ShoppingCartComponent = () => {
                 #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up
                 items at the head office instead of in-store
               </p>
-              <DatePickerComponent onChange={(e)=>{console.log(e.target.date)}}/>
+              <DatePickerComponent
+                onChange={(e) => {
+                  console.log(e.target.date);
+                }}
+              />
               <FaCalendarAlt />
               <p>Schedule a Pickup Appointment</p>
               <sup className="required-field">*</sup>

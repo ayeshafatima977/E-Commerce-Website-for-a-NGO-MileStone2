@@ -122,6 +122,9 @@ available for use not to reinvent the wheel.
 
 # General Notes:
 
-We have kept good reference for the websites that we learned from in our NoteJoy, however we
+- We have kept good reference for the websites that we learned from in our NoteJoy, however we
 didn't copy code snippets from there, and if we did, it was explicitly mentioned above.
+
+- Across the project files, we followed consistent file naming convention which helped us to be slim on comments specially in CSS as the names are self explanatory.
+
 ==============================================================================================
