@@ -1,52 +1,106 @@
 @import url("./normalize.css");
 #billing-form {
-  background-color: #fff;
-  color: #4d626e;
-  width: 50%;
+  background-color: #FFFFFF;
+  margin: 1rem 0.5rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  border-radius: 0.625rem;
+  color: #4D626E;
+  border-radius: 15px;
+  border-right: 1px solid #4D626E;
+  padding: 1.5rem 1.5rem;
+  border-left: 1px solid #4D626E;
+  box-shadow: 1px 5px 5px 3px #888888;
+}
+.billing-form-section-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .billing-form-section-container input,
 select {
   display: block;
   width: 100%;
   height: 35px;
-  margin: 0 0 1rem 0;
-  padding: 0 0 0.25rem 0.75rem;
+  margin: 0.5 0 1rem 0;
+  padding: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 15px;
   font-size: 0.85rem;
-  color: #4d626e;
+  color: #4D626E;
   border: none;
-  border-bottom: 1px solid #4d626e;
-  border-top: 1px solid #4d626e;
+  border-bottom: 1px solid #4D626E;
+  border-top: 1px solid #4D626E;
+}
+.billing-form-section-container select {
+  padding-top: 6px;
 }
 .billing-form-section-container input:focus {
-  background-color: #d6e4e9;
+  background-color: #D6E4E9;
 }
-::placeholder {
-  color: #4d626e;
-  font-size: 0.65rem;
+.billing-form-section-container input::placeholder {
+  color: #4D626E;
   font-style: italic;
+  font: size 1.5rem;
 }
-label {
-  margin: 0 0 0.25rem 0.5rem;
-  color: #4d626e;
+.billing-form-section-container label {
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 0.75rem;
+  margin-left: 12px;
+  color: #4D626E;
+  padding-bottom: 5px;
 }
 .billing-form-section-container .required-field {
-  color: rgba(255, 0, 0);
+  color: rgba(255, 0, 0, 0.5);
+}
+#billing-form-first-name-container,
+#billing-form-last-name-container,
+#billing-form-street-address-container,
+#billing-form-city-container,
+#billing-form-province-container,
+#billing-form-postal-code-container,
+#billing-form-phone-container,
+#billing-form-email-container {
+  margin-top: 10px;
+}
+#billing-firstname-id,
+#billing-lastname-id,
+#billing-streetaddress-id,
+#billing-city-id,
+#province-id,
+#billing-postal-code-id,
+#billing-phone-id,
+#billing-email-id {
+  margin-top: 10px;
 }
 @media screen and (min-width: 600px) {
   #billing-form {
-    background-color: #ffffff;
-    color: #4d626e;
+    background-color: #FFFFFF;
+    color: #4D626E;
     width: 100%;
     margin: 0.25rem auto;
     padding: 0 0.625rem;
     border-radius: 0.625rem;
+  }
+  .billing-form-section-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    padding-top: 20px;
+  }
+  #billing-form-first-name-container {
+    width: 40%;
+  }
+  #billing-form-last-name-container {
+    width: 40%;
+    margin-left: 80px;
+  }
+  #billing-form-street-address-container,
+  #billing-form-city-container,
+  #billing-form-province-container,
+  #billing-form-postal-code-container,
+  #billing-form-phone-container,
+  #billing-form-email-container {
+    width: 100%;
   }
   .billing-form-section-container input,
   select {
@@ -58,7 +112,7 @@ label {
 @media screen and (min-width: 1000px) {
   #billing-form {
     background-color: #fff;
-    color: #4d626e;
+    color: #4D626E;
     width: 100%;
     margin: 2rem auto;
     padding: 2 0.625rem;

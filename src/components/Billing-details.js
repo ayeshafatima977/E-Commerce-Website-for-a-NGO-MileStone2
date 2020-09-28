@@ -99,7 +99,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             <input
               id="billing-firstname-id"
               type="text"
-              placeholder="Johnny"
+              placeholder="First Name"
               className="billing-firstname"
               onChange={(e) => {
                 setUserFirstName(e.target.value);
@@ -116,7 +116,7 @@ const BillingDetailsComponent = forwardRef((props, ref) => {
             <input
               id="billing-lastname-id"
               type="text"
-              placeholder="Bravo"
+              placeholder="Last Name"
               className="billing-lastname"
               onChange={(e) => {
                 setUserLastName(e.target.value);

@@ -17,7 +17,6 @@ const DatePickerCCExpComponent = () => {
       dateFormat="MM/yyyy"
       showMonthYearPicker
       minDate={new Date()}
-      inline
     />
   );
 };
