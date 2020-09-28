@@ -111,6 +111,7 @@ const DonationFormComponent = () => {
           <BillingDetailsComponent ref={billingInfoRef} />
         </div>
         <div className="donation-form-section-container">
+        <h2>Credit Card Information</h2>
           <CreditCardComponent ref={creditCardRef} />
         </div>
         <div id="donation-submit-button-container">

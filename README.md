@@ -50,6 +50,11 @@ For technical support please feel free to leave us comment on GitHub through the
 Best Regards,
 The project's team
 ==============================================================================================
+# Functionality Document
+
+Can be found under the repo > project documentation
+==============================================================================================
+
 # Resources: 
 
 The following links has been used as research resources during the project execution. If any code snippet is used, a citation would be added to the corresponding code.
