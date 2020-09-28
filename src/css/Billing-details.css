@@ -66,6 +66,17 @@ select {
   margin-top: 10px;
 }
 
+#billing-firstname-id,
+#billing-lastname-id,
+#billing-streetaddress-id,
+#billing-city-id,
+#province-id,
+#billing-postal-code-id,
+#billing-phone-id,
+#billing-email-id {
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 600px) {
   #billing-form {
     background-color: #ffffff;
@@ -81,6 +92,7 @@ select {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 15px;
+    padding-top: 20px;
   }
   #billing-form-first-name-container {
     width: 40%;

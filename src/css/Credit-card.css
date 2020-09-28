@@ -62,7 +62,7 @@
   height: 30px;
   display: inline-block;
   margin: 0;
-  transform: translateX(115px) translateY(-20px);
+  transform: translateX(110px) translateY(-25px);
 }
 /*=============================================
 =            Card Icons Styling  Ends           =
@@ -91,7 +91,7 @@
   border-radius: 15px;
 }
 #user-credit-cvc-id {
-  width: 50%;
+  width: 35%;
   height: 35px;
   border-radius: 15px;
   border-right: none;
@@ -128,7 +128,7 @@
   color: rgba(255, 0, 0, 0.5);
 }
 
-#credit-card-form input ::placeholder {
+#credit-card-form input::placeholder {
   color: #4d626e;
   font-size: 0.65rem;
   font-style: italic;
@@ -189,6 +189,6 @@
   }
 
   .credit-icon svg {
-    transform: translateX(325px) translateY(-25px) scale(1.3);
+    transform: translateX(380px) translateY(-25px) scale(1.3);
   }
 }

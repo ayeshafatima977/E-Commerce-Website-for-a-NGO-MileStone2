@@ -39,9 +39,7 @@ const ShoppingCartComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
     /* Display the Message only when Credit Card and Billing Details are Validated */
-    if (
-      /* CreditCardValidationStatus && BillingDetailsValidationStatus */ true
-    ) {
+    if (CreditCardValidationStatus && BillingDetailsValidationStatus) {
       for (let inCartProduct of globalStateInfo.Cart) {
         if (inCartProduct.inCartQty < 1) {
           if (
@@ -96,48 +94,50 @@ const ShoppingCartComponent = () => {
                   </section>
                 </div>
                 <div id="qty-status">
-                  <span>
-                    <button
-                      className="plus"
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(IncreaseCartQty(inCartProduct.id));
-                      }}
-                    >
-                      &#43; {/* Plus sign */}
-                    </button>
-                    &nbsp;
-                  </span>
-                  <span id="qty">
-                    <input
-                      type="number"
-                      value={inCartProduct.inCartQty}
-                      min="0"
-                      onChange={(e) => {
-                        e.target.value > -1 || (e.target.value = "0");
-                        if (e.target.value > -1) {
-                          dispatch(
-                            SetCartQty(inCartProduct.id, e.target.value)
-                          );
-                        }
-                      }}
-                    ></input>
-                    &nbsp;
-                  </span>
-                  <span>
-                    <button
-                      className="minus"
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(DecreaseCartQty(inCartProduct.id));
-                      }}
-                    >
-                      &#8722; {/* Minus sign */}
-                    </button>
-                    &nbsp;{" "}
-                  </span>
+                  <div id="cart-qty-style">
+                    <span>
+                      <button
+                        className="plus"
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(IncreaseCartQty(inCartProduct.id));
+                        }}
+                      >
+                        &#43; {/* Plus sign */}
+                      </button>
+                      &nbsp;
+                    </span>
+                    <span id="qty">
+                      <input
+                        type="number"
+                        value={inCartProduct.inCartQty}
+                        min="0"
+                        onChange={(e) => {
+                          e.target.value > -1 || (e.target.value = "0");
+                          if (e.target.value > -1) {
+                            dispatch(
+                              SetCartQty(inCartProduct.id, e.target.value)
+                            );
+                          }
+                        }}
+                      ></input>
+                      &nbsp;
+                    </span>
+                    <span>
+                      <button
+                        className="minus"
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(DecreaseCartQty(inCartProduct.id));
+                        }}
+                      >
+                        &#8722; {/* Minus sign */}
+                      </button>
+                      &nbsp;{" "}
+                    </span>
+                  </div>
                   <span>
                     <button
                       type="button"
@@ -190,7 +190,7 @@ const ShoppingCartComponent = () => {
   be submitted from the parent form
   */}
           <div id="shopping-required-note">
-            <sup className="required-field note">* Required Field</sup>
+            <sup className="required-field-note">* Required Field</sup>
             <button
               id="btn-order"
               form="shopping-cart"

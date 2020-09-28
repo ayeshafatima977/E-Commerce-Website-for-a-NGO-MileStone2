@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
 import FormValidation from "../functions/Form-validation.js";
-import DatePickerCCExpComponent from "./Date-picker-ccexp";
+import DatePicker from "react-datepicker";
 
 const CreditCardComponent = forwardRef((props, ref) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
   const [userExpiry, setUserExpiry] = useState("");
   const [userCVC, setUserCVC] = useState("");
   const [userInfoSave, setUserInfoSave] = useState("");
-
+  const [startDate, setStartDate] = useState(new Date());
   /* 
    Creating a Copy with parameters assigned in the Creditcard reducer*/
 
@@ -126,16 +126,22 @@ const CreditCardComponent = forwardRef((props, ref) => {
                 Expires<sup className="required-field">*</sup>
               </label>
               {/* Date Picker component is used here for the user to select the expiry date  */}
-              {/* <DatePickerCCExpComponent /> */}
-              <input
+              <DatePicker
                 id="user-credit-expiry-id"
-                type="text"
-                maxLength="5"
-                placeholder="yy/mm"
                 className="user-credit-expiry"
-                onChange={(e) => {
-                  setUserExpiry(e.target.value);
+                selected={startDate}
+                onChange={(date) => {
+                  setStartDate(date);
+                  if (date !== null) {
+                    setUserExpiry(date.getMonth() + "/" + date.getFullYear());
+                  } else {
+                    setUserExpiry("00/0000");
+                  }
                 }}
+                placeholderText="Click to select a date"
+                dateFormat="yyyy/MM"
+                showMonthYearPicker
+                minDate={new Date()}
               />
               <p className="user-credit-expiry-error msg-hide">
                 Please enter correct expiry date
