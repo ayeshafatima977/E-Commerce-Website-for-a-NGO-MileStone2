@@ -80,7 +80,7 @@ const DonationFormComponent = () => {
             </div>
           </div>
           <h2>Fund</h2>
-          <label htmlFor="fund-type">Fund Type</label>
+          <label id="fund-label" htmlFor="fund-type">Fund Type</label>
           <select
             id="fund-type-id"
             onChange={(e) => setFundType(e.target.value)}

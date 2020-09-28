@@ -18,13 +18,12 @@
 }
 .donation-form-section-container {
   border-top: 1px solid #4d626e;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 #donation-amount-container label {
   width: 100%;
   display: block;
-  padding-bottom: 5px;
 }
 #donation-amount-id {
   height: 30px;
@@ -78,6 +77,20 @@
   font-size: 20px;
   font-weight: bold;
   margin: 15px 0;
+}
+.donation-form-section-container label {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+#fund-label {
+  padding-bottom: 5px;
+}
+#fund-type-id {
+  margin-top: 5px;
+}
+.donationMsg {
+  margin-top: 5px;
 }
 @media screen and (min-width: 600px) {
   #donation-form-container {
