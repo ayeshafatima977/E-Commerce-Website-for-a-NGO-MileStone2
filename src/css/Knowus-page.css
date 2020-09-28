@@ -3,7 +3,7 @@
 #know-us-article {
   display: flex;
   flex-direction: column;
-  margin: 2.5% 20% 0 20%;
+  margin: 2.5% 10% 0 10%;
 
 }
 #about-us-heading-container {
@@ -107,6 +107,11 @@
   #faq-heading {
     font-size: 55px;
   }
+  #know-us-article {
+    
+    margin: 2.5% 10% 0 10%;
+  
+  }
   .know-us-section h2 {
     font-size: 40px;
 
@@ -122,4 +127,14 @@
     margin-bottom: 15px;
     line-height: 150%;
   }
+}
+
+@media screen and (min-width: 1000px) {
+  
+  #know-us-article {
+    
+    margin: 2.5% 20% 0 20%;
+  
+  }
+  
 }

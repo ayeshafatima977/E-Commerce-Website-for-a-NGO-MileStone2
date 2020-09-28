@@ -1,7 +1,5 @@
 @import url("./normalize.css");
-#thankyou-img * {
-  outline: 1px solid red;
-}
+
 #thankyou-img {
   display: flex;
   flex-direction: column;
