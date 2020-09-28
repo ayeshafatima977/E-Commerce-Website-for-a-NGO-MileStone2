@@ -16,8 +16,6 @@ const DonationFormComponent = () => {
   const [donationAmount, setDonationAmount] = useState(5);
   const [fundType, setFundType] = useState("General");
   const [donationFreq, setDonationFreq] = useState("Donate Now");
-  const [donationMsg, setDonationMsg] = useState("");
-  /* Setup for future use in case the message to be validated for certain criteria  */
 
   /*The form submits only when all the validation is true from Billing Details,Credit Card and Donation form*/
 
@@ -62,7 +60,7 @@ const DonationFormComponent = () => {
                 Donation Amount<sup className="required-field">*</sup>
               </label>
               <span id="donation-amount-span">
-                $
+                $&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   id="donation-amount-id"
                   className="donation-amount"

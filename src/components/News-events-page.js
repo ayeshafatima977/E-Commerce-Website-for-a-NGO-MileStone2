@@ -25,7 +25,7 @@ const NewsEventsPageComponent = () => {
         <section className="news-event-section">
           <h2>COVID 19 update</h2>
           <div className="img-news-para-one">
-            <img src={NewsImageOne} alt="covid 19 text image"></img>
+            <img src={NewsImageOne} alt="covid 19 logo"></img>
             <p>
               Despite the challenges of COVID-19, our organization has continued
               our work and service in the community. If you feel sick, then call

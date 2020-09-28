@@ -56,15 +56,14 @@ const CreditCardComponent = forwardRef((props, ref) => {
           "user-credit-cvc",
           "user-credit-cvc-error"
         )
-      )
+      ){
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
-      return true;
+      return true;}
     },
   }));
   return (
     <>
-      <form id="credit-card-form">
-        {/* <h4>Credit Card</h4> */}
+      <section id="credit-card-form">
         <div className="credit-card-form-section-container">
           <div className="cards-styling">
             <section id="cards-row-1" className="cards">
@@ -95,7 +94,7 @@ const CreditCardComponent = forwardRef((props, ref) => {
               <label className="credit-label" htmlFor="user-credit-number-id">
                 Number on Card<sup className="required-field">*</sup>
               </label>
-              <div class="credit-icon">
+              <div className="credit-icon">
                 <input
                   type="text"
                   id="user-credit-number-id"
@@ -178,10 +177,9 @@ const CreditCardComponent = forwardRef((props, ref) => {
                 Save payment information
               </label>
             </div>
-            {/* </section> */}
           </div>
         </div>
-      </form>
+      </section>
     </>
   );
 });
