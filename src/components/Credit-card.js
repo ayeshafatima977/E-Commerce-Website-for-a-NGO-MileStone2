@@ -42,24 +42,24 @@ const CreditCardComponent = forwardRef((props, ref) => {
        */
 
       if (
-        /* FormValidation(
+        FormValidation(
           userCreditNumber,
           "cc-number-input",
           "user-credit-number",
           "user-credit-number-error"
-        ) && */
+        ) &&
         FormValidation(
           userExpiry,
           "cc-exp",
           "user-credit-expiry",
           "user-credit-expiry-error"
-        ) /*  &&
+        )  &&
         FormValidation(
           userCVC,
           "cc-cvc",
           "user-credit-cvc",
           "user-credit-cvc-error"
-        ) */
+        )
       )
         dispatch(ChangeCreditInfo(CreditCardStateInfoCopy));
       return true;

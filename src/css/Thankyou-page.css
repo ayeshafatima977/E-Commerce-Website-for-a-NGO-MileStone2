@@ -14,14 +14,14 @@
 }
 #thankyou-img p {
   width: 100%;
-  padding: 100px auto 0 auto 0;
-  margin-top: 50px;
+  padding: 2rem 0 2rem 0;
+  margin-top: 5rem;
   font-weight: 500;
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
-  box-shadow: 5px 500px 500px #ffbc04;
+  text-shadow: 1px 5px 5px #ffbc04;
 }
 
 #thankyou-img span a,
@@ -35,5 +35,7 @@
 @media screen and (min-width: 1000px) {
   #thankyou-img p {
     margin: 0 auto 0 auto;
+    font-size: 5rem;
+
   }
 }
