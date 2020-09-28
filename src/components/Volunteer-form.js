@@ -61,9 +61,6 @@ const VolunteerFormComponent = () => {
         "volunteerEmergencyPhone-error"
       )
     ) {
-      // document
-      //   .getElementsByClassName("volunteer-thankyou-msg")[0]
-      //   .classList.remove("msg-hide");
       history.push("/volnterconf");
     }
   };
