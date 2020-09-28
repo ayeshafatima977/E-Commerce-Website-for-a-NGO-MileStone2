@@ -25,10 +25,16 @@
   width: 100%;
   display: block;
 }
+#donation-amount-container select,
 #donation-amount-id {
-  height: 30px;
+  height: 35px;
+}
+#donation-amount-container select {
+  padding-top: 5px;
+}
+#donation-amount-id {
   width: 70%;
-  padding-left: 5px;
+  padding-right: 15px;
   border-radius: 5px;
   border-right: 0;
   border-left: 0;
@@ -44,7 +50,7 @@
 }
 .donation-form-section-container select {
   width: 70%;
-  height: 40px;
+  height: 35px;
   display: block;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -69,8 +75,8 @@
   text-align: center;
 }
 #donation-submit-button {
-  color: #4d626e;
-  background-color: rgba(255, 255, 255, 0.01);
+  color: #FFF;
+  background-color: #4d626e;
   border: solid #4d626e 4px;
   border-radius: 15px;
   padding: 10px;
@@ -87,6 +93,7 @@
   padding-bottom: 5px;
 }
 #fund-type-id {
+  padding-top: 5px;
   margin-top: 5px;
 }
 .donationMsg {
@@ -105,7 +112,6 @@
   #donation-amount-input-container input,
   #donation-amount-container select {
     width: 210px;
-    height: 30px;
   }
   #donation-amount-input-container {
     margin-left: 40px;
@@ -133,6 +139,5 @@
   #donation-amount-input-container input,
   #donation-amount-container select {
     width: 185px;
-    height: 30px;
   }
 }
