@@ -113,7 +113,7 @@
 }
 
 .credit-card-form-section-container .required-field {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgba(255, 0, 0);
 }
 
 #credit-card-form input::placeholder {
@@ -127,6 +127,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: #4d626e;
+  margin-left: 12px;
 }
 
 #cc-exp-date-label,

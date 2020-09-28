@@ -46,9 +46,10 @@ select {
   font: size 1.5rem;
 }
 
-.billing-form-section-container input label {
+.billing-form-section-container label {
   font-size: 1rem;
   font-weight: 500;
+  margin-left: 12px;
   color: #4d626e;
   padding-bottom: 5px;
 }
