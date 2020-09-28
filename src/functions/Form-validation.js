@@ -153,7 +153,7 @@ export default function FormValidation(
       return PassIndicator;
 
     case "cc-exp": // Credit card expiry date
-      if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(inputFieldContent)) {
+      if (!/^([1-9]|1[0-2])\/?([0-9]{4})$/.test(inputFieldContent)) {
         manipulateDoMError();
       } else {
         manipulateDoMClearError();

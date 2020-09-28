@@ -44,17 +44,19 @@ body {
 }
 #login-submit {
   height: 50px;
+  width: 150px;
   margin: 1.5rem 2rem 0 1rem;
   padding: 0 25px;
   color: white;
   background: #4d626e;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   align-self: flex-start;
   text-align: center;
   border: none;
   border-radius: 15px;
   cursor: pointer;
+
 }
 .loginform-overlay {
   position: fixed;

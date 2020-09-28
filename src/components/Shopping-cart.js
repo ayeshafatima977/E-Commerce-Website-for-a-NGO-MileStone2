@@ -9,7 +9,7 @@ import {
   SetCartQty,
   RemoveFromCart,
 } from "../actions/Cart";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DatePickerComponent from "./Date-picker";
 import "../css/Shopping-cart.css";
 import "../css/Credit-card.css";
@@ -39,8 +39,8 @@ const ShoppingCartComponent = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
     /* Display the Message only when Credit Card and Billing Details are Validated */
-    if (
-      /* CreditCardValidationStatus && BillingDetailsValidationStatus */ true
+    if (true
+      /*  CreditCardValidationStatus && BillingDetailsValidationStatus  */
     ) {
       for (let inCartProduct of globalStateInfo.Cart) {
         if (inCartProduct.inCartQty < 1) {
@@ -61,7 +61,7 @@ const ShoppingCartComponent = () => {
       }
       /* The useHistory hook gives you access to the history instance that you may use to navigate. */
 
-      history.push("/thankyou");
+      history.push("/volnterconf");
     }
   };
 
@@ -167,7 +167,7 @@ const ShoppingCartComponent = () => {
                 #180 3803 Calgary Trail NW Edmonton AB T6J 5M8 Please pick up
                 items at the head office instead of in-store
               </p>
-              <DatePickerComponent />
+              <DatePickerComponent onChange={(e)=>{console.log(e.target.date)}}/>
               <FaCalendarAlt />
               <p>Schedule a Pickup Appointment</p>
               <sup className="required-field">*</sup>

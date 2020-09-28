@@ -5,14 +5,14 @@ import "../css/Thankyou-page.css";
 =         Thank You page React Component        =
 =============================================*/
 
-const ThankYouPage = () => {
+const VolunteerConfPage = () => {
   return (
     <>
-      <ThankYoImg message="Thank you, your order is in process "/>
+      <ThankYoImg message="Thank you for your application "/>
     </>
   );
 };
 
 /*=====  End of Thank You React Component  ======*/
 
-export default ThankYouPage;
+export default VolunteerConfPage;
