@@ -39,7 +39,7 @@ select {
 .billing-form-section-container input::placeholder {
   color: #4D626E;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: .85rem;
 }
 .billing-form-section-container label {
   font-size: 1rem;
